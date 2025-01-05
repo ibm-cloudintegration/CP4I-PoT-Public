@@ -33,16 +33,6 @@ If you are doing this lab out of order return to [Environment Setup](../envsetup
 
 The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo. If you are using another platform, you can download the necessary artifacts from the github repo. The instructor will provide directions.
 
-**Note**: The screen shots were taken on a test cluster and many will not match what you see when running the lab. Particularly URL values will be different depending on the cluster where CP4I is running. Projects (Namespaces) may also vary. It is important to follow the directions, not the pictures.
-
-#### Further information
-
-* [IBM MQ Knowledge Center](https://www.ibm.com/docs/en/ibm-mq/9.2?topic=mq) 
-* “Building scalable fault tolerant systems with IBM MQ 9.1.2 CD” article by David Ware, STSM, Chief Architect, IBM MQ: 
-[David Ware article](https://developer.ibm.com/messaging/2019/03/21/building-scalable-fault-tolerant-ibm-mq-systems/)
-* “Active/active IBM MQ with Uniform Clusters” video by David Ware:
-[YouTube Demo Video](https://www.youtube.com/watch?v=LWELgaEDGs0&feature=youtu.be)
-
 ## Configure the cluster using yaml
 
 1. Open a Firefox web browser by double-clicking the icon on the desktop.
@@ -51,30 +41,35 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 	
 1. Navigate to the URL for the OCP console provided in your PoT email. If required to log in use the userid / password provided in the email.
 
-	![](./images/image304.png)
+	![](./images/image304a.png)
+
+	![](./images/image304b.png)
 
 1. Then add another browser tab by clicking the "+" sign and opening the *CP4I Navigator* URL for the platform navigator provided in your PoT email.
 
-	![](./images/image306.png)
+	![](./images/image304c.png)
 
 1. You may still be logged in from the previous labs. If your platform navigator session timed out, you may be required to log-in again.
 
 	
 1. Once the navigator opens, right click on the **Integration instances** and open in a new tab.
 
-	![](./images/image306b.png)
+	![](./images/image304d.png)
 	
 1. If you ran the *Cleanup* step in prior labs there should be none of your queue managers running. However there may be other's instances running. 
 
-	![](./images/image308.png)
+	![](./images/image304e.png)
 	
 	If you have any remaining *mqxx* (xx = your student ID), delete them now.
 
 1. Open a new terminal window by double-clicking the icon on the desktop.
 
-	![](./images/pots/mq-cp4i/lab2/image1a.png)
+	![](./images/image1a.png)
 
 1. Navigate to the */MQonCP4I/unicluster/* directory using the following commnand:
+	```
+	cd ~/MQonCP4I/unicluster
+	```
 
 1. There are two subdirectories, *deploy* and *test*. Change to the *deploy* directory.
 
@@ -124,20 +119,18 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 The queue managers will be in a *Pending* state for a couple of minutes while they are provisioned.
  
  	![](./images/image214.png)
-		
-1. On the *OpenShift Console* you can watch the pods as they create containers. Click *Workloads* then select *Pods*. You will see a pod for each queue manager and you will see states of *Pending*, *Container creating*, and then *Running*.
-
-	![](./images/image312.png)
-	
-	![](./images/image313.png)
 
 1. After a few minutes the queue managers will then show *Ready* on the *Platform Navigator* and the pods will show *Running* on the *OpenShift Console*.
-	
-	![](./images/image315.png)
-	
-	![](./images/image314.png)
 
-1. Your cluster is also now completely configured. Check this from the *MQ Console* of one of thee queue managers. Click the hyperlink for your mq..a
+ 	![](./images/image214.png)
+
+## Check uniform cluster health
+
+If you like you can go to **Appendix A** which has directions for testing Uniform cluster using **MQExplorer**
+
+But with all the new features that have been added to the **MQ Console** you can verify the cluster using the MQ console.  This section will hightlight the MQ console.
+
+1. Your cluster is also now completely configured. Check this from the *MQ Console* of one of three queue managers. Click the hyperlink for your mq..a
 
 	![](./images/image20.png)
 	
@@ -151,13 +144,13 @@ The queue managers will be in a *Pending* state for a couple of minutes while th
 	
 1. You will see the two local queues **APPQ** and **APPQ2** which were defined by the mqsc *ConfigMap* defined in the yaml template. The other queue managers also have the queues by that name. 
 
-	![](./images/image23.png)
+	![](./images/image22a.png)
 	
 	Click *Communication*.
 	
 1. The listener *SYSTEM.LISTENER.TCP.1* is running. 
 
-	![](./images/image24.png)
+	![](./images/image22b.png)
 	
 	Click *App channels*.
 		
@@ -165,116 +158,20 @@ The queue managers will be in a *Pending* state for a couple of minutes while th
 
 **NOTE:** Make note of the MQ00CHLA name you will have one for each Qmgr and will use that in connecting with MQ Explorer.
 
-![](./images/image25.png)
+![](./images/image22c.png)
 	
 	Click *Queue manager channels*.
 	
 1. Here you find your cluster channels. If you looked closely at the yaml template, you'll remember that your *mqxxa* and *mqxxb* are the primary repositories for your cluster *UNICLUSxx*. While looking at *mqxxa* you see a cluster receiver channel **TO_UNICLUS_MQ00A** and two cluster sender channels **TO_UNICLUS_MQ00B** and **TO_UNICLUS_MQ00C**. They should be *Running*. 
 	
-	![](./images/image26.png)
+	![](./images/image22d.png)
 	
 	Click *View Configuration* in the top right corner.
-
-1. The queue manager properties are displayed. Click *Cluster* to see the cluster properties where you see your cluster name - UNICLUSxx.
-
-	![](./images/image27.png)
 
 1. You can check the other queue manager's console to verify that they are all configured the same. You should have verified that when reviewing the yaml template.
 
 	You are all set, time for testing.
 
-## Test uniform cluster
-
-### Perform health-check on Uniform Cluster
-
-Before proceeding, we need to check the cluster is up and running.
-1. Open a new terminal window.
- 
- Enter the following command to start MQ Explorer making sure to use the correct case:
-
-	```
-	MQExplorer
-	```
-	
- ![](./images/image247.png)
-
-1. When the utility is ready, right-click *Queue Managers* and select *Add Remote Queue Manager*.
-
-	![](./images/image248.png)
-
-1. Enter your queue manager name using your student ID. Click *Next*.
-
-	![](./images/image249.png)
-
-1. We will now need to get the hostname for this Qmgr to connect to it outside the OCP cluster to MQExplorer.   
-Run the following command 
-
-```
-oc get route -n melch1 | grep mq01a
-```
-Copy the hostname 
-	![](./images///image249a.png)
-
-*	Enter the value from the *hostname* above. 
-*	Enter **443** for the *Port number*.
-*	Enter your SVRCONN channel name in the *Server-connection channel* field.
-	
-	**Note** for the uniform cluster lab do not click the checkbox for Multi-instance queue manager.
-	
-	Click *Next* three times.
-	
-	![](./images///image138.png)
-	
-	[For more information refer to KnowledgeCenter](https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.1.0/com.ibm.mq.ctr.doc/cc_conn_qm_openshift.htm)
-		
-1. Click the checkbox for *Enable SSL key repositories*. Click *Browse* and navigate to */home/ibmuser/MQonCP4I/tls* and select **MQExplorer.jks**. Then click *Open*.
-
-	![](./images///image139.png)
-	
-1. Click the *Enter password* button and enter the jks password **'password'**. Click *OK* then *Next*.
-
-	![](./images///image140.png)
-	
-1. On the next screen click the checkbox for *Enable SSL options*. Click the drop-down next to *SSL CipherSpec* and select **ANY_TLS12_OR_HIGHER**.
-
-	![](./images///image141.png)
-	
-1. Click *Finish*. You will get a pop-up saying "Trying to connect to the queue manager".
-
-	![](./images///image141a.png)
-	
-1. After a few seconds you see that MQ Explorer has connected. The Queue Manager will be added and shown in the navigator.
-
-	![](./images/image142.png)
-	
-1. Operate MQ Explorer as you normally would. Expand the queue manager and "explore" MQ looking at queues, channels, etc.
-
-	![](./images/image143.png)
-
-
-**You now have the hosts to connect to the QMgrs Connect all 3 Qmgrs in MQExplorer**
-
-1. Expand *Queue Manager Clusters* to confirm that queue managers **mqxxa** and **mqxxb** have full repositories, while **mqxxc** has a partial repository.
-
-	![](./images/image215.png)
-	
-1. You observed the cluster channels in the MQ Console, but you can verify them in MQ Explorer also. Since *mqxxc* is a partial repository, it has two cluster sender channels, one to each full repository.
-
-	![](./images/image31.png)
-
-1. Check that Cluster Sender and Receiver Channels for each queue manager are running and if not, start them.
-
-	![](./images/image30.png)
-
-	**Note**: the Server Connection Channels will be inactive – do not attempt to start these.
-	
-1. Right-click you cluster name and select *Tests* > *Run Default Tests*.
-	
-	![](./images/image32.png)
-	
-1. Check that there are no errors or warnings resulting in the *MQ Explorer - Test Results*.
-
-	![](./images/image33.png)
 
 ## Launch getting applications
 
@@ -789,3 +686,93 @@ Run the command with the arugments that you used in the EnvSetup using your Stud
 
 [Return to MQ lab page](../index.md#introduction)
 
+# Appendix A
+Perform health-check on Uniform Cluster using MQExplorer
+
+1. Open a new terminal window.
+ 
+ Enter the following command to start MQ Explorer making sure to use the correct case:
+
+	```
+	MQExplorer
+	```
+	
+ ![](./images/image247.png)
+
+1. When the utility is ready, right-click *Queue Managers* and select *Add Remote Queue Manager*.
+
+	![](./images/image248.png)
+
+1. Enter your queue manager name using your student ID. Click *Next*.
+
+	![](./images/image249.png)
+
+1. We will now need to get the hostname for this Qmgr to connect to it outside the OCP cluster to MQExplorer.   
+Run the following command 
+
+```
+oc get route -n melch1 | grep mq01a
+```
+Copy the hostname 
+	![](./images///image249a.png)
+
+*	Enter the value from the *hostname* above. 
+*	Enter **443** for the *Port number*.
+*	Enter your SVRCONN channel name in the *Server-connection channel* field.
+	
+	**Note** for the uniform cluster lab do not click the checkbox for Multi-instance queue manager.
+	
+	Click *Next* three times.
+	
+	![](./images///image138.png)
+	
+	[For more information refer to KnowledgeCenter](https://www.ibm.com/support/knowledgecenter/SSFKSJ_9.1.0/com.ibm.mq.ctr.doc/cc_conn_qm_openshift.htm)
+		
+1. Click the checkbox for *Enable SSL key repositories*. Click *Browse* and navigate to */home/ibmuser/MQonCP4I/tls* and select **MQExplorer.jks**. Then click *Open*.
+
+	![](./images///image139.png)
+	
+1. Click the *Enter password* button and enter the jks password **'password'**. Click *OK* then *Next*.
+
+	![](./images///image140.png)
+	
+1. On the next screen click the checkbox for *Enable SSL options*. Click the drop-down next to *SSL CipherSpec* and select **ANY_TLS12_OR_HIGHER**.
+
+	![](./images///image141.png)
+	
+1. Click *Finish*. You will get a pop-up saying "Trying to connect to the queue manager".
+
+	![](./images///image141a.png)
+	
+1. After a few seconds you see that MQ Explorer has connected. The Queue Manager will be added and shown in the navigator.
+
+	![](./images/image142.png)
+	
+1. Operate MQ Explorer as you normally would. Expand the queue manager and "explore" MQ looking at queues, channels, etc.
+
+	![](./images/image143.png)
+
+
+**You now have the hosts to connect to the QMgrs Connect all 3 Qmgrs in MQExplorer**
+
+1. Expand *Queue Manager Clusters* to confirm that queue managers **mqxxa** and **mqxxb** have full repositories, while **mqxxc** has a partial repository.
+
+	![](./images/image215.png)
+	
+1. You observed the cluster channels in the MQ Console, but you can verify them in MQ Explorer also. Since *mqxxc* is a partial repository, it has two cluster sender channels, one to each full repository.
+
+	![](./images/image31.png)
+
+1. Check that Cluster Sender and Receiver Channels for each queue manager are running and if not, start them.
+
+	![](./images/image30.png)
+
+	**Note**: the Server Connection Channels will be inactive – do not attempt to start these.
+	
+1. Right-click you cluster name and select *Tests* > *Run Default Tests*.
+	
+	![](./images/image32.png)
+	
+1. Check that there are no errors or warnings resulting in the *MQ Explorer - Test Results*.
+
+	![](./images/image33.png)

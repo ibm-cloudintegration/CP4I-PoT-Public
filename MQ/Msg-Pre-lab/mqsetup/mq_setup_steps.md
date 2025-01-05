@@ -5,9 +5,9 @@
 <a name="download"></a>	
 ## Download artifacts for MQ on CP4I PoT
 
-You should be logged on your VDI as *student*. 
+You should be logged on your VDI as *ibmuser*. 
 
-1. Open a Firefox browser tab and navigate to [Github MQonCP4i](https://github.com/jjodl/mqoncp4i).
+1. Open a Firefox browser tab and navigate to [Github MQonCP4i](https://github.com/ibm-cloudintegration/mqoncp4i-2025).
 
 	![](./images/image108.png)
 	
@@ -19,9 +19,9 @@ You should be logged on your VDI as *student*.
 
 	![](./images/image110.png)
 	
-1. Open a terminal window by double-clicking the icon on the desktop.
+1. Open a terminal window by clicking on the **Application** on top menu and under **Favorites** click the icon for **Terminal**.
 
-	![](./images/image111.png)
+	![](./images/setup1.png)
 	
 1. Enter the following command to see the zip file you just downloaded.
 
@@ -61,16 +61,11 @@ You should be logged on your VDI as *student*.
 	find . -type f -iname "*.sh" -exec chmod +x {} \;
 	```
 	
-![](./images/image114a.png)
+	![](./images/setup3.png)
 
-9. Now we will change to the **setup** directory to run the script that will create all the install scripts for your userid.  
+9. Now we will run the script that will create all the install scripts for your userid.  
 	
-	```sh
-	cd setup
-	ls -l 
-	```
-	
-	![](./images/image114b.png)
+	![](./images/setup4.png)
 
 1. 	Now run the MQ_script_setup.sh You will use your student id that was given to you from the instructor.
 
