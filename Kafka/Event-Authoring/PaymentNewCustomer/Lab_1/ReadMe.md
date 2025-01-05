@@ -1,243 +1,175 @@
-# Discover the topic to use and filter events based on particular properties
+# Discover how event automation makes it easy to create new Kafka event streams from existing message queues 
 
-For this scenario, you need a source of order events. A good place to discover sources of event streams to process is the catalog in Event Endpoint Management.
-When processing events, we can use filter operations to select a subset
-that we want to use. Filtering works on individual events in the stream.
+For this scenario, you will use a fictitious company **Focus Corp** who's integration team will be asked to exposes the enterprise’s data using event streams. This will allow application teams to subscribe to the data without impacting the backend system, decoupling development, and lowering risks.  The order management system and its payment gateway exchange customer orders over IBM MQ. 
 
-# 1.1 Discover the topic to use
+# 1.1 Setup your own MQ Payment enviorment. 
 
-In these labs the instructor will act as the Event Endpoint Management administrator to expose the topics that students will need to complete the labs.   
+1. We will first download the scripts to make it easy to setup your environment.  The following shows what  you will have.  You will have your payments coming it to the Order Managerment system using MQ and the Payment gateway will process the transactions. 
 
-**Event Endpoint Management** provides the capability to describe and catalog your Kafka topics as event sources, and to share the details of the topics with application developers within the organization. Application developers can discover the event source and configure their applications to subscribe to the stream of events, providing self-service access to the message content from the event stream.
+    ![](images/es-pay-1.png)
 
-Access to the event sources are managed by the Event Gateway. The Event Gateway handles the incoming requests from applications to consume from a topic’s stream of events. The Event Gateway is independent of your Kafka clusters, making access control to topics possible without requiring any changes to your Kafka cluster configuration.
+1. Now go to the github repo to download.
 
-1. A quick review of Event Endpoint Management home page.  The EEM administrator will manage the **Topics, Clusters, and Event gateways**
-Also will create the controls for topics and published the topics that will be visible to developers 
+```
+https://github.com/ibm-cloudintegration/mqandes
+```
 
-    ![](images/media/image111.png)
+1. Click on **Code** drop down and select the **Download ZIP**
 
+    ![](images/es-pay-2.png)
 
-1. Login to the EEM home page as **eem-user**
+1.  Now go to the Download directory and run the following commands.   Once done you should be in */home/ibmuser/MQ-Order* directory.  
 
-    ![](images/media/image1a.png)
+    ```
+    cd ~/Downloads
+    unzip mqandes-main.zip
+    cd mqanddes-main
+    mv MQ-Order ~/
+    cd ~/MQ-Order
+    find . -type f -iname "*.sh" -exec chmod +x {} \;
+    ```
+       ![](images/es-pay-3.png)
 
-1. Go to the **Event Endpoint Management** catalog home page and find the **ORDERS.NEW** topic.
+1.  Now we will run the create script that will build everything  
 
-    You will notice that as a user you will only have access to the Catolog page and Subscription page. 
+    **Note:** There is just one argument to pass which is your student id.   The screen shots will show us using **Student1**
 
-    ![](images/media/image1.png)
+    ![](images/es-pay-3a.png)
+  
+1. This will take about 5-10 minutes to build everything.   Leave the window open where you started the script.  You can go to the CP4I Platform Navigator to see that it is in progress. 
 
-1. Click on the **ORDERS.NEW** topic to review the information about the events that are available here.
-Look at the schema to see the properties in the order events. 
+     ![](images/es-pay-4.png)
 
-    Will will also see what Controls have been created for this Topic.  For the ORDERS.NEW we will be using the **New Orders** Control
-    You can see the sample message to get an idea of what to expect from events on this topic.
+1. When the script is done the command window will look similar  to this.  
 
-    ![](images/media/image3.png)
-    If you scroll down on the page you will see the Servers available that will be used in the Event Processing and also Code samples.  
-     ![](images/media/image3a.png)
+     ![](images/es-pay-5.png)
 
-    **NOTE**: Keep this page open. It is helpful to have the catalog available while you work on your event processing flows, as it allows you to refer to the documentation about the events as you work. Do the following steps in a separate browser window or tab.
+## 1.2 Review the MQ environment.  
 
-1. Click on the **NEW ORDER** Control topic and select the **Generate access credentials** in the upper right.
+1. Now from the Platform Navigator search for your userid (ex: student1)
 
-    ![](images/media/image3b.png)
+    Right click on the new Qmgr and open in a new tab.
+   
+    ![](images/es-pay-6.png)
+   
+1. If you get worries like this click on advanced and accept the certificates.    
+   
+    ![](images/es-pay-6a.png)
 
-1. Here you will be asked for contact info.  Enter something like a email or just your userid 
+1. You are now on the MQ Console page for the new Qmgr (ex: student1ordersnew)
 
-    For example student1@mail.com
-    
-    Click on Generate.
-    ![](images/media/image3c.png)
+    Click on the tile.
+   
+    ![](images/es-pay-6b.png)
 
-1. You will now see your Access Credentials. You will need to save these for later.  On the Desktop if you open the **EEM-info** file that is a scratch pad to save credentials and other info for the labs. 
+1. Here you will see all the details for your QMgr about queues, channels, connections, etc.  
 
-Save the Username and Password under Orders New in the file. 
-    ![](images/media/image3d.png)
+    Click on **Queues**
+   
+    ![](images/es-pay-6c.png)
 
-# 1.2 Event Automation Processing
+1. You will see your payment queues here.  You will notice that you will always have at least 5 messages on the payment queue.  That is the way we have the payment consuming app confiugred. 
 
-1. Go to the **Event Automation Processing** home page using the URL provided by the instructor.<br>
-The next step is to start processing this stream of events, to create a custom subset that contains the events that you are interested in.
+    Click on the **PAYMENT.REQ** queue to see the messages to view details of the messages. 
+   
+    ![](images/es-pay-6d.png)
 
-    ![](images/media/image4.png)
+1. Click on one of the messages and review the application data.  
+   
+    ![](images/es-pay-6e.png)
 
-1. Create a flow, and give it a name and description to explain that you will use it to identify orders made in the North American (NA) region.
+## 1.3 Clone and publish the Payment Messages to Event Streams. 
 
-    Name your Flow "EP-<Student Name>" for example **EP-student1**
+1. We have our MQ payments processing all running and now we will need to clone the messages and publish to Event Streams without impacting the current environment.  
 
-     And add a Description (ex: POT Event processing lab)
+    ![](images/mq-stream-1.png)
 
-     Click **Create**
+1. Now go to the MQ console for the orders QMgr and select **Queues** and click on **Create**
 
-    ![](images/media/image5.png)
+    ![](images/mq-stream-2.png)
 
-    The next step is to bring the stream of events you discovered in the catalog into Event Processing.
+1. Select the tile for Local Queues and click **Next**
 
-1. You will know be on the canvas. Create an event source node by dragging one onto the canvas. You can find this in the "Events" section of the left panel.
-To configure the event source node hover over the node and select the **pen icon**.
+    ![](images/mq-stream-3.png)
 
-    ![](images/media/image7.png)
+1. Now we will create our new StreamQ and call it **TO.KAFKA**.  
 
-1. Configure the new event source. Make sure to use the **Add event source**.  You may see others that were recently created. 
+    Click **Create**  
 
-    ![](images/media/image10.png)
+    ![](images/mq-stream-4.png)
 
-1. Give the node a name that describes this stream of events and include your userid for ex: 
+1. Now you will be back on the Queue page and will see your new queue **TO.KAFKA** you just created. 
 
-    **Order source student1**
-    
-    We need to get the server address from Event Endpoint Management
+    We will now update our **PAYMENT.REQ** queue to use the new queue as a streaming queue.
 
-    ![](images/media/image10a.png)
+    Click **View configuration**
 
-1. Now go back to the Event Endpoint Management home page (should be open in another tab).
-Here we will copy the Server that we need to complete the Source Connector. 
+    ![](images/mq-stream-5.png)
 
-    ![](images/media/image10d.png)
+1. Now select **Edit** so we can update the PAYMENT.REQ config.
 
-1. Now return to the **Event Processing** to finish configuring the event source for our flow.
-Paste the url in the server and click **Next**
+    ![](images/mq-stream-6.png)
 
-    **Note:** Save this in the EEM-info scratch pad so you have it later.
+1. On the left hand menu select **Storage** and you will see the field for *Streaming queue name*
 
-    ![](images/media/image10a.png)
+    Enter the streaming queue name **TO.KAFKA** and click on **Save**
 
-1. Now we will accept the certificates.  
-Click the **Accept certificate** box and click **Next**
+    ![](images/mq-stream-7.png)
 
-    ![](images/media/image10bb.png)
+1. You will now be back on the MQ console page showing your queues.  You will now see messages being added to the new streamQ **TO.KAFKA**
 
-    **NOTE:**: If the credentials are not accepted immediately, wait for
-    thirty seconds, and then click "Next" again.
+    **NOTE:** The Qmgr takes care of this with no impact to are current processing of messages. 
 
-1. Now we will add the username and password that you saved from the Event Endpoint Management.  
+    ![](images/mq-stream-8.png)
 
-    Click **Next**
+1. Last step now is to create our kafka source connector that will take messages from the **TO.KAFKA** queue and publish to Event Streams.
 
-    ![](images/media/image10c.png)
+    You have two options for this:
 
-1. Now select the Topic we will use. **ORDERS.NEW**
-    ![](images/media/image10d.png)
- 
-1. Get the schema for order events from Event Endpoint Management.
+    1. From the command line where you ran the **create-orders.sh** script there is a mq-source.yaml file.  
+        You can run the following command but make sure you are login to the OCP cluster in order to run **oc* commands.
+        ```
+        oc apply -f mq-source.yaml
+        ```
+    1. The other option is open a **Import YAML** screen by clicking the **+** on the top menu.
+    Then run the following command. 
+        ```
+        cat mq-source.yaml 
+        ```
+        copy the content and paste it into the OCP console and click **Create**
 
-    Click the Copy button in the Sample message tab to copy to the clipboard.
+    ![](images/mq-source-1.png)
 
-    ![](images/media/image10e.png)
+1. Now in the OCP console we can verify the source connector is running.  Go to **Installed Operators** and select **cp4i-eventstreams** project and click on **Kafka Connector**
 
-1. You need to give Event Processing a description of the events
-available from the topic. The information in the sample message will enable
-Event Processing to give guidance for creating event processing nodes.
-Back on the Configure event source screen select the JSON tab and paste the sample message here.
+    ![](images/mq-source-2.png)
 
-    Click **Done**
+1. You should see your source connector and the sink connectors.
 
-    ![](images/media/image10f.png)
+    ![](images/mq-source-3.png)
 
-1.  You will now see the structure of all fields for the source.  Scroll down to the bottom of this screen.
-    ![](images/media/image10g.png)
+1. Now if you go back to your MQ Console for the ordersnew QMgr you will see that the current depth for the **TO.KAFKA** queue is zero.  Every time the **PAYMENT.REQ** queue gets a message it also goes to the **TO.KAFKA** queue and the source connector will take the message and publish to the Topic. 
 
-1.  You will see switch make sure it is clicked off.  We will not need to save this. 
+    ![](images/mq-source-4.png)
 
-    Click **Configure** to finalize the event source.
-    ![](images/media/image10h.png)
+1. From the Platform Navigaotor *right click* on the **es-demo** and open in new tab. 
 
-1.  Now let's do a quick test to make sure are Source Connector can receive messages. Click on the **Run** in upper right corner and select **Include historical**.
+    ![](images/mq-source-5.png)
 
-    ![](images/media/image10i.png)
+1. On the Event Streams page click on topics and search for your user id (ex: student1)
 
-1.  Once the Flink task starts you will start to see messages displayed.  
+    ![](images/mq-source-6.png)
 
-    Click stop in the upper right corner to stop it. 
+1. You will see the messages from your MQ queue being published to the topic.  Select a message to view the details. 
 
-    ![](images/media/image10j.png)
+    ![](images/mq-source-7.png)
 
-### Recap
-
-You created your first event processing flow.
-You have seen how to discover and request access to a topic in the
-catalog, and register it as a source of events for processing.
-
-# 2.0 Filter events based on particular properties
-
-When processing events, we can use filter operations to select a subset
-that we want to use. Filtering works on individual events in the stream.
-
-## Scenario : Identify orders from a specific region                                       
-
-The EMEA operations team wants to move away from reviewing quarterly sales reports and be able to review orders in their region as they occur.                                       Identifying large orders as they occur will help the team identify changes that are needed in sales forecasts much earlier. These results can also be fed back into their manufacturing cycle so they can better respond to demand.                                      
-
-## Define the filter
-
-The next step is to start processing this stream of events, by creating the filter that will select the custom subset with the events that you are interested in.
-
-
-1. If you are still in the Event Processing flow continue otherwise go to the **Event Processing** home page, search for your **Student Name** and click on the "Edit flow" link on the tile for your flow.  
-For example "EP-student1".                                       
-  ![](images/media/image4a.png)
-
-1. Create a **Filter** node and link it to your event source.
-Create a filter node by dragging one
- onto the canvas. You can find this in the "Processors" section of the
- left panel.  Click and drag from the small gray dot on the event source to the
-matching dot on the filter node.
-Hover over the node and select the pen icon to edit the flow. 
-
-   ![](images/media/image2a.png)
-
-    **Note:** You can add a node onto the canvas and automatically
-  connect it to the last node added by  double-clicking it in the
-  palette. 
- 
-1. Give the filter node a name that    describes the events it
-should identify: NA orders
-
-    Click **Next**
-
-      ![](images/media/image2b.png)
-
-1. Use the assistant to define a filter that matches events with:
-
-    *region = NA* 
-
-    Use the drop down for the property and conditon and type in NA.  
-    
-    Click "Add to expression".
-
-    ![](images/media/image5aa.png)
-
-1. You will now see your new expression.
-
-    Click "Configure".
-      ![](images/media/image5b.png)
-
-
-## Testing the flow
-
- The final step is to run your event processing flow and view the results.
-
-1. Use the "Run" menu, and select **Include historical** to run your
-filter on the history of order events available on this Kafka topic.
-
-   ![](images/media/image6a.png)
- 
-    **NOTE:** "Include historical" is useful while you are developing your flows, as it means that you don't need to wait for new events to be produced to the Kafka topic. You can use all of the events already on the topic to check that your flow is working the way that you want.
-
-1. Click the NA orders node to see a live view of results from your filter. It is updated as new events are emitted onto the orders topic.
-
-    **Note:** You may see the message "Waiting for receiving the events"
-
-   ![](images/media/image6b.png)
-
-1. You will see only messages from Region NA.
-    When you have finished reviewing the results, you can stop this flow.
-
-   ![](images/media/image6c.png)
 
 ## Recap
 
- You used a filter node to specify a subset of events on the topic that you are interested in.
- 
+ So we have our **Order Management System** processing messages on MQ and we are also cloning them to kafka topic in Event streams.  
+    The Next lab we will use Event Processing to tab in to this new data. 
+
+![](images/mq-source-8.png)
+
 [Return to main Event processing lab page](../index.md#lab-abstracts)

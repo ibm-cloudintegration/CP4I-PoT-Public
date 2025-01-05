@@ -30,32 +30,30 @@ From the IBM Cloud Pak for Integration Platform Navigator, open IBM Api Manageme
 
     ![](./images/apim4.png)
 
-1. Select AsyncAPI and click **Next** 
+1. Select **AsyncAPI** 
 
     ![](./images/apim5.png)
 
-1. Click the link to upload the yaml you downloaded in previous lab. 
 
-    ![](./images/apim6.png)
+1. Now you will be on the page to Create from Event Endpoint Management or you can import existing definition.   
 
-1. Locate the yaml file in the Downloads directory and select FLIGHT.LANDINGS.yaml.  
+    Select **Create** and click **Next**
 
-    Click **Open** 
+    **Note:** This is a new feature that will allow you to add ASyncAPIs with out exporting and importing. 
 
-    ![](./images/apim7.png)
+    ![](./images/apim5a.png)
 
-1. Should get message YAML successfully validated. 
+1. You will now see all AsyncAPIs that have been published in Event Endpoint Management.   Select the **FLIGHT.LANDINGS**  
 
-    Click **Next** 2 more times.
+    Click **Next**
 
-    ![](./images/apim8.png)
+    ![](./images/apim5b.png)
 
 1. You have successfully imported AsyncApi into IBM Api Connect.
 
     Click **Develop** to return to main page. 
 
     ![](./images/apim9.png)
-
 
 ## 1.1 Create Product
 

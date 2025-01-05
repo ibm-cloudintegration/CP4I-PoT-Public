@@ -11,7 +11,7 @@ In this lab you will, <br>
 
 Sharing a topic with APIC is considered a Kafka topic owner action/process, given it contains sensitive information and they own the topic they get to decide how it is shared and managed. Users of the catalog are intended to be consumers (only) and are expected not to use their generated access for additional socialization in downstream tools such as APIC.
 
-## 1.1 Review ONLY FLIGHT.LANDINGS in EEM
+## 1.1 Review ONLY FLIGHT.LANDINGS in EEM (Admin)
 
 Here we will review the tasks in Event Endpoint Management by the Admin and take a look at the FLIGHT.LANDINGS topic.
 
@@ -44,12 +44,6 @@ Here we will review the tasks in Event Endpoint Management by the Admin and take
 
     ![](./images/eem4.png)
 
-1.  Here the admin choose the format to export. 
-    
-    **Note** This has already been downloaded and is available below. 
-
-    ![](./images/eem5.png)
-
 **That is the end of the review of Event Endpoint Manager.** 
 
 
@@ -58,12 +52,15 @@ Here we will review the tasks in Event Endpoint Management by the Admin and take
 First we will download the AsyncAPI for FLIGHT.LANDINGS to be imported into IBM API Connect. 
 <br>
 Next we will obtain Event Gateway bootstrap certificate, to be used by the Kafka Consumer clients.
+
 ### Download AsyncAPI Yaml
+
 1. We will need to login to EEM as admin in order to download the FLIGHT.LANDINGS yaml.
 
     Open my-event-manager in a new tab.
 
     ![](./images/eem1.png)
+
 1. Select Topics from the menu on the left. You will see the FLIGHT.LANDINGS topic
     ![](./images/eemy1.png)
 
@@ -117,16 +114,13 @@ Here we are using namespace student1
     ```
     ./generate_egw_cert.sh
     ```
-
-	![](./images/apic3.png)
-
-1. Run **ls -ltr** of the directory and will should see the egw cert files
+    When script is done run **ls -ltr** of the directory and you should see the egw cert files
 
     ```
     ls -ltr
     ```
-    
-	![](./images/apic4.png)
+
+	![](./images/apic3.png)
 
 
 [Return to main Event Endpoint Management lab page](../index.md#lab-abstracts)    
