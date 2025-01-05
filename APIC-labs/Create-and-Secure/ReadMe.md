@@ -147,13 +147,9 @@ Before beginning this lab, you will want to make sure that you have completed th
 
 ![alt text][pic9]
 
-5\. We are now able to begin to create APIs and Products.  Click **Add**.
+5\. We are now able to begin to create APIs and Products.  Click **Add** and select **API**
 
 ![alt text][pic10]
-
-6\. Click **API (from REST, GraphQL or SOAP)**.
-
-![alt text][pic11]
 
 7\. Click **Existing OpenAPI** under **Import** and click **Next**.
 
@@ -201,7 +197,7 @@ Finally, we will configure the proxy call to invoke the endpoint.
 
 ![alt text][pic18]
 
-5\. From the **Select an option** drop-down menu, select **https**.  Click **Create**.
+5\. From the **Select an option** drop-down menu, select **https**.  Click **Add**.
 
 ![alt text][pic19]
 
@@ -223,7 +219,8 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic24]
 
-9\. Select **client_id** from the drop-down menu for **Key Type (optional)**, select **header** from the drop-down menu for **Located In**, and enter a name (e.g., **X-IBM-Client-Id**) for **Variable name**.  **Note:** Before clicking Create, make sure that the **This field is required** indicator is no longer there.  Click **Create**.
+9\. Select **client_id** from the drop-down menu for **Key Type**, select **header** from the drop-down menu for **Located In**, and enter a name (e.g., **X-IBM-Client-Id**) for **Variable name**. 
+ Click **Add**.
 
 ![alt text][pic25]
 
@@ -235,15 +232,14 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic22]
 
-12\. Make sure that the **Design** tab is selected and click on the **+** next to **Security Schemes**.
+13\. Make sure that the **Design** tab is selected and click on the **+** next to **Security Schemes**.
 
-![alt text][pic31]
-
-13\. For the **Security Definition Name (Key)**, enter a name (e.g., **X-IBM-Client-Secret**) and select **apiKey** in the drop-down menu for **Security Definition Type**.
+For the **Security Definition Name (Key)**, enter a name (e.g., **X-IBM-Client-Secret**) and select **apiKey** in the drop-down menu for **Security Definition Type**.
 
 ![alt text][pic32]
 
-14\. Select **client_secret** from the drop-down menu for **Key Type (optional)**, select **header** from the drop-down menu for **Located In**, and enter a name (e.g., **X-IBM-Client-Secret**) for **Variable name**.  Before clicking Create, make sure that the **This field is required** indicator is no longer there.  Click **Create**.
+14\. Select **client_secret** from the drop-down menu for **Key Type**, select **header** from the drop-down menu for **Located In**, and enter a name (e.g., **X-IBM-Client-Secret**) for **Variable name**.  
+Click **Add**.
 
 ![alt text][pic33]
 
@@ -259,7 +255,7 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic34]
 
-18\. Select **"X-IBM-Client-Id"** and **"X-IBM-Client-Secret"** and click **Create**.
+18\. Select **"X-IBM-Client-Id"** and **"X-IBM-Client-Secret"** and click **Add**.
 
 ![alt text][pic35]
 
@@ -287,37 +283,30 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 4\. Make sure that the **Gateway** tab is selected and expand **Properties**.  Click on **target-url**.
 
-![alt text][pic41]
-
 5\. Replace the **Property Value (optional)** with the value that you copied in Step 2.  **Note:**  Make sure to include a **http://** at the beginning and remove the **:** and **port number** (e.g. **:80**) if present from the end.
+
+Click **Save**
 
 ![alt text][pic42]
 
-6\. Click **Update**.
 
-![alt text][pic43]
-
-7\. Click **Save**.
-
-![alt text][pic44]
-
-8\. Navigate to the **Design** tab.
+6\. Navigate to the **Design** tab.
 
 ![alt text][pic45]
 
-9\. Click on **Host**.
+7\. Click on **Host**.
 
 ![alt text][pic46]
 
-10\. Delete the value in the **Host (optional)** field.
+8\. Delete the value in the **Host (optional)** field.
 
 ![alt text][pic47]
 
-11\. Click **Save**.
+9\. Click **Save**.
 
 ![alt text][pic26]
 
-12\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+10\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
 
 ![alt text][pic22]
 
@@ -335,7 +324,10 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 ![alt text][pic50]
 
-4\. Update the **URL** so that it reads **$(target-url)$(request.path)**.
+4\. Update the **URL** so that it reads 
+```
+ $(target-url)$(request.path)
+```
 
 ![alt text][pic51]
 
@@ -392,7 +384,8 @@ Once saved, you will see an indicator window appear that shows that **Your API h
 
 In the API Designer, you have the ability to test the API immediately after creation in the Assemble view!
 
-1\. Switch the toggle from Offline to Online. This step automatically publishes the API.
+1\. Click on the **Test** and select **Target Configuration**
+Switch the toggle from Offline to Online. This step automatically publishes the API.
 
 ![alt text][pic54]
 
@@ -577,8 +570,6 @@ When the product is published, the Invoke policy defined in the previous lab is 
 
 ![alt text][pic83]
 
-![alt text][pic84]
-
 4\. Click **New product** and click **Next**.
 
 ![alt text][pic85]
@@ -628,7 +619,3 @@ Congratulations, you have completed the **Create and Secure an API** lab. Throu
 -   Publish an API for developers
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
-
-
-# 7. Lab Recording
-Watch this video if you have any issues with the lab: https://ibm.box.com/s/8t12zzik8ckt0ariuprx6hn1jd5vzj8v

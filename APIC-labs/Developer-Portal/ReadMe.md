@@ -177,7 +177,9 @@ IBM API Connect enforces entitlement rules to ensure that consumers are allowed 
 
 4\.  When your consumer application is registered in the IBM API Connect system, it is assigned a unique set of client credentials. These credentials must be provided on each API request in order for the system to validate your subscription entitlements. The Client Key can be retrieved anytime but the Client Secret can only be retrieved at this time.
 
-Make note of your **Client Key** and **Client Secret** by click on the copy icon for each. **NOTE:** Copy these to notepad since you will need the Client Secret in a future step. 
+Make note of your **Client Key** and **Client Secret** by click on the copy icon for each. 
+
+**NOTE:** Copy these to **PoT-notes** notepad on the desktop or create a file to save them since you will need the Client Secret in a future step. 
  
 Click **OK**.
 

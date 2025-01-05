@@ -73,11 +73,11 @@ Refresh the page in about a minute and make sure student(n)-customer-database-v3
 
     ![](./images/ace-rest-2.png)
 
-1. Capture API endpoint for GET /customers operation.<br>
+1. Capture API endpoint for GET /customers operation.
+
+    Copy and paste the URL to Notepad or Scratchpad.
   ![](./images/ace-rest-3.png)
 
-1. Copy and paste the URL to Notepad or Scratchpad. <br>
-   ![](./images/ace-rest-3.png)
 1. Similarly, capture API endpoint for GET /customers/{customerId} operation.<br>
 
     **Save both endpoints to the Notepad.**
@@ -116,7 +116,26 @@ Now we will expose CustomerDatabaseV3 endpoints into GraphQL Engine on local des
       ./stepzen-admin.sh get-apiadmin
       ``` 
 
-1.  Now we will login to stepzen server running in our OCP cluster.  We will login using **adminkey**  we saved in the last step. 
+1.  Now we will login to stepzen server running in our OCP cluster. 
+    
+    First we will need to create a local route to our cluster.
+    Download the **local-route** files from 
+[<b><u>here</u></b>](./src/local-route.zip) 
+    
+    This will be in the **Downloads** directory.
+    
+    1. Change to the directory and run the unzip command.
+    1. *cd* to the new **local-route** directory.
+    1. run the command to create route and pass in your account you created (ex: student1) 
+
+    ![](./images/graph1a.png)
+
+1. You can go the the Routes and under the project apic-graphql you will see the new route you created. 
+
+    ![](./images/graph1d.png)
+
+
+1. We will login using **adminkey**  we saved when we created our account.  
 
     The last part of the command is the address for the cluster you are using.  You can get that by running **oc cluster-info**
 
@@ -124,10 +143,14 @@ Now we will expose CustomerDatabaseV3 endpoints into GraphQL Engine on local des
 
     ![](./images/graph2.png)
 
+1. Following is the command format and it maybe easier to update this in your notepad.   Copy it in and update before coping to command line to run. 
+
+    ![](./images/graph2a.png)
+ 
     ```
     stepzen login -a student1 -k student1::local.io+1000::47d1460707f4d35a5200bace6a01b8c6189d3ee10764cd427fdcd34ba11d5ee1 apps.6740c90be65b8f52703314d3.ocp.techzone.ibm.com
     ```
-       ![](./images/graph3.png)
+      ![](./images/graph3.png)
 
 ### 3b Import /customers, /customers/getCustomerById operations <a name="stepzen-import"></a>
 
@@ -402,7 +425,7 @@ We will expose the GraphQL Endpoint into API Connect so that the API is secured,
 1. Now from the new browser tab 
   
     1. Enter the Application clientID you captured above.
-    1. Enter the below getCustomers Gra[hQL Query into the body.
+    1. Enter the below getCustomers GraphQL Query into the body.
         ```
         query MyQuery {
           getCustomers {
