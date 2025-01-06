@@ -51,16 +51,15 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 1. You may still be logged in from the previous labs. If your platform navigator session timed out, you may be required to log-in again.
 
-	
-1. Once the navigator opens, right click on the **Integration instances** and open in a new tab.
-
 	![](./images/image304d.png)
 	
 1. If you ran the *Cleanup* step in prior labs there should be none of your queue managers running. However there may be other's instances running. 
 
+	**Note:** You can use the search option to show just your instances in your student namespace. *(ex: student1)*
+	<br>Also in the upper right corner you can collapase the top part of the screen. 
+
 	![](./images/image304e.png)
 	
-	If you have any remaining *mqxx* (xx = your student ID), delete them now.
 
 1. Open a new terminal window by double-clicking the icon on the desktop.
 
@@ -68,21 +67,16 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 1. Navigate to the */MQonCP4I/unicluster/* directory using the following commnand:
 	```
-	cd ~/MQonCP4I/unicluster
+	cd ~/MQonCP4I/unicluster/deploy
 	```
+	1. *unicluster.yaml_template* contains the yaml code to define a cluster.
+	1. *uni-install.sh* is a shell script which contains environment variables using your student ID and copies *unicluster.yaml_template* to *unicluster.yaml* and runs the openshift command to apply the definitions.
+	1. *uni-cleanup.sh* is another shell script containing environment variables with your student ID and commands to delete your queue managers and related artifacts when you are finished. 
 
-1. There are two subdirectories, *deploy* and *test*. Change to the *deploy* directory.
-
-	```
-	cd deploy
-	ls
-	```	
-	
 	![](./images/image309.png)
 	
-	*unicluster.yaml_template* contains the yaml code to define a cluster. *uni-install.sh* is a shell script which contains environment variables using your student ID and copies *unicluster.yaml_template* to *unicluster.yaml* and runs the openshift command to apply the definitions. *uni-cleanup.sh* is another shell script containing environment variables with your student ID and commands to delete your queue managers and related artifacts when you are finished. 
 
-1. Review the yaml file.  Scan through the template which has definitions for all three queue managers. Your environment variables will be substituted throughout the file. If you execute a find for "$" you can easily locate the substitutions. 
+1. Review the yaml template file.  Scan through the template which has definitions for all three queue managers. Your environment variables will be substituted throughout the file. If you execute a find for "$" you can easily locate the substitutions. 
 
 	Each queue manager has two *ConfigMap* stanzas, one *QueueManager* stanza, and one *Route* stanza. One *ConfigMap* is the mqsc commands for the queue manager - **uniform-cluster-mqsc-x** and one for the cluster ini file - **uniform-cluster-ini-x**.
 	
@@ -100,18 +94,18 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 1. A new tab will be opened.  Login with your username/password Click *Display Token*, copy the token and run it on your terminal.
 	
-![](./images/image213.png)	
+	![](./images/image213.png)	
 	**Note**: You should still be in your project so you shouldn't need to run this command.
 	
 	Run the following command to navigate to your project substituting your personal project name:
 	
 	```
-	oc project palpatine5
+	oc project student1
 	``` 
 
-1. Now we will run the install script for the unicluster Qmgrs in your namespace.  If you run the uni-install.sh 
+1. Now we will run the install script for the unicluster Qmgrs **./uni-install.sh** 
 	
-1. Review the output from the script.  You should see 3 Qmgrs created with all required assets. 
+	Review the output from the script.  You should see 3 Qmgrs created with all required assets. 
 	
 	![](./images/image209a.png)
 	
@@ -122,7 +116,7 @@ The queue managers will be in a *Pending* state for a couple of minutes while th
 
 1. After a few minutes the queue managers will then show *Ready* on the *Platform Navigator* and the pods will show *Running* on the *OpenShift Console*.
 
- 	![](./images/image214.png)
+ 	![](./images/image214aa.png)
 
 ## Check uniform cluster health
 
@@ -130,7 +124,7 @@ If you like you can go to **Appendix A** which has directions for testing Unifor
 
 But with all the new features that have been added to the **MQ Console** you can verify the cluster using the MQ console.  This section will hightlight the MQ console.
 
-1. Your cluster is also now completely configured. Check this from the *MQ Console* of one of three queue managers. Click the hyperlink for your mq..a
+1. Your cluster is also now completely configured. Check this from the *MQ Console* of one of three queue managers. Right click the hyperlink for your **mq..a** QMgr and open in new tab
 
 	![](./images/image20.png)
 	
@@ -145,20 +139,10 @@ But with all the new features that have been added to the **MQ Console** you can
 1. You will see the two local queues **APPQ** and **APPQ2** which were defined by the mqsc *ConfigMap* defined in the yaml template. The other queue managers also have the queues by that name. 
 
 	![](./images/image22a.png)
-	
-	Click *Communication*.
-	
-1. The listener *SYSTEM.LISTENER.TCP.1* is running. 
 
-	![](./images/image22b.png)
-	
 	Click *App channels*.
-		
-1. *App channels* are actually *SVRCONN* channels. You will have two defined within the yaml file. **MQ00CHLA** and **TO_UNICLUS00**. These will used during testing in the next section. 
 
-**NOTE:** Make note of the MQ00CHLA name you will have one for each Qmgr and will use that in connecting with MQ Explorer.
-
-![](./images/image22c.png)
+	![](./images/image22c.png)
 	
 	Click *Queue manager channels*.
 	
@@ -362,49 +346,6 @@ So far we have connected our getting applications to *mqxxa* directly, and relie
 
 In this section, we shall see that by using Queue Manager Groups within our CCDT file we can decouple application instances from a particular queue manager and take advantage of the built-in load balancing capabilities available with CCDTs.
 
-For a fuller description of the issues highlighted here, see step 5 of the following article:
-
-[Walkthrough Uniform Cluster](https://developer.ibm.com/messaging/2019/03/21/walkthrough-auto-application-rebalancing-using-the-uniform-cluster-pattern)
-
-### Stop queue manager - application refers to queue manager directly
-
-Now that you know how to stop and start queue managers in CP4i, you will not receive the detailed instructions as previously. 
-
-1. Stop *mqxxa* by scaling the replicas in its *Stateful Set* to zero. 
-
-	![](./images/image231.png)
-	
-	Click *Save* on the *Managed resource* pop-up.
-	
-1. This time the getting application instances connected to *mqxxa* will continually try to reconnect to the stopped queue manager:
-
-	![](./images/image70.png)
-	
-1. Now run the following MQSC command on any active queue manager in the cluster:
-
-	```
-	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(APPL)
-	```
-	
-	After a while, there should be fewer than the 6 application instances that were originally present. You may need to run the command more than once until the rebalancing  occurs.
-	
-	![](./images/image71.png)
-	
-	If it still shows *COUNT(6)* then run the command again with *type(QMGR)*.
-	
-	```
-	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(QMGR)
-	```
-		
-	![](./images/image232.png)
-	
-	You can see that there are six, three each on mq00b and mq00c, but none on mq00a.		
-1. Now restart *mqxxa* by scaling the replicas back up to one.
-	
-	![](./images/image233.png)
-
-### Stop queue manager – application refers to CCDT Queue Manager Group
-
 1. In the classroom environment, an updated CCDT file has been created for you to use: */home/student/MQonCP4I/unicluster/test/ccdt5.json*.
 
 	Open this file in the editor. Change the *host* values for each queue manager as you did in the *ccdt.json* file. There are 8 hosts parameters to change. As well as containing the original set of direct references to the queue managers, it gives a queue manager group definition with a route to all queue managers using the name **ANY_QM**.
@@ -418,9 +359,8 @@ Now that you know how to stop and start queue managers in CP4i, you will not rec
 	* **clientWeight**: a priority list for each client. The default value is zero. A client with a higher clientWeight will be picked over a client with a smaller value.
 	* **affinity**: setting the affinity to “none” will build up an ordered list of group connections to attempt to try in a random order, for any clients on a particular named host.
 
-1. Now let’s put the updated CCDT to the test. First, stop the 6 running getting application instances that you started earlier by entering *ctrl-C* in each terminal. You may leave the termninal running.
-	
-	![](./images/image74.png)
+1. Now let’s put the updated CCDT to the test.
+
 		
 1. Please note: the supplied updated CCDT5 file was originally created for a scenario with an additional queue manager called *mqxxd*. For completeness, we shall create that missing queue manager now.
 
@@ -575,7 +515,7 @@ Run the command with the arugments that you used in the EnvSetup using your Stud
 	```
 	/home/student/MQonCP4I/unicluster/deploy/uni-cleanup.sh -i 05 -n palpatine5
 	```
-![](./images/image324a.png)
+![](./images/image324a.png)-
    
 [Continue to Lab 2](../Lab_5/mq_cp4i_pot_lab5.md)
 
