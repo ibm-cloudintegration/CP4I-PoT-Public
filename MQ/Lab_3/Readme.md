@@ -180,116 +180,87 @@ In this section we shall launch 6 instances of an application connected to the s
 The Client Channel Definition Table (CCDT) determines the channel definitions and authentication information used by client applications to connect to a queue manager.
 We shall be using a CCDT in JSON format. 
 
-1. Open a terminal window and navigate to */home/student/MQonCP4I/unicluster/test*. Copy the command snippet so you don't have to type the whole thing (you will need it in other terminals).
+1. Open a terminal window and navigate to */home/ibmuser/MQonCP4I/unicluster/test*. Copy the command snippet so you don't have to type the whole thing (you will need it in other terminals).
 
 	```
-	cd /home/student/MQonCP4I/unicluster/test
+	cd /home/ibmuser/MQonCP4I/unicluster/test
 	```
 
-1. Make shell scripts executable with the following commmand:
+1. Make sure all shell scripts are executable with the following commmand if needed:
 
 	```
-	chmod +x getMessage.sh
+	chmod +x *.sh
+	ls -l
 	```
-	
-	Repeat the command for the other scripts:
-	
-	* sendMessage.sh
-	* killall.sh
-	* rClient.sh
-	* sClient.sh
-	* setEnv.sh
-	* *showConns.sh
 	
 	![](./images/image218f.png)
 	
-1. Edit **ccdt.json** with the following command:
+1. We have a script that will create and update the  **ccdt.json** file. Run the following command. 
+
+	**Note:** There is also a ccdt4 json we will create later. 
 
 	```
-	gedit ccdt.json
+	./update-ccdt.sh -i 01 -n student1
 	```
-	
+	You will need to pass in your student number and namespace like you did when doing the inital MQ setup script. 
+
+	When done you will have a **ccdt.json** file
 	![](./images/image218a.png)	
-1. Before you make any changes review the file observing:
-	
-	* the channel name matches the server connection channel on the queue manager
-	* the host is in the format that you used in MQ Explorer	* the port is the listener port for the queue manager
-	* queue manager name
-	* cipherspec
+1.  You can edit the **ccdt.json** where you will find entry for the 3 uniform Qmgrs. 
+
+	It will include three sections for each of our Qmgrs.  
+	 MQCHLL sets the folder containing the JSON CCDT file
+	* Channel name
+	* host name 
+	* queuemanager name  
+
+	**Note:** When done exit without saving. 
 
 	![](./images/image218b.png)
-	
-1. You only need to change the channel name, host, and queue manager name.  First you need to find the host name. To get the host name, return to the OpenShift console. Make sure you are in the *cp4i-mq* project substituting your personal project for cp4i-mq. Open *Networking* and select *Routes*. Filter by your queue manager name (mqxxa) then click the hyperlink for *mqxxa-ibm-mq-qm*.
+
+1.  Before you start the getting applications, you will want to start a script which displays the queue managers and the number of applications connected to it. The script will open 3 terminals one for each of your MQ Qmgrs.
+
+	**Note:** You should be in the following directory *~/MQonCP4I/unicluster/test/*
+
+	```
+	./getterApp.sh
+	```	
+	 Position those three windows so you can see the diplays.
 
 	![](./images/image218c.png)
-	
-	Scroll down to the *Router:default* section. Copy the string under *Host* and paste it into the host field of the *ccdt.json* file.
-	
-	![](./images/image218d.png)
 
-	Change the "00" to your student ID in the channel *name* and *queueManager* values. 
-	
-	![](./images/image218e.png)
-	
-	Click *Save*.
-	
-1. In the editor, click the Open drop-down and select *getMessage.sh*. You may need to click *Other documents* if it doesn't appear in the list. 
-
-	![](./images/image39.png)
-	
-1. Also review this file before making any changes observing:
-
-	* MQCHLLIB sets the folder containing the JSON CCDT file
-	* MQCHLTAB sets the name of the JSON CCDT file
-	* MQCCDTURL sets the address of the JSON CCDT file
-	* MQSSLKEYR sets the location of the key
-	* MQAPPLNAME gives a name to the application for displays 
-	* The shell will run the sample program *amqsghac* getting messages from queue *APPQ* on your queue manager
-	
-	Change the "00" in QMpre and QMname to your student ID, then click *Save*.
-	
-	![](./images/image219a.png)
-
-1. Open a new terminal window and enter the command:
+1. Now from the same terminal you will start 6 getMessage process.  They will be displayed in the same window in different tabs.
 
 	```
-	MQonCP4I/unicluster/test/getMessage.sh
+	./start-get-tabs.sh
 	```
+	**NOTE:** You will see the 6 connections are connected to mqxx01a to start with.   
 	
 	![](./images/image220.png) 
 	
-	Do this 5 more times so that you have six terminals running the program.
+1. Over time the programs running in each of the *tabs* you will see them rebalance and reconnect. When done you will see them balanced across the 3 Qmgrs and you will see 2 for each **MY.GETTER.APP**
 
-1. Notice that each time you open a new terminal and run the shell again the programs start to rebalance and reconnect. 
-	
-	![](./images/image42.png)
+	![](./images/image220a.png) 
 
-1. Return to the OpenShift Console browser tab. Make sure you are in the your project. Open *Workload > Pods*, use the filter to search for you queue managers, then click the hyperlink *mqxxa-ibm-mq-0* pod. 
+1. Return to the OpenShift Console browser tab. Make sure you are in the your project. Open *Workload > Pods*, use the filter to search for your queue managers, then click the hyperlink *mqxxa-ibm-mq-0* pod. 
 
 	![](./images/image316.png)
 	
 1. Click *Terminal*. This opens a terminal window in the container running inside that pod.
 
-	![](./images/image317.png)		
-1. There is a new MQSC command, *DISPLAY APSTATUS*, which we shall now use to display the status of an application across all queue managers in a cluster.
+	 There is a new MQSC command, *DISPLAY APSTATUS*, which we shall now use to display the status of an application across all queue managers in a cluster.
 
-	Start *runmqsc* with following command:
-		
+	* Start *runmqsc* with following command
+	* Run the display *APSTATUS* command
 	```
 	runmqsc mq00a
-	```
-	
-	Run the display *APSTATUS* command:	
-		
-	```
 	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(APPL)
 	```
 	
-	*COUNT* is the number of instances of the specified application name currently running on this queue manager, while *MOVCOUNT* is the number of instances of the specified application name running on the queue manager which could be moved to another queue manager if required. You started the getMessage.sh six times.
-	
+	*COUNT* is the number of instances of the specified application name currently running on this queue manager, while *MOVCOUNT* is the number of instances of the specified application name running on the queue manager which could be moved to another queue manager if required. 
 	![](./images/image318.png)
 	
-	Click *Expand* to make the window larger. Repeat the command changing the *TYPE* to **QMGR**.	
+1. Repeat the command changing the *TYPE* to **QMGR**.	
 	
 	```
 	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(QMGR)
@@ -307,26 +278,14 @@ We shall be using a CCDT in JSON format.
 	end
 	```
 
-1. Some of the application instances will show reconnection events as the workload is rebalanced to queue managers *mqxxb* and *mqxxc*.
-
-	![](./images/image320.png)
 	
 ## Launch putting application
 
 We shall launch another sample which will put messages to each queue manager in the cluster. The running samples should then pick up these messages and display them. In this lab, we are using one putting application to send messages to all getting applications using cluster workload balancing. You could set up the same scenario with one or more putting applications per queue manager and application rebalancing would work in the same way that you’ve seen for getting applications.
 
-1. Open a new terminal window and navigate to */home/student/MQonCP4I/unicluster/test*. Open an edit session for *sendMessage.sh*. Review the export commands observing:
-	
-	* MQCHLLIB (sets the folder of the JSON CCDT file
-	* MQCHLTAB sets the name of the JSON CCDT file
-	* MQSSLKEYR sets the location of the key
-	* MQAPPLNAME gives a name to the application for displays 
-	* The shell will run the sample program *amqsphac* putting messages to queue *APPQ* on your queue manager	
+1. From the same terminal window where we hvae the getter apps running go to the first tab and start the sending application. 
 
-	Change *00* to your student ID, then click *Save*.
-	
-	![](./images/image223.png)		
-1. We shall be using the sample amqsphac in this scenario. In the terminal window, enter the following command: 
+	We shall be using the sample amqsphac in this scenario. In the terminal window, enter the following command: 
 		
 	```
 	./sendMessage.sh
@@ -334,7 +293,7 @@ We shall launch another sample which will put messages to each queue manager in 
 	
 	![](./images/image224.png)
 
-1. You should now see the generated messages split across the getting application sessions that are running. Each window will contain a subset, like this:
+1. You should now see the generated messages split across the getting application sessions that are running. Each tab will contain a subset, like this:
 
 	![](./images/image52.png)
 
@@ -346,49 +305,19 @@ In this scenario, imagine a queue manager needs to be stopped for maintenance pu
 
 When a queue manager is ended, the applications on that queue manager are usually lost. However, if the optional parameter -r is used, the applications will attempt to reconnect to a different queue manager.
 
-1. Return to the OpenShift Console tab in the web browser. You should still be in the *cp4i-mq* Project. Click the drop-down for *Workloads* and select *Stateful Sets*. Filter on your **c** queue manager. Click the hyperlink for your the *Stateful Set*.
+1. Return to the OpenShift Console tab in the web browser. You should still be in your *studentx* Project. Click the drop-down for *Workloads* and select *Stateful Sets*. Filter on your **b** queue manager. Click the hyperlink for your the *Stateful Set*.
 
-	![](./images/image54.png)	
-1. Click *YAML* which will open an editor for the *Stateful Set*. Scroll to the *spec* stanza at line 370. Change *replicas* to **0**. This will remove the active container in effect stopping the queue manager.
-
+	Now we will click the **v** to change to 0 Pod.   
 	![](./images/image225.png)
 	
-	Click *Save*.
-	
-1. Click *Save* again on the *Managed resource* pop-up.
+1. You will now see 0 Scaling to 1 for the pods.  You will also see in the monitors for the **MY.GETTER.APP** are rebalanced.
 
 	![](./images/image227.png)	
-1. Click *Pods* in the side-bar and notice that the pod for *mqxxc* has been terminated.
 
-	![](./images/image56.png)
-	
-	**Tip**: Now that you have seen the yaml code to change replicas, there is a much faster way to scale down the replicas in order to stop a queue manager. Instead of clicking the *YAML* tab in the *StatefulSet* click *Details* instead. Then just decrease the count by 1. To start the queue manager again, just increase the number back to 1. Use this pod counter when asked to stop or start the queue manager.
+1. Once the pod restarts you will see 1 Pod the pods.  You will also see in the monitors for the **MY.GETTER.APP** are rebalanced.
+
 	![](./images/image325.png)
-	
-1. In the application windows, you'll notice that the application connected to *mq00c* are now trying to reconnect.
 
-	![](./images/image57.png)
-			
-1. After a while, an application imbalance will be detected, and affected applications will be reconnected to the other available queue managers.
-
-	To see this happening, re-run the MQSC command DISPLAY APSTATUS on any active queue manager in the cluster. After a minute or two you should see all application instances now running on mq00a and mq00b:
-
-	![](./images/image60.png)
-
-1. Once you are happy that the applications have balanced out equally across the other queue managers, re-start the stopped queue manager by changing the *spec > replicas* back to one in *Stateful Set* **mq00c-ibm-mq**.
-	
-	![](./images/image226.png)
-
-1. In the application windows, you'll notice that the application connected to *mq00c* has now reconnected.	
-	
-	![](./images/image59.png) 
-	
-	As this queue manager has started and has no applications connected, it will request some from the other queue managers in the cluster.
-	
-1.  Display *apstatus* again and you'll see that the applications are again rebalanced.
-
-	![](./images/image61.png)
-	
 ## Metrics (new in 9.1.5)
 
 The amqsrua sample application provides a way to consume MQ monitoring publications and display performance data published by queue managers. This data can include information about the CPU, memory, and disk usage. MQ v9.1.5 adds the ability to allow you to monitor usage statistics for each application you specify by adding the STATAPP class to the amqsrua command. You can use this information to help you understand how your applications are being moved between queue managers and to identify any anomalies.
@@ -416,47 +345,13 @@ Statistics available are:
 
 	Initial stats are displayed and then updated every 10 seconds to show activity in the previous interval. You should see an Instance Count and Movable Instance Count of 2 as shown below. You may see different numbers for the other stats in the first interval, but these should be 0 in subsequent intervals.
 	
-	![](./images/image62.png)
-	
-	Refer to the description of these stats at the start of this section. 
-	Keep this command running.
-	
-1. Open a new browser tab and click the openshift bookmark of the cluster you are working on. Change to the *cp4i-mq* project if not already there.
-
-	![](./images/image229.png)
-	
-1. In this browser tab, expand *Workloads*, select *Stateful Sets*, then click the hyperlink for *mqxxc-ibm-mq*.	
-
-	![](./images/image228.png)
-	
-1. As you did previously, stop *mqxxc* by editing the *YAML* changing *spec > replcas* to zero. Click *Save*.
-  
-	![](./images/image230.png)
-	
-	Click *Save* on the *Managed resource* pop-up.	
-1. Refer back to the browser tab where you are running the *amqsrua* session. When the next update is shown, the following should have changed:
-
-	**Instance Count & Movable Instance Count**
-	
-	there are now 3 instances of the application running on this queue manager;
-
-	**Initiated & Completed Outbound Instance Moves, Instances ended**
-	
-	temporarily equal to 1 during the first interval as an instance is moved from *mqxxc* to this queue manager.
-	
-	![](./images/image65.png)
-	
-1. In the other console, restart mqxxc by editing the *YAML* changing *spec > replicas* back to one and clicking *Save*.
-	
-	![](./images/image67.png)
-	
-1. Again, refer back to the **amqsrua** session. When the next update is shown, the stats will have changed again. There are now 2 instances running on this queue manager, one having been moved (back) to *mqxxc*. As this happens, the numbers of moved and ended instances are again temporarily equal to 1.
-
 	![](./images/image68.png)
 	
-1. Stop the **amqsrua** session when you are ready, using *ctrl-C*.
 
 1. Stop the putting application with *ctrl-C*. Leave the terminal window open as you will need it in the next secion.
+	
+	![](./images/image68a.png)
+	
 
 ## Using CCDT Queue Manager Groups
 
