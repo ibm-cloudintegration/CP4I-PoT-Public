@@ -136,388 +136,168 @@ But with all the new features that have been added to the **MQ Console** you can
 
 	![](./images/image22.png)
 	
-1. You will see the two local queues **APPQ** and **APPQ2** which were defined by the mqsc *ConfigMap* defined in the yaml template. The other queue managers also have the queues by that name. 
+1. You are now on the Overview page.  You will see varies information regarding your QMgr.  
+
+	Click on the **Queue** tab now.
 
 	![](./images/image22a.png)
 
-	Click *App channels*.
+1. You will see the two local queues **APPQ** and **APPQ2** which were defined by the mqsc *ConfigMap* defined in the yaml template. The other queue managers also have the queues by that name.
+
+	Next Click on the **MQ network** tab
+
+	![](./images/image22b.png)
+
+1. Now on the **MQ network** page we see that we have 2 cluster queue mangers connected, and this Qmgr is a full repository for the Cluster.
+You will also see the other QMgr versions. 
+
+	Click on the **Connected queue managers** channel instances. 
 
 	![](./images/image22c.png)
 	
-	Click *Queue manager channels*.
-	
+1. Here you will see the connected queue manager names and status. 
+
+	Next click on the **Queue manager channel**
+	![](./images/image22dd.png)
+
 1. Here you find your cluster channels. If you looked closely at the yaml template, you'll remember that your *mqxxa* and *mqxxb* are the primary repositories for your cluster *UNICLUSxx*. While looking at *mqxxa* you see a cluster receiver channel **TO_UNICLUS_MQ00A** and two cluster sender channels **TO_UNICLUS_MQ00B** and **TO_UNICLUS_MQ00C**. They should be *Running*. 
 	
 	![](./images/image22d.png)
-	
-	Click *View Configuration* in the top right corner.
 
-1. You can check the other queue manager's console to verify that they are all configured the same. You should have verified that when reviewing the yaml template.
+1. You can check the other queue manager's console to verify that they are all configured the same. 
 
 	You are all set, time for testing.
 
+## Using CCDT Queue Manager Groups to test 
 
-## Launch getting applications
+We could connect our getting applications to *mqxxa* directly, and relied on the Uniform Cluster to rebalance them across the other queue managers over a period of time. There are 2 disadvantages to connecting in this way:
 
-In this section we shall launch 6 instances of an application connected to the same queue manager.
+* When the applications initially connect, they all start out connected to *mqxxa* and there is a delay in the Uniform Cluster balancing them across the other queue managers
+* If *mqxxa* is stopped unexpectedly or for maintenance, any applications connected to it will try to reconnect to *mqxxa* and fail. They will not attempt to connect to the other queue managers in the cluster. This will also be true if applications connected to other queue managers try to reconnect after an outage.
 
-The Client Channel Definition Table (CCDT) determines the channel definitions and authentication information used by client applications to connect to a queue manager.
-We shall be using a CCDT in JSON format. 
+For testing our cluster we shall see that by using Queue Manager Groups within our CCDT file we can decouple application instances from a particular queue manager and take advantage of the built-in load balancing capabilities available with CCDTs.
 
-1. Open a terminal window and navigate to */home/ibmuser/MQonCP4I/unicluster/test*. Copy the command snippet so you don't have to type the whole thing (you will need it in other terminals).
+1. In the classroom environment, We have a ccdt.json_template file that we will use to create the ccdt.json for the testing.  There is an update script that will update the clientConnection name depending on your student number and will pull the host from OCP.
 
-	```
-	cd /home/ibmuser/MQonCP4I/unicluster/test
-	```
+	1. ```cd ../test``` or ```cd /home/ibmuser/MQonCP4I/unicluster/test/```
 
-1. Make sure all shell scripts are executable with the following commmand if needed:
+	1. Run the update script ```./update-ccdt.sh```
+		You will need to pass in your *Student number* and *Namespace*
 
-	```
-	chmod +x *.sh
-	ls -l
-	```
-	
-	![](./images/image218f.png)
-	
-1. We have a script that will create and update the  **ccdt.json** file. Run the following command. 
-
-	**Note:** There is also a ccdt4 json we will create later. 
-
-	```
-	./update-ccdt.sh -i 01 -n student1
-	```
-	You will need to pass in your student number and namespace like you did when doing the inital MQ setup script. 
-
-	When done you will have a **ccdt.json** file
-	![](./images/image218a.png)	
-1.  You can edit the **ccdt.json** where you will find entry for the 3 uniform Qmgrs. 
-
-	It will include three sections for each of our Qmgrs.  
-	 MQCHLL sets the folder containing the JSON CCDT file
-	* Channel name
-	* host name 
-	* queuemanager name  
-
-	**Note:** When done exit without saving. 
-
-	![](./images/image218b.png)
-
-1.  Before you start the getting applications, you will want to start a script which displays the queue managers and the number of applications connected to it. The script will open 3 terminals one for each of your MQ Qmgrs.
-
-	**Note:** You should be in the following directory *~/MQonCP4I/unicluster/test/*
-
-	```
-	./getterApp.sh
-	```	
-	 Position those three windows so you can see the diplays.
-
-	![](./images/image218c.png)
-
-1. Now from the same terminal you will start 6 getMessage process.  They will be displayed in the same window in different tabs.
-
-	```
-	./start-get-tabs.sh
-	```
-	**NOTE:** You will see the 6 connections are connected to mqxx01a to start with.   
-	
-	![](./images/image220.png) 
-	
-1. Over time the programs running in each of the *tabs* you will see them rebalance and reconnect. When done you will see them balanced across the 3 Qmgrs and you will see 2 for each **MY.GETTER.APP**
-
-	![](./images/image220a.png) 
-
-1. Return to the OpenShift Console browser tab. Make sure you are in the your project. Open *Workload > Pods*, use the filter to search for your queue managers, then click the hyperlink *mqxxa-ibm-mq-0* pod. 
-
-	![](./images/image316.png)
-	
-1. Click *Terminal*. This opens a terminal window in the container running inside that pod.
-
-	 There is a new MQSC command, *DISPLAY APSTATUS*, which we shall now use to display the status of an application across all queue managers in a cluster.
-
-	* Start *runmqsc* with following command
-	* Run the display *APSTATUS* command
-	```
-	runmqsc mq00a
-	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(APPL)
-	```
-	
-	*COUNT* is the number of instances of the specified application name currently running on this queue manager, while *MOVCOUNT* is the number of instances of the specified application name running on the queue manager which could be moved to another queue manager if required. 
-	![](./images/image318.png)
-	
-1. Repeat the command changing the *TYPE* to **QMGR**.	
-	
-	```
-	DISPLAY APSTATUS(MY.GETTER.APP) TYPE(QMGR)
-	```
-	
-	At first, all instances of the application will be running on mqxxa and none on the other two queue managers. However, by the time you run this command, the instances will probably be shared across all queue managers as shown below.
-	
-	This display shows how the applications have been rebalanced. Notice that each queue manager in the cluster is now running two of the client applications making a total of six rebalanced.
-	
-	![](./images/image319.png) 
-	
-	Click *Collapse* to return the window to normal size. Enter *end* to stop runmqsc.
-	
-	```
-	end
-	```
-
-	
-## Launch putting application
-
-We shall launch another sample which will put messages to each queue manager in the cluster. The running samples should then pick up these messages and display them. In this lab, we are using one putting application to send messages to all getting applications using cluster workload balancing. You could set up the same scenario with one or more putting applications per queue manager and application rebalancing would work in the same way that you’ve seen for getting applications.
-
-1. From the same terminal window where we hvae the getter apps running go to the first tab and start the sending application. 
-
-	We shall be using the sample amqsphac in this scenario. In the terminal window, enter the following command: 
+	1. Then edit the new ccdt.json file.   
+		The *host* is updated for each Qmgr and the clientConnection name.  Also for the queueManager name it will have *ANY_QM.
 		
-	```
-	./sendMessage.sh
-	```		
+		values for each queue manager as you did in the *ccdt.json* file. There are 8 hosts parameters to change. As well as containing the original set of direct references to the queue managers, it gives a queue manager group definition with a route to all queue managers using the name **ANY_QM**.
+	1. We also have two new attributes:
+		* **clientWeight**: a priority list for each client. The default value is zero. A client with a higher clientWeight will be picked over a client with a smaller value.
+		* **affinity**: setting the affinity to “none” will build up an ordered list of group connections to attempt to try in a random order, for any clients on a particular named host.
 	
-	![](./images/image224.png)
+	When done click the **X** to close the editor without making changes.
 
-1. You should now see the generated messages split across the getting application sessions that are running. Each tab will contain a subset, like this:
+	![](./images/uni-test-1.png) 
 
-	![](./images/image52.png)
+1. Now let’s put the updated CCDT to the test.
 
-	Note: the messages may not be evenly distributed across the getting applications instances.
+	To make it easier to visaluze this we will create both *getter* and *putter* monitors that will show the counts of connected apps.
+
+	![](./images/uni-test-2.png) 
+		
+1. Now to make it easier to look at all these terminals you should resize them and move them around.   Should look something like this.
+
+	You will have a getter and putter monitor for each of the three QMgrs.  
+
+	Do a quick test by running ```./getMessage.sh``` You will see one of the Qmgrs getters update.  When done do CTL-C
+
+	![](./images/uni-test-3.png) 
+	
+
+1. Open a new terminal window using the menu bar.
+
+	![](./images/image1a.png)
+
+1. In the new terminal click the plus **+** to create a new tab and make sure both tabs are in the ```/home/ibmuser/MQonCP4I/unicluster/test/```
+
+	This terminal will be used for the sending applactions.  The other terminal window will be for the getting applications.   Arrange them like this. 
+
+	![](./images/uni-test-4.png)
+
+
+	
+1. Now from the **Getter** terminal we will start six new tabs each running a getting application *amqsghac* using *ccdt.json*. 
+
+	Run ```./start-get-tabs.sh```
+
+	You will see six new tabs created on your terminal each running the *amqsghac* program.  You can click on those tabs and observe the behavior as the queue managers rebalance the connections. 
+	
+	Watch the **Getter** windows running the *GETTER Apps*.  Eventually, the applications are evenly distributed across the queue managers.
+
+	Return to the first tab where you ran the *./start-get-tabs.sh*
+	
+	![](./images/uni-test-5.png) 
+	
+1. Now from the **Putter** terminal we will start the putting application *amqsphac* using *ccdt.json*. 
+
+	Run ```./sendMessage.sh```
+
+	Watch the **Putter** windows running the *PUTTER Apps*.  You will see which QMgrs the putting applications are connected.
+
+	Repeat this on the other tab you have opened.
+
+	You can also view the varies *GetMsg tabs*. You will see the generated messages split across the getting application sessions that are running. Each tab will contain a subset of messages.
+	
+	![](./images/uni-test-6.png) 	
+
+	
+1. Now let's say that the getting apps can't keep up with the load.  We can easily create more getting apps to process the workload.Open one more terminal window and run the following command:
+
+	```
+	./rClient.sh
+	```
+	This will start six more clients in the background and you will see the messages that window is receiving.	
+
+	Watch the **Getter** windows running the *GETTER Apps*.  Eventually, the applications are evenly distributed across the queue managers.
+	
+	![](./images/uni-test-7.png)	
 	
 ## Queue Manager maintenance
 
 In this scenario, imagine a queue manager needs to be stopped for maintenance purposes. We shall demonstrate how doing this will cause the applications running on that queue manager to run instead on the remaining active queue managers in the Uniform Cluster. Once the maintenance is complete, the queue manager will be re-enabled.
 
-When a queue manager is ended, the applications on that queue manager are usually lost. However, if the optional parameter -r is used, the applications will attempt to reconnect to a different queue manager.
+1. Return to the OpenShift Console tab in the web browser. You should still be in your *studentx* Project. Click the drop-down for *Workloads* and select *pods*. Filter on your **student-mq** queue managers.  
 
-1. Return to the OpenShift Console tab in the web browser. You should still be in your *studentx* Project. Click the drop-down for *Workloads* and select *Stateful Sets*. Filter on your **b** queue manager. Click the hyperlink for your the *Stateful Set*.
+	You should see your three unicluster QMgrs.
+	![](./images/uni-test-8.png)
+	
+1.	To simulate taking down a QMgr we will simply delete the running Pod which OCP will restart for us.  While this is down the putter and getter applications running on that QMgr will rebalance for us.  
 
-	Now we will click the **v** to change to 0 Pod.   
-	![](./images/image225.png)
+	Select a QMgr where you have one of the sender applications running. In this screen shot we select mq01a.  
 	
-1. You will now see 0 Scaling to 1 for the pods.  You will also see in the monitors for the **MY.GETTER.APP** are rebalanced.
+	Click on the 3 dots and click on **Delete Pod** 
 
-	![](./images/image227.png)	
+	![](./images/uni-test-9.png)	
 
-1. Once the pod restarts you will see 1 Pod the pods.  You will also see in the monitors for the **MY.GETTER.APP** are rebalanced.
+1. In the pop-up window click **Delete**
+	![](./images/uni-test-9a.png)	
 
-	![](./images/image325.png)
+1. You will now see the **Pod** you just deleted in a Terminating state.  You will also see in your sender window the application reconnecting.  In the Putter and Getter connection monitoring terminals you will see that the QMgr we stopped is zero connections and the other two QMgrs will rebalance the load.  
 
-## Metrics (new in 9.1.5)
+	![](./images/uni-test-10.png)
 
-The amqsrua sample application provides a way to consume MQ monitoring publications and display performance data published by queue managers. This data can include information about the CPU, memory, and disk usage. MQ v9.1.5 adds the ability to allow you to monitor usage statistics for each application you specify by adding the STATAPP class to the amqsrua command. You can use this information to help you understand how your applications are being moved between queue managers and to identify any anomalies.
+1. Once you see in the OCP console the QMgr is restarted you will see the sender sending messages again.  ALso you will see the Putter and Getter connection monitoring terminals that the connections are now rebalanced and you should see the sender has moved QMgrs.
 
-The data is published every 10 seconds and is reported while the command runs.
+	You have completed this lab Uniform Clusters and Application Rebalancing.
 
-Statistics available are:
+	![](./images/uni-test-11.png)
 
-* Instance count: number of instances of the specified application name currently running on this queue manager. See also COUNT from MQSC APSTATUS that we saw earlier.
-* Movable instance count: number of instances of the specified application name running on this queue manager which could be moved to another queue manager if required. See also MOVCOUNT from MQSC APSTATUS that we saw earlier.
-* Instance shortfall count: how far short of the mean instance count for the uniform cluster that this queue manager’s instance count is. This will be 0 if queue manager is not part of a uniform cluster.
-* Instances started: number of new instances of the specified application name that have started on this queue manager in the last monitoring period (these may have previously moved from other queue managers or be completely new instances).
-* Initiated outbound Instance moves: number of movable instances of the specified application that have been requested to move to another queue manager in the last monitoring period. This will be 0 if the queue manager is not part of a uniform cluster.
-* Completed outbound instance moves: number of instances of the specified application that have ended following a request to move to another queue manager. This number includes those that are actioning the requested move, or that are ending for any other reason after being requested to move (note that it does not mean that the instances have successfully started on another queue manager). This will be 0 if the queue manager is not part of a uniform cluster.
-* Instances ended during reconnect: number of instances of the specified application that have ended while in the middle of reconnecting to this queue manager (whether as a result of a move request from another queue manager, or as part of an HA fail over).
-* Instances ended: number of instances of the specified application that have ended in the last monitoring period. This includes instances that have moved, and those that have failed during reconnection processing.
+1. You can now in both sender terminals do CTL-c to stop the senders. You will see the Putter connection monitoring terminals showing no more connections. 
 
-1. In the browser tab for OpenShift Console stop *runmqsc* for *mqxxa* by entering *ctrl-C*. Then run the *amqsrua* command as follows, i.e. with a class of STATAPP, a type of INSTANCE, and object of your getting application name. Change *xx* to your student ID.
-	
-	```
-	/opt/mqm/samp/bin/amqsrua -m mqxxa -c STATAPP -t INSTANCE -o MY.GETTER.APP
-	```
+	![](./images/uni-test-12.png)
 
-	(Note: you can omit the class, type and object parameters and enter them when prompted instead).
+1. Now in the sender terminal run the ```./killall.sh``` command to terminate  all getter applications.  You will see all the **Get Tabs** close in the one terminal and will also see the Getter connection monitoring terminals showing no more connections.
 
-	Initial stats are displayed and then updated every 10 seconds to show activity in the previous interval. You should see an Instance Count and Movable Instance Count of 2 as shown below. You may see different numbers for the other stats in the first interval, but these should be 0 in subsequent intervals.
-	
-	![](./images/image68.png)
-	
-
-1. Stop the putting application with *ctrl-C*. Leave the terminal window open as you will need it in the next secion.
-	
-	![](./images/image68a.png)
-	
-
-## Using CCDT Queue Manager Groups
-
-So far we have connected our getting applications to *mqxxa* directly, and relied on the Uniform Cluster to rebalance them across the other queue managers over a period of time. There are 2 disadvantages to connecting in this way:
-
-* When the applications initially connect, they all start out connected to *mqxxa* and there is a delay in the Uniform Cluster balancing them across the other queue managers
-* If *mqxxa* is stopped unexpectedly or for maintenance, any applications connected to it will try to reconnect to *mqxxa* and fail. They will not attempt to connect to the other queue managers in the cluster. This will also be true if applications connected to other queue managers try to reconnect after an outage.
-
-In this section, we shall see that by using Queue Manager Groups within our CCDT file we can decouple application instances from a particular queue manager and take advantage of the built-in load balancing capabilities available with CCDTs.
-
-1. In the classroom environment, an updated CCDT file has been created for you to use: */home/student/MQonCP4I/unicluster/test/ccdt5.json*.
-
-	Open this file in the editor. Change the *host* values for each queue manager as you did in the *ccdt.json* file. There are 8 hosts parameters to change. As well as containing the original set of direct references to the queue managers, it gives a queue manager group definition with a route to all queue managers using the name **ANY_QM**.
-	
-1. Scroll down the file and note two new attributes:
-
-	![](./images/image234.png)
-	
-	These are defined under *connectionManagement*: 
-	
-	* **clientWeight**: a priority list for each client. The default value is zero. A client with a higher clientWeight will be picked over a client with a smaller value.
-	* **affinity**: setting the affinity to “none” will build up an ordered list of group connections to attempt to try in a random order, for any clients on a particular named host.
-
-1. Now let’s put the updated CCDT to the test.
-
-		
-1. Please note: the supplied updated CCDT5 file was originally created for a scenario with an additional queue manager called *mqxxd*. For completeness, we shall create that missing queue manager now.
-
-1. In your editor session (gedit), click *Open* > *Other documents* and navigate to 
-*/home/student/MQonCP4I/unicluster/deploy*, then select *uniaddqmgr.yaml_template* and click *Open*. 
-
-	![](./images/image75.png) 
-	
-	Do not change anything in this file. Review it observing that it will create *qmxxd*, configmaps for *mqxxd*, and a route for *mqxxd*. It will use the same secret as the other three queue managers.
-	
-	![](./images/image76.png)
-
-1. 	Open another file in the editor: 
-
-	*/home/student/MQonCP4I/unicluster/deploy/uni-addqmgr.sh*.
-	
-	Review the export commands observing:
-	
-	* MQCHLLIB sets the folder of the JSON CCDT file
-	* MQCHLTAB sets the name of the JSON CCDT file
-	* MQSSLKEYR sets the location of the key
-	```
- 1. Now we will run the install script for the fourth unicluster Qmgrs in your  namespace.  
-		
-	Enter the following command to create the new queue manager:
-	
-	```
-	./uni-addqmgr.sh
-	```
-	
-	![](./images/image78.png) 
-	
-	Like *mqxxc*, it will have a partial repository.
-	
-	Note: You need to add *mqxxd* to MQExplorer to see it in the cluster display.
-	
-1. In the editor, open */home/student/MQonCP4I/unicluster/test/sClient.sh*. Change *00* to your student ID. Change the path for *MQCHLTAB* and *MQCCDTURL* to **/home/student/MQonCP4I/unicluster/test/ccdt5.json**. Click *Save*.
-
-	![](./images/image236a.png)
-	
-	*ccdt5.json* includes *mqxxd* and entries for the queue manager group *ANY_QM*. The script will connect to an available queue manager and run the getting application *amqsghac*.
-	
-1. Open and make the same edits in *rClient.sh*. 
-
-	![](./images/image237.png)			
-1. In the editor, open file 			
-*/home/student/MQonCP4I/unicluster/test/showConns.sh*. Make the necessary changes: 00 to your student ID and the paths for MQCHLTAB and MQCCDTURL to **/home/student/MQonCP4I/unicluster/test/ccdt5.json**.
-	
-	![](./images/image238.png)  
-	
-	Script *sClient.sh* will start the getting application *amqsghac* using *ccdt5.json* and will continue to run in that terminal. Script *rClient.sh* however, will start six more client applications running getting application *amqsghac* in the background. The main difference being that displays for those six clients will all be displayed in that single terminal.
-	
-1. Before you start the getting applications, you will want to start a script which displays the queue managers and the number of applications connected to it. Open four new terminal windows. In each one enter the following command where "xx" is equal to your student ID and "z" is equal to "a", "b", "c", or "d".
-
-	```
-	MQonCP4I/unicluster/test/showConns.sh mqxxz
-	```
-	
-	![](./images/image239.png)	
-1. Position those four windows so you can see the diplays:
-
-	![](./images/image83a.png)
-	
-1. Now you are ready to start the getting applications. In each one of your open terminal windows, run the following command:
-
-	```
-	MQonCP4I/unicluster/test/sClient.sh
-	```
-				
-	![](./images/image240.png) 
-	
-	This time you are running the application with the queue manager group ANY_QM, prefixed with * which tells the client to connect to any queue manager in the ANY_QM group. 
-	
-	Again, you will need to run this command 6 times.	
-1. Observe the behavior as the queue managers rebalance the connections. Watch the windows runnning the *showConns.sh* scripts as well as the windows where the getting applications are running. The application instances will now attempt to connect to any of the queue managers defined in the queue manager group, and with the client weight and affinity options defined above, we should see each application instance connect to one of the queue managers in the Queue Manager Group and Uniform Cluster.
-
-	Eventually, the applications are evenly distributed across the queue managers.
-	
-	![](./images/image240a.png) 
-	
-	You can confirm this by watching the windows runnning the *showConns.sh* script or running the MQSC command DISPLAY APSTATUS on any active queue manager in the cluster.
-	
-1. In a command window, start the putting application by entering the following command:
-
-	```
-	./sendMessage.sh
-	```
-	
-	![](./images/image86a.png)
-	
-1. While *showConns.sh* displays show even distribution, you can also observe the application windows to see that the applications are getting an even distribution of messages.
-
-	![](./images/image87a.png)
-			
-1. Now end *mqxxa* to force the applications to be rebalanced:
-
-	![](./images/image90.png)
-	
-	Rather than the applications getting stuck in a reconnect loop trying to connect to *mqxxa* as we saw using the previous version of the CCDT file, the applications now tied to the queue manager group ANY_QM will go through each of the definitions of ANY_QM and when able to successfully connect to one of the underlying queue managers, will do so. You should see this reported in a subset of the application instances:
-	
-	![](./images/image91a.png)
-	
-1. Run the MQSC command DISPLAY APSTATUS on any active queue manager in the cluster (try it on mqxxd stateful set this time since it was added later). After a while, there should once more be 6 connections in total, as there were before *mqxxa* was shut down. Notice there are 6 total, but none on *mqxxa*
-
-	![](./images/image92a.png)
-	
-1. Restart *mqxxa*.
-
-	
-	![](./images/image93.png)
-	
-1. Open one more terminal window and run the following command:
-
-	```
-	MQonCP4I/unicluster/test/rClient.sh
-	```
-	Six more clients are started and you can see the messages that window is receiving.	
-	
-	![](./images/image242a.png)	
-1. Check the *showConns.sh* windows and you will see the applications evenly distributed again now totaling twelve.	
-	
-	![](./images/image89a.png)	
-	
 ## Congratulations
 
 You have completed this lab Uniform Clusters and Application Rebalancing.
-
-
-## Cleanup
-
-1. In one of the terminal windows, run the following command to end the getting applications:
-
-	```
-	./killall.sh
-	```
-	
-	![](./images/image323.png)
-
-1. Close all the applications and terminal windows.
-
-
-1. In a terminal window run the following command:
-
-	```
-	/home/student/MQonCP4I/unicluster/deploy/uni-cleanup.sh
-	```
-
-	![](./images/image324.png)
-	
-Run the command with the arugments that you used in the EnvSetup using your Student number and namespace:
-
-	```
-	/home/student/MQonCP4I/unicluster/deploy/uni-cleanup.sh -i 05 -n palpatine5
-	```
-![](./images/image324a.png)-
-   
-[Continue to Lab 2](../Lab_5/mq_cp4i_pot_lab5.md)
 
 [Return to MQ lab page](../index.md#introduction)
 
