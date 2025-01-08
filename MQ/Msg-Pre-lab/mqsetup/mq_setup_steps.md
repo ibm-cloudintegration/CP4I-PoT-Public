@@ -14,10 +14,6 @@ You should be logged on your VDI as *ibmuser*.
 1. Click *Code* and select *Download zip*.
 
 	![](./images/image109.png)
-
-1. Click *Save file* radio button then click *OK*.
-
-	![](./images/image110.png)
 	
 1. Open a terminal window by clicking on the **Application** on top menu and under **Favorites** click the icon for **Terminal**.
 
@@ -49,7 +45,7 @@ You should be logged on your VDI as *ibmuser*.
 	
 	![](./images/image113a.png) 
 	
-	This will create the directory **/home/student/MQonCP4I**.  Change to your home directory and list the contents of the directory to verify that it contains *MQonCP4I*. 
+	This will create the directory **/home/ibmuser/MQonCP4I**.  Change to your home directory and list the contents of the directory to verify that it contains *MQonCP4I*. 
 	
 	```sh
 	cd ~/MQonCP4I
@@ -60,18 +56,15 @@ You should be logged on your VDI as *ibmuser*.
 	```
 	find . -type f -iname "*.sh" -exec chmod +x {} \;
 	```
-	
-	![](./images/setup3.png)
 
-9. Now we will run the script that will create all the install scripts for your userid.  
-	
-	![](./images/setup4.png)
+	1. Now we will run the script that will create all the install scripts for your userid. ```./MQ_setup.sh```  
 
-1. 	Now run the MQ_script_setup.sh You will use your student id that was given to you from the instructor.
+	1. 	Now run the MQ_setup.sh You will use your student id that was given to you from the instructor.
 
-**Note:** In this example we are user student1 so would use that as the namespace and 01 as the student id.
+		**Note:** In this example we are user student1 so would use that as the namespace and 01 as the student id.
+	1. If will ask if this is correct.  enter **Y**
 
-![](./images/image114c.png)
+	![](./images/image114c.png)
 	
 Great! You are now ready to start working in the MQ and Kafka labs. 
 
