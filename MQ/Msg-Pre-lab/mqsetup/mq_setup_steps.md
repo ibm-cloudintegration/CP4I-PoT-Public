@@ -28,7 +28,7 @@ You should be logged on your VDI as *ibmuser*.
 1. Enter the following command to unzip the downloaded file:
 
 	```
-	unzip mqoncp4i-main.zip
+	unzip mqoncp4i-2025-main.zip
 	```
 	
 	![](./images/image112a.png)
@@ -36,7 +36,7 @@ You should be logged on your VDI as *ibmuser*.
 1. Move the unzipped directory to your home directory with the following command:
 	
 	```
-	cd mqoncp4i-main
+	cd mqoncp4i-2025-main
 	```
 	
 	```
