@@ -181,13 +181,14 @@ For testing our cluster we shall see that by using Queue Manager Groups within o
 
 	1. ```cd ../test``` or ```cd /home/ibmuser/MQonCP4I/unicluster/test/```
 
-	1. Run the update script ```./update-ccdt.sh```
+	1. Run the update script ```./update-scripts.sh```
 		You will need to pass in your *Student number* and *Namespace*
-
-	1. Then edit the new ccdt.json file.   
-		The *host* is updated for each Qmgr and the clientConnection name.  Also for the queueManager name it will have *ANY_QM.
 		
-		values for each queue manager as you did in the *ccdt.json* file. There are 8 hosts parameters to change. As well as containing the original set of direct references to the queue managers, it gives a queue manager group definition with a route to all queue managers using the name **ANY_QM**.
+		* This will create your **ccdt.json** file as well as create a **getterApp.sh** and **putterApp.sh** that you will use later. 
+
+	1. Now edit the new ccdt.json file.   
+		The *host* is updated for each Qmgr and the clientConnection name.  Also for the queueManager name it will have *ANY_QM.
+		This gives you the a queue manager group definition with a route to all queue managers using the name **ANY_QM**.
 	1. We also have two new attributes:
 		* **clientWeight**: a priority list for each client. The default value is zero. A client with a higher clientWeight will be picked over a client with a smaller value.
 		* **affinity**: setting the affinity to “none” will build up an ordered list of group connections to attempt to try in a random order, for any clients on a particular named host.
@@ -202,9 +203,7 @@ For testing our cluster we shall see that by using Queue Manager Groups within o
 
 	![](./images/uni-test-2.png) 
 		
-1. Now to make it easier to look at all these terminals you should resize them and move them around.   Should look something like this.
-
-	You will have a getter and putter monitor for each of the three QMgrs.  
+1. 	You will have a getter and putter monitor for each of the three QMgrs.  
 
 	Do a quick test by running ```./getMessage.sh``` You will see one of the Qmgrs getters update.  When done do CTL-C
 
