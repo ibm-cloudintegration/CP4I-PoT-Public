@@ -2,7 +2,7 @@
 
 ## Requirements
 
-* Openshift 4.6
+* Openshift 4.16
 * IBM Cloud Pak for Integration V2020.4.1
 * IBM MQ V 9.2.2.0-r1 and mq.ibm.com/v1beta1 Operator ibm-mq.v1.5
 * A namespace called cp4i-mq where the MQ Operator is installed
