@@ -549,6 +549,17 @@ and click **Send**.
 [pic78]: images/78.png
 [pic79]: images/79.png
 [pic107]: images/107.png
+[pic108]: images/108.png
+[pic109]: images/109.png
+
+## 4a. Stop Test API (Offline the API)
+
+![alt text][pic108]
+
+![alt text][pic109]
+
+<br>
+
 
 # 5. Publish API <a name="publish_api"></a>
 
