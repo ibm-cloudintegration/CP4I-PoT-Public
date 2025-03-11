@@ -140,7 +140,7 @@ Before beginning this lab, you will want to make sure that you have completed th
 
 ![alt text][pic6]
 
-3\. If this is your first time logging in, the login page is presented. Click **Common Services User Registry**.
+3\. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
 ![alt text][pic8]
 
 4\. Confirm that you are in the provider organization for your username (upper right) and then click on **Develop APIs and products**.
