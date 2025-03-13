@@ -58,25 +58,18 @@ LAB ENVIRONMENT: <br>
 User/password: <br>
 student(n)/xxxxx <br>
 
-**STUDENTS 1-10** <br>
+******* STUDENTS 1 - 10 ******* <br>
 
 Cluster 1:<br>
-OpenShift Cluster URL:<br>
-<href>https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
-<br>
+OpenShift Cluster URL: <href>https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
 
-Cloud Pak for Integration <br>
-Platform Navigator URL:<br>
-<href>https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
+Cloud Pak for Integration Platform Navigator URL: <href>https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
 <br><br>
 
 
-**STUDENTS 11-20** <br>
-Cluster 2:<br>
-OpenShift Cluster URL:<br>
-<href>https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
-<br>
+******* STUDENTS 11 - 20 ******* <br>
 
-Cloud Pak for Integration <br>
-Platform Navigator URL:<br>
-<href>https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
+Cluster 2: OpenShift Cluster URL:<br>
+<href>https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
+
+Cloud Pak for Integration Platform Navigator URL: <href>https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
