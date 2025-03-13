@@ -213,6 +213,16 @@ You will import customers, customers{id} operations into API Connect GraphQL eng
 
 ## 4. StepZen CLI - Deploy & Start <a name="stepzen-deploy"></a>
 
+Disable security for API Connect
+
+```
+echo "access:
+  policies:
+    - type: Query
+      policyDefault:
+        condition: true" > config.yaml 
+```
+
 1. We will now start stepzen and deploy our GraphQL queries into our account.  
 
     ```
