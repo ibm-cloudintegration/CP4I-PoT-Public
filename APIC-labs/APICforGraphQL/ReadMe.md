@@ -88,7 +88,15 @@ Refresh the page in about a minute and make sure student(n)-customer-database-v3
 ## 3. StepZen CLI  <a name="stepzen"></a>
 Now we will expose CustomerDatabaseV3 endpoints into GraphQL Engine on local desktop.
 
-**NOTE:** Do these steps on the VDI and make sure you are logged into the OCP cluster with your student id.  
+**NOTE:** Do these steps on the VDI and make sure you are logged into the OCP cluster with your student id.
+
+**NOTE:** To login to the OCP Cluster: <br>
+**(a) Login to the OpenShift Console with your student(id)**<br>
+**(b) On top right of the screen, click on your student(id), then click on "Copy login command".**<br>
+**(c) Logon again with your student(id).**<br>
+**(d) Click on "Display Token".**<br>
+**(e) Copy full "oc login --token=\<token\> --server=\<url\> into the clipboard**<br>
+**(f) Paste the copied command into the Terminal Window, and hit enter.**<br>
 
 1. Make sure you are in the correct namespace **apic-graphql**
 
