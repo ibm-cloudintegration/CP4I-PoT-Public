@@ -51,3 +51,32 @@ Before starting the labs you should review the lab environment and the use of th
 <!--- <[ACE Toolkit Labs](ACE-toolkit-labs/index.md) > -->
 <!--- <[Event Endpoint Labs](Event_EndPoint/index.md) > -->
 <!--- <[Aspera Labs](Aspera/index.md) > -->
+
+
+LAB ENVIRONMENT: <br>
+
+User/password: <br>
+student(n)/xxxxx <br>
+
+**STUDENTS 1-10** <br>
+
+Cluster 1:<br>
+OpenShift Cluster URL:<br>
+https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com
+<br>
+
+Cloud Pak for Integration <br>
+Platform Navigator URL:<br>
+https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com
+<br><br><br>
+
+
+**STUDENTS 11-20** <br>
+Cluster 2:<br>
+OpenShift Cluster URL:<br>
+Desktop url: https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com
+<br>
+
+Cloud Pak for Integration <br>
+Platform Navigator URL:<br>
+https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com
