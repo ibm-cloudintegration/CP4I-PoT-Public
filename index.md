@@ -59,7 +59,8 @@ User/password: <br>
 student(n)/xxxxx <br>
 
 ******* STUDENTS 1 - 10 ******* <br>
-OpenShift Cluster URL: <br>
+OpenShift Cluster URL:
+<br>
 <href>https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
 <br>
 CP4I Platform Navigator URL: <br>
