@@ -211,6 +211,9 @@ You will import customers, customers{id} operations into API Connect GraphQL eng
 
      ![](./images/graph7a.png)
 
+<br>
+
+
 ## 4. StepZen CLI - Deploy & Start <a name="stepzen-deploy"></a>
 
 Disable security for API Connect
