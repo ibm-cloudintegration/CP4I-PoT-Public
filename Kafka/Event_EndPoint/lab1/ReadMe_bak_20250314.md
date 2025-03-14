@@ -47,10 +47,7 @@ Here we will review the tasks in Event Endpoint Management by the Admin and take
 **That is the end of the review of Event Endpoint Manager.** 
 
 
-# 2. Generate client certificates for Event Gateway
-
-<!--
-SUDHAKAR COMMENT - BEGIN
+# 2. Flight Landings AsyncAPI yaml and Event Gateway Bootstrap certificate
 
 First we will download the AsyncAPI for FLIGHT.LANDINGS to be imported into IBM API Connect. 
 <br>
@@ -79,10 +76,6 @@ Next we will obtain Event Gateway bootstrap certificate, to be used by the Kafka
 You will be importing the downloaded AsyncAPI definition file into Api Connect Manager in the next lab.
 
 This will save it into your Download directory. 
-
-SUDHAKAR COMMENT - END
--->
-
 ### Get bootstrap certs
 1. Now we will get the bootstrap certs. 
 
