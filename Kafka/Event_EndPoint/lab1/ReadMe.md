@@ -11,7 +11,7 @@ In this lab you will, <br>
 
 Sharing a topic with APIC is considered a Kafka topic owner action/process, given it contains sensitive information and they own the topic they get to decide how it is shared and managed. Users of the catalog are intended to be consumers (only) and are expected not to use their generated access for additional socialization in downstream tools such as APIC.
 
-## 1.1 Review ONLY FLIGHT.LANDINGS in EEM (Admin)
+## 1.1 (Review only) FLIGHT.LANDINGS in EEM (Admin)
 
 Here we will review the tasks in Event Endpoint Management by the Admin and take a look at the FLIGHT.LANDINGS topic.
 
