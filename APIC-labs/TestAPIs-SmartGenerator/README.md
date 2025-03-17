@@ -1,169 +1,321 @@
-# API Connect Test APIs - Generate Tests using SmartGenerator
+# API Connect - Generate Testcases Automatically using the SmartGenerator 
 
 # 1. Overview
 
-In this lab, you will explore "Test APIs" feature of IBM API Connect that generates API tests automatically. By using IBM Api Connect TestAPIs capability you can deliver high quality APIs consistently and improve developer productivity with automation and AI powered testing capabilities.
+In this lab, you will explore "Test APIs" feature of IBM API Connect that can automatically generate test cases to execute calls and trace the API actions. By using IBM Api Connect TestAPIs capability you can deliver high quality APIs consistently and improve developer productivity with automation and AI powered testing capabilities.
 <br>
 Reference: https://www.ibm.com/products/api-connect/api-testing
 
-You will be using Customer Database Rest API deployed in Lab1 to App Connect Dashboard. <br>
-<br> 
-
-# 2. App Connect - Download Swagger document
-
-From the Cloud Pak for Integration Platform Navigator, open App Connect Dashboard (student(n)-db). <br>
-
-Click on the Runtimes.<br>
-Select customerdatabase Integration Runtime, and click on the API, then "Download the OpenAPI Document" (yaml) as below.<br>
-![Alt text](./images/cdb-openapi.png)
-
+You will be using Customer Database Rest API deployed to explore Test APIs capability of IBM API Connect. <br>
 <br>
-Lets adjust the OpenAPI document to conform to the specification that API Connect Test APIs feature is expecting!  <br>
-
-Edit the downloaded yaml file. <br>
-
-a) Append the below section above the schema: segement. Make sure it's aligned propertly.<br>
-```
-consumes:
-  - application/json
-produces:
-  - application/json
-```
-![alt text](./images/image-35.png)
 
 
-b) Make sure the /customers/post: operation is defined before the "get" operation. if not move the "post" operation segment before the "get" segment as below. <br>
-
-![alt text](./images/image-36.png)
-
-
-
-# 3. Api Connect - Test APIs
+## 2. Api Connect - Test APIs
 
 From the Cloud Pak for Integration Platform Navigator, open API Connect Manager (apim-demo). <br>
 
+![alt text](./images/image-9.png)
+
 Click on the "Test APIs" tile. <br>
 
-![Alt text](./images/image.png)
+![alt text](./images/image.png)
 
-![Alt text](./images/image-2.png)
+## 3. Add Test Suite
 
-Click **"Add test suite"**. <br>
-
-Test Suite name: student(n)-customerdatabase <br>
-Description: student(n) customer database test suite.<br>
-
-![Alt text](./images/image-3.png)
-
-Click Save.<br>
-
-![alt text](./images/image-3a.png)
-
-Click on the Test Suite tile that you just created.<br>
-
-![alt text](./images/image-4a.png)
-
-![alt text](./images/image-4b.png)
-![alt text](./images/image-4c.png)
-![alt text](./images/image-4d.png)
-![alt text](./images/image-4e.png)
-![alt text](./images/image-4f.png)
-![alt text](./images/image-4g.png)
-
-xxxx
+![alt text](./images/image-1.png)
 
 
-![Alt text](./images/image-4.png)
+Click on \"Add test suite\". <br>
 
-Click on "Tests" Option.<br>
 
-![Alt text](./images/image-5.png)
+![alt text](./images/image-2.png)
+
+
+![alt text](./images/image-3.png)
+
+Click on the ts-customer-database test suite. <br>
+
+![alt text](./images/image-4.png)
+
+## 3. Add Test
+
+Click \<Add\> to add a test. <br>
+
+![alt text](./images/image-5.png)
+\<Next\>
+
+![alt text](./images/image-6.png)
+
+Select the Customer Database REST API you deployed in the API Management first lab. <br>
+\<Next\>
+
+![alt text](./images/image-7.png)
+
+![alt text](./images/image-8.png)
+
+Hit \<Save\> button on the top right of the screen. <br>
+
 <br>
-Click on **\<Add\>** to create a test. <br>
 
-![Alt text](./images/image-6.png)
+
+## 4. Set Global Datasets
+
+Now, lets update the "Global Datasets". <br>
+
+![alt text](./images/image-10.png)
+
+Before we update the "Global Datasets" lets capture the Customer Database API's API Gateway URL from the Developer Portal. <br>
+
+Click on the Home icon on the top left. <br>
+
+Click on "Manage Catalogs" tile. <br>
+![alt text](./images/image-11.png)
+
+Click on "Sandbox" catalog tile. <br>
+
+Click on "Catalog Settings" tab, and Portal on the left. <br>
+
+![alt text](./images/image-12.png)
+
+Once the Developer Portal is open then click on the Product that the Customer Database API is published. <br>
+
+Select the Customer Database API, and capture the domain as below. <br>
+
+![alt text](./images/image-13.png)
+
+Copy that select section and paste into a Notepad. <br>
+
+Now, lets go back to the "Test APIs" and open the Test you created previously. <br>
+
+
+Click on the "Data Sets" section. <br>
+
+Edit domain from "yourdomain.com" with what you captured in the Developer Portal. <br>
+
+![alt text](./images/image-14.png)
+
+Edit the basePath and set to "customerdb/v1". <br>
+
+![alt text](./images/image-15.png)
+
+
+Hit the \<Save\> button on the top right. <br>
+
+
+
+
+## 5. Set Input Datasets
+
+![alt text](./images/image-19.png)
+
+### 5a. Update X-IBM-Client-Id, and X-IBM-Client-Secret 
+
+In the API Connect Developer Portal lab, you must have created an application and obtained ClientId, and ClientSecret. Lets populate those values as below. <br>
+
+![alt text](./images/image-20.png)
+
+<br><br>
+
+
+## 5. Disable Security
+
+Disable security to the API Gateway URL by adding insecureSkipVerify flag to each operation.<br>
+```
+      insecureSkipVerify: true
+```
+
+![alt text](./images/image-16.png)
+
+
 <br>
-Enter customerdatabasev1_test1 and hit **continue**.<br>
 
-![Alt text](./images/image-7.png)
-Click \<Template from Specifications\> in the bottom middle option.<br>
+## 6. Mockup Customer Record
 
-![alt text](./images/image-7a.png)
+Update POST operation, enter mockup data as below. <br>
 
-Select "Swagger 2.0 YAML", and click on "drag a file here or click to upload", select downloaded yaml file (as below). <br>
+![alt text](./images/image-18.png)
 
-![Alt text](./images/image-19.png)
-Click **Save**. <br>
-
-Click on the dropdown, and select /customerdb/v1/customers/{customerId} operation.<br>
-![alt text](./images/image-19a.png)
-
-Select "Smart Generator" circle as below, and click on the Tick mark on right of the window.<br>
-![Alt text](./images/image-20.png)
+Hit \<Save\> button on the top right. <br>
 
 
-That should generate a POST, GET, and DELETE operations as below.<br>
-![Alt text](./images/image-21.png)
-
-Now, add a variable "customerId" in between POST, and GET as below.<br>
-
-Click on the (i) circle on the GET opeartion, and select "add component before".<br>
-
-![Alt text](./images/image-22.png)
-
-Click on "Set variable" circle.<br>
-
-![Alt text](./images/image-23.png)
-
-Set the variable name as customerId, and value as ${payload.id}. <br>
-
-Confirm changes by clicking the Tick mark on top right of the Variable window.<br>
-
-![Alt text](./images/variable.png)
-
-Modify the DELETE operation. Set Authorization default secret <br>
-![alt text](./images/image-37.png)
-Click Edit of Authorization header field, and enter value "secr3t" as below and click the Correct symbol to save.<br>
-![alt text](./images/image-38.png)
-
-Click \<Save\> button on the top, and then click \<Run Test\>. <br>
-
-![Alt text](./images/image-24.png)
-
-![Alt text](./images/image-25.png)
-
-Take the defaults, and hit \<Run Test\>, and that should generate a report as below.<br>
-
-![Alt text](./images/image-26a.png)
-![alt text](image.png)
-![Alt text](./images/image-26b.png)
 
 
-Review and Close the Report.<br>
+## 7. Replace customerId parm with id
 
-Click on \<Save and Exit\> button on the top.<br>
+The POST operation returns and "id" back so we should change customers.customerId with customers.id in the GET and DELETE operations. <br>
 
-![Alt text](./images/image-27.png)
+![alt text](./images/image-17.png)
 
-![Alt text](./images/image-28.png)
-
-
-NOW CLICK \<Publish\> button as below.<br>
-![Alt text](./images/image-29.png)
-
-Click on the Tests option on the top.<br>
-![Alt text](./images/image-31.png)
-
-Click on the 3 dots on the test CustomerDatabasev1_test1 as below, and click Run. You can hit Run few times.<br>
-![Alt text](./images/image-32.png)
-
-Click on the Dashboard on the top.<br>
-![Alt text](./images/image-34.png)
-
-Here you can see the tests that were ran, and results with Graphs.<br>
-![Alt text](./images/image-33.png)
+Hit \<Save\> button on the top right. <br>
 
 
+## 8. Add body element to DELETE operation
+
+The Customer Database API's DELETE operation is expecting a non null body. Let's append body: with curly open&close curly brackets. <br>
+
+![alt text](./images/image-23.png)
+
+## 8. Update Authorization header element of DELETE operation
+
+```
+Authorization: secr3t
+```
+![alt text](./images/image-24.png)
+
+<br>
+
+
+
+## 8. Run Test
+
+Hit "Run Test" button. <br>
+
+![alt text](./images/image-21.png)
+
+![alt text](./images/image-22.png)
+
+![alt text](./images/image-25.png)
+
+
+## 8. Optional - Running the Test from Command line
+
+in this section we will create a webhook, and apikey to run the test from a command line.
+<br>
+
+Click on your Test Suite. <br>
+
+![alt text](./images/image-26.png)
+
+
+### 8a. Publish the Test
+![alt text](./images/image-30.png)
+
+Click \<Yes\>. <br>
+
+![alt text](./images/image-31.png)
+
+
+
+### 8b. Create webhook
+
+Click on the Settings tab. <br>
+
+![alt text](./images/image-27.png)
+
+Click on "API hooks and keys" and Click on \<Add\> button in the Hooks section. <br>
+![alt text](./images/image-28.png)
+
+Copy and save the URL to Notepad. <br>
+![alt text](./images/image-29.png)
+
+### 8b. Create key
+
+![alt text](./images/image-32.png)
+
+Click \<Add\>. <br>
+
+![alt text](./images/image-33.png)
+
+Capture the Key, Secret into the Notepad.
+
+
+### 8c. Run from the Command line
+
+```
+export KEY=PASTE-THE-KEY
+export SECRET=PASTE-THE-SECRET
+export WEBHOOK=PASTE-THE-WEBHOOK-URL
+curl -k -X POST  -H X-API-Key:$KEY -H X-API-Secret:$SECRET  ${WEBHOOK}/tests/run" -d ' { "options": { "allAssertions": true }  } ' | jq
+```
+
+You should see output like below with 200 status codes. <br>
+
+![alt text](./images/image-34.png)
+
+<br><br><br><br>
+
+
+## 9. Reference
+
+### 9a. Completed Testcase
+
+```
+info:
+    testName: 1-Customer-Database-Rest-Api
+    version: 2
+configs:
+    globalVariables:
+        basePath: customerdb/v1
+        domain: apim-demo-gw-gateway-cp4i-apic.apps.67448d46e8a5a32b1ae1a48a.ocp.techzone.ibm.com/sbodapati-porg/sandbox
+        protocol: https://
+    inputs:
+        - default:
+            X-IBM-Client-Id: a441bbb44dd8687b78cc1be9da33ce0c
+            X-IBM-Client-Secret: d0e6b28b232f705c868f255daf2822a8
+            customerId: ""
+            token: token
+steps:
+    - type: request
+      method: post
+      url: '{{ protocol }}{{ domain }}/{{ basePath }}/customers'
+      var: customers
+      body:
+        address: 175 Marina Drive, Edison, NJ, 08824
+        firstname: Joseph
+        lastname: Jodl
+      mode: json
+      headers:
+        Authorization: Bearer {{ token }}
+        Content-Type: application/json
+        X-IBM-Client-Id: '{{ X-IBM-Client-Id }}'
+        X-IBM-Client-Secret: '{{ X-IBM-Client-Secret }}'
+      insecureSkipVerify: true
+    - type: request
+      method: get
+      url: '{{ protocol }}{{ domain }}/{{ basePath }}/customers/{{ customers.id }}'
+      var: payload
+      mode: json
+      headers:
+        Authorization: Bearer {{ token }}
+        X-IBM-Client-Id: '{{ X-IBM-Client-Id }}'
+        X-IBM-Client-Secret: '{{ X-IBM-Client-Secret }}'
+      insecureSkipVerify: true
+    - type: assert-equals
+      expression: payload_response_statusCode
+      value: "200"
+      stoponfail: "false"
+    - type: assert-exists
+      expression: payload.address
+      stoponfail: "true"
+    - type: assert-is
+      expression: payload.address
+      value: string
+    - type: assert-exists
+      expression: payload.firstname
+      stoponfail: "true"
+    - type: assert-is
+      expression: payload.firstname
+      value: string
+    - type: assert-is
+      expression: payload.id
+      value: number
+    - type: assert-exists
+      expression: payload.lastname
+      stoponfail: "true"
+    - type: assert-is
+      expression: payload.lastname
+      value: string
+    - type: request
+      method: delete
+      url: '{{ protocol }}{{ domain }}/{{ basePath }}/customers/{{ customers.id }}'
+      body: {}
+      mode: json
+      headers:
+        Authorization: secr3t
+        X-IBM-Client-Id: '{{ X-IBM-Client-Id }}'
+        X-IBM-Client-Secret: '{{ X-IBM-Client-Secret }}'
+      insecureSkipVerify: true
+
+```
 
 ### Congratulations !!!
-
