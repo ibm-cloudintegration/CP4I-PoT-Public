@@ -61,16 +61,16 @@ student(n)/xxxxx <br>
 ******* STUDENTS 1 - 10 ******* <br>
 OpenShift Cluster URL:
 <br>
-<href>https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
+[https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com](https://console-openshift-console.apps.67c2115d118370015abaee20.am1.techzone.ibm.com)
 <br>
 CP4I Platform Navigator URL: <br>
-<href>https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com</href>
+[https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.67c2115d118370015abaee20.am1.techzone.ibm.com)
 <br><br>
 
 
 ******* STUDENTS 11 - 20 ******* <br>
 OpenShift Cluster URL:<br>
-<href>https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
+[https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com](https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com)
 <br>
 CP4I Platform Navigator URL: <br>
-<href>https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com</href>
+[https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com)
