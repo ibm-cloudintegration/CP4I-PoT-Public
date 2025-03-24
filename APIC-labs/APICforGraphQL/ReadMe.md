@@ -184,7 +184,7 @@ You will import customers, customers{id} operations into API Connect GraphQL eng
     You should have your api urls saved in your notepad from the beginning when you installed the customer database API.  
 
      ```
-      stepzen import curl "http://student1-customer-dbv3-http-student1.apps.6740c90be65b8f52703314d3.ocp.techzone.ibm.com/customerdb/v3/customers/1" --query-name=getCustomersById
+      stepzen import curl "http://student1-customer-dbv3-http-student1.apps.6740c90be65b8f52703314d3.ocp.techzone.ibm.com/customerdb/v3/customers/1" --query-name=getCustomerById
       Starting... done<br>
       Successfully imported curl data source into your GraphQL schema
     ```
