@@ -329,15 +329,14 @@ Click **Next**
 
 ![alt text][pic44]
 
-8\. The final section is the server details.   We will give it a name **is-snow-designer** and change the Designer flows mode to local.
-
- Go ahead and click **Create**.
+8\. The final section is the server details. We will give it a name **is-snow-designer** and change the Designer flows mode to local.
 
 ![alt text][pic45]
 
-Enable Advanced properties, and navigate to Overrides section as below.<br>
+Enable Advanced properties, and navigate to Overrides section & Flow Types as below.<br>
 ![alt text](pic45a)
 
+ Go ahead and click **Create**.
 
 9\. This will take you back to the Dashboard where you will see your new integration.   It will be showing Pending while it is starting up the pods for it. 
 
