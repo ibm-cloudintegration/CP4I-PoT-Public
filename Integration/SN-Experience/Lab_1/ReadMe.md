@@ -42,11 +42,17 @@ Select the tile for **Create flows for an API**
 
 ![alt text][pic3]
 
-6\. First thing we will do is create the model for this.  We will call the model **ServiceNowRetrieve**.  Also in the upper left, we will change the Name from Untitled to **SNowRetrieveIncidents**.  
+6\. First thing we will do is create the model for this.  We will call the model **SNowIncidents**.  Also in the upper left, we will change the Name from Untitled to **SNowRetrieveIncidents**.  
+
+<!--
+First thing we will do is create the model for this.  We will call the model **ServiceNowRetrieve**.  Also in the upper left, we will change the Name from Untitled to **SNowRetrieveIncidents**. 
+-->
+
 
 Click **Create model**. 
 
 ![alt text][pic8]
+
 
 8\. We will now add the following properties which are all data type String.
 
@@ -83,6 +89,8 @@ Click the **Implement flow**
 This will take us to the App Connect Designer flow. This is where we can insert Smart Connectors to communicate with a variety of external applications as well as implement conditional logic and callable flows. 
 
 ![alt text][pic11]
+
+![alt text](image.png)
 
 12\. After clicking the blue plus icon on our flow designer interface, we will be able to see the variety of Smart Connectors offered by IBM App Connect Designer. 
 * For our lab, we will be using the ServiceNow smart connector, Since there is already a connection define (student) you will use that. 
