@@ -335,6 +335,10 @@ Click **Next**
 
 ![alt text][pic45]
 
+Enable Advanced properties, and navigate to Overrides section as below.<br>
+![alt text](pic45a)
+
+
 9\. This will take you back to the Dashboard where you will see your new integration.   It will be showing Pending while it is starting up the pods for it. 
 
 ![alt text][pic46]
@@ -367,6 +371,7 @@ Select the Get accounts and then select the GET url and paste in a browser windo
 [pic43]: images/43.png
 [pic44]: images/44.png
 [pic45]: images/45.png
+[pic45a]: images/45a.png
 [pic46]: images/46.png
 [pic47]: images/47.png
 [pic48]: images/48.png
