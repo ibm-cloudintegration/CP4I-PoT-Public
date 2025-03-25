@@ -49,7 +49,7 @@ You should be logged on your VDI as *student*.
 	
 	![](./images/image113a.png) 
 	
-	This will create the directory **/home/student/MQonCP4I**.  Change to your home directory and list the contents of the directory to verify that it contains *MQonCP4I*. 
+	This will create the directory **/home/ibmuser/MQonCP4I**.  Change to your home directory and list the contents of the directory to verify that it contains *MQonCP4I*. 
 	
 	```sh
 	cd ~/MQonCP4I

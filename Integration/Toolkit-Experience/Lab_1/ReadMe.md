@@ -75,7 +75,7 @@ Note: the default port for Administration of the server is 7600. Since the “**
 
 6\. On successful start of the local Integration Server you will see a message similar to the following. **\<Before>** dismissing the message, note the location of the console.log file.
 
-**Note** If using the POT VDI defaults then the location will be this /home/student/IBM/ACET12/workspace/TEST_SERVER/console.log
+**Note** If using the POT VDI defaults then the location will be this /home/ibmuser/IBM/ACET12/workspace/TEST_SERVER/console.log
 
 ![alt text][pic6]
 

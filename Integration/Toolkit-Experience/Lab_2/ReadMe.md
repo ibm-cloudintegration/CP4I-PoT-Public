@@ -159,7 +159,7 @@ The URL should look similar to this one which is to the chopper cluster: https:/
 ![alt text][pic19]
 
 8\. Take the agentx.json file we just downloaded and copy to the TEST_SERVER config location. 
-From the home directory /home/student run the following command to move the json file to the location in the server directory in the agentx directory.  
+From the home directory /home/ibmuser run the following command to move the json file to the location in the server directory in the agentx directory.  
 
 ```
 cp Downloads/agentx.json IBM/ACET12/workspace/TEST_SERVER/config/iibswitch/agentx/  
@@ -297,7 +297,7 @@ Click in the upper right cornor on the Stopped switch and it will turn green and
 ![alt text][pic36]
 
 6\. Go back to your on-prem server where you set the trace node to log info.  
-From a terminal window go to /home/student/tmp and run the gedit command which will open the logger file.
+From a terminal window go to /home/ibmuser/tmp and run the gedit command which will open the logger file.
 
 ![alt text][pic37]
 ![alt text][pic38]

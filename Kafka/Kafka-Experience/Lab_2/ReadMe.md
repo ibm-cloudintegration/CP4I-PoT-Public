@@ -195,7 +195,7 @@ We have a Project Interchange File provided that you will configure to use your 
 
 1\. First we will start the ACE toolkit in our VDI.  Double click on the Terminal icon on the desktop to open a terminal window.  This will land you in the home directory.  
 Enter the following command to launch the ACE toolkit kit **ace toolkit**.
-You will be presented with a window to select your workspace.   Enter the workspace name  **/home/student/IBM/ACET12/workspace** and click launch.
+You will be presented with a window to select your workspace.   Enter the workspace name  **/home/ibmuser/IBM/ACET12/workspace** and click launch.
 
 ![alt text][1tk]
 
@@ -441,7 +441,7 @@ Or if you already have a tab open from earlier in the lab you can select that.
 
 ![alt text][bar2a]
 
-4\. Navigate to the folder where the BAR file was created (In the VDI it should be in /home/student/IBM/ACET12/workspace/BARfiles) and select the file and click Open.  
+4\. Navigate to the folder where the BAR file was created (In the VDI it should be in /home/ibmuser/IBM/ACET12/workspace/BARfiles) and select the file and click Open.  
 
 ![alt text][bar2]
 
