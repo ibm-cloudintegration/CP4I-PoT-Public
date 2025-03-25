@@ -288,7 +288,7 @@ Click on *Queues* you will see **APPQ** and **MY.LOG.QUEUE** which were defined 
 
 ### Test the deployment
 
-1. In a terminal window navigate to */home/student/MQonCP4I/streamq/test* directory. You will find three files (and additional files for TLS):
+1. In a terminal window navigate to */home/ibmuser/MQonCP4I/streamq/test* directory. You will find three files (and additional files for TLS):
 
 	* CCDT.JSON
 	* getMessage.sh
@@ -314,7 +314,7 @@ Click on *Queues* you will see **APPQ** and **MY.LOG.QUEUE** which were defined 
 	
 	Click *Save* to save ccdt.json.
 	
-1. Now edit *getMessage.sh* and *sendMessge.sh*. You need to change the same values in each file. In the export statements, change 00 to your student ID. Verify that the paths for *MQCCDTURL* and *MQSSLKEYR* are set to /home/student/…. Click the *Save* button for each file.
+1. Now edit *getMessage.sh* and *sendMessge.sh*. You need to change the same values in each file. In the export statements, change 00 to your student ID. Verify that the paths for *MQCCDTURL* and *MQSSLKEYR* are set to /home/ibmuser/…. Click the *Save* button for each file.
 
 	![](./images/image41.png)
 
@@ -345,7 +345,7 @@ MY.LOG.QUEUE – the queue manager will do that for us.**
 
 	![](./images/image44.png)
 
-1. Open another command window, navigate to */home/student/mqoncp4i-master/MQonCP4I/streamq/test* directory and run the following command:
+1. Open another command window, navigate to */home/ibmuser/mqoncp4i-master/MQonCP4I/streamq/test* directory and run the following command:
 
 	```sh
 	./getMessage.sh

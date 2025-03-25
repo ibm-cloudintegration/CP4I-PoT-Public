@@ -130,7 +130,7 @@ MY.LOG.QUEUE – the queue manager will do that for us.
 	
 1. Close all the applications and terminal windows.
 
-1. In a terminal navigate to /home/student/MQonCP4I/streamq/deploy:
+1. In a terminal navigate to /home/ibmuser/MQonCP4I/streamq/deploy:
 
 	```sh
 	cd ~/MQonCP4I/streamq/deploy

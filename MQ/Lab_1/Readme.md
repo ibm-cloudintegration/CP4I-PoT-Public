@@ -47,7 +47,7 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 1. Navigate to the *nativeHA* directory with the following command:
 
 	```sh
-	cd /home/student/MQonCP4I/nativeha/deploy
+	cd /home/ibmuser/MQonCP4I/nativeha/deploy
 	```
 	
 	![](./images/image1.png)
@@ -314,7 +314,7 @@ The following status fields are used to report Native HA configuration status:
 
 ## Test the deployment
 
-1. Open a new terminal window and navigate to */home/student/MQonCP4I/nativeha/test* directory using the following command:
+1. Open a new terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha/test* directory using the following command:
 
 	```sh
 	cd ~/MQonCP4I/nativeha/test
@@ -365,7 +365,7 @@ The following status fields are used to report Native HA configuration status:
 	```
 	The sample program amqsghac starts running and will wait for messages to arrive on queue **APPQ1**.
 	
-1. Open another terminal window and 	navigate to */home/student/MQonCP4I/nativeha/test* as you did previously. Start the sendMessage shell with the following command:
+1. Open another terminal window and 	navigate to */home/ibmuser/MQonCP4I/nativeha/test* as you did previously. Start the sendMessage shell with the following command:
 
 	```sh
 	./sendMessage.sh
@@ -439,7 +439,7 @@ You have completed this lab nativeHA for MQ on CP4I.
 	
 1. Close all the applications and terminal windows.
 
-1. In a terminal navigate to /home/student/MQonCP4I/deploy:
+1. In a terminal navigate to /home/ibmuser/MQonCP4I/deploy:
 
 	
 	```sh
