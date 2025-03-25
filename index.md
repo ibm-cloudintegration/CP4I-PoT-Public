@@ -56,7 +56,7 @@ Before starting the labs you should review the lab environment and the use of th
 LAB ENVIRONMENT: <br>
 
 User/password: <br>
-student(n)/xxxxx <br>
+student(n)/welcometomarchpot <br>
 
 ******* STUDENTS 1 - 10 ******* <br>
 OpenShift Cluster URL:
@@ -68,6 +68,8 @@ CP4I Platform Navigator URL: <br>
 <br><br>
 
 VDI/DESKTOP URL's<br>
+VDI Password: engageibm<br>
+Linux: ibmuser / engageibm <br>
 student1: http://useast.services.cloud.techzone.ibm.com:44376<br>
 student2: http://useast.services.cloud.techzone.ibm.com:45010<br>
 student3: http://useast.services.cloud.techzone.ibm.com:38155<br>
@@ -89,6 +91,8 @@ CP4I Platform Navigator URL: <br>
 [https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com)
 
 VDI/DESKTOP URL's<br>
+VDI Password: engageibm<br>
+Linux: ibmuser / engageibm <br>
 student11: http://useast.services.cloud.techzone.ibm.com:28839<br>
 student12: http://useast.services.cloud.techzone.ibm.com:46488<br>
 student13: http://useast.services.cloud.techzone.ibm.com:24181<br>
