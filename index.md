@@ -27,7 +27,7 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 - Easily portable to other clouds, since this can run on RedHat OpenShift. This allows you to install and operate the Pak identically across multiple cloud vendors.  
 
 ## Lab section:
-Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br>
+Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br><br>
 **[Review Lab environment.](Setup/VDI-overview/index.md)**
 
 
