@@ -129,7 +129,7 @@ IBM App Connect Enterprise has an extensive administration REST API that enables
 
 ![alt text][pic12]
 
-2\. Open a Firefox browser window and go to the following URL: [https://localhost:7600/apidocs](https://localhost:7600/apidocs)
+2\. Open a Firefox browser window and go to the following URL: [http://localhost:7600/apidocs](http://localhost:7600/apidocs)
 
 ![alt text][pic13]
 
