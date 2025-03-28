@@ -70,16 +70,16 @@ CP4I Platform Navigator URL: <br>
 VDI/DESKTOP URL's<br>
 VDI Password: engageibm<br>
 Linux: ibmuser / engageibm <br>
-student1: 
-student2: 
-student3: 
-student4: 
-student5: 
-student6: 
-student7: 
-student8: 
-student9: 
-student10: 
+student1: http://useast.services.cloud.techzone.ibm.com:44376<br>
+student2: http://useast.services.cloud.techzone.ibm.com:45010<br>
+student3: http://useast.services.cloud.techzone.ibm.com:38155<br>
+student4: http://useast.services.cloud.techzone.ibm.com:22056<br>
+student5: http://useast.services.cloud.techzone.ibm.com:30625<br>
+student6: http://useast.services.cloud.techzone.ibm.com:42999<br>
+student7: http://useast.services.cloud.techzone.ibm.com:38421<br>
+student8: http://useast.services.cloud.techzone.ibm.com:49215<br>
+student9: http://useast.services.cloud.techzone.ibm.com:44015<br>
+student10: http://useast.services.cloud.techzone.ibm.com:31605
 <br>
 
 
@@ -93,14 +93,14 @@ CP4I Platform Navigator URL: <br>
 VDI/DESKTOP URL's<br>
 VDI Password: engageibm<br>
 Linux: ibmuser / engageibm <br>
-student11: 
-student12: 
-student13: 
-student14: 
-student15: 
-student16: 
-student17: 
-student18: 
-student19: 
-student20: 
+student11: http://useast.services.cloud.techzone.ibm.com:28839<br>
+student12: http://useast.services.cloud.techzone.ibm.com:46488<br>
+student13: http://useast.services.cloud.techzone.ibm.com:24181<br>
+student14: http://useast.services.cloud.techzone.ibm.com:46812<br>
+student15: http://useast.services.cloud.techzone.ibm.com:28650<br>
+student16: http://useast.services.cloud.techzone.ibm.com:45333<br>
+student17: http://useast.services.cloud.techzone.ibm.com:27778<br>
+student18: http://useast.services.cloud.techzone.ibm.com:28605<br>
+student19: http://useast.services.cloud.techzone.ibm.com:30078<br>
+student20: http://useast.services.cloud.techzone.ibm.com:21189<br>
 <br>
