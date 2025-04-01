@@ -11,7 +11,7 @@ In this lab, you will consume the flight landing events using Kafka Clients kafk
 Receive flight landing events using open-source kafka-console-consumer.sh
 
 Open a Terminal Window. <br>
-![alt text](./iamges/test0a.png)
+![alt text](./images/test0a.png)
 
 Change Directory to ~/EEM. <br>
 
