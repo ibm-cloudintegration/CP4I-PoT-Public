@@ -109,5 +109,8 @@ When both the Consumers are running, you should see both the Consumers receving 
 
 ![alt text](./images/test3b.png)
 
+Summary: <br>
+You have successfully received Flight landing events from Kafka through the IBM Event Gateway securely using IBM API Connect AsyncAPIs.
+<br>
 
 [Return to main Event Endpoint Management lab page](../index.md#lab-abstracts)
