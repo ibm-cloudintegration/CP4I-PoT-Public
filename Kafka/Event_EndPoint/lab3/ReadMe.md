@@ -39,6 +39,7 @@ Receive flight landing events using open-source kafka-console-consumer.sh
 Use the Java Client application and receive the flight landing events thru the IBM Event Gateway --> Api Connect Async Api --> Event Streams<br>
 
 Open a new Terminal window (keep the kafka_console_flight_landing_consumer.sh running).
+
 <br>
 
 <!--
@@ -60,11 +61,12 @@ Open a new Terminal window (keep the kafka_console_flight_landing_consumer.sh ru
       ![](./images/test2aa.png)
 -->
 
-a) From a command terminal use the following command to go to the directory for the JAVA client.
+a) Change the Directory. <br>
 
-    ```
-    cd ~/EEM/java_flight_landing_project
-    ```
+```
+cd ~/EEM/java_flight_landing_project
+```
+
 <!--
     Then use gedit to edit the config.properties file.  
   ![](./images/test2a.png)
@@ -88,7 +90,7 @@ a) From a command terminal use the following command to go to the directory for 
     ![](./images/test2c.png)
 -->
 
-b) Now run this command to start the Java Consumer.
+b) Now run the following command to start the Java Consumer.
 
 ```
 ./java_flight_landing_consumer.sh
