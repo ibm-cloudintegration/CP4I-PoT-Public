@@ -39,9 +39,7 @@ Change Directory to ~/EEM. <br>
 
 
 # 2. Java Application
-<!--
-Use the Java Client application and receive the flight landing events thru the IBM Event Gateway --> Api Connect Async Api --> Event Streams<br>
--->
+
 Here, you will receive flight landing events using a custom java program. <br>
 
 Open a **NEW** Terminal window (keep the kafka_console_flight_landing_consumer.sh running).
