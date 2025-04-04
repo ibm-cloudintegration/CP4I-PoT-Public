@@ -13,6 +13,8 @@ From the IBM Cloud Pak for Integration Platform Navigator, open IBM Api Manageme
 
     ![](./images/apim1.png)
 
+    Accept the certificate exceptions if needed by clicking on the Advanced Tab and accept the certificate exceptions. <br>
+
 
 ## 1.0 Import AsyncApi definition
 
@@ -55,7 +57,7 @@ From the IBM Cloud Pak for Integration Platform Navigator, open IBM Api Manageme
 
     ![](./images/apim9.png)
 
-## 1.1 Create Product
+## 1.1 Create Product and add FLIGHT.LANDINGS AsyncApi
 
 1. Select **Add** and **Product**
 
@@ -125,10 +127,35 @@ Now, publish the AsyncApi's product to the IBM Api Connect Developer Portal, and
 
     ![](./images/dev1f.png)
 
-## 1.4 Subscribe to AsyncAPI
+## 1.4 Subscribing to AsyncAPI
 
-1. Select Flight.Landing asyncapis Product.
-We will select the default plan for this lab. 
+In this section, you will subscribe to FLIGHT.LANDIGS API. <br>
+a) First you will open config.properties. <br>
+b) Second, you will create an application. <br>
+c) Third, when you create the application you will get key, and secret. You will copy and paste them into config.properties APP_CLIENT_ID, and APP_CLIENT_SECRET fields.
+
+1. Open config.properties file with Text Editor as below.
+
+   Click on Applications (top left of the desktop) --> Files and locate EEM folder. <br>
+    
+   ![](./images/dev1ia.png)
+
+   ![](./images/dev1ib.png)
+
+   Double click on EEM (Event Endpoint Manager) folder. <br>
+   
+   Open config.properties file using "Open With Text Editor".
+
+   ![](./images/dev1ic.png)
+
+   ![](./images/dev1id.png)
+
+   Now populate each field. <br>
+   STUDENT_NUM=1,2,...20 <br>
+
+1. Switch to API Connect Developer Portal. 
+   Select Flight.Landing asyncapis Product. <br>
+   Select the default plan for this lab. <br>
 
     ![](./images/dev1g.png)
 
@@ -140,11 +167,15 @@ We will select the default plan for this lab.
     **EX:** Flight landing
      ![](./images/dev1i.png)
 
-1. You will now have the credentials for your application.  Create a section under you Flight-Landing for Dev-Portal. Then close window.
+
+1. You will now have the credentials for your application. Let's copy and paste them into ~/EEM/config.properties file.
 
     **IMPORTANT**<BR> 
-    Copy and Save the Key and the Secret into the EEM-info file. These will be used by the Async Client java application.
+    Copy and Paste the Key to APP_CLIENT_ID in config.properties file.
+    Copy and Paste the Secret APP_CLIENT_SECRET in config.properties file.
      ![](./images/dev1j.png)
+
+     
 1. Click **Next**
      ![](./images/dev1k.png)
 
@@ -156,9 +187,14 @@ We will select the default plan for this lab.
 
 1. From here go to the Subscribe(operation) and scroll down to the *Properties* section.
 
-    Save the **client.id** into your EEM-info as shown.
-     ![](./images/dev1n.png)
+    Copy and Paste the **bootstrap.servers** to EGW_BOOTSTRAP field in config.properties file.. <br> Copy and Paste the **client.id** to API_CLIENT_ID field in config.properties file. <br>
+    
+    ![](./images/dev1n.png)
 
+1. Save config.properties file. 
+
+**Summary:** <br>
+You have created an AsyncApi, added it to a API Product, Published, Subscribed, and finally captured APP_CLIENT_ID, APP_CLIENT_SECRET, EGW_BOOTSTRAP, and API_CLIENT_ID and saved them to config.properties file. <br>
 <b> CONGRAGULATIONS !!! 
 
 [Return to main Event Endpoint Management lab page](../index.md#lab-abstracts)
