@@ -1,6 +1,8 @@
-# Lab 1 - NativeHA: Deploying a Cloud Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
+# Lab 1b - NativeHA Cross Region Replication: Deploying a Cloud Native HA persistent IBM MQ Queue Manager between region clusters
 
 [Return to MQ lab page](../index.md)
+
+![](./images/nativeha-crr-1.png)
 
 These instructions will document the process to deploy a NativeHA highly available (HA) persistent IBM MQ on the Cloud Pak for Integration (CP4I) 2023.4 
 
