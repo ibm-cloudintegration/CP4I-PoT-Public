@@ -1,4 +1,4 @@
-## Lab 1A - NativeHA: Deploying a Cloud Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
+## Lab 1A - NativeHA: Deploying a container Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
 
 [Return to MQ lab page](../index.md)
 
@@ -13,13 +13,7 @@ A Native HA configuration consists of three Kubernetes pods, each with an instan
 A Kubernetes Service is used to route TCP/IP client connections to the current active instance, which is identified as being the only pod which is ready for network traffic. This happens without the need for the client application to be aware of the different instances.
 
 Three pods are used to greatly reduce the possibility of a split-brain situation arising. In a two-pod high availability system split-brain could occur when the connectivity between the two pods breaks. With no connectivity, both pods could run the queue manager at the same time, accumulating different data. When connection is restored, there would be two different versions of the data (a 'split-brain'), and manual intervention is required to decide which data set to keep, and which to discard.
-Native HA uses a three pod system with quorum to avoid the split-brain situation. Pods that can communicate with at least one of the other pods form a quorum. A queue manager can only become the active instance on a pod that has quorum. The queue manager cannot become active on a pod that is not connected to at least one other pod, so there can never be two active instances at the same time:
-
-* If a single pod fails, the queue manager on one of the other two pods can take over. If two pods fail, the queue manager cannot become the active instance on the remaining pod because the pod does not have quorum (the remaining pod cannot tell whether the other two pods have failed, or they are still running and it has lost connectivity).
-    
-* If a single pod loses connectivity, the queue manager cannot become active on this pod because the pod does not have quorum. The queue manager on one of the remaining two pods can take over, which do have quorum. If all pods lose connectivity, the queue manager is unable to become active on any of the pods, because none of the pods have quorum.
-
-If an active pod fails, and subsequently recovers, it can rejoin the group in a replica role.
+Native HA uses a three pod system with quorum to avoid the split-brain situation. 
 
 The following figure shows a typical deployment with three instances of a queue manager deployed in three containers.
 

@@ -1,5 +1,7 @@
 # Lab 1b - NativeHA Cross Region Replication: Deploying a Cloud Native HA persistent IBM MQ Queue Manager between region clusters
 
+NativeHA: Deploying a container Native HA persistent IBM MQ Queue Manager on the Cloud Pak for Integration
+
 [Return to MQ lab page](../index.md)
 
 ![](./images/nativeha-crr-1.png)
@@ -46,12 +48,15 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 ## Deploy the MQ Queue Manager with associated resources
 
-1. Navigate to the *nativeHA* directory with the following command:
+1. Navigate to the *nativeha-crr* deploy directory with the following command and do the ls list command:
 
 	```sh
-	cd /home/ibmuser/MQonCP4I/nativeha/deploy
+	cd /home/ibmuser/MQonCP4I/nativeha-crr/deploy
+
+	ls -ls 1-*
 	```
 	
+1. Now you will 
 	![](./images/image1.png)
 	
 
