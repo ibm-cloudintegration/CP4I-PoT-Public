@@ -34,17 +34,19 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 
 ## Deploy the MQ Queue Manager with associated resources
 
-1. Navigate to the *nativeha-crr* directory with the following command:
+1. Navigate to the *nativeha-crr* directory with the following command to get to the correct directory and enter the ls -l command:
 
 	```sh
 	cd /home/ibmuser/MQonCP4I/nativeha-crr/deploy
+
+	ls -l 1-*
 	```
 	
-	![](./images/image1.png)
+
 	
 
-1. Use gedit to open *nativeha.yaml_template*.  
-
+1. You will see the 1-live
+	![](./images/image1.png)
 	There is nothing to change here, but it is necessary to review the how the queue manager is created by the yaml code. The first Kubernetes API is a *ConfigMap* named (QMGR Name)-mqsc
 	
 	**(ex: mq01ha-mqsc).** 
@@ -243,20 +245,6 @@ The following status fields are used to report Native HA configuration status:
 	![](./images/image60a.png)
 	
 	In a replica pod the queue manager shows *Replica*.
-	
-	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
-
-	* An active instance of the queue manager named **mq05ha** would report the following status:
-
-			QMNAME(mq05ha)                 STATUS(Running)
-
-	* A replica instance of the queue manager would report the following status:
-
-			QMNAME(mq05ha)                 STATUS(Replica)
-
-	* An inactive instance would report the following status:
-
-			QMNAME(mq05ha)                 STATUS(Ended Immediately)
 
 1. To determine Native HA operational status of the instance in the specified pod:
 
@@ -265,57 +253,6 @@ The following status fields are used to report Native HA configuration status:
 	```
 	
 	![](./images/image61a.png)
-	
-	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
-	
-	* The active instance of the queue manager named **mq05ha** might report the following status:
-
-			QMNAME(mq05ha)               ROLE(Active) INSTANCE(inst1) INSYNC(Yes) QUORUM(3/3)
-
-	* A replica instance of the queue manager might report the following status:
-
-			QMNAME(mq05ha)               ROLE(Replica) INSTANCE(inst2) INSYNC(Yes) QUORUM(2/3)
-
-	* An inactive instance of the queue manager might report the following status:
-
-			QMNAME(mq05ha)               ROLE(Unknown) INSTANCE(inst3) INSYNC(no) QUORUM(0/3)
-
-1. To determine the Native HA operational status of all the instances in the Native HA configuration:
-
-	```sh
-	oc rsh student1-mq01ha-ibm-mq-0 dspmq -o nativeha -x -m mq01ha
-	```
-	
-	![](./images/image62a.png)
-	
-	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
-	
-	* If you issue this command on the node running the active instance of queue manager **mq05ha**, you might receive the following status:
-
-			QMNAME(mq05ha)			ROLE(Active) INSTANCE(inst1) INSYNC(Yes) QUORUM(3/3) 
-				INSTANCE(mq05ha-ibm-mq-0) ROLE(Active)  REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
-				INSTANCE(mq05ha-ibm-mq-1) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
-				INSTANCE(mq05ha-ibm-mq-2) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44)
-
-	* If you issue this command on a node running a replica instance of queue manager **mq05ha**, you might receive the following status, which indicates that one of the replicas is lagging behind:
-
-			QMNAME(mq05ha)			ROLE(Replica) INSTANCE(inst2) INSYNC(Yes) QUORUM(2/3)
-				INSTANCE(mq05ha-ibm-mq-2) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
-				INSTANCE(mq05ha-ibm-mq-0) ROLE(Active)  REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
-				INSTANCE(mq05ha-ibm-mq-1) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Yes) INSYNC(No)  					BACKLOG(435) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44)
-
-	* If you issue this command on a node running an inactive instance of queue manager **mq05ha**, you might receive the following status:
-
-			QMNAME(mq05ha)			ROLE(Unknown) INSTANCE(inst3) INSYNC(no) QUORUM(0/3)
-			 	INSTANCE(mq05ha-ibm-mq-0) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Unknown) 							INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME() 
-				INSTANCE(mq05ha-ibm-mq-1) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Unknown) 							INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME() 
-			 	INSTANCE(mq05ha-ibm-mq-2) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(No) 								INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME()
-
-	* If you issue the command when the instances are still negotiating which is active and which are replicas, you would receive the following status:
-
-			QMNAME(mq05ha)              STATUS(Negotiating)
-
-1. If necessary, use these commands while testing the deployment.
 
 ## Test the deployment
 
@@ -463,3 +400,70 @@ You have completed this lab nativeHA for MQ on CP4I.
 [Continue to Lab 2](../Lab_2a/Readme.md)
 
 [Return to MQ lab page](../index.md)
+
+## Appendix A
+
+	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
+
+	* An active instance of the queue manager named **mq05ha** would report the following status:
+
+			QMNAME(mq05ha)                 STATUS(Running)
+
+	* A replica instance of the queue manager would report the following status:
+
+			QMNAME(mq05ha)                 STATUS(Replica)
+
+	* An inactive instance would report the following status:
+
+			QMNAME(mq05ha)                 STATUS(Ended Immediately)
+	
+	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
+	
+	* The active instance of the queue manager named **mq05ha** might report the following status:
+
+			QMNAME(mq05ha)               ROLE(Active) INSTANCE(inst1) INSYNC(Yes) QUORUM(3/3)
+
+	* A replica instance of the queue manager might report the following status:
+
+			QMNAME(mq05ha)               ROLE(Replica) INSTANCE(inst2) INSYNC(Yes) QUORUM(2/3)
+
+	* An inactive instance of the queue manager might report the following status:
+
+			QMNAME(mq05ha)               ROLE(Unknown) INSTANCE(inst3) INSYNC(no) QUORUM(0/3)
+
+1. To determine the Native HA operational status of all the instances in the Native HA configuration:
+
+	```sh
+	oc rsh student1-mq01ha-ibm-mq-0 dspmq -o nativeha -x -m mq01ha
+	```
+	
+	![](./images/image62a.png)
+	
+	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
+	
+	* If you issue this command on the node running the active instance of queue manager **mq05ha**, you might receive the following status:
+
+			QMNAME(mq05ha)			ROLE(Active) INSTANCE(inst1) INSYNC(Yes) QUORUM(3/3) 
+				INSTANCE(mq05ha-ibm-mq-0) ROLE(Active)  REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
+				INSTANCE(mq05ha-ibm-mq-1) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
+				INSTANCE(mq05ha-ibm-mq-2) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44)
+
+	* If you issue this command on a node running a replica instance of queue manager **mq05ha**, you might receive the following status, which indicates that one of the replicas is lagging behind:
+
+			QMNAME(mq05ha)			ROLE(Replica) INSTANCE(inst2) INSYNC(Yes) QUORUM(2/3)
+				INSTANCE(mq05ha-ibm-mq-2) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
+				INSTANCE(mq05ha-ibm-mq-0) ROLE(Active)  REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Yes) INSYNC(Yes) 					BACKLOG(0) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44) 
+				INSTANCE(mq05ha-ibm-mq-1) ROLE(Replica) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Yes) INSYNC(No)  					BACKLOG(435) CONNINST(Yes) ALTDATE(2021-01-12) ALTTIME(12.03.44)
+
+	* If you issue this command on a node running an inactive instance of queue manager **mq05ha**, you might receive the following status:
+
+			QMNAME(mq05ha)			ROLE(Unknown) INSTANCE(inst3) INSYNC(no) QUORUM(0/3)
+			 	INSTANCE(mq05ha-ibm-mq-0) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-0) 					CONNACTV(Unknown) 							INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME() 
+				INSTANCE(mq05ha-ibm-mq-1) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-1) 					CONNACTV(Unknown) 							INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME() 
+			 	INSTANCE(mq05ha-ibm-mq-2) ROLE(Unknown) REPLADDR(mq05ha-ibm-mq-2) 					CONNACTV(No) 								INSYNC(Unknown) BACKLOG(Unknown) CONNINST(No) ALTDATE() ALTTIME()
+
+	* If you issue the command when the instances are still negotiating which is active and which are replicas, you would receive the following status:
+
+			QMNAME(mq05ha)              STATUS(Negotiating)
+
+1. If necessary, use these commands while testing the deployment.
