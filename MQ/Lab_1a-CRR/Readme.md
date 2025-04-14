@@ -15,10 +15,6 @@ A Kubernetes Service is used to route TCP/IP client connections to the current a
 Three pods are used to greatly reduce the possibility of a split-brain situation arising. In a two-pod high availability system split-brain could occur when the connectivity between the two pods breaks. With no connectivity, both pods could run the queue manager at the same time, accumulating different data. When connection is restored, there would be two different versions of the data (a 'split-brain'), and manual intervention is required to decide which data set to keep, and which to discard.
 Native HA uses a three pod system with quorum to avoid the split-brain situation. 
 
-The following figure shows a typical deployment with three instances of a queue manager deployed in three containers.
-
-![](./images/image00.png)
-
 ## Pre-reqs
 
 You should have already downloaded the artifacts for this lab in the lab Environment Setup from [GitHub MQonCP4I](https://github.com/ibm-cloudintegration/mqoncp4i-2025). 
