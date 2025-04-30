@@ -26,6 +26,36 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 - Unification of integration broad ranging integration technologies – e.g. iPaaS, API management, messaging, events
 - Easily portable to other clouds, since this can run on RedHat OpenShift. This allows you to install and operate the Pak identically across multiple cloud vendors.  
 
+# Student instructions                                                                                                                                        #
+  1. Please make sure you are assigned a student number and please make sure you only use your assigned number for labs or logging into environments
+  2. From the below environments list use the one appropriate for your student number
+# STUDENT1 through STUDENT10 use cluster 1, cluster 1 urls and credentials below
+  OCP URL:
+       https://console-openshift-console.apps.680805c90b3f018ca424c53b.am1.techzone.ibm.com
+ 
+    Select EnterpriseLDAP login option
+       username: student[n] - where n is the student ID, make sure to not include the '[]' parentheses
+       Password: welcometoaugustpot
+  CP4I Platform UI URL: 
+       https://cp4i-navigator-pn-cp4i.apps.680805c90b3f018ca424c53b.am1.techzone.ibm.com
+       username: student[n] - where n is the student ID, make sure to not include the '[]' parentheses
+       Password: welcometoaugustpot
+
+# STUDENT11 through STUDENT20 use cluster 2, cluster 2 urls and credentials below
+  OCP URL:
+       https://console-openshift-console.apps.6808d9f9851476ef890dcaba.am1.techzone.ibm.com
+       
+       Select EnterpriseLDAP login option
+       username: student[n] - where n is the student ID, make sure to not include the '[]' parentheses
+       Password: welcometoaugustpot
+  CP4I Platform UI URL: 
+       https://cp4i-navigator-pn-cp4i.apps.6808d9f9851476ef890dcaba.am1.techzone.ibm.com
+       username: student[n] - where n is the student ID, make sure to not include the '[]' parentheses
+       Password: welcometoaugustpot
+
+
+
+
 ## Lab section:
 Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br><br>
 **[Review Lab environment.](Setup/VDI-overview/index.md)**
