@@ -23,12 +23,12 @@ If you are doing this lab out of order return to [Environment Setup](../envsetup
 
 ### Important points to note
 
-The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo. 
+The lab guide assumes you are using the RHEL desktop VM from the IBM TechZone.
 
 **Note**: The screen shots were taken on a test cluster and many will not match what you see when running the lab. Particularly URL values will be different depending on the cluster where CP4I is running. Projects (Namespaces) may also vary. It is important to follow the directions, not the pictures.
 
 
-## Deploy the MQ Queue Manager with associated resources
+## Deploy the MQ nativeHA Queue Manager with associated resources
 
 1. Navigate to the *nativeha-crr* directory with the following command to get to the correct directory and enter the ls -l command:
 
@@ -39,11 +39,9 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 	```
 	
 
-	
-
 1. You will see the 1-live
 	![](./images/image1.png)
-	There is nothing to change here, but it is necessary to review the how the queue manager is created by the yaml code. The first Kubernetes API is a *ConfigMap* named (QMGR Name)-mqsc
+	There is nothing to change here since the **MQ_Setup.sh** built this for you,  but it is necessary to review how the queue manager is created by the yaml code. The first Kubernetes API is a *ConfigMap* named (QMGR Name)-mqsc
 	
 	**(ex: mq01ha-mqsc).** 
 	
@@ -372,26 +370,6 @@ The following status fields are used to report Native HA configuration status:
 
 You have completed this lab nativeHA for MQ on CP4I.
 
-
-## Cleanup
-	
-1. Close all the applications and terminal windows.
-
-1. In a terminal navigate to /home/ibmuser/MQonCP4I/deploy:
-
-	
-	```sh
-	cd ~/MQonCP4I/nativeha/deploy
-	```
-	
-	 Run the cleanup.sh script nww to delete the nativeHA queue manager.
-	 You will need to pass the 2 args to this script, your student number and your namespace.
-	
-	```sh
-	./cleanup.sh
-	```
-
-	![](./images/image52.png)
 		
 [Continue to Lab 2](../Lab_2a/Readme.md)
 
