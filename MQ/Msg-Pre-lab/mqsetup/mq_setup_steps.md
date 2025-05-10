@@ -51,15 +51,32 @@ You should be logged on your VDI as *ibmuser*.
 	cd ~/MQonCP4I
 	ls -l 
 	```
-1. Now first we will need to change the mode to executable for all the scripts.   From the MQonCP4I directory run the following command.
+1. Now first we will need to update the setup.properties file with cluster info so that the scripts will be able to login to the correct clusters. 
+Enter the following command to edit file.
+
+	```
+	gedit setup.properties
+	```
+
+	![](./images/setup-mq114c.png)
+
+	1. Update *OCP Cluster 1* with the primary cluster URL.  
+	
+		If you are going to do the MQ NativeHA CRR labs you will have a second cluster so update the *OCP Cluster 2* with that cluster URL.     
+
+	1. 	Update the OCP CLUSTER USER and PASSWORD with the ones provide to you.  This will be the same for both clusters. 
+
+	1. Select **Save**   
+
+1. Now we will need to change the mode to executable for all the scripts.  From the MQonCP4I directory run the following command.
 
 	```
 	find . -type f -iname "*.sh" -exec chmod +x {} \;
 	```
 
-	1. Now we will run the script that will create all the install scripts for your userid. ```./MQ_setup.sh```  
+1. Now we will run the script that will create all the install scripts for your userid. ```./MQ_setup.sh```  
 
-	1. 	Now run the MQ_setup.sh You will use your student id that was given to you from the instructor.
+	1. 	When you run the MQ_setup.sh You will use your student id that was given to you from the instructor.
 
 		**Note:** In this example we are user student1 so would use that as the namespace and 01 as the student id.
 	1. If will ask if this is correct.  enter **Y**
