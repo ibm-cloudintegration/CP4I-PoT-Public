@@ -253,7 +253,7 @@ The following status fields are used to report Native HA configuration status:
 1. Open a new terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha/test* directory using the following command:
 
 	```sh
-	cd ~/MQonCP4I/nativeha/test
+	cd ~/MQonCP4I/nativeha-crr/test
 	```
 	
 	Open *getMessage.sh* in gedit:
@@ -268,7 +268,7 @@ The following status fields are used to report Native HA configuration status:
 	
 1. Change *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
 
-	Here is an example for student1
+	Here is an example for student2
 
 	![](./images/image23a.png)	
 1. Still in gedit, open *sendMessage.sh*, make the same changes *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
@@ -301,28 +301,25 @@ The following status fields are used to report Native HA configuration status:
 	```
 	The sample program amqsghac starts running and will wait for messages to arrive on queue **APPQ1**.
 	
-1. Open another terminal window and 	navigate to */home/ibmuser/MQonCP4I/nativeha/test* as you did previously. Start the sendMessage shell with the following command:
+1. Open another terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha-crr/test* as you did previously. Start the sendMessage shell with the following command:
 
 	```sh
 	./sendMessage.sh
 	```
-	
-	![](./images/image25.png)	
+
 1. The sample program amqsphac will connect to MQ and start sending messages incessantly.	
 
-1. Return to the window where *getMessage.sh* is running. You should get a list of all the messages that have been previously sent before running the command and the ones that are being sent after.
-   
-   ![](./images/image27.png)
+	You will see in the window where *getMessage.sh* is running consuming the messages being sent.
 
 1. Open a new terminal window. To see how the pods work together in action, run the following command to view the current pods:
 
 	```sh
-	oc get pod | grep mq01ha
+	oc get pod | grep mq02ha
 	``` 
 
-	**NOTE:** Make sure you change the number from 01 to what ever student # you are using.
+	**NOTE:** Make sure you change the number from 02 to what ever student # you are using.
 
-	![](./images/image28a.png) 
+	![](./images/image25.png)	
 	
 1. Delete the running pod by issuing the command: 
 
@@ -340,7 +337,7 @@ The following status fields are used to report Native HA configuration status:
 	oc get pods | grep mq01ha
 	```
 	
-	You will see that pod **student1-mq01ha-ibm-mq-1** is now the active pod and the other two are in standby. This is indicated by the *Ready* column which shows 1 of 1 containers is running. The other pods have 0 of 1 containers running.
+	You will see that pod **student2-mq02ha-ibm-mq-2** is now the active pod and the other two are in standby. This is indicated by the *Ready* column which shows 1 of 1 containers is running. The other pods have 0 of 1 containers running.
 	
 	![](./images/image30a.png)
 
@@ -358,7 +355,7 @@ The following status fields are used to report Native HA configuration status:
 
 	![](./images/image32b.png)
 
-1. Return to the browser tab where MQ Console is running. Refresh the page and click *Manage*. Verify that queue **APPQ** still has the number of messages you put to the queue earlier. 
+1. Return to the browser tab where MQ Console is running. Refresh the page and click *Manage*. Verify that queue **APPQ1** still has the number of messages you put to the queue earlier. 
 
 	![](./images/image56.png)
 	
