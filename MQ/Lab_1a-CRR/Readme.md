@@ -90,31 +90,35 @@ Here we are using namespace student1
 
 	![](./images/image118.png)
 	
-1. Run the ha-install.sh script with the following command:
+1. Now we will go to the deployment for nativeha-crr directory.   Will see all the scripts that were created earlier when you ran the **MQ_setup.sh**
+
+	We will in this lab only be focused on the **1-live..** script. 
+
+	Change to the correct directory and run the ./1-live-deploy.sh script to create your HA Qmgr.
 
 	```sh
-	./ha-install.sh
+	cd ~/MQonCP4I/nativeha-crr/deploy
+	```
+	```sh
+	./1-live-deploy.sh 
 	```
 	
 	![](./images/nativeha-2.png) 
 	
 	The response is that the configmap, secret, and queue manager were successfully created.  
 	
-1. If you receive an unauthorized message, your session may have timed out. You will need to sign-on again as you did in the *Environment Setup*. 
+ 	**NOTE:** If you receive an unauthorized message, your session may have timed out. You will need to sign-on again with the OCP token. 
 
-![](./images/nativeha-3.png) 
+1. Now we will login to the OCP console using are student account.  In the screen shots we are using *student1* .  Make sure you use your assigned student id. Also make sure to use Enterprise LDAP when logging in. 
 ![](./images/nativeha-4.png) 
 ![](./images/nativeha-5.png) 
-![](./images/nativeha-6.png) 
-![](./images/nativeha-7.png) 
 
+1. Once logged in make sure you are in your namespace/project.   Then on the left hand side select **Workloads** and select **Pods** 
+
+	You should see your 3 pods running for your QMGr.   Notice that one of them is showing ready state of 1/1.   That is your active running QMgr and the others are standbys. 
 	
-	Make sure you are in your assigned project.  For example if you are student1 enter student1
-	
-	```sh
-	oc project student1
-	```
-	
+![](./images/nativeha-6.png) 
+
 ## Explore the queue manager 
 
 ### MQ Console
