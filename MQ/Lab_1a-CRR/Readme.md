@@ -35,7 +35,7 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM TechZone.
 	```sh
 	cd /home/ibmuser/MQonCP4I/nativeha-crr/deploy
 
-	ls -l 1-*
+	ls -l
 	```
 	
 
@@ -59,7 +59,7 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM TechZone.
 	
 	There is nothing to change so just close the yaml file. 
 	
-1. Looking again at *ha-install.sh*, the last statement copies the yaml template to nativeha.yaml and applies that it to create the queue manager.
+1. Looking again at *1-live-deploy.sh *, you will see the 1-live-template.yaml which is used to create the 1-live-active.yaml and that is then applied to create the queue manager.
 
 	![](./images/image10a.png)
 	
@@ -377,6 +377,7 @@ You have completed this lab nativeHA for MQ on CP4I.
 [Return to MQ lab page](../index.md)
 
 ## Appendix A
+### This covers varies commands to review. 
 
 	We will not test every possibility, but the following are possible displays to expect. Review the possibilities.
 
