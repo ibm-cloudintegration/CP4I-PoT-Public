@@ -74,22 +74,49 @@ The lab guide assumes you are using the RHEL desktop VM from the IBM Asset Repo.
 	We will now continue to enable CRR on both QMgrs.  
 	
 ## Enable the Active MQ Queue Manager and the Recovery MQ Queue Manager. 
- 1. Now from the deploy directory run the following command.  You will see that it will create your **Recovery QMgr on Cluster 2**.  
+This section we will now enable the CRR between the two nativeHA clusters.  This will get the hacrr route from the clusters and patch that to the QMgr. 
+
+ 1. Now from the deploy directory run the following command.  It will enable CRR on your live cluster. 
 
 	Then do an ls -l command and you will see that the script created the yaml file.  
 
 	```sh
-	./3-recovery-deploy.sh
+	./3-live-enable-crr.sh
 
 	ls -ls
 	```
 
 	![](./images/image2-crr.png)
 
+1. Now from the deploy directory run the following command.  It will enable CRR on your recovery cluster. 
+
+	Then do an ls -l command and you will see that the script created the yaml file.  
+
+	```sh
+	./4-recovery-enable-crr.sh
+
+	ls -ls
+	```
+
+	![](./images/image2-crr.png)
+
+1. Now sign in or go to tabs where you are logged into the OCP clusters 1 and 2.   We will run the following command to make sure the QMgr's are connected.   
+
+	```sh
+	dspmq -o nativeha -g
+	```
+	![](./images/image2-crr.png)
+
 ## Switch MQ Queue Manager active status between both Clusters.
-test
+Now we will test a control failover from Live cluster to Recovery cluster.  
+
+	The scripts were built to take care of signing into both clusters for you.   Run the following command and you will see that each cluster will be patched to the oppostied state. 
 	
-	
+		```sh
+	./5-switch-roles.sh
+	```
+	![](./images/image2-crr.png)
+
 ## Viewing the status of Native HA queue managers 
 
 You can view the status of the Native HA instances by running the dspmq command inside one of the running Pods.
