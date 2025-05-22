@@ -78,6 +78,8 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 
  1. Now from the deploy directory run the following command.  It will enable CRR on your live cluster. 
 
+	This script will log in to the recovery cluster and get the **Host Name**.  This will be used to then patch the yaml for your active QMgr on the Live cluster.
+
 	Then do an ls -l command and you will see that the script created the yaml file.  
 
 	```sh
@@ -86,9 +88,11 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 	ls -ls
 	```
 
-	![](./images/image2-crr.png)
+	![](./images/image5-crr.png)
 
-1. Now from the deploy directory run the following command.  It will enable CRR on your recovery cluster. 
+1. Now from the deploy directory run the following command.  It will enable CRR on your recovery cluster.
+
+	This script will log in to the Live cluster and get the **Host Name**.  This will be used to then patch the yaml for your recovery QMgr on the Recovery cluster.
 
 	Then do an ls -l command and you will see that the script created the yaml file.  
 
@@ -98,29 +102,41 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 	ls -ls
 	```
 
-	![](./images/image2-crr.png)
+	![](./images/image6-crr.png)
 
 1. Now sign in or go to tabs where you are logged into the OCP clusters 1 and 2.   We will run the following command to make sure the QMgr's are connected.   
 
 	```sh
 	dspmq -o nativeha -g
 	```
-	![](./images/image2-crr.png)
+
+1.	We will first check the Cluster 1 which should be your Active (Live) Qmgr.
+
+	![](./images/image7-crr.png)
+
+1.	Now we will check Cluster 2 which should be your Recovery Group Qmgr.
+
+	![](./images/image8-crr.png)
+
 
 ## Switch MQ Queue Manager active status between both Clusters.
-Now we will test a control failover from Live cluster to Recovery cluster.  
+Now we will test a control failover from Live cluster to Recovery cluster. 
 
-	The scripts were built to take care of signing into both clusters for you.   Run the following command and you will see that each cluster will be patched to the oppostied state. 
+1. The scripts were built to take care of signing into both clusters for you.   Run the following command and you will see that each cluster will be patched to the opposite state. 
 	
-		```sh
+	```sh
 	./5-switch-roles.sh
 	```
-	![](./images/image2-crr.png)
+	![](./images/image9-crr.png)
+
 
 ## Viewing the status of Native HA queue managers 
 
 You can view the status of the Native HA instances by running the dspmq command inside one of the running Pods.
 
+1. Now once the pods have restarted we will login to the OCP console for each cluster and see that the state of the QMgrs have changed. 
+
+	![](./images/image10-crr.png)
 
 ## Congratulations
 
