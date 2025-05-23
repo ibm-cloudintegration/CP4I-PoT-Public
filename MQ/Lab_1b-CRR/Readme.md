@@ -122,27 +122,48 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 ## Switch MQ Queue Manager active status between both Clusters.
 Now we will test a control failover from Live cluster to Recovery cluster. 
 
-1. The scripts were built to take care of signing into both clusters for you.   Run the following command and you will see that each cluster will be patched to the opposite state. 
+1. First we will open 2 new terminal windows and start the *sendMessage* script and the *getMessage* script.   These are setup to generate the CCDT table using both clusters. 
+
+	
+	```sh
+	cd /home/ibmuser/MQonCP4I/nativeha-crr/test
+	./sendMessage-CRR.sh 
+
+	cd /home/ibmuser/MQonCP4I/nativeha-crr/test
+	./getMessage-CRR.sh 
+	```
+	![](./images/image11-crr.png)
+
+1. This script was built to take care of signing into both clusters for you.  Run the following command and you will see that each cluster will be patched to the opposite state.
+
+	When the QMgr is patched the pods will be restarted and you will see the getting and sending app disconnect and reconnect to the other cluster.
 	
 	```sh
 	./5-switch-roles.sh
 	```
-	![](./images/image9-crr.png)
+	![](./images/image12-crr.png)
 
 
 ## Viewing the status of Native HA queue managers 
 
-You can view the status of the Native HA instances by running the dspmq command inside one of the running Pods.
+You can view the status of the Native HA instances by running the dspmq command inside the active running Pod on each cluster.
 
-1. Now once the pods have restarted we will login to the OCP console for each cluster and see that the state of the QMgrs have changed. 
 
-	![](./images/image10-crr.png)
+1. Login to the OCP console for each cluster and see that the state of the QMgrs have changed. 
+
+	This is Cluster 1 which was switched to **Recovery** so it now shows as **Recovery group leader**
+
+	![](./images/image13-crr.png)
+
+
+1. This is Cluster 2 which was switched to **Live** so it now shows as **Running** 
+
+	![](./images/image14-crr.png)
 
 ## Congratulations
 
 You have completed this lab nativeHA for MQ on CP4I.
 
-	![](./images/image52.png)
 		
 [Continue to Lab 2](../Lab_2a/Readme.md)
 
