@@ -30,6 +30,16 @@ We will cover all the various components that are part of Cloud Pak for Integrat
 Before starting the labs you should review the lab environment and the use of the VDI desktop you will be using along with the OCP cluster to complete the labs.<br><br>
 **[Review Lab environment.](Setup/VDI-overview/index.md)**
 
+****** <br>
+OpenShift Cluster URL 1:
+<br>
+[https://console-openshift-console.apps.6810c0b40acb90ebd1e57b48.am1.techzone.ibm.com/](https://console-openshift-console.apps.6810c0b40acb90ebd1e57b48.am1.techzone.ibm.com/)
+<br>
+
+OpenShift Cluster URL 2 :
+<br>
+[https://console-openshift-console.apps.6810df9bfee848c5908c2e63.am1.techzone.ibm.com/](https://console-openshift-console.apps.6810df9bfee848c5908c2e63.am1.techzone.ibm.com/)
+<br>
 
 
 |  Topic                                | Description                                                                

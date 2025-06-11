@@ -20,13 +20,15 @@ What is IBM MQ?
 |-----------------------------|------------------------------------------------------------------------------------------------------------| 
 | [EnvSetup](Msg-Pre-lab/mqsetup/mq_setup_steps.md) | MQ lab environment Setup - download MQ lab artifacts                                         
 |--------------------------------|-----------------------------------------------------------------|
-| [Lab 1](Lab_1/Readme.md)       | Native HA Queue Manager on Cloud Platforms                      | 
+| [Lab 1a](Lab_1a-CRR/Readme.md) | NEW MQ Native HA Queue Manager running in containers platforms  | 
 |--------------------------------|-----------------------------------------------------------------|
-| [Lab 2a](Lab_2a/Readme.md)       | Streaming Queues for MQ                       |                                       
+| [Lab 1b](Lab_1b-CRR/Readme.md)   | NEW MQ Native HA Cross Region Replication between clusters    | 
 |--------------------------------|-----------------------------------------------------------------|
-| [Lab 2b](Lab_2b/Readme.md)       | MQ Source connector to Kafka from Streaming Queues                       |                                       
+| [Lab 2a](Lab_2a/Readme.md)       | Streaming Queues for MQ                                       |  
 |--------------------------------|-----------------------------------------------------------------|
-| [Lab 3](Lab_3/Readme.md)       | Uniform Cluster and Application Load Balancing          |                                     
+| [Lab 2b](Lab_2b/Readme.md)       | MQ Source connector to Kafka from Streaming Queues            | 
+|--------------------------------|-----------------------------------------------------------------|
+| [Lab 3](Lab_3/Readme.md)       | Uniform Cluster and Application Load Balancing                  |
 |--------------------------------|-----------------------------------------------------------------|
 
 [Return to main lab section](../index.md#lab-section)
