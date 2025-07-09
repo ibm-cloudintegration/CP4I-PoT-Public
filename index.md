@@ -49,6 +49,5 @@ Before starting the labs you should review the lab environment and the use of th
 <!--- <[Event Endpoint Labs](Event_EndPoint/index.md) > -->
 <!--- <[Aspera Labs](Aspera/index.md) > -->
 
-
 LAB ENVIRONMENT: <br>
 
