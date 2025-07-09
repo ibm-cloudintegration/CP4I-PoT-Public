@@ -45,7 +45,6 @@ Before starting the labs you should review the lab environment and the use of th
 |---------------------------------------|-----------------------------------------------------------------------------| 
 -->
 
-
 <!--- <[ACE Toolkit Labs](ACE-toolkit-labs/index.md) > -->
 <!--- <[Event Endpoint Labs](Event_EndPoint/index.md) > -->
 <!--- <[Aspera Labs](Aspera/index.md) > -->
