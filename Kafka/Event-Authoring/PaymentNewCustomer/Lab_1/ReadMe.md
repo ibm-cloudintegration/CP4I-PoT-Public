@@ -168,7 +168,7 @@ https://github.com/ibm-cloudintegration/mqandes
 ## Recap
 
  So we have our **Order Management System** processing messages on MQ and we are also cloning them to kafka topic in Event streams.  
-    The Next lab we will use Event Processing to tab in to this new data. 
+    The Next lab we will use Event Processing to tap in to this new data. 
 
 ![](images/mq-source-8.png)
 
