@@ -1,24 +1,25 @@
-# Discover the topic to use and filter events based on particular properties
+# Discover how event automation makes it easy to create new Kafka event streams from existing message queues 
 
-For this scenario, you need a source of order events. A good place to discover sources of event streams to process is the catalog in Event Endpoint Management.
-When processing events, we can use filter operations to select a subset
-that we want to use. Filtering works on individual events in the stream.
+For this scenario, you will use a fictitious company **Focus Corp** who's integration team will be asked to exposes the enterprise’s data using event streams. This will allow application teams to subscribe to the data without impacting the backend system, decoupling development, and lowering risks.  The order management system and its payment gateway exchange customer orders over IBM MQ. 
+
+<B> Note:</B> In the messaging experince lab 2 we went thru the process of setting up streaming Queues and connect to a new topic.   
+In this lab we will continue using topics that have already been published in Event Endpoint Management gateway.  It will contain the same messages.
+
+![](images/media/title.png)
 
 # 1.1 Discover the topic to use
 
-In these labs the instructor will act as the Event Endpoint Management administrator to expose the topics that students will need to complete the labs.   
+In this lab the instructor will act as the Event Endpoint Management administrator to expose the topics that students will need to complete the labs.   
 
 **Event Endpoint Management** provides the capability to describe and catalog your Kafka topics as event sources, and to share the details of the topics with application developers within the organization. Application developers can discover the event source and configure their applications to subscribe to the stream of events, providing self-service access to the message content from the event stream.
 
 Access to the event sources are managed by the Event Gateway. The Event Gateway handles the incoming requests from applications to consume from a topic’s stream of events. The Event Gateway is independent of your Kafka clusters, making access control to topics possible without requiring any changes to your Kafka cluster configuration.
 
-1. A quick review of Event Endpoint Management home page.  The EEM administrator will manage the **Topics, Clusters, and Event gateways**
-Also will create the controls for topics and published the topics that will be visible to developers 
+1. We will now login to the EEM screen.  In the search bar enter **eem** 
 
-    ![](images/media/image111.png)
+    ![](images/media/image1b.png)
 
-
-1. Login to the EEM home page as **eem-user**
+1. Login to the EEM home page as **eem-user** and the password is **passw0rd**
 
     ![](images/media/image1a.png)
 
@@ -26,7 +27,7 @@ Also will create the controls for topics and published the topics that will be v
 
     You will notice that as a user you will only have access to the Catolog page and Subscription page. 
 
-    ![](images/media/image1.png)
+    ![](images/media/image1c.png)
 
 1. Click on the **ORDERS.NEW** topic to review the information about the events that are available here.
 Look at the schema to see the properties in the order events. 
@@ -34,7 +35,7 @@ Look at the schema to see the properties in the order events.
     Will will also see what Controls have been created for this Topic.  For the ORDERS.NEW we will be using the **New Orders** Control
     You can see the sample message to get an idea of what to expect from events on this topic.
 
-    ![](images/media/image3.png)
+    ![](images/media/image1d.png)
     If you scroll down on the page you will see the Servers available that will be used in the Event Processing and also Code samples.  
      ![](images/media/image3a.png)
 
@@ -42,7 +43,7 @@ Look at the schema to see the properties in the order events.
 
 1. Click on the **NEW ORDER** Control topic and select the **Generate access credentials** in the upper right.
 
-    ![](images/media/image3b.png)
+    ![](images/media/image1e.png)
 
 1. Here you will be asked for contact info.  Enter something like a email or just your userid 
 
@@ -54,14 +55,14 @@ Look at the schema to see the properties in the order events.
 1. You will now see your Access Credentials. You will need to save these for later.  On the Desktop if you open the **EEM-info** file that is a scratch pad to save credentials and other info for the labs. 
 
 Save the Username and Password under Orders New in the file. 
-    ![](images/media/image3d.png)
+    ![](images/media/image1f.png)
 
 # 1.2 Event Automation Processing
 
 1. Go to the **Event Automation Processing** home page using the URL provided by the instructor.<br>
 The next step is to start processing this stream of events, to create a custom subset that contains the events that you are interested in.
 
-    ![](images/media/image4.png)
+    ![](images/media/ep-1.png)
 
 1. Create a flow, and give it a name and description to explain that you will use it to identify orders made in the North American (NA) region.
 
