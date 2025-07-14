@@ -175,10 +175,9 @@ should identify: NA orders
 
 ### 1.2.4 Configure the Customer new event source node
 
-1. You will now be on the canvas. You will have a source node already on the canvas.  
-To configure the event source node hover over the node and select the **pen icon**.
+1. We will now add a new Event source to the canvas.  To configure the event source node hover over the node and select the **pen icon**.
 
-    ![](images/media/image7.png)
+    ![](images/media/ep3-a.png)
 
 1. You will now configure the event source.  First step is to select **Add evnet source**
 
@@ -192,36 +191,118 @@ To configure the event source node hover over the node and select the **pen icon
 1. Next we will **click on** Accept certificates and then click on **Next** 
    ![](images/media/ep-1d.png)
 
-1. Now we will add the access credentials we saved for the **ORDERS.NEW** topic.
+1. Now we will add the access credentials we saved for the **CUSTOMER.NEW** topic.
 
    Then click **Next**
 
-   ![](images/media/ep-1e.png)
+   ![](images/media/ep3-e.png)
 
-1. You should now for the Topic Selection see **ORDERS.NEW**.   Select that one and click **Next**
-   ![](images/media/ep-1f.png)
+1. You should now for the Topic Selection see **CUSTOMER.NEW**.   Select that one and click **Next**
+   ![](images/media/ep3-f.png)
 
 1. The next screen you can review the *Message format and then click **Next** 
-   ![](images/media/ep-1g.png)
+   ![](images/media/ep3-g.png)
 
 1. The next screen we will not map any key or header fields so just click **Next**  
    ![](images/media/ep-1h.png)
 
-1. The last step is to name the Node to describe the stream of events and included your userid for ex: **Payment-student1**
+1. The last step is to name the Node to describe the stream of events and included your userid for ex: **New Customers**
 
     Also turn off the Save for re-use and then click on **Configure**
    ![](images/media/ep-1i.png)
 
+1. You now have the new source connector on the canvas.  You will see the *Validation error* you can close.   That is just saying that the Event nodes all need to be connected.
+
+      ![](images/media/ep3-j.png)
+
 ### 1.2.5 Configure an Interval join of two sources. 
+we now need to "JOIN" the filtered Order stream data to records of New Customers in order to correctly identify first-time purchasers that placed an order for over $50 USD in the last 24 hours. 
 
+1. Back on the canvas for **studentX-payment** flow, scroll down along the left-hand interface until you locate the Interval Join node. Drag and drop this node to the far right-hand edge of the authoring canvas.
 
+    We will then connect the FilterLargeOrders and the New Customers nodes to the IntervalJoin node.  With your cursor, hover
+over the intervalJoin_1 node and click the Edit (pencil) icon.
 
+   ![](images/media/ep4-a.png)
+
+1. The Details tab, set Node name equal to **DetectNewCustomerLargeOrders**. 
+
+   Click **Next**  
+   ![](images/media/ep4-b.png)
+
+1. The next screen activate the expression builder by click the Assistant dropdown menu. 
+    Set the following properties:<br>
+        • Specify property from **New Customers: customerid** <br>
+        • Specify property from **FilterLargeOrders: customerid** <br>
+    When ready, click Add to expression.
+
+   ![](images/media/ep4-c.png)
+
+1. The syntactically correct JOIN expression will be expressed under the Define events field: 'New
+Customers'.'customerid' = 'FilterLargeOrders'.'customerid'. After you have reviewed the JOIN
+condition, click **Next**.
+
+   ![](images/media/ep4-d.png)
+
+1. Under the Time window condition, you can define the time interval "window" where detected
+events are considered viable. To meet the
+criteria, a purchase of over $50 USD must be made by a first-time customer within a 24 hour
+window of creating an account.
+
+    • Look for the Event to detect field and select the FilterLargeOrders (event_time) option from the drop-down menu.
+
+    • Event to set the time window: New Customers (event-time) (B).
+
+    • Offset from event to end the time window: 24 HOUR(S) (D)
+
+    Click **Next**
+
+   ![](images/media/ep4-e.png)
+
+1. Next you will see the matching interval join.   
+
+    click **Next**  
+   ![](images/media/ep4-f.png)
+
+1. The JOIN node's output will be a combination of fields from both the filtered Orders and New
+Customers events streams.
+Before finalizing the interval join, you need to clean up the output so that duplicate fields (like
+customerid and event_time) are not included from the JOIN operation. 
+    
+    **Note:** You have the option of
+renaming or removing the duplicate fields — but for the sake of this demonstration, you will be
+removing the fields.
+
+    Click the round - sign to the left of the first customerid row, where the Source is labelled as **New Customers** , to remove the duplicate
+
+    Delete the event_time row where the Source column is labelled as **New Customers**
+  
+   ![](images/media/ep4-g.png)
+
+1. You should now have no warnings.  
+    Click **Configure**  
+   ![](images/media/ep4-h.png)
+
+### 1.2.5 Test current flow 
+
+Now let's do a quick test to make sure are flow is working correctly.  
+
+1. Click on the Run in upper right corner and select Include historical.
+  ![](images/media/ep4-i.png)
+
+1. You should now see historical data and you should notice that the price is greater then $50 which is what we filtered the payment stream.
+
+    After reviewing make sure to stop the flow
+  ![](images/media/ep4-j.png)
 
 ### 1.2.6 Configure sink connector to new Kafka topic. 
 
+1. The next screen we will not map any key or header fields so just click **Next**  
+   ![](images/media/ep4-b.png)
+
  The final step is to run your event processing flow and view the results.
 
-1. Use the "Run" menu, and select **Include historical** to run your
+1. Use the "Run" menu, and select **Include istorical** to run your
 filter on the history of order events available on this Kafka topic.
 
    ![](images/media/image6a.png)
@@ -238,6 +319,11 @@ filter on the history of order events available on this Kafka topic.
     When you have finished reviewing the results, you can stop this flow.
 
    ![](images/media/image6c.png)
+
+### 1.2.6 Configure sink connector to new Kafka topic. 
+
+
+
 
 ## Recap
 
