@@ -295,38 +295,82 @@ Now let's do a quick test to make sure are flow is working correctly.
     After reviewing make sure to stop the flow
   ![](images/media/ep4-j.png)
 
-### 1.2.6 Configure sink connector to new Kafka topic. 
+### 1.2.6 Configure sink connector for new Kafka topic. 
 
-1. The next screen we will not map any key or header fields so just click **Next**  
-   ![](images/media/ep4-b.png)
+With a rich feed of filtered and processed event streams, which joins together New Customers and Orders data feeds, lets see about making that feed available to other teams to use. 
+Marketing department can begin supplying their customer loyalty application with input.
+When new events are detected which match the marketing team's promotional criteria, the application
+will automatically trigger an upsell activity for the new customer.
 
- The final step is to run your event processing flow and view the results.
+1. We will now login to the EEM screen.  In the search bar enter **eem** 
 
-1. Use the "Run" menu, and select **Include istorical** to run your
-filter on the history of order events available on this Kafka topic.
+    Right click on **my-eem-manager** and open in new tab.
 
-   ![](images/media/image6a.png)
- 
-    **NOTE:** "Include historical" is useful while you are developing your flows, as it means that you don't need to wait for new events to be produced to the Kafka topic. You can use all of the events already on the topic to check that your flow is working the way that you want.
+    ![](images/media/image1b.png)
 
-1. Click the NA orders node to see a live view of results from your filter. It is updated as new events are emitted onto the orders topic.
+1. Login to the EEM home page as **eem-user** and the password is **passw0rd**
 
-    **Note:** You may see the message "Waiting for receiving the events"
+    ![](images/media/image1a.png)
 
-   ![](images/media/image6b.png)
+1. Go to the **Event Endpoint Management** catalog home page and find the **LOYALTY.APP** topic.
 
-1. You will see only messages from Region NA.
-    When you have finished reviewing the results, you can stop this flow.
+    You will notice that as a user you will only have access to the Catolog page and Subscription page. 
 
-   ![](images/media/image6c.png)
+    ![](images/media/ep5-2.png)
 
-### 1.2.6 Configure sink connector to new Kafka topic. 
+1. Click on the **LOYALTY.APP** topic to review the information about the events that are available here.
+Look at the schema to see the properties in the order events.   You can also review *Code accelerator* to see code samples. 
+
+    ![](images/media/ep5-3.png)
+
+1. Will will also see what Controls have been created for this Topic.  For the ORDERS.NEW we will be using the **Self service** Control
+    <br>Go to top of page and select **Subscribe**
+
+    ![](images/media/ep5-4.png)
+
+1. On the right hand side enter an email address.  For this just use your student id.
+
+    Click **Subscribe**
+
+   ![](images/media/ep5-5.png)
+
+1. You will now see your Access Credentials. You will need to save these for later.  On the Desktop if you open the **POT-notes** file that is a scratch pad to save credentials and other info for the labs. 
+  ![](images/media/ep5-6.png)
+
+### 1.2.5 Add the new Sink connector topic to Flow. 
+
+1. Back on the canvas for **studentX-payment** flow, we will add an Event destination (sink connector) to the IntervalJoin node.  Drag and drop the event destination to the canvas and connect the Interval join. 
+Hover over the new sink node and click the Edit (pencil) icon.
+
+    ![](images/media/ep6-1.png)
+
+1. Now add the eem-gateway url to the bootstrap server and click **Next**
 
 
+   ![](images/media/ep6-2.png)
 
+1. Next click to *Accept certificates*  and click **Next**
 
-## Recap
+   ![](images/media/ep6-3.png)
 
- You used a filter node to specify a subset of events on the topic that you are interested in.
- 
+1. Now enter your credentials that you saved from when you subscripted to the topic.
+
+   ![](images/media/ep6-4.png)
+
+1. Now select the **LOYALTY.APP** topic and click **Configure**
+
+   ![](images/media/ep6-5.png)
+
+1. Now you can test your flow.  
+
+   ![](images/media/ep6-6.png)
+
+1. You will see your test data which is being put on to the **LOYALTY.APP** topic.  
+
+   ![](images/media/ep6-7.png)
+
+1. If you go to the **es-demo** page which shows all topics and select **LOYALTY.APP** topic you can check the latest offset to see that you messages were published. 
+
+   ![](images/media/ep6-8.png)
+   
 [Return to main Event processing lab page](../index.md#lab-abstracts)
