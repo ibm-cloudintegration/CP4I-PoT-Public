@@ -2,62 +2,39 @@
 
 1. Introduction [#introduction]
 
-# Table of Contents 
-- [1. Introduction](#introduction)
+# Table of Contents
 
-- [2. IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review](#FLIGHTLANDINGS)
+ [1. Introduction](#introduction)
 
-IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review
+ [2. IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review](#eem-section)
 
-- 3 [Publish API Product](#publish-api-product)
+* [2.1 Topics View](#topics-view)
 
-[2.1 Adjust Desktop Settings
-[8](#adjust-desktop-settings)](#adjust-desktop-settings)
+* [2.2 Catalogs View](#catalogs-view)
 
-[2.2 Copying & Pasting from the Lab Document into the Desktop Console
-[9](#copying-pasting-from-the-lab-document-into-the-desktop-console)](#copying-pasting-from-the-lab-document-into-the-desktop-console)
+[3. Api Connect Manager](#api-connect-manager)
 
-[2.3 Cloud Pak for Integration Platform Navigator
-[12](#cloud-pak-for-integration-platform-navigator)](#cloud-pak-for-integration-platform-navigator)
+* [3.1 Add FLIGHT.LANDINGS AsyncApi](#add-flight-landings-asyncapi)
 
-[2.4 Topics View [15](#topics-view)](#topics-view)
+* [3.2 Create API Product & Add FLIGHT.LANDINGS AsyncAPI](#create-api-product-add-flight-landings-asyncapi)
 
-[2.5 Catalogs View [16](#catalogs-view)](#catalogs-view)
+* [3.3 Publish API Product](#publish-api-product)
 
-[3. Api Connect Manager
-[18](#api-connect-manager)](#api-connect-manager)
+[4. API Connect Developer Portal](#_Toc203031005)
 
-[3.1 Add FLIGHT.LANDINGS AsyncApi
-[19](#add-flight.landings-asyncapi)](#add-flight.landings-asyncapi)
+* [4.1 Access API Connect Developer Portal](#access-api-connect-developer-portal)
 
-[3.2 Create API Product & Add FLIGHT.LANDINGS AsyncAPI
-[22](#create-api-product-add-flight.landings-asyncapi)](#create-api-product-add-flight.landings-asyncapi)
+* [4.2 Sign-on the API Connect Developer Portal](#sign-on-the-api-connect-developer-portal)
 
-[3.3 Publish API Product
-[24](#publish-api-product)](#publish-api-product)
+* [4.3 Subscribe to FLIGHT.LANDINGS API](#subscribe-to-flight-landings-api)
 
-[4. API Connect Developer Portal [26](#_Toc203031005)](#_Toc203031005)
+[5. Consuming Flight Landing Events](#consuming-flight-landing-events)
 
-[4.1 Access API Connect Developer Portal
-[26](#access-api-connect-developer-portal)](#access-api-connect-developer-portal)
+* [5.1 Generate client certificates of Event Gateway](#generate-client-certificates-of-event-gateway)
 
-[4.2 Sign-on the API Connect Developer Portal
-[27](#sign-on-the-api-connect-developer-portal)](#sign-on-the-api-connect-developer-portal)
+* [5.2 kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer-sh---consume-flight-events)
 
-[4.3 Subscribe to FLIGHT.LANDINGS API
-[28](#subscribe-to-flight.landings-api)](#subscribe-to-flight.landings-api)
-
-[5. Consuming Flight Landing Events
-[34](#consuming-flight-landing-events)](#consuming-flight-landing-events)
-
-[5.1 Generate client certificates of Event Gateway
-[34](#generate-client-certificates-of-event-gateway)](#generate-client-certificates-of-event-gateway)
-
-[5.2 kafka-console-consumer.sh - Consume flight events
-[36](#kafka-console-consumer.sh---consume-flight-events)](#kafka-console-consumer.sh---consume-flight-events)
-
-[5.3 Java Application -- Consume flight events
-[37](#java-application-consume-flight-events)](#java-application-consume-flight-events)
+* [5.3 Java Application -- Consume flight events](#java-application-consume-flight-events)
 
 # Introduction <a name="introduction"></a>
 
@@ -92,7 +69,7 @@ Streams](https://www.google.com/search?sca_esv=4da7261d6af0beeb&rlz=1C5MACD_enUS
 Endpoint
 Management](https://www.google.com/search?sca_esv=4da7261d6af0beeb&rlz=1C5MACD_enUS1032US1032&cs=0&q=Event+Endpoint+Management&sa=X&ved=2ahUKEwi1ksHCwZ6OAxVlhYkEHTmfBYAQxccNegQIBhAC&mstk=AUtExfDlQhrW9SEOa4CieD1tMQ5yOCVs9K_q2WXiKZDIhMlDssvCf0Ta3k5-dFH1cZsih5t2FVh9gV5rfeJZeizkGWS-b4NZO4pU0erzJOsQ7b2e-VL3lNJa-BQ_jPBGoRdlmWU&csui=3), and [Event
 Processing](https://www.google.com/search?sca_esv=4da7261d6af0beeb&rlz=1C5MACD_enUS1032US1032&cs=0&q=Event+Processing&sa=X&ved=2ahUKEwi1ksHCwZ6OAxVlhYkEHTmfBYAQxccNegQIBhAD&mstk=AUtExfDlQhrW9SEOa4CieD1tMQ5yOCVs9K_q2WXiKZDIhMlDssvCf0Ta3k5-dFH1cZsih5t2FVh9gV5rfeJZeizkGWS-b4NZO4pU0erzJOsQ7b2e-VL3lNJa-BQ_jPBGoRdlmWU&csui=3), providing
-a foundation for event-driven architectures. 
+a foundation for event-driven architectures.
 
 **What is IBM Event Streams?**
 
@@ -143,9 +120,6 @@ applications. API Connect provides a unified experience across the API
 lifecycle, from design and development to deployment, management, and
 monitoring.
 
-**\
-**
-
 **About this hands-on lab**
 
 To support the hands-on activities in this lab, a dedicated environment
@@ -153,13 +127,13 @@ has been provisioned, consisting of a Red Hat OpenShift cluster and a
 Linux workstation. These components provide the foundation for deploying
 and testing AsyncAPIs in a realistic, cloud-native setup.
 
--   **Red Hat OpenShift Cluster**\
+- **Red Hat OpenShift Cluster**\
     The OpenShift cluster serves as the deployment platform for all IBM
     Capabilities throughout the lab. It offers a fully containerized and
     orchestrated environment that aligns with modern enterprise cloud
     strategies.
 
--   **Linux Workstation**\
+- **Linux Workstation**\
     The Linux workstation functions as the primary interface for
     interacting with the OpenShift cluster. It will be used to execute
     deployment scripts, manage queue manager configurations, and run
@@ -167,7 +141,8 @@ and testing AsyncAPIs in a realistic, cloud-native setup.
     monitor queue manager behavior, evaluate failover performance, and
     validate high availability and disaster recovery features.
 
-# IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review <a name="FLIGHTLANDINGS"></a>
+# IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review 
+<a name="eem-section"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
@@ -183,49 +158,6 @@ thereby offering a unified platform for managing Kafka Platforms.
 
 Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been
 pre-defined and cataloged in EEM.
-
-Access the **RedHat Linux Desktop Console** using the **instructor**
-provided **Desktop URL.** The Desktop URL would look something like
-this:
-
-noVNC: <http://useast.services.cloud.techzone.ibm.com:12345>
-
-**Login with Password:** engageibm
-
-## Adjust Desktop Settings
-
-Click on the twisty to open the icon pallet.
-
-![](./images/image3.png)
-
-Change Scale Mode to "Remote Scaling" for bigger desktop to work with.
-Click on Settings (gear icon)
-
-![](./images/image4.png)
-
-## Copying & Pasting from the Lab Document into the Desktop Console
-
-Use the following procedure to paste something from the document into
-the Desktop.
-
-![](./images/image5.png)
-
-![](./images/image6.png)
-Click on the Clipboard icon to close the Clipboard window.
-
-![](./images/image7.png)
-
-## Cloud Pak for Integration Platform Navigator
-
-Inside the Desktop Console, Open Firefox Browser.
-
-![](./images/image8.png)
-
-Copy the below link from document and paste into the browser URL.
-
-<https://cp4i-navigator-pn-cp4i.apps.6840855f81445a03dd00115e.ocp.techzone.ibm.com/>
-
-Login as student\<n\>, password = welcometotxc
 
 Access IBM Event Endpoint Manager (***my-eem-manager***) from the Cloud
 Pak for Integration Platform Navigator Console.
@@ -295,7 +227,7 @@ and click "Accept Risk and Continue" button to continue.
 
 ![](./images/image17.png)
 
-## Add FLIGHT.LANDINGS AsyncApi 
+## Add FLIGHT.LANDINGS AsyncApi
 
 Login as Cloud Pak User Registry
 
@@ -376,11 +308,11 @@ a)  Go to the Develop page and select Products. Click on the 3-dots on
 
 ![](./images/image30.png)
 
-b)  We only have 1 Catalog so select that and click **Next** 
+b)  We only have 1 Catalog so select that and click **Next**
 
 > ![](./images/image31.png)
 >
-> Next page click **Publish** 
+> Next page click **Publish**
 >
 > ![](./images/image32.png)
 
@@ -437,9 +369,9 @@ c)  You should now be signed in under your student COrg. You will also
 
 Subscribe to FLIGHT.LANDIGS API.
 
-* i) First you will open config.properties.
-* ii) Second, you will create an application.
-* iii) Third, when you create the application you will get key, and secret. You will copy and paste them into config.properties APP_CLIENT_ID, and APP_CLIENT_SECRET fields.
+- i) First you will open config.properties.
+- ii) Second, you will create an application.
+- iii) Third, when you create the application you will get key, and secret. You will copy and paste them into config.properties APP_CLIENT_ID, and APP_CLIENT_SECRET fields.
 
 a)  On the desktop, Open config.properties file with Text Editor as
     below.
@@ -475,7 +407,7 @@ c)  Now we will need to create an application to subscribe to this plan.
 
 d)  Give the new Application a Name.
 
-**EX:** Flight landing 
+**EX:** Flight landing
 
 ![](./images/image45.png)
 
@@ -486,7 +418,7 @@ e)  You will now have the credentials for your application. Let's copy
 
  **IMPORTANT**\
  Copy and Paste the Key to APP_CLIENT_ID in config.properties file.
- Copy and Paste the Secret APP_CLIENT_SECRET in config.properties file. 
+ Copy and Paste the Secret APP_CLIENT_SECRET in config.properties file.
 
 ![](./images/image46.png)
 
@@ -501,8 +433,8 @@ h)  Now Click on the FLIGHT.LANDING API
 i)  From here go to the Subscribe(operation) and scroll down to
     the *Properties* section.
 
-* Copy and Paste the **bootstrap.servers** to EGW_BOOTSTRAP field in config.properties file.
-* Copy and Paste the **client.id** to API_CLIENT_ID field in config.properties file.
+- Copy and Paste the **bootstrap.servers** to EGW_BOOTSTRAP field in config.properties file.
+- Copy and Paste the **client.id** to API_CLIENT_ID field in config.properties file.
 
 ![](./images/image50.png)
 
@@ -561,18 +493,23 @@ Change Directory to \~/EEM.
 ```
  cd ~/EEM
 ```
+
  You should have the following info saved in
  your **config.properties** file.
+
 ```
  cat config.properties
 ```
+
  ![](./images/image55.png)
 
  Now run the kafka_console_flight_landings_consumer.sh script and you
  should see flight info being displayed.
+
 ```
  ./kafka_console_flight_landings_consumer.sh
 ```
+
  ![](./images/image56.png)
 
 ## Java Application -- Consume flight events
@@ -582,13 +519,17 @@ Change Directory to \~/EEM.
  Open a **NEW** Terminal window (keep the kafka_console_flight_landing_consumer.sh running).
 
  a\) Change the Directory.
+
 ```
  cd ~/EEM/java_flight_landing_project
 ```
+
  b\) Now run the following command to start the Java Consumer.
+
 ```
  ./java_flight_landing_consumer.sh
 ```
+
  You should see output like below.
 
  ![alt text](./images/image57.png)

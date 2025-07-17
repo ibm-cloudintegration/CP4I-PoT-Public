@@ -9,7 +9,7 @@ IBM Event Automation, a fully composable solution, enables businesses to help me
 
 |  Subject                            | Description                                         
 |-----------------------------|------------------------------------------------------------------------------------------------------------|
-| [Event Endpoint Experience](Event_EndPoint/index.md)       | **Integration with AsyncAPI's Event Endpoint Experience**  Show how to create an Async API in **IBM API Connect Manager**, Produce events to IBM Event Streams using IBM App Connect Toolkit Flow, and finally run varies Consumers to read the events 
+| [Event Endpoint Experience](Event_EndPoint/Readme.md)       | **Integration with AsyncAPI's Event Endpoint Experience**  Here you will explore the full potential of ASYNCAPI within IBM Event Automation and IBM API Connect. ASYNCAPI enables the integration of Kafka Topics into APIs via IBM Event Endpoint Management (EEM), which is a feature of IBM Event Automation, as well as IBM API Connect.
 |-------------------------|------------------------------------------------------------------------------------------------------------|
 | [Event Automation Authoring Experience](Event-Authoring/index.md)       | **Event Automation Experience**  Define business scenarios in an intuitive, easy-to-use authoring canvas. Detect whenever they arise and start acting in real-time when it matters the most.   
 |-------------------------|------------------------------------------------------------------------------------------------------------|
