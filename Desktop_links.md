@@ -15,7 +15,7 @@ presentations and hands-on lab exercises.
     *Userid / password*<br>
     studentx / welcometoaugustpot
 
-    OCP_CLUSTER1= https://api.6860979f22ccf67c3fb345a3.am1.techzone.ibm.com:6443
+    OCP_CLUSTER1= https://console-openshift-console.apps.6860979f22ccf67c3fb345a3.am1.techzone.ibm.com/
 
     Platform Navigator= https://cp4i-navigator-pn-cp4i.apps.6860979f22ccf67c3fb345a3.am1.techzone.ibm.com
 
@@ -24,7 +24,7 @@ presentations and hands-on lab exercises.
     *Userid / password*<br>
     studentx / welcometopot
 
-    OCP_CLUSTER2= https://api.6810df9bfee848c5908c2e63.am1.techzone.ibm.com:6443
+    OCP_CLUSTER2= https://console-openshift-console.apps.6810df9bfee848c5908c2e63.am1.techzone.ibm.com/
 
     Platform Navigator= https://cp4i-navigator-pn-cp4i.apps.6810df9bfee848c5908c2e63.am1.techzone.ibm.com/
 
