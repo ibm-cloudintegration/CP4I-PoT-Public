@@ -259,11 +259,12 @@ The following status fields are used to report Native HA configuration status:
 	```sh
 	cd ~/MQonCP4I/nativeha-crr/test
 	```
-	
-	Open *getMessage.sh* in gedit:
+	**Note: the pictures have not been updated yet but make sure you edit the getMessage-CRR.sh script.**
+
+	Open *getMessage-CRR.sh* in gedit:
 	
 	```sh
-	gedit getMessage.sh
+	gedit getMessage-CRR.sh
 	```
 	
 	![](./images/image22.png)
@@ -275,7 +276,9 @@ The following status fields are used to report Native HA configuration status:
 	Here is an example for student2
 
 	![](./images/image23a.png)	
-1. Still in gedit, open *sendMessage.sh*, make the same changes *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
+
+	**Note: the pictures have not been updated yet but make sure you edit the getMessage-CRR.sh script.**
+1. Still in gedit, open *sendMessage-CRR.sh*, make the same changes *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
 
 	![](./images/image24a.png)
 	
@@ -298,22 +301,22 @@ The following status fields are used to report Native HA configuration status:
 	
 	The sample program amsputc will put the messages to queue **APPQ1** which has a default persistence defined as persistent. These messages should still be available after a failover.
 	
-1. Now start the getMessage shell with the following command:
+1. Now start the getMessage-CRR shell with the following command:
 
 	```sh
-	./getMessage.sh
+	./getMessage-CRR.sh
 	```
 	The sample program amqsghac starts running and will wait for messages to arrive on queue **APPQ1**.
 	
-1. Open another terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha-crr/test* as you did previously. Start the sendMessage shell with the following command:
+1. Open another terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha-crr/test* as you did previously. Start the sendMessage-CRR shell with the following command:
 
 	```sh
-	./sendMessage.sh
+	./sendMessage-CRR.sh
 	```
 
 1. The sample program amqsphac will connect to MQ and start sending messages incessantly.	
 
-	You will see in the window where *getMessage.sh* is running consuming the messages being sent.
+	You will see in the window where *getMessage-CRR.sh* is running consuming the messages being sent.
 
 1. Open a new terminal window. To see how the pods work together in action, run the following command to view the current pods:
 
