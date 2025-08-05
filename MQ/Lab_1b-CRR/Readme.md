@@ -122,7 +122,7 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 ## Switch MQ Queue Manager active status between both Clusters.
 Now we will test a control failover from Live cluster to Recovery cluster. 
 
-1. First we will open 2 new terminal windows and start the *sendMessage* script and the *getMessage* script.   These are setup to generate the CCDT table using both clusters. 
+1. First we will open 2 new terminal windows and start the *sendMessage-CRR* script and the *getMessage-CRR* script.   These are setup to generate the CCDT table using both clusters. 
 
 	
 	```sh
