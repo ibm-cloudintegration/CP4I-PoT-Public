@@ -32,7 +32,6 @@ presentations and hands-on lab exercises.
 <br>
 VDI Password: engageibm<br>
 Linux: ibmuser / engageibm <br>
-student3: http://useast.serv
 
 **LAB Desktops:** <br>
 VDI/DESKTOP URL's<br>
