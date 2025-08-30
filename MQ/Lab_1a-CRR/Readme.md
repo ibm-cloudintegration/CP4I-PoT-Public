@@ -92,7 +92,7 @@ Here we are using namespace student1
 	
 1. Now we will go to the deployment for nativeha-crr directory.   Will see all the scripts that were created earlier when you ran the **MQ_setup.sh**
 
-	We will in this lab only be focused on the **1-live..** script. 
+	We will in this lab only be focused on the **1-live-deploy.sh** script. 
 
 	Change to the correct directory and run the ./1-live-deploy.sh script to create your HA Qmgr.
 
@@ -259,64 +259,20 @@ The following status fields are used to report Native HA configuration status:
 	```sh
 	cd ~/MQonCP4I/nativeha-crr/test
 	```
-	**Note: the pictures have not been updated yet but make sure you edit the getMessage-CRR.sh script.**
-
-	Open *getMessage-CRR.sh* in gedit:
-	
-	```sh
-	gedit getMessage-CRR.sh
-	```
+1. When you ran the MQ_setup script the following scripts were created in the *test* directory with your credentials.
 	
 	![](./images/image22.png)
 	
+1. It is best to open two more terminal windows one for **Sending** and one for **getting** messages.  Using the followng scripts: 
+
+	```sh
+	./sendMessage-CRR-setup.sh 
+	./getMessage-CRR-setup.sh
+	```
 	![](./images/image22a.png)
-	
-1. Change *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
 
-	Here is an example for student2
-
-	![](./images/image23a.png)	
-
-	**Note: the pictures have not been updated yet but make sure you edit the getMessage-CRR.sh script.**
-1. Still in gedit, open *sendMessage-CRR.sh*, make the same changes *TARGET_NAMESPACE* to your assigned namespace. Change *00* to your student number. Then click *Save*.
-
-	![](./images/image24a.png)
-	
-	Repeat the edit again for *sendPersistentMessage.sh*.
-	
-	![](./images/image24b.png)
-	
-	Close gedit.
-	
-1. Run the sendPersistentMessage.sh command:
-
-	```sh
-	./sendPersistentMessage.sh
-	```
-	
-	Enter a few random messages and hit enter after each message.
-	Hit enter when finished to end the program.
-	
-	![](./images/image55.png)
-	
-	The sample program amsputc will put the messages to queue **APPQ1** which has a default persistence defined as persistent. These messages should still be available after a failover.
-	
-1. Now start the getMessage-CRR shell with the following command:
-
-	```sh
-	./getMessage-CRR.sh
-	```
-	The sample program amqsghac starts running and will wait for messages to arrive on queue **APPQ1**.
-	
-1. Open another terminal window and navigate to */home/ibmuser/MQonCP4I/nativeha-crr/test* as you did previously. Start the sendMessage-CRR shell with the following command:
-
-	```sh
-	./sendMessage-CRR.sh
-	```
-
-1. The sample program amqsphac will connect to MQ and start sending messages incessantly.	
-
-	You will see in the window where *getMessage-CRR.sh* is running consuming the messages being sent.
+	When you start the programs you will see it logs into the cluster and your namespace and will start putting messages and getting messages from your **APPQ**.
+	![](./images/image22b.png)
 
 1. Open a new terminal window. To see how the pods work together in action, run the following command to view the current pods:
 
