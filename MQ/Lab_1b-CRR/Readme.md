@@ -122,17 +122,29 @@ This section we will now enable the CRR between the two nativeHA clusters.  This
 ## Switch MQ Queue Manager active status between both Clusters.
 Now we will test a control failover from Live cluster to Recovery cluster. 
 
-1. First we will open 2 new terminal windows and start the *sendMessage-CRR* script and the *getMessage-CRR* script.   These are setup to generate the CCDT table using both clusters. 
+1. First we will open 2 new terminal windows and start the *sendMessage-CRR-setup* script and the *getMessage-CRR-setup* script.   These are setup to generate the CCDT table using both clusters. 
 
 	
 	```sh
 	cd /home/ibmuser/MQonCP4I/nativeha-crr/test
-	./sendMessage-CRR.sh 
+	./sendMessage-CRR-setup.sh 
 
 	cd /home/ibmuser/MQonCP4I/nativeha-crr/test
-	./getMessage-CRR.sh 
+	./getMessage-CRR-setup.sh 
 	```
 	![](./images/image11-crr.png)
+1. Before doing the controlled failover you can run the new script *get-roles* which will show the current **Role** for each cluster. 
+	
+	```sh
+	cd /home/ibmuser/MQonCP4I/nativeha-crr/test
+
+	./6-get-roles.sh
+	```
+	![](./images/image11a-crr.png)
+
+	**NOTE:** you can run this after you do the control failover and you should see the state change for your two clusters. 
+
+
 
 1. This script was built to take care of signing into both clusters for you.  Run the following command and you will see that each cluster will be patched to the opposite state.
 
