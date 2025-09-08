@@ -51,11 +51,11 @@ You should be logged on your VDI as *ibmuser*.
 	cd ~/MQonCP4I
 	ls -l 
 	```
-1. Now first we will need to update the setup.properties file with cluster info so that the scripts will be able to login to the correct clusters. 
+1. Now first we will need to update the setup.properties_template file with cluster info so that the scripts will be able to login to the correct clusters. 
 Enter the following command to edit file.
 
 	```
-	gedit setup.properties
+	gedit setup.properties_template
 	```
 
 	![](./images/setup-mq114c.png)
