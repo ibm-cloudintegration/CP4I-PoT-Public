@@ -15,7 +15,7 @@ When messages are put to the original queue, a duplicate copy of each message is
 
 - [Recap](#recap)
 
-- [Appendix A](#appendixa)
+- [Appendix A - Overview for stream queues](#appendixa)
 ---
 
 # 1. Introduction <a name="introduction"></a>
@@ -194,7 +194,7 @@ https://github.com/ibm-cloudintegration/mqandes
 
 [Return to main Event processing lab page](../index.md#lab-abstracts)
 
-# 1. Appendix A <a name="appendixa"></a>
+# Appendix A <a name="appendixa"></a>
 
 
 ## Topology overview for stream queues
