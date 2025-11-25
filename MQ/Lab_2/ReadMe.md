@@ -10,25 +10,12 @@ When messages are put to the original queue, a duplicate copy of each message is
 
 - [1. Introduction](#introduction)
   * [1.1 Setup your own MQ Payment environment](#Setup)
+  * [1.2 Review the MQ environment.](#review)
+  * [1.3 Clone and publish the Payment Messages to Event Streams.](#clone)
 
-- [2. App Connect Toolkit - Prepare API](#toolkit-prepare-api)
-	* [2a. Import CustomerDatabaseJava.zip](#import-cdb-java)
-	* [2b. Create CustomerDatabaseV2 REST OpenAPI 3](#create-openapi)
+- [Recap](#recap)
 
-- [3. App Connect Toolkit - Implement API](#toolkit-implement-api)
-	* [3a. Implement getCustomers subflow](#get_customers)
-	* [3b. Implement addCustomer subflow](#add_customer)
-	* [3c. Implement getCustomer subflow](#get_customer)
-	* [3d. Implement updateCustomer subflow](#update_customer)
-	* [3e. Implement deleteCustomer subflow](#delete_c_ustomer)
-
-- [4. Deploy](#deploy)
-
-- [5. Test the API](#testing)
-
-- [6. Summary](#summary)
-
-- [7. Appendix A](#appendixa)
+- [Appendix A](#appendixa)
 ---
 
 # 1. Introduction <a name="introduction"></a>
@@ -77,7 +64,7 @@ https://github.com/ibm-cloudintegration/mqandes
 
      ![](images/es-pay-5.png)
 
-## 1.2 Review the MQ environment.  
+# 1.2 Review the MQ environment. <a name="review"></a> 
 
 1. Now from the Platform Navigator search for your userid (ex: student1)
 
@@ -111,7 +98,7 @@ https://github.com/ibm-cloudintegration/mqandes
    
     ![](images/es-pay-6e.png)
 
-## 1.3 Clone and publish the Payment Messages to Event Streams. 
+# 1.3 Clone and publish the Payment Messages to Event Streams. <a name="clone"></a> 
 
 1. We have our MQ payments processing all running and now we will need to clone the messages and publish to Event Streams without impacting the current environment.  
 
@@ -198,7 +185,7 @@ https://github.com/ibm-cloudintegration/mqandes
     ![](images/mq-source-7.png)
 
 
-## Recap
+# Recap  <a name="recap"></a>
 
  So we have our **Order Management System** processing messages on MQ and we are also cloning them to kafka topic in Event streams.  
     In the <b> Event Automatnion Authoring Experience</b> there is a Event Processing lab to tap in to this new data. 
