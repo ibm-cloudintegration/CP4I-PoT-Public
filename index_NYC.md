@@ -88,7 +88,7 @@ OpenShift Cluster URL:<br>
 [https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com](https://console-openshift-console.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com)
 <br>
 CP4I Platform Navigator URL: <br>
-[https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.67c229a1d1ee7bb0b5beadb5.am1.techzone.ibm.com)
+[https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
 
 VDI/DESKTOP URL's<br>
 VDI Password: engageibm<br>
