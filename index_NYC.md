@@ -68,7 +68,6 @@ OpenShift Cluster - 1: <br>
 [https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
 --> 
 
-<br>
 CP4I Platform Navigator URL: <br>
 
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
@@ -88,7 +87,6 @@ OpenShift Cluster - 2:<br>
 [https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
 -->
 
-<br>
 CP4I Platform Navigator URL: <br>
 
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
