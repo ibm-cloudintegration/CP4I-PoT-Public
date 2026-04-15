@@ -62,7 +62,7 @@ student(n)/welcometopot <br>
 
 OpenShift Cluster - 1: <br>
 
-<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default" rel="noopener noreferrer">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
+<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
 <!--
 [https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
@@ -93,3 +93,7 @@ CP4I Platform Navigator URL: <br>
 <!--
 [https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
 -->
+
+
+test new url <br>
+<a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visit Google</a>
