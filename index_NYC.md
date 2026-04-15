@@ -58,7 +58,8 @@ LAB ENVIRONMENT: <br>
 User/password: <br>
 student(n)/welcometopot <br>
 
-******* STUDENTS 1 - 10 ******* <br>
+******* STUDENTS 1 - 20 ******* <br>
+
 OpenShift Cluster - 1: <br>
 [https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
 <br>
