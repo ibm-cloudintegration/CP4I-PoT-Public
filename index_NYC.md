@@ -60,7 +60,7 @@ student(n)/welcometopot <br>
 
 ******* STUDENTS 1 - 20 ******* <br>
 
-Please right click on the link and open in a new tab, <br>
+Please right click and open the links in a new tab, <br>
 ![alt text](image.png)
 
 
