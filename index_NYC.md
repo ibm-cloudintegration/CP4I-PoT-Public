@@ -62,7 +62,7 @@ student(n)/welcometopot <br>
 
 OpenShift Cluster - 1: <br>
 
-<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
+<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default" rel="noopener noreferrer">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
 <!--
 [https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
