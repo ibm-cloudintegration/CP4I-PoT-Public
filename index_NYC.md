@@ -60,6 +60,10 @@ student(n)/welcometopot <br>
 
 ******* STUDENTS 1 - 20 ******* <br>
 
+Please right click on the link and open in a new tab, <br>
+![alt text](image.png)
+
+
 OpenShift Cluster - 1: <br>
 
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
@@ -94,6 +98,3 @@ CP4I Platform Navigator URL: <br>
 [https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
 -->
 
-
-test new url <br>
-<a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visit Google</a>
