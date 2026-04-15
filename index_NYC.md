@@ -56,7 +56,7 @@ Before starting the labs you should review the lab environment and the use of th
 LAB ENVIRONMENT: <br>
 
 User/password: <br>
-student(n)/welcometomarchpot <br>
+student(n)/welcometopot <br>
 
 ******* STUDENTS 1 - 10 ******* <br>
 OpenShift Cluster URL:
