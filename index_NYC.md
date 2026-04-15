@@ -60,7 +60,7 @@ student(n)/welcometopot <br>
 
 ******* STUDENTS 1 - 20 ******* <br>
 
-Please right click on the below link and open in a new tab, <br>
+**Please right click on the below links to open in a new tab,** <br>
 
 OpenShift Cluster - 1: <br>
 
