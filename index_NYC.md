@@ -60,7 +60,6 @@ student(n)/welcometopot <br>
 
 ******* STUDENTS 1 - 10 ******* <br>
 OpenShift Cluster - 1: <br>
-<br>
 [https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
 <br>
 CP4I Platform Navigator URL: <br>
