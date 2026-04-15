@@ -70,13 +70,28 @@ OpenShift Cluster - 1: <br>
 
 <br>
 CP4I Platform Navigator URL: <br>
+
+<a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
+
+<!--
 [https://keycloak-ibm-common-services.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://keycloak-ibm-common-services.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
+-->
 <br><br>
 
 
 
 OpenShift Cluster - 2:<br>
+
+<a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
+
+<!--
 [https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
+-->
+
 <br>
 CP4I Platform Navigator URL: <br>
+
+<a href="https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
+<!--
 [https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
+-->
