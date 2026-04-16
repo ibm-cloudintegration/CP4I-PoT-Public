@@ -64,7 +64,9 @@ LAB ENVIRONMENT: <br>
 **Please right click on the below links to open in a new tab,** <br>
 
 ******* OpenShift Cluster - 1: STUDENTS 1 - 10 ******* <br>
+
 ![alt text](image.png)
+<br>
 **OpenShift Console URL:**
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
