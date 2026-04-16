@@ -71,30 +71,33 @@ LAB ENVIRONMENT: <br>
 <br>
 **OpenShift Cluster - 1:**<br>
 **STUDENTS 1 - 10** <br>
-**OpenShift Console URL:**
-<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a><br>
-**CP4I Platform Navigator URL:**
+<br>**OpenShift Console URL:**<br>
+<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
+<br>
+**CP4I Platform Navigator URL:**<br>
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
 ![alt text](./images/blue.png)
 
-<br><br>
+<br>
 
-![alt text](./images/red.png)<br>
-***************************************************************** <br>
+![alt text](./images/red.png)
+<br>
 **OpenShift Cluster - 3:**<br>
-**SHARED CLUSTER FOR ALL STUDENTS (1-20)** <br>
+**STUDENTS 1-20 -- SHARED CLUSTER FOR ALL** <br>
 **To be used for MQ NativeHA CRR Lab** <br>
-***************************************************************** <br>
-**OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
-**CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
+
+**OpenShift Console URL:**<br>
+<a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
+**CP4I Platform Navigator URL:**<br> 
+<a href="https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
 ![alt text](./images/red.png)
 
-<br><br>
+<br>
 
 ![alt text](./images/green.png)
 <br>
 **OpenShift Cluster - 2:**<br>
-**STUDENTS 11 - 20** <br>
+**STUDENTS 11 - 20** <br><br>
 **OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 <br>
 **CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
