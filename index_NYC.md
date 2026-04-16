@@ -59,7 +59,10 @@ LAB ENVIRONMENT: <br>
 
 <br>
 
-**User/password:** student(n)/welcometopot <br><br>
+**Login Credentials**<br>
+**User**: student(n)<br>
+**Password:** welcometopot <br>
+<br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
