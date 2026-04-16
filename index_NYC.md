@@ -55,44 +55,39 @@ Before starting the labs you should review the lab environment and the use of th
 
 LAB ENVIRONMENT: <br>
 
-User/password: <br>
-student(n)/welcometopot <br>
-
-******* STUDENTS 1 - 20 ******* <br>
+**User/password:** student(n)/welcometopot <br><br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
-OpenShift Cluster - 1: <br>
+******* OpenShift Cluster - 1: STUDENTS 1 - 10 ******* <br>
 
+**OpenShift Console URL:** <br>
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
-<!--
-[https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
---> 
 
-CP4I Platform Navigator URL: <br>
-
+**CP4I Platform Navigator URL:** <br>
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
 
-<!--
-[https://keycloak-ibm-common-services.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com](https://keycloak-ibm-common-services.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com)
--->
+**-------------------------------------------------** <br>
+
+<br>
+******* OpenShift Cluster - 2: STUDENTS 11 - 20 ******* <br>
+**OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
+
+**CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
+
+
 <br><br>
 
+***************************************************************** <br>
+**OpenShift Cluster - 3: SHARED CLUSTER FOR ALL STUDENTS (1-20)** <br>
+**To be used for the MQ NativeHA CRR Lab** <br>
+***************************************************************** <br>
+**OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a>
+
+**CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a>
 
 
-OpenShift Cluster - 2:<br>
-
-<a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
-
-<!--
-[https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
--->
-
-CP4I Platform Navigator URL: <br>
-
-<a href="https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
 <!--
 [https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
 -->
-
