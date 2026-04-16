@@ -87,7 +87,7 @@ LAB ENVIRONMENT: <br>
 ![alt text](image-4.png)
 ***************************************************************** <br>
 **OpenShift Cluster - 3: SHARED CLUSTER FOR ALL STUDENTS (1-20)** <br>
-**To be used for the MQ NativeHA CRR Lab** <br>
+**To be used for MQ NativeHA CRR Lab** <br>
 ***************************************************************** <br>
 **OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a>
 
