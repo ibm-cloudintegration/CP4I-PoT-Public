@@ -65,11 +65,11 @@ LAB ENVIRONMENT: <br>
 
 ******* OpenShift Cluster - 1: STUDENTS 1 - 10 ******* <br>
 ![alt text](image.png)
-**OpenShift Console URL:** <br>
+**OpenShift Console URL:**
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
 
-**CP4I Platform Navigator URL:** <br>
+**CP4I Platform Navigator URL:**
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
 ![alt text](image-1.png)
 
