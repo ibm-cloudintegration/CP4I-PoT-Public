@@ -55,7 +55,7 @@ Before starting the labs you should review the lab environment and the use of th
 
 LAB ENVIRONMENT: <br>
 
-![alt text](image-6.png)
+![alt text](./images/labenv_topology.png)
 
 <br>
 
@@ -66,30 +66,31 @@ LAB ENVIRONMENT: <br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
-******* OpenShift Cluster - 1: STUDENTS 1 - 10 ******* <br>
 
-![alt text](image.png)
+![alt text](./images/blue.png)
 <br>
+**** OpenShift Cluster - 1: STUDENTS 1 - 10 **** <br>
 **OpenShift Console URL:**
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
 
 **CP4I Platform Navigator URL:**
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
-![alt text](image-1.png)
+![alt text](./images/blue.png)
 
 <br>
 
-![alt text](image-2.png)
-******* OpenShift Cluster - 2: STUDENTS 11 - 20 ******* <br>
+![alt text](./images/green.png)
+<br>
+**** OpenShift Cluster - 2: STUDENTS 11 - 20 **** <br>
 **OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 
 **CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
-![alt text](image-3.png)
+![alt text](./images/green.png)
 
 <br><br>
 
-![alt text](image-4.png)
+![alt text](./images/red.png)
 ***************************************************************** <br>
 **OpenShift Cluster - 3: SHARED CLUSTER FOR ALL STUDENTS (1-20)** <br>
 **To be used for MQ NativeHA CRR Lab** <br>
@@ -97,7 +98,7 @@ LAB ENVIRONMENT: <br>
 **OpenShift Console URL:** <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a>
 
 **CP4I Platform Navigator URL:** <a href="https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a>
-![alt text](image-5.png)
+![alt text](./images/red.png)
 
 <!--
 [https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com](https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com)
