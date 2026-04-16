@@ -71,7 +71,7 @@ LAB ENVIRONMENT: <br>
 <br>
 **OpenShift Cluster - 1:**<br>
 **STUDENTS 1 - 10** <br>
-<br>**OpenShift Console URL:**<br>
+**OpenShift Console URL:** <br>
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 <br>
 **CP4I Platform Navigator URL:**<br>
@@ -84,9 +84,8 @@ LAB ENVIRONMENT: <br>
 ![alt text](./images/red.png)
 <br>
 **OpenShift Cluster - 3:**<br>
-**STUDENTS 1-20 -- SHARED CLUSTER FOR ALL** <br>
-**To be used for MQ NativeHA CRR Lab** <br>
-
+**STUDENTS 1-20 (SHARED CLUSTER for MQ NativeHA CRR Lab)** 
+<br>
 **OpenShift Console URL:**<br>
 <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
 **CP4I Platform Navigator URL:**<br> 
@@ -98,7 +97,7 @@ LAB ENVIRONMENT: <br>
 ![alt text](./images/green.png)
 <br>
 **OpenShift Cluster - 2:**<br>
-**STUDENTS 11 - 20** <br><br>
+**STUDENTS 11 - 20** <br>
 **OpenShift Console URL:** <br>
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 <br>
