@@ -62,8 +62,10 @@ LAB ENVIRONMENT: <br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
+
 ![alt text](./images/Blue.png)
 <br>
+
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
 **Login Credentials (User/Password**): student(n) / welcometopot <br>
