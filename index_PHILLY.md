@@ -63,8 +63,7 @@ LAB ENVIRONMENT: <br>
 **Please right click on the below links to open in a new tab,** <br>
 
 
-![alt text](./images/Blue.png)
-
+![alt text](./images/blue.png)
 <br>
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
