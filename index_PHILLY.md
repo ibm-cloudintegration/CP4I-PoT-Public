@@ -77,7 +77,7 @@ LAB ENVIRONMENT: <br>
 <br>
 
 **--OpenShift Command Line Login--**  <br>
-oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com:6443
+oc login -u student(n) -p welcometopot --server=https://api.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
 **+++ CP4I Platform Navigator URL +++**<br>
@@ -98,7 +98,7 @@ oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.t
 <br>
 
 **--OpenShift Command Line Login--**  <br>
-oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
+oc login -u student(n) -p welcometopot --server=https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
 **+++ CP4I Platform Navigator URL +++**<br> 
@@ -117,7 +117,7 @@ oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.t
 <br>
 
 **__OpenShift Command Line Login__**  <br>
-oc login -u student(n) -p welcometopot https://api.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com:6443
+oc login -u student(n) -p welcometopot --server=https://api.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com:6443
 <br> <br>
 
 **CP4I Platform Navigator URL:** <br>
