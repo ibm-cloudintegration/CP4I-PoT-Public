@@ -76,7 +76,7 @@ LAB ENVIRONMENT: <br>
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 <br>
 
-**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
+**--OpenShift Command Line Login--**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
@@ -97,7 +97,7 @@ oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.t
 <a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
 
-**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
+**--OpenShift Command Line Login--**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
@@ -116,7 +116,7 @@ oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.t
 <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> 
 <br>
 
-**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
+**__OpenShift Command Line Login__**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com:6443
 <br> <br>
 
