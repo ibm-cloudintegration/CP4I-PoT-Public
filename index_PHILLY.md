@@ -59,10 +59,6 @@ LAB ENVIRONMENT: <br>
 
 <br>
 
-**Login Credentials**<br>
-**User**: student(n)<br>
-**Password:** welcometopot <br>
-<br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
@@ -71,7 +67,8 @@ LAB ENVIRONMENT: <br>
 <br>
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
-
+**Login Credentials (User/Password**): student(n) / welcometopot <br>
+<br>
 **+++ OpenShift Console URL +++** <br>
 <a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
 <br>
@@ -90,9 +87,9 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-rcr3gi.infra01-l
 ![alt text](./images/red.png)
 <br>
 **OpenShift Cluster - 3 (rz9v1d):**<br>
-**STUDENTS 1-20 (SHARED CLUSTER for MQ NativeHA CRR Lab)** 
+**STUDENTS 1-20 (SHARED CLUSTER for MQ NativeHA CRR Lab)** <br>
+**Login Credentials (User/Password**): student(n) / welcometopot <br>
 <br>
-
 **+++ OpenShift Console URL +++** <br>
 <a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
@@ -111,6 +108,8 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-rz9v1d.infra01-l
 <br>
 **OpenShift Cluster - 2 (uz6rl0):**<br>
 **STUDENTS 11 - 20** <br>
+**Login Credentials (User/Password**): student(n) / welcometopot <br>
+
 
 **OpenShift Console URL:** <br>
 <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> 
