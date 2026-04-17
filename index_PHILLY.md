@@ -71,15 +71,16 @@ LAB ENVIRONMENT: <br>
 <br>
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
-**OpenShift Console URL:** <br>
-<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
-<br><br>
 
-COMMAND LINE OPENSHIFT LOGIN: <br>
+**+++ OpenShift Console URL +++** <br>
+<a href="https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com </a>
+<br>
+
+**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
-**CP4I Platform Navigator URL:**<br>
+**+++ CP4I Platform Navigator URL +++**<br>
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
 ![alt text](./images/blue.png)
@@ -91,15 +92,16 @@ oc login -u student(n) -p welcometopot https://api.itz-rcr3gi.infra01-lb.dal14.t
 **OpenShift Cluster - 3 (rz9v1d):**<br>
 **STUDENTS 1-20 (SHARED CLUSTER for MQ NativeHA CRR Lab)** 
 <br>
-**OpenShift Console URL:**<br>
-<a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
-<br><br>
 
-COMMAND LINE OPENSHIFT LOGIN: <br>
+**+++ OpenShift Console URL +++** <br>
+<a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
+<br>
+
+**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
 <br><br>
 
-**CP4I Platform Navigator URL:**<br> 
+**+++ CP4I Platform Navigator URL +++**<br> 
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a> <br>
 ![alt text](./images/red.png)
 
@@ -109,12 +111,12 @@ oc login -u student(n) -p welcometopot https://api.itz-rz9v1d.infra01-lb.dal14.t
 <br>
 **OpenShift Cluster - 2 (uz6rl0):**<br>
 **STUDENTS 11 - 20** <br>
+
 **OpenShift Console URL:** <br>
 <a href="https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> 
-<br><br>
+<br>
 
-
-COMMAND LINE OPENSHIFT LOGIN: <br>
+**--COMMAND LINE - OPENSHIFT LOGIN--**  <br>
 oc login -u student(n) -p welcometopot https://api.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com:6443
 <br> <br>
 
