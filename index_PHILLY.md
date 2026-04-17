@@ -64,8 +64,8 @@ LAB ENVIRONMENT: <br>
 
 
 ![alt text](./images/Blue.png)
-<br>
 
+<br>
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
 **Login Credentials (User/Password**): student(n) / welcometopot <br>
@@ -120,7 +120,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-uz6rl0.infra01-l
 
 **CP4I Platform Navigator URL:** <br>
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-uz6rl0.infra01-lb.wdc04.techzone.ibm.com</a> <br>
-![alt text](./images/green.png)
+
 
 <br><br>
 
