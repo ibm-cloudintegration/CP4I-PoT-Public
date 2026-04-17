@@ -62,8 +62,7 @@ LAB ENVIRONMENT: <br>
 
 **Please right click on the below links to open in a new tab,** <br>
 
-
-![alt text](./images/blue.png)
+![alt text](./images/Blue.png)
 <br>
 **OpenShift Cluster - 1 (rcr3gi):**<br>
 **STUDENTS 1 - 10** <br>
@@ -80,7 +79,6 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-rcr3gi.infra01-l
 **+++ CP4I Platform Navigator URL +++**<br>
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rcr3gi.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
-![alt text](./images/blue.png)
 
 <br>
 
@@ -100,7 +98,6 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-rz9v1d.infra01-l
 
 **+++ CP4I Platform Navigator URL +++**<br> 
 <a href="https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a> <br>
-![alt text](./images/red.png)
 
 <br>
 
