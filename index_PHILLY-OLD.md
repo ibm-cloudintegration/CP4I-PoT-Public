@@ -86,7 +86,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-l
 
 ![alt text](./images/green.png)
 <br>
-**OpenShift Cluster - 2 ( ):**<br>
+**OpenShift Cluster - 2 ( 6uta2x ):**<br>
 **STUDENTS 11 - 20** <br>
 **Login Credentials (User/Password**): student(n) / welcometopot <br>
 
