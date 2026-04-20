@@ -10,21 +10,28 @@ You should be logged on your VDI as *ibmuser*.
 1. Open a Firefox browser tab and navigate to [Github MQonCP4i](https://github.com/ibm-cloudintegration/mqoncp4i-2025).
 
 	![](./images/image108.png)
-	
+
+<br>
+
 1. Click *Code* and select *Download zip*.
 
 	![](./images/image109.png)
 	
+<br>
+
 1. Open a terminal window by clicking on the **Application** on top menu and under **Favorites** click the icon for **Terminal**.
 
 	![](./images/setup1.png)
-	
+
+<br>
+
 1. Enter the following command to see the zip file you just downloaded.
 
 	```
 	cd Downloads
 	```
-	
+
+
 1. Enter the following command to unzip the downloaded file:
 
 	```
