@@ -56,6 +56,7 @@ Before starting the labs you should review the lab environment and the use of th
 LAB ENVIRONMENT: <br>
 
 ![alt text](./images/labenv_topology.png)
+
 <br>
 
 
