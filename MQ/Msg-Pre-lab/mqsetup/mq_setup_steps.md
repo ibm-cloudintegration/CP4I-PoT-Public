@@ -11,19 +11,17 @@ You should be logged on your VDI as *ibmuser*.
 
 	![](./images/image108.png)
 
-<br>
 
 1. Click *Code* and select *Download zip*.
 
 	![](./images/image109.png)
 	
-<br>
+
 
 1. Open a terminal window by clicking on the **Application** on top menu and under **Favorites** click the icon for **Terminal**.
 
 	![](./images/setup1.png)
 
-<br>
 
 1. Enter the following command to see the zip file you just downloaded.
 
