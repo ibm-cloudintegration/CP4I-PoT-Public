@@ -73,7 +73,7 @@ LAB ENVIRONMENT: <br>
 <a href="https://console-openshift-console.apps.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
 
-**--OpenShift Command Line Login--**  <br>
+**+++ OpenShift Command Line Login +++**  <br>
 
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com:6443
@@ -97,7 +97,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-l
 <a href="https://console-openshift-console.apps.itz-6uta2x.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-6uta2x.infra01-lb.dal14.techzone.ibm.com</a> 
 <br>
 
-**__OpenShift Command Line Login__**  <br>
+**+++ OpenShift Command Line Login +++**  <br>
 
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-6uta2x.infra01-lb.dal14.techzone.ibm.com:6443
@@ -120,7 +120,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-6uta2x.infra01-l
 <a href="https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com" target="_default">https://console-openshift-console.apps.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
 
-**--OpenShift Command Line Login--**  <br>
+**+++ OpenShift Command Line Login +++**  <br>
 
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
