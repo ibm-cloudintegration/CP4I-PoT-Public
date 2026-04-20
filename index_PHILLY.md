@@ -79,7 +79,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-l
 ```
 
 **+++ CP4I Platform Navigator URL +++**<br>
-<a href="https://cp4i-navigator-pn-cp4i.apps.itz-itz-gwohoa.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com</a>
+<a href="https://cp4i-navigator-pn-cp4i.apps.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com" target="_default">https://cp4i-navigator-pn-cp4i.apps.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com</a>
 <br>
 
 <br>
