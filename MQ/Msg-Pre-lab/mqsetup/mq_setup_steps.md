@@ -31,9 +31,9 @@ You should be logged on your VDI as *ibmuser*.
 	unzip mqoncp4i-2025-main.zip
 	```
 	
-	![](./images/image112a.png)
-	
-1. Move the unzipped directory to your home directory with the following command:
+1. Change to the main directory of the zip file you unzipped.
+<br>
+Move the unzipped directory to your home directory with the following command:
 	
 	```
 	cd mqoncp4i-2025-main
@@ -43,30 +43,10 @@ You should be logged on your VDI as *ibmuser*.
 	mv MQonCP4I/ ~/
 	```
 	
-	![](./images/image113a.png) 
-	
-	This will create the directory **/home/ibmuser/MQonCP4I**.  Change to your home directory and list the contents of the directory to verify that it contains *MQonCP4I*. 
-	
 	```sh
 	cd ~/MQonCP4I
 	ls -l 
 	```
-1. Now first we will need to update the setup.properties_template file with cluster info so that the scripts will be able to login to the correct clusters. 
-Enter the following command to edit file.
-
-	```
-	gedit setup.properties_template
-	```
-
-	![](./images/setup-mq114c.png)
-
-	1. Update *OCP Cluster 1* with the primary cluster URL.  
-	
-		If you are going to do the MQ NativeHA CRR labs you will have a second cluster so update the *OCP Cluster 2* with that cluster URL.     
-
-	1. 	Update the OCP CLUSTER USER and PASSWORD with the ones provide to you.  This will be the same for both clusters. 
-
-	1. Select **Save**   
 
 1. Now we will need to change the mode to executable for all the scripts.  From the MQonCP4I directory run the following command.
 
@@ -74,15 +54,22 @@ Enter the following command to edit file.
 	find . -type f -iname "*.sh" -exec chmod +x {} \;
 	```
 
-1. Now we will run the script that will create all the install scripts for your userid. ```./MQ_setup.sh```  
+1. Now we will run the script that will create all the install scripts for your userid. <br>
 
-	1. 	When you run the MQ_setup.sh You will use your student id that was given to you from the instructor.
+	```
+	./MQ_setup.sh 
+	-i \<your student number\>
+	-n \<your openshift student namespace\>
+	``` 
 
-		**Note:** In this example we are user student1 so would use that as the namespace and 01 as the student id.
-	1. If will ask if this is correct.  enter **Y**
+	<b>Example: If I am student2 I would do this.
+<br>
+./MQ_setup.sh -i 2 -n student2
 
-	![](./images/image114c.png)
-	
+<br>
+<br>
+
+
 Great! You are now ready to start working in the MQ and Kafka labs. 
 
 [Return to MQ lab page](../../index.md)
