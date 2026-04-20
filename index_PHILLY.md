@@ -74,6 +74,7 @@ LAB ENVIRONMENT: <br>
 <br>
 
 **--OpenShift Command Line Login--**  <br>
+
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-lb.dal14.techzone.ibm.com:6443
 ```
@@ -97,6 +98,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-gwohoa.infra01-l
 <br>
 
 **__OpenShift Command Line Login__**  <br>
+
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-6uta2x.infra01-lb.dal14.techzone.ibm.com:6443
 ```
@@ -119,6 +121,7 @@ oc login -u student(n) -p welcometopot --server=https://api.itz-6uta2x.infra01-l
 <br>
 
 **--OpenShift Command Line Login--**  <br>
+
 ```
 oc login -u student(n) -p welcometopot --server=https://api.itz-rz9v1d.infra01-lb.dal14.techzone.ibm.com:6443
 ```
