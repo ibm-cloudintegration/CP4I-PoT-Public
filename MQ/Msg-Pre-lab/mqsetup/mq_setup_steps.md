@@ -34,7 +34,7 @@ You should be logged on your VDI as *ibmuser*.
 1. Change to the main directory of the zip file you unzipped.
 <br>
 
-	Move the unzipped directory to your home directory with the following command:
+	x`Move the unzipped directory to your home directory with the following command:
 	
 	```
 	cd mqoncp4i-2025-main
