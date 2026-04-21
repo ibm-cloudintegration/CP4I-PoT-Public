@@ -37,9 +37,15 @@ In this section we use App Connect Designer to create a flow that will be expose
 
 ![alt text][pic2]
 
-3\. In the upper left always make sure you are in the correct namespace.  Select the tab on the left to open the Catalog screen.  The App Connect catalog provides a list of applications and APIs that are available.
+3\. In the upper left always make sure you are in the correct namespace.  Select the tab on the left to open the Connect screen.  The App Connect Connect provides a list of applications and APIs that are available.
 
-![alt text][pic3]
+![alt text][pic3a]
+
+]
+
+click "Applications and APIs". <br>
+
+![alt text][pic3b]
 
 4\. Now scroll down to the Salesforce connector and click on the Connect button.  We are setting up our Salesforce connector here first but this also can be done with in the flow as you are building it. 
 * **Note:** If you already have the Salasforce smart connect account setup skip to step 8.
@@ -140,7 +146,8 @@ Click on the **Salesforce / Retrieve accounts / Accounts** mapping and select **
 [pic0]: images/0.png
 [pic1]: images/1.png
 [pic2]: images/2.png
-[pic3]: images/3.png
+[pic3a]: images/3a.png
+[pic3b]: images/3b.png
 [pic4]: images/4.png
 [pic5]: images/5.png
 [pic5a]: images/5a.png
