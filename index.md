@@ -35,11 +35,12 @@ Before starting the labs you should review the lab environment and the use of th
 | [API Management Experiences](APIC-labs/ReadMe.md)          | This section you will explore an API Management platform for use in your API Economy. IBM API Connect enables users to create, assemble, manage, secure and socialize APIs  
 |---------------------------------------|-----------------------------------------------------------------------------|   
 | [Integration Experiences](Integration/index.md)         | This section you will explorer key capabilities using both the ACE Toolkit and ACE Designer to build integrations solutions.  When creating APIs you will also import them into APIC.
-|---------------------------------------|-----------------------------------------------------------------------------|     
-| [Event Automation Experiences](Kafka/index.md)          | This section you will explore MQ messaging solutions as well as Event Streams solutions. <BR> A message platform to simplify and accelerate integration of diverse applications and business data across multiple platforms with multiple messaging styles.<br> A full-scale streaming platform, capable of not only publish-and-subscribe, but also the storage and processing of data within the stream.  
 |---------------------------------------|-----------------------------------------------------------------------------|
 | [MQ Messaging Experiences](MQ/index.md)          | This section you will explore MQ messaging solutions as well as Event Streams solutions. <BR> A message platform to simplify and accelerate integration of diverse applications and business data across multiple platforms with multiple messaging styles.<br> A full-scale streaming platform, capable of not only publish-and-subscribe, but also the storage and processing of data within the stream.  
 |---------------------------------------|-----------------------------------------------------------------------------|     
+| [Event Automation Experiences](Kafka/index.md)          | This section you will explore MQ messaging solutions as well as Event Streams solutions. <BR> A message platform to simplify and accelerate integration of diverse applications and business data across multiple platforms with multiple messaging styles.<br> A full-scale streaming platform, capable of not only publish-and-subscribe, but also the storage and processing of data within the stream.  
+|---------------------------------------|-----------------------------------------------------------------------------|
+
 
 <!-- | [CP4I Addon](Add-on/index.md)         | This section will show additional Unique Value and Capabilities when using Cloud pak for Integration. Collaboration and Asset Sharing with Cloud Pak for Integration **Asset Catalog**
 |---------------------------------------|-----------------------------------------------------------------------------| 
