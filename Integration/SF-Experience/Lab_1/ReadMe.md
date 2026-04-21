@@ -46,7 +46,7 @@ Click "Applications and APIs". <br>
 ![alt text][pic3b]
 
 4\. Now scroll down. 
-  * **Note:** If you already have the Salasforce smart connect account setup skip to step 8. <br>
+  * **Note:** If you already have the Salasforce smart connect account setup skip to step 6. <br>
   If not, locate Salesforce connector and click on the Connect button.  We are setting up our Salesforce connector here first but this also can be done with in the flow as you are building it. 
 
 ![alt text][pic4]
@@ -56,9 +56,10 @@ Click "Applications and APIs". <br>
 
 ![alt text][pic6]
 
-6\. Click on the App Connect Designer dashboard icon:
+6\. Click on the App Connect Design  icon:
 
 ![alt text][pic7]
+
 
 7\. Select from the New drop down to create a new API flow:  
 
@@ -67,6 +68,7 @@ Click "Applications and APIs". <br>
 8\. First thing we will do is create the model for this.  We will call the model **SalesforceRetrieve**
 
 ![alt text][pic9]
+
 
 9\. For this example, we will map the following properties which are all data type String. You can also set the data type to Number for properties containing numerical integer values. 
 
@@ -78,7 +80,12 @@ Click "Applications and APIs". <br>
 
 
 10\. Now that we have defined the properties in our API model definition, we can implement a flow by clicking on the Operations tab. The Operations tab is located next to the Properties tab.
-From the Operations drop-down menu, select Add a Custom Operation. Here we will customize the operation that we want our API to perform. 
+
+![alt text][pic10a]
+
+From the Operations drop-down menu, select "Add a Custom Operation". Here we will customize the operation that we want our API to perform. 
+
+![alt text](pic10b)
 
 11\. Customize the details of your API operation. 
 * **Note**: You can optionally set a description for your individual API operation. 
@@ -92,11 +99,16 @@ From the Operations drop-down menu, select Add a Custom Operation. Here we will 
 
 ![alt text][pic11]
 
-Now click the "Get /SalesforceRetrieve/accounts" tab can click the Implement Flow button next to our API operation definition. This will take us to the App Connect Designer flow. This is where we can insert Smart Connectors to communicate with a variety of external applications as well as implement conditional logic and callable flows. 
+Now click the "Get /SalesforceRetrieve/accounts" tab can click the "Implement Flow" button next to our API operation definition. This will take us to the App Connect Designer flow. 
+<!--
+This is where we can insert Smart Connectors to communicate with a variety of external applications as well as implement conditional logic and callable flows. -->
 
-13\. After clicking the blue plus icon on our flow designer interface, we will be able to see the variety of Smart Connectors offered by IBM App Connect Designer. You will also see an option for callable flows which allows you to integrate more complex logic into your Designer flows by building them in App Connect Enterprise Toolkit and calling them via REST API protocols. 
+13\. Click plus icon. 
 
 ![alt text][pic12]
+
+Clicking the blue plus icon on our flow designer interface, we will be able to see the variety of Smart Connectors offered by IBM App Connect Designer. You will also see an option for callable flows which allows you to integrate more complex logic into your Designer flows by building them in App Connect Enterprise Toolkit and calling them via REST API protocols. 
+
 
 14\.For our lab, we will be using the Salesforce smart connector, so let us scroll down to the Salesforce connector and select it.
 
@@ -126,7 +138,9 @@ A helpful feature offered by the Smart Connectors is the **“Try this action”
 
 20\. Now we will map our API Response keys to the respective values we want our consumer to obtain from Salesforce. Let us start with the **AccountID** field. 
 
-* Click on the hamburger icon next to AccountID field. ![alt text][pic18]
+* Click on the hamburger icon next to AccountID field. 
+![alt text][pic18]
+
 * Now you will see the list of **Available mappings.**
 
 Click on the **Salesforce / Retrieve accounts / Accounts** mapping and select **Account ID.** Repeat the process for the other two data fields. After populating all the fields your mapping should match the image attached below.
@@ -137,7 +151,8 @@ Click on the **Salesforce / Retrieve accounts / Accounts** mapping and select **
 
 ![alt text][pic20]
 
-22\. We are now ready to start and Test the API but first need to give it a meaningful name.  This will automatically be saved.  Click the Done button to close the flow
+
+23\. We are now ready to start and Test the API but first need to give it a meaningful name (SalesforceDemo).  This will automatically be saved.  Click the Done button to close the flow
 
 ![alt text][pic21]
 
@@ -155,7 +170,10 @@ Click on the **Salesforce / Retrieve accounts / Accounts** mapping and select **
 [pic8]: images/8.png
 [pic9]: images/9.png
 [pic10]: images/10.png
+[pic10a]: images/10a.png
+[pic10b]: images/10b.png
 [pic11]: images/11.png
+[pic11a]: images/11a.png
 [pic12]: images/12.png
 [pic13]: images/13.png
 [pic14]: images/14.png
