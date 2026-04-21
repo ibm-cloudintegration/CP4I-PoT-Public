@@ -107,12 +107,14 @@ This is where we can insert Smart Connectors to communicate with a variety of ex
 
 ![alt text][pic12]
 
-Clicking the blue plus icon on our flow designer interface, we will be able to see the variety of Smart Connectors offered by IBM App Connect Designer. You will also see an option for callable flows which allows you to integrate more complex logic into your Designer flows by building them in App Connect Enterprise Toolkit and calling them via REST API protocols. 
+Clicking the blue plus icon on our flow designer interface, we will be able to see the variety of Smart Connectors offered by IBM App Connect Designer. 
 
+<!--You will also see an option for callable flows which allows you to integrate more complex logic into your Designer flows by building them in App Connect Enterprise Toolkit and calling them via REST API protocols. 
+-->
 
-14\.For our lab, we will be using the Salesforce smart connector, so let us scroll down to the Salesforce connector and select it.
+14\. We will be using the Salesforce smart connector, so let us scroll down to the Salesforce connector and select it.
 
-15\. There is a vast catalog of different Salesforce objects you can interact with from App Connect Designer. In this lab we are retrieving Account information so go ahead and drop down the Accounts option and click Retrieve accounts.
+15\. We are retrieving Account information so go ahead and drop down the Accounts option and click Retrieve accounts.
 
 ![alt text][pic13]
 
