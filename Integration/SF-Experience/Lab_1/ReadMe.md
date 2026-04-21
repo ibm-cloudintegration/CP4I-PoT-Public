@@ -41,14 +41,13 @@ In this section we use App Connect Designer to create a flow that will be expose
 
 ![alt text][pic3a]
 
-]
-
-click "Applications and APIs". <br>
+Click "Applications and APIs". <br>
 
 ![alt text][pic3b]
 
-4\. Now scroll down to the Salesforce connector and click on the Connect button.  We are setting up our Salesforce connector here first but this also can be done with in the flow as you are building it. 
-* **Note:** If you already have the Salasforce smart connect account setup skip to step 8.
+4\. Now scroll down. 
+  * **Note:** If you already have the Salasforce smart connect account setup skip to step 8. <br>
+  If not, locate Salesforce connector and click on the Connect button.  We are setting up our Salesforce connector here first but this also can be done with in the flow as you are building it. 
 
 ![alt text][pic4]
 
