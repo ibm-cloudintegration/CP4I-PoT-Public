@@ -151,18 +151,52 @@ Click on the newly created Runtime.
 
 ![alt text][pic10]
 
-7\. Click **Create New Project**.
+6\. Click **Create New Project**.
 
 ![alt text][pic12]
 
 Name it customer-database-agw, where agw stands for the API Gateway. <br>
 
-![alt text](pic12a)
+![alt text](images/12a.png)
 
 
-8\.  Open the project customer-database-agw. 
+7\.  Open the project customer-database-agw. 
 
-![alt text](pic12b)
+![alt text](images/12b.png)
+
+8\. Add API 
+
+![alt text](images/12c.png)
+
+![alt text](images/12d.png)
+
+
+![alt text](image-1.png)
+
+Select Customer_Database-1.0.0.yaml <br>
+
+![alt text](image.png)
+
+Click \<Create\>. <br>
+
+![alt text](image-2.png)
+
+Your backend REST API has been imported successfully. <br>
+
+9\. Configure API - Add Gateway Policy
+
+Click (+) sign next to "Policy Sequence". <br>
+
+![alt text](image-3.png)
+
+Select "DataPower API Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
+Click \<Add\>.
+
+![alt text](image-4.png)
+
+Click on "Invoke" policy. <br>
+
+![alt text](image-5.png)
 
 
 Drag and drop the yaml file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the yaml file listed under and should see a notification that the "YAML has been successfully validated".  Click **Next**.
@@ -188,8 +222,6 @@ Make sure that the **Activate API** <span style="color: red">is not</span> selec
 [pic10]: images/10.png
 [pic11]: images/11.png
 [pic12]: images/12.png
-[pic12a]: images/12a.png
-[pic12b]: images/12b.png
 [pic13]: images/13.png
 [pic14]: images/14.png
 [pic15]: images/15.png
