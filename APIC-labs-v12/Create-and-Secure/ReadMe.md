@@ -198,6 +198,109 @@ Click on "Invoke" policy. <br>
 
 ![alt text](image-5.png)
 
+Append "$(api.operation.path)" at the end of the backend URL. <br>
+
+![alt text](image-6.png)
+
+
+
+10\. Configure API - Add CORS
+
+Click on the API Customer_Database under APIs section (left), then scroll down and click on CORS (Cross-Origin Resource Sharing). <br>
+
+Click <\Add\>. <br>
+
+![alt text](image-7.png)
+
+Enter name, namespace (project), then click <\Add\>. <br>
+
+![alt text](image-8.png)
+
+Edit CORS. <br>
+
+![alt text](image-9.png)
+
+SCROLL down, and uncheck "Expose headers", then Save. <br>
+
+![alt text](image-10.png)
+
+
+11\. Configure API - Secure API
+
+Scroll down to "Components" section, then on the right side again scroll down to "Security Schemas" section. <br>
+
+Click <\Add Security Schema\>. <br>
+
+![alt text](image-11.png)
+
+Add "X-IBM-Client-Id". <br>
+
+![alt text](image-12.png)
+
+Similarly, add "X-IBM-Client-Secret". <br>
+
+![alt text](image-13.png)
+
+Now, click "Security" section and then click on <\Add Security Schema\>. <br>
+
+![alt text](image-14.png)
+
+First, select both apikeys, then click on <\Create AND group (2 selected)\> button. <br>
+
+![alt text](image-15.png)
+
+Now, click <\Add\>. <br>
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)
+
+
+12\. Publish the API to DataPower API Gateway and Developer Portal
+
+
+![alt text](image-18.png)
+
+![alt text](image-19.png)
+
+![alt text](image-20.png)
+
+Click on Catalog button. Don't worry if that little window disappears quickly, you should be able to access the Catalog through Manage section in the left. <br>
+
+![alt text](image-21.png)
+
+Navigate to the Portal Section under Catalog Settings, then click on the Portal URL. <br>
+
+![alt text](image-22.png)
+
+
+
+13\. Welcome to API Connect Developer Portal
+
+![alt text](image-23.png)
+
+Click on <\Sign up\> button. <br>
+
+![alt text](image-24.png)
+
+![alt text](image-25.png)
+
+Login as student(n) now. <br>
+
+![alt text](image-26.png)
+
+Welcome page. <br>
+![alt text](image-27.png)
+
+Click on "API Products". <br>
+
+![alt text](image-28.png)
+
+You should see Customer_Database API that was published earlier, then Click on the API. <br>
+
+![alt text](image-29.png)
+
+
 
 Drag and drop the yaml file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the yaml file listed under and should see a notification that the "YAML has been successfully validated".  Click **Next**.
 
