@@ -301,10 +301,37 @@ You should see Customer_Database API that was published earlier, then Click on t
 ![alt text](image-29.png)
 
 
+14\. Subscribe the API
+
+![alt text](image-30.png)
+
+![alt text](image-31.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower API Gateway. <br>
+
+You should also see ClientID, and ClientSecret being generated. <br>
+
+**SAVE the ClientID, and ClientSecret to a NOTEPAD or TEXTPAD.** <br> 
+
+
+
+
+
+
+
+
 
 Drag and drop the yaml file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the yaml file listed under and should see a notification that the "YAML has been successfully validated".  Click **Next**.
 
 ![alt text][pic13]
+
+
+
+
 
 <!--
 9\. 
