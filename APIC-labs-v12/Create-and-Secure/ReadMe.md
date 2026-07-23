@@ -97,18 +97,13 @@ Note: It may take a several minutes to start up. You can refresh the page. Once 
 <!--
 ![alt text][pic100]
 -->
+
+Click on the newly created Runtime.
+
 ![alt text][pic99]
 
 
-12\.  Click on the newly created Runtime.
-
-![alt text][pic101]
-
-13\. Click on the **CustomerDatabaseV3** API.
-
-![alt text][pic102]
-
-14\. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document As JSON (or) Download OpenAPI Document As YAML**. Either format can be used to import in API Connect.<br>
+12\. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document As JSON (or) Download OpenAPI Document As YAML**. Either format can be used to import in API Connect.<br>
 
 ![alt text][pic103]
 
@@ -151,15 +146,26 @@ Note: It may take a several minutes to start up. You can refresh the page. Once 
 
 ![alt text][pic9]
 
-5\. We are now able to begin to create APIs and Products.  Click **Add** and select **API**
+
+5\. We are now able to begin to create APIs and Products.  Click **API Studio**
 
 ![alt text][pic10]
 
-7\. Click **Existing OpenAPI** under **Import** and click **Next**.
+7\. Click **Create New Project**.
 
 ![alt text][pic12]
 
-8\.  Drag and drop the yaml file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the yaml file listed under and should see a notification that the "YAML has been successfully validated".  Click **Next**.
+Name it customer-database-agw, where agw stands for the API Gateway. <br>
+
+![alt text](pic12a)
+
+
+8\.  Open the project customer-database-agw. 
+
+![alt text](pic12b)
+
+
+Drag and drop the yaml file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the yaml file listed under and should see a notification that the "YAML has been successfully validated".  Click **Next**.
 
 ![alt text][pic13]
 
@@ -182,6 +188,8 @@ Make sure that the **Activate API** <span style="color: red">is not</span> selec
 [pic10]: images/10.png
 [pic11]: images/11.png
 [pic12]: images/12.png
+[pic12a]: images/12a.png
+[pic12b]: images/12b.png
 [pic13]: images/13.png
 [pic14]: images/14.png
 [pic15]: images/15.png
