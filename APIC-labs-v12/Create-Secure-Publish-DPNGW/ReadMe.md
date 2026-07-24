@@ -12,9 +12,10 @@
 - [3. Import an API into the Developer Workspace](#import_api)
 	* [3a. Create project](#create-project)
 	* [3b. Add API ](#add-api)
-	* [3c. Configure DataPower Nano Gateway Policy](#config-api-gateway-policy)
-	* [3d. Configure CORS](#config-api-cors)
-	* [3e. Configure Security](#config-api-security)
+	* [3c. Rename API ](#rename-api)
+	* [3d. Configure DataPower Nano Gateway Policy](#config-api-gateway-policy)
+	* [3e. Configure CORS](#config-api-cors)
+	* [3f. Configure Security](#config-api-security)
 - [4. Publish API](#publish-api)
 - [5. API Connect Developer Portal<](#devportal)
 	* [5a. Subscribe API](#devportal-subscribe)
@@ -39,8 +40,8 @@ In this tutorial, you will explore the following key capabilities:
 
 <br>
 
-![alt text](./images/component-diagram..png)
-![alt text](image.png)
+![alt text](./images/component-diagram.png)
+
 
 <br>
 
@@ -147,7 +148,13 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 	Your backend REST API has been imported successfully. <br>
 
 
-## 3c. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
+## 3c. Rename the API <a name="rename-api"></a>
+![alt text](images/image-43.png)
+
+	Change the name to customer-database-ngw, then click \<Update\>. <br>
+	![alt text](images/image-43a.png)
+
+## 3d. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
 
 1. Click (+) sign next to "Policy Sequence". <br>
 ![alt text](./images/image-7a.png)
@@ -170,7 +177,7 @@ Click \<Add\>.
 ![alt text](./images/image-7f.png)
 
 
-## 3d. Configure CORS<a name="config-api-cors"></a>
+## 3e. Configure CORS<a name="config-api-cors"></a>
 
 1. Click on the API Customer_Database under APIs section (left), then scroll down and click on CORS (Cross-Origin Resource Sharing). <br>
 
@@ -187,7 +194,7 @@ Click \<Add\>.
 ![alt text](./images/image-8d.png)
 
 
-## 3e. Configure Security<a name="config-api-security"></a>
+## 3f. Configure Security<a name="config-api-security"></a>
 
 1. Click the Components section
 Scroll down to "Components" section, then on the right side again scroll down to "Security Schemas" section. <br>
