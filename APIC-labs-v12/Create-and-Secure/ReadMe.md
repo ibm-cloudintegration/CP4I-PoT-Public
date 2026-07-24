@@ -98,10 +98,10 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 
 1. Navigate to the API Connect instance.
 
-From the IBM Cloud Pak for Integration Platform Navigator, navigate to apim-demo an IBM API Connect capability. <br>
+	From the IBM Cloud Pak for Integration Platform Navigator, navigate to apim-demo an IBM API Connect capability. <br>
 
-Click on apim-demo instance. <br>
-\![alt text](images/6.png)
+	Click on apim-demo instance. <br>
+![alt text](images/6.png)
 
 1. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
 ![alt text](images/8.png)
