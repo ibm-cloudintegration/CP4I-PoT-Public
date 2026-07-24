@@ -56,37 +56,37 @@ First, you will deploy a Customer Database REST service and then you will downlo
 ![alt text](./images/image-1.png)
 
 1. Click on the **Dashboard** icon in the left navigation.
-![alt text](./images/93.png)
+![alt text](./images/image-10.png)
 
 1. For this lab, we already have the REST service built and available as a **bar** file. You can download the **CustomerDatabaseV3.bar** file for the service [<u>**here**</u>](./resources/CustomerDatabaseV3.bar).
 
 1. Click on **Deploy integrations**.
-![alt text](./images/94.png)
+![alt text](./images/image-11.png)
 
 
 1. Click **Quick start integration** and click **Next**.
-![alt text](./images/95.png)
+![alt text](./images/image-12.png)
 
 
 1. Drag and drop the BAR file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the bar file listed under **to be imported**.  Click **Next**.
-![alt text](./images/96.png)
+![alt text](./images/image-13.png)
 
 1. Click **Next**.
-![alt text](./images/97.png)
+![alt text](./images/image-14.png)
 
 1. Give the Integration Server a **Name** (e.g., student(n)-customerdb) and click **Create**. Replace (n) with your student number, for example student1-customerdb. <br>
-![alt text](./images/98.png)
+![alt text](./images/image-15.png)
 
 1. This will take you back to the Runtimes Dashboard where you will see your new server. It will likely be showing Pending while it is starting up the pod.
 
 	**Note:** It may take a several minutes to start up. You can refresh the page. Once it is up and running it will show the following:
 
 	Click on the newly created Runtime.
-![alt text](./images/99.png)
+![alt text](./images/image-16.png)
 
 
 1. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document As JSON (or) Download OpenAPI Document As YAML**. Either format can be used to import in API Connect.<br>
-![alt text](./images/103.png)
+![alt text](./images/image-17.png)
 
 
 <br><br>
@@ -100,47 +100,47 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 	From the IBM Cloud Pak for Integration Platform Navigator, navigate to apim-demo an IBM API Connect capability. <br>
 
 	Click on apim-demo instance. <br>
-![alt text](images/6.png)
+![alt text](images/image-2.png)
 
 1. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
-![alt text](images/8.png)
+![alt text](images/image-3.png)
 
 1. Confirm that you are in the provider organization for your username (upper right).
-![alt text](images/9.png)
+![alt text](images/image-4.png)
 
 1. We are now able to begin to create APIs and Products.  Click **API Studio**
-![alt text](images/10.png)
+![alt text](images/image-5.png)
 
 
 
 ## 3a. Create project <a name="create-project"></a>
 
 1. Click **Create New Project**.
-![alt text](images/12.png)
+![alt text](images/image-6.png)
 
 	Name it customer-database-agw, where agw stands for the API Gateway. <br>
-![alt text](images/12a.png)
+![alt text](images/image-6a.png)
 
 1.  Open the project customer-database-agw. 
-![alt text](images/12b.png)
+![alt text](images/image-6b.png)
 
 
 ## 3b. Add API <a name="add-api"></a>
 
 1. Click "Add API"
-![alt text](images/12c.png)
+![alt text](images/image-6c.png)
 
 1. Click "Import". 
-![alt text](images/12d.png)
+![alt text](images/image-6d.png)
 
 1. Click on "drag and drop" 
-![alt text](./images/12e.png)
+![alt text](./images/image-6e.png)
 
 1. Select Customer_Database-1.0.0.yaml <br>
-![alt text](./images/12f.png)
+![alt text](./images/image-6f.png)
 
 1. Click \<Create\>. <br>
-![alt text](./images/12g.png)
+![alt text](./images/image-6g.png)
 
 	Your backend REST API has been imported successfully. <br>
 
@@ -148,17 +148,17 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 ## 3c. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
 
 1. Click (+) sign next to "Policy Sequence". <br>
-![alt text](./images/13a.png)
+![alt text](./images/image-7a.png)
 
 1. Select "DataPower API Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
 Click \<Add\>.
-![alt text](./images/13b.png)
+![alt text](./images/image-7b.png)
 
 1. Click on "Invoke" policy. <br>
-![alt text](./images/13c.png)
+![alt text](./images/image-7c.png)
 
 	Append "$(api.operation.path)" at the end of the backend URL. <br>
-![alt text](./images/13d.png)
+![alt text](./images/image-7d.png)
 
 
 
@@ -167,16 +167,16 @@ Click \<Add\>.
 1. Click on the API Customer_Database under APIs section (left), then scroll down and click on CORS (Cross-Origin Resource Sharing). <br>
 
 1. Click <\Add\>. <br>
-![alt text](./images/14a.png)
+![alt text](./images/image-8a.png)
 
 1. Enter name, namespace (project), then click <\Add\>. <br>
-![alt text](./images/14b.png)
+![alt text](./images/image-8b.png)
 
 1. Edit CORS. <br>
-![alt text](./images/14c.png)
+![alt text](./images/image-8c.png)
 
 	SCROLL down, and uncheck "Expose headers", then Save. <br>
-![alt text](./images/14d.png)
+![alt text](./images/image-8d.png)
 
 
 ## 3e. Configure Security<a name="config-api-security"></a>
@@ -185,25 +185,25 @@ Click \<Add\>.
 Scroll down to "Components" section, then on the right side again scroll down to "Security Schemas" section. <br>
 
 1. Click <\Add Security Schema\>. <br>
-![alt text](./images/15a.png)
+![alt text](./images/image-9a.png)
 
 1. Add "X-IBM-Client-Id". <br>
-![alt text](./images/15b.png)
+![alt text](./images/image-9b.png)
 
 1. Similarly, add "X-IBM-Client-Secret". <br>
-![alt text](./images/15c.png)
+![alt text](./images/image-9c.png)
 
 1. Now, click "Security" section and then click on <\Add Security Schema\>. <br>
-![alt text](./images/15d.png)
+![alt text](./images/image-9d.png)
 
 	First, select both apikeys, then click on <\Create AND group (2 selected)\> button. <br>
-![alt text](./images/15e.png)
+![alt text](./images/image-9e.png)
 
 
 	Now, click <\Add\>. <br>
-	![alt text](./images/15f.png) <br>
+	![alt text](./images/image-9f.png) <br>
 
-	![alt text](./images/15g.png)
+	![alt text](./images/image-9g.png)
 
 
 <br>
