@@ -297,26 +297,33 @@ You should see Customer_Database API that was published earlier, then Click on t
 
 ## 5a. Subscribe API <a name="devportal-subscribe"></a>
 
-Subscribe the API
+Subscribe the API. <br>
 
 ![alt text](./images/image-30.png)
 
+Click <\Subscribe\>. <br>
+
 ![alt text](./images/image-31.png)
+
+Click "Create new subscription", then click <\Request\>. <br>
 
 ![alt text](./images/image-32.png)
 
+Click <\Save\>. <br>
+
 ![alt text](./images/image-33.png)
+
 
 Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower API Gateway. <br>
 
 You should also see ClientID, and ClientSecret being generated. <br>
 
-**SAVE the ClientID, and ClientSecret to a NOTEPAD or TEXTPAD.** You will need them when testing the API. <br> 
-
 ![alt text](./images/image-34.png)
 
+**SAVE the ClientID, and ClientSecret to a NOTEPAD or TEXTPAD.** You will need them when testing the API. <br> 
 
-<br>
+
+<br> <br>
 
 
 # 6. Test the API <a name="test-api"></a>
@@ -326,9 +333,7 @@ Click on "API Products". <br>
 
 ![alt text](./images/image-35.png)
 
-Click on the API Product Customer_Database_product, then click on the API. <br>
-
-![alt text](./images/image-36.png)
+Click on the API Product Customer_Database-product, then click on the API. <br>
 
 ![alt text](./images/image-37.png)
 
@@ -336,7 +341,10 @@ Expand "API Resources". <br>
 
 ![alt text](./images/image-38.png)
 
+Navigate to GET under /customers operation. <br>
+
 ![alt text](./images/image-39.png)
+
 
 Click Headers tab to populate our ClientId, and Secret. <br>
 
