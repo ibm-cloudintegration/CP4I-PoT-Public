@@ -8,9 +8,7 @@
 
 # Table of Contents
 - [1. Introduction](#introduction)
-
 - [2. IBM App Connect - Deploying the backend REST Service](#deploy)
-
 - [3. Import an API into the Developer Workspace](#import_api)
 	* [3a. Create project](#create-project)
 	* [3b. Add API ](#add-api)
@@ -18,12 +16,9 @@
 	* [3d. Configure CORS](#config-api-cors)
 	* [3e. Configure Security](#config-api-security)
 - [4. Publish API](#publish-api)
-
 - [5. API Connect Developer Portal<](#devportal)
 	* [5a. Subscribe API](#devportal-subscribe)
-
 - [6. Test the API](#test-api)
-
 - [7. Summary](#summary)
 
 ---
@@ -60,33 +55,38 @@ First, you will deploy a Customer Database REST service and then you will downlo
 
 3\. Navigate to the **App Connect Dashboard**.
 
-![alt text][pic92]
+![alt text](./images/92.png)
+
 
 4\. Click on the **Dashboard** icon in the left navigation.
 
-![alt text][pic93]
+![alt text](./images/93.png)
 
 5\. For this lab, we already have the REST service built and available as a **bar** file. You can download the **CustomerDatabaseV3.bar** file for the service [<u>**here**</u>](./resources/CustomerDatabaseV3.bar).
 
 6\. Click on **Deploy integrations**.
 
-![alt text][pic94]
+![alt text](./images/94.png)
+
 
 7\. Click **Quick start integration** and click **Next**.
 
-![alt text][pic95]
+![alt text](./images/95.png)
+
+
 
 8\. Drag and drop the BAR file that you just downloaded or click to upload.  Once you have dragged and dropped or uploaded, you will see the bar file listed under **to be imported**.  Click **Next**.
 
-![alt text][pic96]
+
+![alt text](./images/96.png)
 
 9\. Click **Next**.
 
-![alt text][pic97]
+![alt text](./images/97.png)
 
 10\. Give the Integration Server a **Name** (e.g., student(n)-customerdb) and click **Create**. Replace (n) with your student number, for example student1-customerdb. <br>
 
-![alt text][pic98]
+![alt text](./images/98.png)
 
 
 11\. This will take you back to the Runtimes Dashboard where you will see your new server. It will likely be showing Pending while it is starting up the pod.
@@ -95,32 +95,14 @@ First, you will deploy a Customer Database REST service and then you will downlo
 
 Click on the newly created Runtime.
 
-![alt text][pic99]
+![alt text](./images/99.png)
 
 
 12\. Confirm that the **Overview** tab is selected and click **Download OpenAPI Document As JSON (or) Download OpenAPI Document As YAML**. Either format can be used to import in API Connect.<br>
 
-![alt text][pic103]
 
-[pic0]: images/0.png
-[pic1]: images/1.png
-[pic2]: images/2.png
-[pic3]: images/3.png
-[pic4]: images/4.png
-[pic5]: images/5.png
-[pic91]: images/91.png
-[pic92]: images/92.png
-[pic93]: images/93.png
-[pic94]: images/94.png
-[pic95]: images/95.png
-[pic96]: images/96.png
-[pic97]: images/97.png
-[pic98]: images/98.png
-[pic99]: images/99.png
-[pic100]: images/100.png
-[pic101]: images/101.png
-[pic102]: images/102.png
-[pic103]: images/103.png
+![alt text](./images/103.png)
+
 
 <br><br>
 
@@ -134,21 +116,20 @@ From the IBM Cloud Pak for Integration Platform Navigator, navigate to apim-demo
 
 Click on apim-demo instance. <br>
 
-![alt text][pic6]
-
+![alt text](images/6.png)
 
 2\. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
 
-![alt text][pic8]
+![alt text](images/8.png)
 
 3\. Confirm that you are in the provider organization for your username (upper right).
 
-![alt text][pic9]
+![alt text](images/9.png)
 
 
 4\. We are now able to begin to create APIs and Products.  Click **API Studio**
 
-![alt text][pic10]
+![alt text](images/10.png)
 
 
 
@@ -156,7 +137,8 @@ Click on apim-demo instance. <br>
 
 1\. Click **Create New Project**.
 
-![alt text][pic12]
+![alt text](images/12.png)
+
 
 Name it customer-database-agw, where agw stands for the API Gateway. <br>
 
@@ -173,7 +155,7 @@ Name it customer-database-agw, where agw stands for the API Gateway. <br>
 
 ![alt text](images/12d.png)
 
-![alt text](image-1.png)
+![alt text](./images/12e.png)
 
 Select Customer_Database-1.0.0.yaml <br>
 
