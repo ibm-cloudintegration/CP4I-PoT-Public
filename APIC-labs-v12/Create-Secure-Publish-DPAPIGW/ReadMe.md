@@ -12,7 +12,7 @@
 - [3. Import an API into the Developer Workspace](#import_api)
 	* [3a. Create project](#create-project)
 	* [3b. Add API ](#add-api)
-	* [3c. Configure Gateway Policy](#config-api-gateway-policy)
+	* [3c. Configure DataPower API Gateway Policy](#config-api-gateway-policy)
 	* [3d. Configure CORS](#config-api-cors)
 	* [3e. Configure Security](#config-api-security)
 - [4. Publish API](#publish-api)
@@ -145,7 +145,7 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 	Your backend REST API has been imported successfully. <br>
 
 
-## 3c. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
+## 3c. Configure DataPower API Gateway Policy<a name="config-api-gateway-policy"></a>
 
 1. Click (+) sign next to "Policy Sequence". <br>
 ![alt text](./images/image-7a.png)

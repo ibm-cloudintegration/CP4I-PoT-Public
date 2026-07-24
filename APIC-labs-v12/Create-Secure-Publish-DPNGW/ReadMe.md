@@ -12,7 +12,7 @@
 - [3. Import an API into the Developer Workspace](#import_api)
 	* [3a. Create project](#create-project)
 	* [3b. Add API ](#add-api)
-	* [3c. Configure Gateway Policy](#config-api-gateway-policy)
+	* [3c. Configure DataPower Nano Gateway Policy](#config-api-gateway-policy)
 	* [3d. Configure CORS](#config-api-cors)
 	* [3e. Configure Security](#config-api-security)
 - [4. Publish API](#publish-api)
@@ -40,6 +40,7 @@ In this tutorial, you will explore the following key capabilities:
 <br>
 
 ![alt text](./images/component-diagram..png)
+![alt text](image.png)
 
 <br>
 
@@ -118,10 +119,11 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 1. Click **Create New Project**.
 ![alt text](images/image-6.png)
 
-	Name it customer-database-agw, where ngw stands for the Nano Gateway. <br>
+	Name it customer-database-ngw, where ngw stands for the Nano Gateway. <br>
 ![alt text](images/image-6a.png)
 
-1.  Open the project customer-database-agw. 
+
+1.  Open the project customer-database-ngw. 
 ![alt text](images/image-6b.png)
 
 
