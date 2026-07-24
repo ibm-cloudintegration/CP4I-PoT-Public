@@ -39,8 +39,7 @@ In this tutorial, you will explore the following key capabilities:
 
 <br>
 
-![alt text](./images/apic-lab1-component-diagram.png)
-
+![alt text](./images/component-diagram..png)
 
 <br>
 
