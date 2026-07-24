@@ -9,20 +9,20 @@
 # Table of Contents
 - [1. Introduction](#introduction)
 
-
-- [2. Deploying the REST Service](#deploy)
+- [2. IBM App Connect - Deploying the backend REST Service](#deploy)
 
 - [3. Import an API into the Developer Workspace](#import_api)
+	* [3a. Create project](#create-project)
+	* [3b. Add API ](#add-api)
+	* [3c. Configure Gateway Policy](#config-api-gateway-policy)
+	* [3d. Configure CORS](#config-api-cors)
+	* [3e. Configure Security](#config-api-security)
+- [4. Publish API](#publish-api)
 
-- [4. Configure the API ](#configure_api)
-	* [3a. Configure Client Secret API Key Security](#configure_security)
-	* [3b. Review and update the Target-URL for Sandbox Environment](#target_url)
-	* [3c. Review the Proxy Call in Designer](#proxy)
+- [5. API Connect Developer Portal<](#devportal)
+	* [5a. Subscribe API](#devportal-subscribe)
 
-- [5. Test the API](#test_api)
-
-- [6. Publish API](#publish_api)
-	* [5a. Create Customer Product and Add API](#customer_product)
+- [6. Test the API](#test-api)
 
 - [7. Summary](#summary)
 
@@ -30,38 +30,36 @@
 
 # 1. Introduction <a name="introduction"></a>
 
-In this lab, you will get a chance to use the IBM API Connect (APIC) Designer and its intuitive interface to import and edit an API using the OpenAPI definition (YAML) of an existing Customer Database RESTful web service.
+In this lab, you will get a chance to use the IBM API Connect (APIC) Studio and its intuitive interface to import and edit an API using the OpenAPI definition (YAML) of an existing Customer Database RESTful web service.
 
 In this tutorial, you will explore the following key capabilities:
 
--   Creating an API by importing an OpenAPI definition for an existing REST service
+-   Creating an API by importing an OpenAPI definition for an existing backend REST service
 
--   Configuring ClientID/Secret Security, endpoints, and proxy to invoke an endpoint
+-   Configuring ClientID/Secret Security, endpoints, CORS, and proxy to invoke an endpoint
 
--   Testing a REST API in the developer toolkit
+-   Publish an API for developers into Developer Portal 
 
--   Publish an API for developers
+-   Testing a REST API in the Developer Portal
+
+<br>
 
 ![alt text](./images/apic-lab1-component-diagram.png)
 
 
-# 2. Deploying the REST Services <a name="deploy"></a>
+<br>
+
+# 2. IBM App Connect - Deploying the backend REST Service <a name="deploy"></a>
 
 First, you will deploy a Customer Database REST service and then you will download the OpenAPI file for the Customer Database REST service that you deployed.
 
 1\. In a browser, enter the URL for the Platform Navigator URL that is provided by your instructor.
 
-<!--
-Before beginning this lab, you will want to make sure that you have completed the [API Connect Experience Prereq instructions](../APIC-prereq/index.md).
-
-2\. When you log in for the first time, you may see a **Welcome, let's get started** window.  Feel free to review the contents by click **Start the tour** or by click on the **X** to close the window.
-
-![alt text][pic91]
--->
 
 2\. Filter instances by the student(number). You will see your instances.(br)
 
 3\. Navigate to the **App Connect Dashboard**.
+
 ![alt text][pic92]
 
 4\. Click on the **Dashboard** icon in the left navigation.
@@ -86,17 +84,14 @@ Before beginning this lab, you will want to make sure that you have completed th
 
 ![alt text][pic97]
 
-10\. Give the Integration Server a **Name** (e.g., student(n)-customerdb) and click **Create**. Replace (n) with your student number, for example 1. <br>
+10\. Give the Integration Server a **Name** (e.g., student(n)-customerdb) and click **Create**. Replace (n) with your student number, for example student1-customerdb. <br>
 
 ![alt text][pic98]
 
+
 11\. This will take you back to the Runtimes Dashboard where you will see your new server. It will likely be showing Pending while it is starting up the pod.
 
-
-Note: It may take a several minutes to start up. You can refresh the page. Once it is up and running it will show the following:
-<!--
-![alt text][pic100]
--->
+**Note:** It may take a several minutes to start up. You can refresh the page. Once it is up and running it will show the following:
 
 Click on the newly created Runtime.
 
@@ -129,29 +124,37 @@ Click on the newly created Runtime.
 
 <br><br>
 
-# 3. Import API into IBM API Connect Studio <a name="import_api"></a>
+# 3. IBM Api Connect - Import backend REST API <a name="import_api"></a>
 
-1\. Click on **IBM Cloud Pak** in the upper left.
+You will be importing the backend REST API definition into IBM API Connect Studio, then you will configure the API to enable Security, CORS, and finally publish the API to community. <br>
 
-![alt text][pic104]
+1\. Navigate to the API Connect instance.
 
-2\. Navigate to the API Connect instance.
+From the IBM Cloud Pak for Integration Platform Navigator, navigate to apim-demo an IBM API Connect capability. <br>
+
+Click on apim-demo instance. <br>
 
 ![alt text][pic6]
 
-3\. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
+
+2\. If this is your first time logging in, the login page is presented. Click **Cloud Pak User Registry**.
+
 ![alt text][pic8]
 
-4\. Confirm that you are in the provider organization for your username (upper right) and then click on **Develop APIs and products**.
+3\. Confirm that you are in the provider organization for your username (upper right).
 
 ![alt text][pic9]
 
 
-5\. We are now able to begin to create APIs and Products.  Click **API Studio**
+4\. We are now able to begin to create APIs and Products.  Click **API Studio**
 
 ![alt text][pic10]
 
-6\. Click **Create New Project**.
+
+
+## 3a. Create project <a name="create-project"></a>
+
+1\. Click **Create New Project**.
 
 ![alt text][pic12]
 
@@ -159,17 +162,16 @@ Name it customer-database-agw, where agw stands for the API Gateway. <br>
 
 ![alt text](images/12a.png)
 
-
-7\.  Open the project customer-database-agw. 
+2\.  Open the project customer-database-agw. 
 
 ![alt text](images/12b.png)
 
-8\. Add API 
+
+## 3b. Add API <a name="add-api"></a>
 
 ![alt text](images/12c.png)
 
 ![alt text](images/12d.png)
-
 
 ![alt text](image-1.png)
 
@@ -183,7 +185,7 @@ Click \<Create\>. <br>
 
 Your backend REST API has been imported successfully. <br>
 
-9\. Configure API - Add Gateway Policy
+## 3c. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
 
 Click (+) sign next to "Policy Sequence". <br>
 
@@ -203,8 +205,7 @@ Append "$(api.operation.path)" at the end of the backend URL. <br>
 ![alt text](image-6.png)
 
 
-
-10\. Configure API - Add CORS
+## 3d. Configure CORS<a name="config-api-cors"></a>
 
 Click on the API Customer_Database under APIs section (left), then scroll down and click on CORS (Cross-Origin Resource Sharing). <br>
 
@@ -225,7 +226,7 @@ SCROLL down, and uncheck "Expose headers", then Save. <br>
 ![alt text](image-10.png)
 
 
-11\. Configure API - Secure API
+## 3e. Configure Security<a name="config-api-security"></a>
 
 Scroll down to "Components" section, then on the right side again scroll down to "Security Schemas" section. <br>
 
@@ -258,10 +259,9 @@ Now, click <\Add\>. <br>
 
 
 
+# 4. Publish API<a name="publish-api"></a>
 
-
-# 4. Publish API to DataPower API Gateway and Developer Portal<a name="publish_api"></a>
-
+Here, you will publish the API to IBM DataPower API Gateway and Developer Portal community for consuming the API. <br>
 
 ![alt text](image-18.png)
 
@@ -278,8 +278,7 @@ Navigate to the Portal Section under Catalog Settings, then click on the Portal 
 ![alt text](image-22.png)
 
 
-
-13\. Welcome to API Connect Developer Portal
+# 5. API Connect Developer Portal<a name="devportal"></a>
 
 ![alt text](image-23.png)
 
@@ -293,7 +292,9 @@ Login as student(n) now. <br>
 
 ![alt text](image-26.png)
 
-Welcome page. <br>
+
+THis is the Developer Portal Welcome page. <br>
+
 ![alt text](image-27.png)
 
 Click on "API Products". <br>
@@ -305,7 +306,9 @@ You should see Customer_Database API that was published earlier, then Click on t
 ![alt text](image-29.png)
 
 
-14\. Subscribe the API
+## 5a. Subscribe API <a name="devportal-subscribe"></a>
+
+Subscribe the API
 
 ![alt text](image-30.png)
 
@@ -327,7 +330,7 @@ You should also see ClientID, and ClientSecret being generated. <br>
 
 
 
-# 5. Test the API <a name="test_api"></a>
+# 6. Test the API <a name="test-api"></a>
 
 
 Click on "API Products". <br>
@@ -364,14 +367,6 @@ If successful, you should get "200 OK" Result.
 
 
 
-
-
-
-
-
-
-
-9\.  The API should be imported successfully as shown in the image below.  Click **Edit API**.
 
 ![alt text][pic15]
     
