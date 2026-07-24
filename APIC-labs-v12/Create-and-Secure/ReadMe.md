@@ -55,8 +55,7 @@ First, you will deploy a Customer Database REST service and then you will downlo
 
 3\. Navigate to the **App Connect Dashboard**.
 
-![alt text](./images/92.png)
-
+![alt text](./images/image-1.png)
 
 4\. Click on the **Dashboard** icon in the left navigation.
 
