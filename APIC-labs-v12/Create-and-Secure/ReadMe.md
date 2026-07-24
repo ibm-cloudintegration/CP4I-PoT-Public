@@ -1,6 +1,6 @@
 # IBM API Connect v12
 
-## Create and Secure an API to Proxy an Existing REST Web Service
+## Create, Secure, Publish, Subscribe, and Test an API
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
