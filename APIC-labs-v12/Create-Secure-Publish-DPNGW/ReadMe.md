@@ -152,16 +152,22 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 1. Click (+) sign next to "Policy Sequence". <br>
 ![alt text](./images/image-7a.png)
 
+
 1. Select "DataPower Nano Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
 Click \<Add\>.
 ![alt text](./images/image-7b.png)
 
+
 1. Click on "Invoke" policy. <br>
 ![alt text](./images/image-7c.png)
 
-	Append "$(api.operation.path)" at the end of the backend URL. <br>
+	Wrap the endpoint URL with single quotes, then append & $relativeUrl('request') after the single quote (including &). <br>
 ![alt text](./images/image-7d.png)
+<br>
+![alt text](./images/image-7e.png)
 
+1. Change URL Type to be Jsonata
+![alt text](./images/image-7f.png)
 
 
 ## 3d. Configure CORS<a name="config-api-cors"></a>
@@ -198,7 +204,7 @@ Scroll down to "Components" section, then on the right side again scroll down to
 1. Now, click "Security" section and then click on <\Add Security Schema\>. <br>
 ![alt text](./images/image-9d.png)
 
-	First, select both apikeys, then click on <\Create AND group (2 selected)\> button. <br>
+	First, select both apikeys, then click on \<Create AND group (2 selected)\> button. <br>
 ![alt text](./images/image-9e.png)
 
 
@@ -250,24 +256,27 @@ Here, you will publish the API to IBM DataPower Nano Gateway and Developer Porta
 1. Click on "API Products". <br>
 ![alt text](./images/image-28.png)
 
-1. You should see Customer_Database API that was published earlier, then Click on the API. <br>
+
+1. You should see customer-database-ngw API that was published earlier, then Click on the API. <br>
 ![alt text](./images/image-29.png)
 
 
 ## 5a. Subscribe API <a name="devportal-subscribe"></a>
 
-1. Subscribe the API
+1. Subscribe the API, Click \<Subscribe\>
 ![alt text](./images/image-30.png)
 
-1. Click <\Subscribe\>
+1. Click "Create new subscription", then click \<Request\>. <br>
 ![alt text](./images/image-31.png)
 
-1. Click "Create new subscription", then click <\Request\>. <br>
+1. Enter demo-app-2, then click \<Save\>
 ![alt text](./images/image-32.png)
+
 
 1. Click <\Save\>. <br>
 ![alt text](./images/image-33.png)
 
+![alt text](image.png)
 
 1. Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower Nano Gateway. <br>
 
