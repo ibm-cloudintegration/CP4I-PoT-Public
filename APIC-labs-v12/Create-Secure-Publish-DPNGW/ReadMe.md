@@ -43,7 +43,7 @@ In this tutorial, you will explore the following key capabilities:
 ![alt text](./images/component-diagram.png)
 
 
-**What is IBM DataPower Nano Gateway?**
+**What is IBM DataPower Nano Gateway?**<br>
 IBM DataPower Nano Gateway is a lightweight, containerized API gateway built on the IBM DataPower technology foundation. <br>
 
 **What It Is:** 
