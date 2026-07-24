@@ -33,7 +33,7 @@ In this tutorial, you will explore the following key capabilities:
 
 -   Configuring ClientID/Secret Security, endpoints, CORS, and proxy to invoke an endpoint
 
--   Publish an API for developers into Developer Portal 
+-   Publish API to **IBM DataPower API Gateway** and to Developer Portal
 
 -   Testing a REST API in the Developer Portal
 
