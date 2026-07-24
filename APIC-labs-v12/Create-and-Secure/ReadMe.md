@@ -159,32 +159,35 @@ Name it customer-database-agw, where agw stands for the API Gateway. <br>
 
 Select Customer_Database-1.0.0.yaml <br>
 
-![alt text](image.png)
+![alt text](./images/12f.png)
+
 
 Click \<Create\>. <br>
 
-![alt text](image-2.png)
+![alt text](./images/12g.png)
 
 Your backend REST API has been imported successfully. <br>
+
 
 ## 3c. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
 
 Click (+) sign next to "Policy Sequence". <br>
 
-![alt text](image-3.png)
+![alt text](./images/13a.png)
 
 Select "DataPower API Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
 Click \<Add\>.
 
-![alt text](image-4.png)
+![alt text](./images/13b.png)
 
 Click on "Invoke" policy. <br>
 
-![alt text](image-5.png)
+![alt text](./images/13c.png)
 
 Append "$(api.operation.path)" at the end of the backend URL. <br>
 
-![alt text](image-6.png)
+![alt text](./images/13d.png)
+
 
 
 ## 3d. Configure CORS<a name="config-api-cors"></a>
@@ -193,19 +196,19 @@ Click on the API Customer_Database under APIs section (left), then scroll down a
 
 Click <\Add\>. <br>
 
-![alt text](image-7.png)
+![alt text](./images/14a.png)
 
 Enter name, namespace (project), then click <\Add\>. <br>
 
-![alt text](image-8.png)
+![alt text](./images/14b.png)
 
 Edit CORS. <br>
 
-![alt text](image-9.png)
+![alt text](./images/14c.png)
 
 SCROLL down, and uncheck "Expose headers", then Save. <br>
 
-![alt text](image-10.png)
+![alt text](./images/14d.png)
 
 
 ## 3e. Configure Security<a name="config-api-security"></a>
@@ -214,91 +217,95 @@ Scroll down to "Components" section, then on the right side again scroll down to
 
 Click <\Add Security Schema\>. <br>
 
-![alt text](image-11.png)
+![alt text](./images/15a.png)
 
 Add "X-IBM-Client-Id". <br>
 
-![alt text](image-12.png)
+![alt text](./images/15b.png)
 
 Similarly, add "X-IBM-Client-Secret". <br>
 
-![alt text](image-13.png)
+![alt text](./images/15c.png)
 
 Now, click "Security" section and then click on <\Add Security Schema\>. <br>
 
-![alt text](image-14.png)
+![alt text](./images/15d.png)
+
 
 First, select both apikeys, then click on <\Create AND group (2 selected)\> button. <br>
 
-![alt text](image-15.png)
+![alt text](./images/15e.png)
+
 
 Now, click <\Add\>. <br>
 
-![alt text](image-16.png)
+![alt text](./images/15f.png)
 
-![alt text](image-17.png)
+![alt text](./images/15g.png)
 
 
+<br>
 
 
 # 4. Publish API<a name="publish-api"></a>
 
 Here, you will publish the API to IBM DataPower API Gateway and Developer Portal community for consuming the API. <br>
 
-![alt text](image-18.png)
+![alt text](./images/image-18.png)
 
-![alt text](image-19.png)
+![alt text](./images/image-19.png)
 
-![alt text](image-20.png)
+![alt text](./images/image-20.png)
 
 Click on Catalog button. Don't worry if that little window disappears quickly, you should be able to access the Catalog through Manage section in the left. <br>
 
-![alt text](image-21.png)
+![alt text](./images/image-21.png)
 
 Navigate to the Portal Section under Catalog Settings, then click on the Portal URL. <br>
 
-![alt text](image-22.png)
+![alt text](./images/image-22.png)
 
+<br>
 
 # 5. API Connect Developer Portal<a name="devportal"></a>
 
-![alt text](image-23.png)
+![alt text](./images/image-23.png)
 
 Click on <\Sign up\> button. <br>
 
-![alt text](image-24.png)
+![alt text](./images/image-24.png)
 
-![alt text](image-25.png)
+![alt text](./images/image-25.png)
 
 Login as student(n) now. <br>
 
-![alt text](image-26.png)
+![alt text](./images/image-26.png)
 
 
 THis is the Developer Portal Welcome page. <br>
 
-![alt text](image-27.png)
+![alt text](./images/image-27.png)
 
 Click on "API Products". <br>
 
-![alt text](image-28.png)
+![alt text](./images/image-28.png)
 
 You should see Customer_Database API that was published earlier, then Click on the API. <br>
 
-![alt text](image-29.png)
+![alt text](./images/image-29.png)
 
 
 ## 5a. Subscribe API <a name="devportal-subscribe"></a>
 
 Subscribe the API
 
-![alt text](image-30.png)
+![alt text](./images/image-30.png)
 
-![alt text](image-31.png)
+![alt text](./images/image-31.png)
 
-![alt text](image-32.png)
+![alt text](./images/image-32.png)
 
-![alt text](image-33.png)
+![alt text](./images/image-33.png)
 
 Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower API Gateway. <br>
 
@@ -306,10 +313,10 @@ You should also see ClientID, and ClientSecret being generated. <br>
 
 **SAVE the ClientID, and ClientSecret to a NOTEPAD or TEXTPAD.** You will need them when testing the API. <br> 
 
-![alt text](image-34.png)
+![alt text](./images/image-34.png)
 
 
-
+<br>
 
 
 # 6. Test the API <a name="test-api"></a>
@@ -317,78 +324,49 @@ You should also see ClientID, and ClientSecret being generated. <br>
 
 Click on "API Products". <br>
 
-![alt text](image-35.png)
+![alt text](./images/image-35.png)
 
 Click on the API Product Customer_Database_product, then click on the API. <br>
 
-![alt text](image-36.png)
+![alt text](./images/image-36.png)
 
-![alt text](image-37.png)
+![alt text](./images/image-37.png)
 
 Expand "API Resources". <br>
 
-![alt text](image-38.png)
+![alt text](./images/image-38.png)
 
-![alt text](image-39.png)
+![alt text](./images/image-39.png)
 
 Click Headers tab to populate our ClientId, and Secret. <br>
 
-![alt text](image-40.png)
+![alt text](./images/image-40.png)
 
 The ClientID should be populated automatically, you need to populate X-IBM-Client-Secret and its value that saved into the Notepad. <br>
 
 Then click **<\Send\>**. <br>
 
-![alt text](image-41.png)
+![alt text](./images/image-41.png)
 
 
 If successful, you should get "200 OK" Result.
 
-![alt text](image-42.png)
+![alt text](./images/image-42.png)
 
 
-
-
-
-![alt text][pic15]
-    
-[pic6]: images/6.png
-[pic7]: images/7.png
-[pic8]: images/8.png
-[pic9]: images/9.png
-[pic10]: images/10.png
-[pic11]: images/11.png
-[pic12]: images/12.png
-[pic13]: images/13.png
-[pic14]: images/14.png
-[pic15]: images/15.png
-[pic104]: images/104.png
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<br><br>
 
 
 # 6.Summary <a name="summary"></a>
 
-Congratulations, you have completed the **Create and Secure an API** lab. Throughout the lab, you learned how to:
+Congratulations, you have completed the **Create, Secure, publish, subscribe, and tested your API**. Throughout the lab, you learned how to:
 
 -   Create an API by importing an OpenAPI definition for an existing REST service
 
--   Configure ClientID/Secret Security, endpoints, and proxy to invoke endpoint
-
--   Test a REST API in the Developer Toolkit
+-   Configure ClientID/Secret Security, endpoints, CORS, and proxy to invoke endpoint
 
 -   Publish an API for developers
+
+-   Test a REST API in the Developer Portal
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
