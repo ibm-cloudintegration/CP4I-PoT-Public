@@ -41,6 +41,21 @@ In this tutorial, you will explore the following key capabilities:
 
 ![alt text](./images/component-diagram.png)
 
+
+**What is IBM DataPower API Gateway?**
+IBM DataPower API Gateway is a purpose-built, high-performance enterprise API gateway that provides security, integration, and traffic management for APIs and web services. It is one of IBM's flagship middleware products, originally designed as a hardware appliance and now available as software and containers. <br>
+
+1. Core Purpose
+It acts as a policy enforcement point between API consumers (clients) and API providers (backend services) — handling security, transformation, routing, and monitoring without requiring changes to backend applications.
+![alt text](image-43.png)
+
+1. Typical Use Cases
+API Security Gateway — Protect internal services from external consumers <br>
+B2B Integration — Secure partner-facing EDI/AS2 transactions<br>
+SOA/ESB offload — Move security and transformation out of the ESB<br>
+Regulatory compliance — Financial services, healthcare (HIPAA), government<br>
+Microservices security — North-south traffic enforcement in Kubernetes<br>
+
 <br>
 
 # 2. IBM App Connect - Deploying the backend REST Service <a name="deploy"></a>
