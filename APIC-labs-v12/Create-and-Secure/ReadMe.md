@@ -1,4 +1,4 @@
-# IBM API Connect
+# IBM API Connect v12
 
 ## Create and Secure an API to Proxy an Existing REST Web Service
 
