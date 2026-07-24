@@ -273,12 +273,13 @@ Here, you will publish the API to IBM DataPower Nano Gateway and Developer Porta
 ![alt text](./images/image-32.png)
 
 
-1. Click <\Save\>. <br>
+1. Click \<Save\> <br>
 ![alt text](./images/image-33.png)
 
-![alt text](image.png)
+	See demo-app-2
+	![alt text](./images/image-33a.png)
 
-1. Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower Nano Gateway. <br>
+1. Click on the demo-app-2. You should see that your subscription is successful, and acknowledged by the DataPower Nano Gateway. <br>
 
 	You should also see ClientID, and ClientSecret being generated. <br>
 ![alt text](./images/image-34.png)
@@ -295,19 +296,21 @@ Here, you will publish the API to IBM DataPower Nano Gateway and Developer Porta
 1. Click on "API Products".
 ![alt text](./images/image-35.png)
 
-1. Click on the API Product Customer_Database-product, then click on the API.
+1. Click on the API Product customer-database-ngw-product, then click on the API.
 ![alt text](./images/image-37.png)
 
 1. Expand "API Resources".
 ![alt text](./images/image-38.png)
 
-1. Navigate to GET under /customers operation. <br>
+1. Navigate to GET under /customers operation, then click on \<Try\>. <br>
 ![alt text](./images/image-39.png)
 
 1. Click Headers tab to populate our ClientId, and Secret. <br>
 ![alt text](./images/image-40.png)
 
 1. The ClientID should be populated automatically, you need to populate X-IBM-Client-Secret and its value that saved into the Notepad. <br>
+Click \<Add New\>, and add X-IBM-Client-Secret. <br>
+![alt text](./images/image-40a.png)
 
 1. Click **<\Send\>**. <br>
 ![alt text](./images/image-41.png)
@@ -316,6 +319,10 @@ Here, you will publish the API to IBM DataPower Nano Gateway and Developer Porta
 1. If successful, you should get "200 OK" Result.
 ![alt text](./images/image-42.png)
 
+1. A DataPower Nano Gateway Runtime pod should be started. Switch to OpenShift Console, workloads -> pods -> under project cp4i-apic. <br>
+
+	You should see a pod like this. <br>
+	![alt text](./images/image-42a.png)
 
 <br><br>
 
@@ -328,8 +335,8 @@ Congratulations, you have completed the **Create, Secure, publish, subscribe, an
 
 -   Configure ClientID/Secret Security, endpoints, CORS, and proxy to invoke endpoint
 
--   Publish an API for developers
+-   Publish an API to IBM DataPower Nano Gateway, and to a Developer Portal to socialize the API for developers to consume the API.
 
--   Test a REST API in the Developer Portal
+-   Test a REST API in the Developer Portal, and witnessed that the Nano Gateway was created on the fly while the API is active. <br>
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
