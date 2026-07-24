@@ -1,6 +1,6 @@
 # IBM API Connect v12
 
-## Create, Secure, Publish, Subscribe, and Test an API
+## Create, Secure, Publish, Subscribe, and Test API 
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
@@ -33,7 +33,7 @@ In this tutorial, you will explore the following key capabilities:
 
 -   Configuring ClientID/Secret Security, endpoints, CORS, and proxy to invoke an endpoint
 
--   Publish API to **IBM DataPower API Gateway** and to Developer Portal
+-   Publish API to **IBM DataPower NANO Gateway** and to Developer Portal
 
 -   Testing a REST API in the Developer Portal
 
@@ -118,7 +118,7 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 1. Click **Create New Project**.
 ![alt text](images/image-6.png)
 
-	Name it customer-database-agw, where agw stands for the API Gateway. <br>
+	Name it customer-database-agw, where ngw stands for the Nano Gateway. <br>
 ![alt text](images/image-6a.png)
 
 1.  Open the project customer-database-agw. 
@@ -150,7 +150,7 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 1. Click (+) sign next to "Policy Sequence". <br>
 ![alt text](./images/image-7a.png)
 
-1. Select "DataPower API Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
+1. Select "DataPower Nano Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
 Click \<Add\>.
 ![alt text](./images/image-7b.png)
 
@@ -211,7 +211,7 @@ Scroll down to "Components" section, then on the right side again scroll down to
 
 # 4. Publish API<a name="publish-api"></a>
 
-Here, you will publish the API to IBM DataPower API Gateway and Developer Portal community for consuming the API. <br>
+Here, you will publish the API to IBM DataPower Nano Gateway and Developer Portal community for consuming the API. <br>
 
 1. Click on "Publish" 
 ![alt text](./images/image-18.png)
@@ -267,7 +267,7 @@ Here, you will publish the API to IBM DataPower API Gateway and Developer Portal
 ![alt text](./images/image-33.png)
 
 
-1. Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower API Gateway. <br>
+1. Click on the demo-app. You should see that your subscription is successful, and acknowledged by the DataPower Nano Gateway. <br>
 
 	You should also see ClientID, and ClientSecret being generated. <br>
 ![alt text](./images/image-34.png)
