@@ -32,7 +32,7 @@ Before starting the labs you should review the lab environment and the use of th
 
 |  Topic                                | Description                                                                
 |---------------------------------------|-----------------------------------------------------------------------------|
-| [API Management Experiences](APIC-labs/ReadMe.md)          | This section you will explore an API Management platform for use in your API Economy. IBM API Connect enables users to create, assemble, manage, secure and socialize APIs  
+| [API Management Experiences](APIC-labs-v12/ReadMe.md)          | This section you will explore an API Management platform for use in your API Economy. IBM API Connect enables users to create, assemble, manage, secure and socialize APIs  
 |---------------------------------------|-----------------------------------------------------------------------------|   
 | [Integration Experiences](Integration/index.md)         | This section you will explorer key capabilities using both the ACE Toolkit and ACE Designer to build integrations solutions.  When creating APIs you will also import them into APIC.
 |---------------------------------------|-----------------------------------------------------------------------------|
