@@ -180,7 +180,7 @@ Click \<Add\>.
 ![alt text](./images/image-7c.png)
 
 	Wrap the endpoint URL with single quotes, then append & $relativeUrl('request') after the single quote (including &). <br>
-![alt text](./images/image-7d.png)
+	![alt text](./images/image-7d.png)
 <br>
 ![alt text](./images/image-7e.png)
 
