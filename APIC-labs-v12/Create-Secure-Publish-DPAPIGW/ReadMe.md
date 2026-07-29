@@ -47,7 +47,7 @@ IBM DataPower API Gateway is a purpose-built, high-performance enterprise API ga
 
 1. Core Purpose
 It acts as a policy enforcement point between API consumers (clients) and API providers (backend services) — handling security, transformation, routing, and monitoring without requiring changes to backend applications.
-![alt text](image-43.png)
+![alt text](./images/image-43.png)
 
 1. Typical Use Cases
 API Security Gateway — Protect internal services from external consumers <br>
@@ -172,7 +172,7 @@ Click \<Add\>.
 1. Click on "Invoke" policy. <br>
 ![alt text](./images/image-7c.png)
 
-	Append "$(api.operation.path)" at the end of the backend URL. <br>
+	Append **$(api.operation.path)** at the end of the backend URL. <br>
 ![alt text](./images/image-7d.png)
 
 
