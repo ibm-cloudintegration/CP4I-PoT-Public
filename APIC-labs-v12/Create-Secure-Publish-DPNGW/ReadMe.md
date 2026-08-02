@@ -162,8 +162,9 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 ## 3c. Rename the API <a name="rename-api"></a>
 ![alt text](images/image-43.png)
 
-	Change the name to customer-database-ngw, then click \<Update\>. <br>
-	![alt text](images/image-43a.png)
+	Change the name to customer-database-ngw, then click \<Update\>.
+
+![alt text](images/image-43a.png)
 
 ## 3d. Configure API - Add Gateway Policy<a name="config-api-gateway-policy"></a>
 
