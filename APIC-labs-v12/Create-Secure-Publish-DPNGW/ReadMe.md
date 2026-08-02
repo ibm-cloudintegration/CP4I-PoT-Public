@@ -162,7 +162,7 @@ You will be importing the backend REST API definition into IBM API Connect Studi
 ## 3c. Rename the API <a name="rename-api"></a>
 ![alt text](images/image-43.png)
 
-	Change the name to customer-database-ngw, then click \<Update\>.
+Change the name to customer-database-ngw, then click \<Update\>.
 
 ![alt text](images/image-43a.png)
 
@@ -188,6 +188,15 @@ Click \<Add\>.
 1. Change URL Type to be Jsonata
 ![alt text](./images/image-7f.png)
 
+1. Scroll down to TLS client profile on Invoke policy.
+
+	Provide value for TLS client profile - **tls-client-profile-catalog-default:1.0.0**
+
+	(It is the TLS profile name of Sandbox catalog along with version which we are going to use while calling https backend. Make sure there is no space at the end of the line if you copy paste.) We now have an API and NanoGw policy created associated to it. Next, we will publish the API.
+
+	![alt text](./images/image-48.png)
+
+	For non-Sandbox Catalogs, the TLS Client Profile needs to be added in the Catalog Settings —> TLS Client Profiles
 
 ## 3e. Configure CORS<a name="config-api-cors"></a>
 
