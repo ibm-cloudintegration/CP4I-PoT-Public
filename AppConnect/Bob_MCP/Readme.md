@@ -5,28 +5,38 @@
 
 ## Pre-reqs
 
+Free trial of Bob
+
+
+## App Connect Dashboard 
+
+### Deploy Customer Database REST API
+
+REST Open API 3.0 
+
+
+### Create MCP Servers
+
+
+### Capture MCP Server Credentials
 
 
 
-## Deploy the MQ Queue Manager with associated resources
-
-1. xx
+## Bob	
 	
-	
+### Add Customer Database MCP Server 
 
-1. xx
+Settings > MCP
 
+Make sure it's connected. <br>
 
-	
-1. xx
-
-	
-## Explore the queue manager 
+### Run prompts
 
 
 
-## Cleanup
 
-[Continue to Lab 2](../Lab_2a/Readme.md)
 
-[Return to MQ lab page](../index.md)
+## Summary
+
+
+[Return to ACE lab page](../index.md)
