@@ -1,4 +1,4 @@
-# Leveraging App Connect MCP Servers in Bob
+# App Connect MCP Servers Bob
 
 [Return to MQ lab page](../index.md)
 
