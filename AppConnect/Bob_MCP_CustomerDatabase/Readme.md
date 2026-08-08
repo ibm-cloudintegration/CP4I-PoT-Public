@@ -1,4 +1,4 @@
-# App Connect MCP Servers Bob
+# App Connect - Exposing Customer Database REST API as an MCP Server in IBM Bob
 
 [Return to MQ lab page](../index.md)
 
@@ -6,7 +6,7 @@
 
 # Table of Contents
 - [1. Overview](#overview)
-- [2. Signup for IBM Bob](#signup)
+- [2. Signup to IBM Bob](#signup)
 - [3. App Connect Dashboard](#ace-dashboard)
 	* [3a. Deploy Customer Database REST API](#ace-dashboard-deploy-cdb)
 	* [3b. Create MCP Server ](#ace-dashboard-create-mcp)
@@ -19,7 +19,10 @@
 
 ## 1. Overview <a name="overview"></a>
 
-## 2. Signup for IBM Bob <a name="signup"></a>
+In this lab, you will deploy Customer Database REST API into IBM App Connect on Cloud Pak for Integration, then you will create an Model Context Protocol (MCP) server in App Connect which will be used in IBM Bob. <br>
+<br>
+
+## 2. Signup to IBM Bob <a name="signup"></a>
 
 Signup for IBM Bob 30-day free trial. <br>
 
@@ -159,5 +162,7 @@ Notice that Customer 11 was created Successfully.
 
 ## 6. Summary <a name="summary"></a>
 
+Congratulations! You have exposed an APP Connect REST API as an MCP server into IBM Bob, and ran prompts to retrieve and add new customers through Natural Language prompts using IBM Bob. <br>
+<br>
 
 [Return to ACE lab page](../index.md)
