@@ -2,94 +2,111 @@
 
 [Return to MQ lab page](../index.md)
 
+---
 
-## Pre-reqs
+# Table of Contents
+- [1. Overview](#overview)
+- [2. Signup for IBM Bob](#signup)
+- [3. App Connect Dashboard](#ace-dashboard)
+	* [3a. Deploy Customer Database REST API](#ace-dashboard-deploy-cdb)
+	* [3b. Create MCP Server ](#ace-dashboard-create-mcp)
+- [4. IBM Bob](#ibm-bob)
+	* [4a. Add Customer Database MCP Server](#ibm-bob-add-mcp)
+- [5. Sample Prompts](#prompts)
+- [6. Summary](#summary)
 
-Free trial of Bob
+---
+
+## 1. Overview <a name="overview"></a>
+
+## 2. Signup for IBM Bob <a name="signup"></a>
+
+Signup for IBM Bob 30-day free trial. <br>
 
 https://bob.ibm.com/trial
-<br>
-
-![alt text](image.png)
-
-![alt text](image-1.png)
-
-![alt text](image-2.png)
-
-![alt text](image-3.png)
 
 <br>
 
+![alt text](./images/image.png)
 
-## App Connect Dashboard 
+![alt text](./images/image-1.png)
 
-### Deploy Customer Database REST API
+![alt text](./images/image-2.png)
 
-![alt text](image-13.png)
+![alt text](./images/image-3.png)
+
+<br>
+
+
+## 3. App Connect Dashboard <a name="ace-dashboard"></a>
+
+### 3a. Deploy Customer Database REST API <a name="ace-dashboard-deploy-cdb"></a>
+
+![alt text](./images/image-13.png)
 
 Click Quick Start , then click \<Next\>. <br>
 
-![alt text](image-14.png)
+![alt text](./images/image-14.png)
 
 
-![alt text](image-15.png)
+![alt text](./images/image-15.png)
 
-![alt text](image-16.png)
+![alt text](./images/image-16.png)
 
-![alt text](image-17.png)
+![alt text](./images/image-17.png)
 
-![alt text](image-18.png)
+![alt text](./images/image-18.png)
 
-![alt text](image-19.png)
+![alt text](./images/image-19.png)
 
-![alt text](image-20.png)
+![alt text](./images/image-20.png)
 
 <br><br>
 
-### Create MCP Servers
+### 3b. Create MCP Server <a name="ace-dashboard-create-mcp"></a>
 
-![alt text](image-4.png)
+![alt text](./images/image-4.png)
 
-![alt text](image-5.png)
+![alt text](./images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](./images/image-6.png)
 
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
 
-![alt text](image-8.png)
+![alt text](./images/image-8.png)
 
-![alt text](image-9.png)
+![alt text](./images/image-9.png)
 
-![alt text](image-10.png)
+![alt text](./images/image-10.png)
 
-![alt text](image-11.png)
+![alt text](./images/image-11.png)
 
 Capture MCP Server Basic Auth Credentials. <br>
-![alt text](image-12.png)
+![alt text](./images/image-12.png)
 
 
 
 
 
-## Bob
-	
-### Add Customer Database MCP Server 
+## 4. IBM Bob <a name="ibm-bob"></a>
 
 Open the IBM Bob IDE, and navigate to Settings <br>
 
-![alt text](image-21.png)
+### 4a. Add Customer Database MCP Server <a name="ibm-bob-add-mcp"></a>
+
+![alt text](./images/image-21.png)
 
 Navigate to MCP. <br>
 
-![alt text](image-22.png)
+![alt text](./images/image-22.png)
 
 Click + sign. <br>
 
-![alt text](image-23.png)
+![alt text](./images/image-23.png)
 
-![alt text](image-24.png)
+![alt text](./images/image-24.png)
 
-![alt text](image-25.png)
+![alt text](./images/image-25.png)
 Append the below between the curly braces. <br>
 ```
     "customer-database-v3": {
@@ -100,46 +117,47 @@ Append the below between the curly braces. <br>
     }
 ```
 
-![alt text](image-26.png)
+![alt text](./images/image-26.png)
 
 Now, populate the url, and Authorization values from the MCP Server created in the App Connect Dashboard. <br>
 
-![alt text](image-27.png)
+![alt text](./images/image-27.png)
 
-![alt text](image-28.png)
+![alt text](./images/image-28.png)
 
 Now, save and close mcp.json. <br>
 
 Notice that customer-databasev-v3 is connected to the MCP server. <br>
 
-![alt text](image-29.png)
+![alt text](./images/image-29.png)
 
 
-### Run prompts
+## 5. Prompts <a name="prompts"></a>
 
 
-![alt text](image-30.png)
+![alt text](./images/image-30.png)
 
 Click on Approve. <br>
 
-![alt text](image-31.png)
+![alt text](./images/image-31.png)
 
 Notice that Bob called the backend MCP server and the REST API and retrived list of customers. <br>
 
-![alt text](image-32.png)
+![alt text](./images/image-32.png)
 
 Let's add few Customers using below prompt. <br>
 ```
 add customer, firstname Joe, lastname Jodl, address 144 marina drive, edison, nj, zip code 11111-1111
 ```
 Notice that Bob automatically formed the JSON payload for addCustomer operation. <br>
-![alt text](image-33.png)
+![alt text](./images/image-33.png)
 
 Click "Approve Once". <br>
 
 Notice that Customer 11 was created Successfully.
-![alt text](image-34.png)
+![alt text](./images/image-34.png)
 
-## Summary
+## 6. Summary <a name="summary"></a>
+
 
 [Return to ACE lab page](../index.md)
