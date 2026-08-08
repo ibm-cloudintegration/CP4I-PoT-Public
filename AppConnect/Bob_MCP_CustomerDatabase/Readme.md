@@ -45,6 +45,11 @@ https://bob.ibm.com/trial
 
 ### 3a. Deploy Customer Database REST API <a name="ace-dashboard-deploy-cdb"></a>
 
+For this lab, we already have the REST service built and available as a **bar** file. You can download the **CustomerDatabaseV3.bar** file for the service [<u>**here**</u>](./resources/CustomerDatabaseV3.bar).
+<br>
+
+Open IBM App Connect Dashboard from the Cloud Pak for Integration Platform Navigator, and click on Deploy Integrations. <br>
+
 ![alt text](./images/image-13.png)
 
 Click Quick Start , then click \<Next\>. <br>
