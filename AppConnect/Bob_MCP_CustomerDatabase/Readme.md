@@ -89,11 +89,10 @@ Click Quick Start , then click \<Next\>. <br>
 
 ![alt text](./images/image-11.png)
 
-Capture MCP Server Basic Auth Credentials. <br>
+Capture MCP Server URL, and Basic Auth Credentials. <br>
+
 ![alt text](./images/image-12.png)
-
-
-
+<br>
 
 
 ## 4. IBM Bob <a name="ibm-bob"></a>
