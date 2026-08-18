@@ -1,4 +1,4 @@
-# IBM API Connect v12
+# IBM API Connect v12 - DataPower API Gateway lab
 
 ## Create, Secure, Publish, Subscribe, and Test an API
 

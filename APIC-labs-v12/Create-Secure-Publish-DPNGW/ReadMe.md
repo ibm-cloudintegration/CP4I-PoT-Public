@@ -1,4 +1,4 @@
-# IBM API Connect v12
+# IBM API Connect v12 - DataPower Nano Gateway lab
 
 ## Create, Secure, Publish, Subscribe, and Test API 
 
@@ -172,7 +172,7 @@ Change the name to customer-database-ngw, then click \<Update\>.
 ![alt text](./images/image-7a.png)
 
 
-1. Select "DataPower Nano Gateway", and name the policy as "customer-database-agw-policy", then select the API using the drop-down. <br>
+1. Select "DataPower Nano Gateway", and name the policy as "customer-database-ngw-policy", then select the API using the drop-down. <br>
 Click \<Add\>.
 ![alt text](./images/image-7b.png)
 
