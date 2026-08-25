@@ -298,9 +298,9 @@ In this section, you will consume the flight landing events using Kafka Clients 
 
 ## Generate client certificates of Event Gateway
 
+**Note: Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. ** <br>
 
-
-b)  Run the generate_egw_cert.sh script
+a)  Run the generate_egw_cert.sh script
 
 ./generate_egw_cert.sh
 
@@ -329,8 +329,9 @@ Change Directory to \~/EEM.
 
  ![](./images/image55.png)
 
- Now run the kafka_console_flight_landings_consumer.sh script and you
- should see flight info being displayed.
+gedit kafka_console_flight_landings_consumer.sh, and change topic (last line) to STUDENTyour-number.FLIGHT.LANDINGS, save and close file. <br>
+
+Now run the kafka_console_flight_landings_consumer.sh script and you should see flight info being displayed.
 
 ```
  ./kafka_console_flight_landings_consumer.sh
@@ -352,6 +353,11 @@ Change Directory to \~/EEM.
 
  b\) Now run the following command to start the Java Consumer.
 
+gedit config.properties.2 and change TOPIC to STUDENTyour-number.FLIGHT.LANDINGS. <br>
+
+![alt text](image-29.png)
+
+Now, run the Java consumer program. <br>
 ```
  ./java_flight_landing_consumer.sh
 ```
