@@ -253,6 +253,15 @@ Now, click on the application to see the SASL username and password. <br>
 
 Let's copy and paste the SASL Username, and Password into \~/EEM/config.properties file. <br>
 
+Now, on the Desktop open a Terminal Window.
+
+![alt text](./images/image51.png)
+
+Go to the EEM directory
+
+cd \~/EEM
+
+gedit config.properties <br>
 ```
 STUDENT_NUM=YOUR-STUDENT-NUMBER
 APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
@@ -289,14 +298,6 @@ In this section, you will consume the flight landing events using Kafka Clients 
 
 ## Generate client certificates of Event Gateway
 
-Now, on the Desktop minimize the Google Chrome Browser, and open a Terminal Window.
-
-![alt text](./images/image51.png)
-
-
-a)  Go to the EEM directory
-
-cd \~/EEM
 
 
 b)  Run the generate_egw_cert.sh script
