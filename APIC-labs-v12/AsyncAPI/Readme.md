@@ -216,7 +216,7 @@ Locate the devportal url. <br>
 
 ![alt text](image-12.png)
 
-Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal. <br>
+Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if not already signed up. <br>
 
 ![alt text](image-13.png)
 
@@ -276,8 +276,11 @@ APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
 APP_CLIENT_SECRET=a9fxxxxxxxxxxxxxxxxxx
 EGW_BOOTSTRAP=group-1.xxxxx.xxx.xxxxxxx
 ```
+Now, save and close config.properties file. <br>
 
-Then click on \<Download certificate\>. <br>
+<!--
+Click on \<Download certificate\>. The certificate will be downloaded into ~/Downloads folder. <br>
+-->
 
 <br>
 
@@ -285,13 +288,11 @@ Then click on \<Download certificate\>. <br>
 
 # Consuming Flight Landing Events
 
-In this section, you will consume the flight landing events using Kafka
-Clients kafka-console-consumer.sh and a Java client.
+In this section, you will consume the flight landing events using Kafka Clients kafka-console-consumer.sh and a Java client.
 
 ## Generate client certificates of Event Gateway
 
-Now, on the Desktop minimize the Google Chrome Browser, and open a
-Terminal Window.
+Now, on the Desktop minimize the Google Chrome Browser, and open a Terminal Window.
 
 ![alt text](./images/image51.png)
 
