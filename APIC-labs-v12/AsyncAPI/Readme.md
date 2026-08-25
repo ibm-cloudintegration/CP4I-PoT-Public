@@ -240,7 +240,7 @@ Click on "Asset Gallery". <br>
 You should see the Virtual Topic that you created and published from the Event Endpoint Manager section. <br>
 ![alt text](image-18.png)
 
-Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now on \<Consume\> icon. <br>
+Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now click on \<Consume\> icon. <br>
 
 ![alt text](image-19.png)
 
@@ -250,18 +250,27 @@ Select "Create new application", then click \<Request\>. <br>
 Give a name to your application, for example student1-asyncapi-demo. <br>
 ![alt text](image-21.png)
 
-Now, click on the application to see the SASL username and password. <br>
+
 ![alt text](image-22.png)
+
+Now, click on the application to see the SASL username and password. <br>
+
+
+![alt text](image-25.png)
 
 Save them to a Notepad or Textpad. We will use them later when Testing. <br>
 
 After saving the SASL username, password, click on the AsyncAPI. <br>
+
 ![alt text](image-23.png)
 
 Copy the "Gateway group" into the Notepad or Textpad, then click on \<Download certificate\>. <br>
+
 ![alt text](image-24.png)
 
 <br>
+
+
 
 ## Testing
 
