@@ -65,23 +65,27 @@ both as a fully managed service or on-premise.
 
 
 **What is IBM Event Endpoint Management?** <br>
-IBM Event Endpoint Management, a component of IBM Event Automation, is a
-tool that allows organizations to manage, discover, and share event
-streams as easily as APIs. It provides a catalog for event streams,
-enabling application developers to discover, understand, and utilize
-these events within their applications. Essentially, it helps bridge the
-gap between event-driven architectures and API management practices.
+
+IBM Event Endpoint Manager (EEM) enables organizations to efficiently manage, discover, and share event streams in a manner comparable to APIs. EEM facilitates the addition and management of Kafka Topics from any Kafka platforms thereby offering a unified platform for managing Kafka Platforms. <br>
+
+**Event Endpoint Management Core Capabilities** <br>
+**Event Catalog:** Provides a self-service, developer-friendly portal to search, discover, and reuse event sources.<br>
+**AsyncAPI Standardization:** Automatically documents event streams using the standard AsyncAPI specification.<br>
+**Centralized Control Plane:** Unifies governance across multiple disparate Kafka clusters.
+
+**Main Components** <br>
+**Event Manager:** The administrative plane where technical experts discover Kafka topics, define access rules, and publish definitions to the catalog. <br>
+**Event Gateway:** The runtime enforcement point that abstracts direct access to Kafka clusters, handling security, traffic virtualization, and policy enforcement.
+
+**Key Security and Governance Features** <br>
+**Authentication:** Validates Kafka clients before granting access. <br>
+**Quota Enforcement:** Limits the number of events a client can publish or consume over time.<br>
+**Redaction and Filtering:** Automatically redacts sensitive information and enforces schema-based filtering as traffic flows through the gateway.
 
 
 
 **What is IBM API Connect?** <br>
-IBM API Connect is a comprehensive platform for managing the complete
-lifecycle of APIs (Application Programming Interfaces). It enables
-organizations to create, manage, secure, socialize, and analyze APIs,
-allowing them to unlock their data and assets and power digital
-applications. API Connect provides a unified experience across the API
-lifecycle, from design and development to deployment, management, and
-monitoring.
+IBM API Connect is an enterprise-grade, integrated API management platform that helps businesses create, secure, manage, share, monetize, and analyze application programming interfaces (APIs) across cloud and on-premises environments. <br>
 
 <br>
 
@@ -92,23 +96,16 @@ Linux workstation. These components provide the foundation for deploying
 and testing AsyncAPIs in a realistic, cloud-native setup.
 
 - **Red Hat OpenShift Cluster**\
-    The OpenShift cluster serves as the deployment platform for all IBM
-    Capabilities throughout the lab. It offers a fully containerized and
-    orchestrated environment that aligns with modern enterprise cloud
-    strategies.
+    The OpenShift cluster serves as the container deployment platform for all IBM
+    Capabilities throughout the lab.
 
 - **Linux Workstation**\
     The Linux workstation functions as the primary interface for
-    interacting with the OpenShift cluster. It will be used to execute
-    deployment scripts, manage queue manager configurations, and run
-    test scenarios. Participants will also use the workstation to
-    monitor queue manager behavior, evaluate failover performance, and
-    validate high availability and disaster recovery features.
+    interacting with the OpenShift cluster. 
 
 <br>
 
-# IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review 
-<a name="eem-section"></a>
+# IBM Event Endpoint Manager -- Review FLIGHT.LANDINGS Topic <a name="eem-section"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
@@ -116,10 +113,6 @@ and testing AsyncAPIs in a realistic, cloud-native setup.
 Endpoint Management Admin would use to expose a topic as AsyncAPI for
 IBM API Connect.
 
-IBM Event Endpoint Manager (EEM) enables organizations to efficiently
-manage, discover, and share event streams in a manner comparable to
-APIs. EEM facilitates the addition and management of Kafka Topics from
-any Kafka platforms thereby offering a unified platform for managing Kafka Platforms.
 
 Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been
 pre-defined and cataloged in EEM.
@@ -144,9 +137,8 @@ button to view the Topics view.
 Click on the FLIGHT.LANDINGS to look at the options for the topic. Here
 you will see that it has been published to the Event Gateway.
 
-Please be informed that the FLIGHT.LANDINGS Topic from the Kafka Platform (Event Streams or Confluent or Other Kafka providers) 
-is preconfigured within EEM, and an application is consistently
-generating events into this Topic at regular intervals.
+Please be informed that the FLIGHT.LANDINGS Topic from the Kafka Platform (Confluent or Other Kafka providers) 
+is preconfigured within EEM, and an application is consistently generating flight landing events into this Topic at regular intervals.
 
 ![](./images/image12.png)
 
@@ -194,7 +186,7 @@ Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for exampl
 
 
 
-# API Connect Developer Portal
+# IBM API Connect
 
 Here, you will access, login, discover, and subscribe to the FLIGHT.LANDINGS AsyncAPI.
 Consider the API Connect Developer Portal as a marketplace for all your
@@ -204,19 +196,24 @@ Applications, Mobile Applications, and more.
 
 ## Access API Connect Developer Portal
 
-a)  Locate the developer portal URL, by navigating to API Manager Home
-    (Home Icon on top left) --\> Manage Catalogs, select Sandbox
-    Catalog.
+a) Logon to API Connect Manager using your student id. <br>  
+
+![alt text](image-26.png)
+
+b) Click on Manage. <br>
+![alt text](image-27.png)
+
+c) Click on Sandbox catalog, then locate the developer portal URL, by navigating Catalog Settings Catalogs, and Portal. <br>
 
 ![alt text](image-10.png)
 
 ![alt text](image-11.png)
 
-Locate the devportal url. <br>
+Click on the devportal url. <br>
 
 ![alt text](image-12.png)
 
-Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if not already signed up. <br>
+Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if **not already** signed up. <br>
 
 ![alt text](image-13.png)
 
