@@ -6,8 +6,9 @@
 - [1. Introduction](#introduction)
 - [2. IBM Event Endpoint Manager](#eem-section)
     * [2a. Review FLIGHT.LANDINGS Topic](#review-topic)
-    * [2b. Topics View](#topics-view)
-    * [2c. Catalogs View](#catalogs-view)
+    * [2b. Topics](#topics)
+    * [2c. Virtual Topics](#virtual-topics)
+    * [2d. Catalogs](#catalogs)
 - [3. IBM API Connect](#apiconnect)
     * [3a. API Connect Manager](#apiconnect-manager)
     * [3b. API Connect Developer Portal](#apiconnect-devptl)
@@ -109,7 +110,7 @@ button to view the Topics view.
 
 ![](./images/image-31.png)
 
-## Topics View
+## 2b. Topics<a name="topics"></a>
 
 ![](./images/image-32.png)
 
@@ -125,7 +126,7 @@ Explore the **Information** tab. Notice the Schema, and Sample message
 that is describing the FLIGHT.LANDINGS topic.
 
 
-## Virtual topics 
+## 2c. Virtual topics <a name="virtual-topics"></a>
 
 Let's create a virtual topic with your student id, for example STUDENT1.FLIGHT.LANDINGS. <br>
 
@@ -148,7 +149,7 @@ After Publish, it should look like below. <br>
 ![alt text](./images/image-7.png)
 
 
-## Catalogs View
+## 2d. Catalogs<a name="catalogs"></a>
 
 Now, click on the Catalog icon on the left to see the Published Topics
 to the Event Gateway.
