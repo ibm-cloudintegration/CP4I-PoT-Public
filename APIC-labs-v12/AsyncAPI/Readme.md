@@ -1,42 +1,29 @@
 # IBM Event Automation & IBM API Connect: Socialization of Kafka Topics as AsyncAPI’s
 
-1. Introduction [#introduction]
+---
 
 # Table of Contents
+- [1. Introduction](#introduction)
+- [2. IBM Event Endpoint Manager](#eem-section)
+    * [2a. Review FLIGHT.LANDINGS Topic](#review-topic)
+    * [2b. Topics View](#topics-view)
+    * [2c. Catalogs View](#catalogs-view)
+- [3. IBM API Connect](#apiconnect)
+    * [3a. API Connect Manager](#apiconnect-manager)
+    * [3b. API Connect Developer Portal](#apiconnect-devptl)
+- [4. Consuming Flight Landing Events](#consume-flight-events)
+    * [4a. Generate client certificates of Event Gateway](#generate-egw-cert)
+    * [4b. kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer.sh)
+    * [4c. Java Application -- Consume flight events](#java-consume)
+- [5. Summary](#summary)
 
- [1. Introduction](#introduction)
+---
 
- [2. IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review](#eem-section)
 
-* [2.1 Topics View](#topics-view)
 
-* [2.2 Catalogs View](#catalogs-view)
+<br>
 
-[3. Api Connect Manager](#api-connect-manager)
-
-* [3.1 Add FLIGHT.LANDINGS AsyncApi](#add-flight-landings-asyncapi)
-
-* [3.2 Create API Product & Add FLIGHT.LANDINGS AsyncAPI](#create-api-product-add-flight-landings-asyncapi)
-
-* [3.3 Publish API Product](#publish-api-product)
-
-[4. API Connect Developer Portal](#_Toc203031005)
-
-* [4.1 Access API Connect Developer Portal](#access-api-connect-developer-portal)
-
-* [4.2 Sign-on the API Connect Developer Portal](#sign-on-the-api-connect-developer-portal)
-
-* [4.3 Subscribe to FLIGHT.LANDINGS API](#subscribe-to-flight-landings-api)
-
-[5. Consuming Flight Landing Events](#consuming-flight-landing-events)
-
-* [5.1 Generate client certificates of Event Gateway](#generate-client-certificates-of-event-gateway)
-
-* [5.2 kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer-sh---consume-flight-events)
-
-* [5.3 Java Application -- Consume flight events](#java-application-consume-flight-events)
-
-# Introduction <a name="introduction"></a>
+# 1. Introduction <a name="introduction"></a>
 
 In this lab, you will explore the full potential of ASYNCAPI within IBM
 Event Endpoint Management and IBM API Connect. ASYNCAPI enables the integration
@@ -105,25 +92,22 @@ and testing AsyncAPIs in a realistic, cloud-native setup.
 
 <br>
 
-# IBM Event Endpoint Manager -- Review FLIGHT.LANDINGS Topic <a name="eem-section"></a>
+# 2. IBM Event Endpoint Manager <a name="eem-section"></a>
+
+**Note:** This section is just showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.
+<br>
+
+## 2a. Review FLIGHT.LANDINGS Topic <a name="review-topic"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
-**Note:** This section is just showing the screens that an Event
-Endpoint Management Admin would use to expose a topic as AsyncAPI for
-IBM API Connect.
+Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been pre-defined and cataloged in EEM.
 
-
-Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been
-pre-defined and cataloged in EEM.
-
-Access IBM Event Endpoint Manager (***my-eem-manager***) from the Cloud
-Pak for Integration Platform Navigator Console.
+Access IBM Event Endpoint Manager (***my-eem-manager***) from the Cloud Pak for Integration Platform Navigator Console.
 
 ![](./images/image9.png)
 
-Logon to IBM Event Endpoint Manager as an Admin user "eem-admin", and
-password "passw0rd".
+Logon to IBM Event Endpoint Manager as an Admin user "eem-admin", and password "passw0rd".
 
 If you get the below Welcome page, then simply click on the **Skip**
 button to view the Topics view.
@@ -186,7 +170,7 @@ Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for exampl
 
 
 
-# IBM API Connect
+# 3. IBM API Connect <a name="apiconnect"></a>
 
 Here, you will access, login, discover, and subscribe to the FLIGHT.LANDINGS AsyncAPI.
 Consider the API Connect Developer Portal as a marketplace for all your
@@ -194,7 +178,7 @@ APIs, enabling application development teams to discover, subscribe to,
 and utilize the APIs within their applications, including Web
 Applications, Mobile Applications, and more.
 
-## Access API Connect Developer Portal
+## 3a. API Connect Manager<a name="apiconnect-manager"></a>
 
 a) Logon to API Connect Manager using your student id. <br>  
 
@@ -209,9 +193,12 @@ c) Click on Sandbox catalog, then locate the developer portal URL, by navigating
 
 ![alt text](image-11.png)
 
-Click on the devportal url. <br>
+d) Click on the devportal url. <br>
 
 ![alt text](image-12.png)
+
+
+## 3b. API Connect Developer Portal<a name="apiconnect-devptl"></a>
 
 Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if **not already** signed up. <br>
 
@@ -230,7 +217,7 @@ Welcome to developer portal home page. <br>
 Click on "Asset Gallery". <br>
 ![alt text](image-17.png)
 
-You should see the Virtual Topic that you created and published from the Event Endpoint Manager section. <br>
+You should see the Virtual Topic that you created and published in the Event Endpoint Manager section. <br>
 ![alt text](image-18.png)
 
 Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now click on \<Consume\> icon. <br>
@@ -248,7 +235,6 @@ Give a name to your application, for example student1-asyncapi-demo. <br>
 
 Now, click on the application to see the SASL username and password. <br>
 
-
 ![alt text](image-25.png)
 
 Let's copy and paste the SASL Username, and Password into \~/EEM/config.properties file. <br>
@@ -263,12 +249,12 @@ cd \~/EEM
 
 gedit config.properties <br>
 ```
-STUDENT_NUM=YOUR-STUDENT-NUMBER
-APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
-APP_CLIENT_SECRET=a9fxxxxxxxxxxxxxxxxxx
+STUDENT_NUM=REPLACE_WITH_YOUR-STUDENT-NUMBER
+APP_CLIENT_ID=REPLACE_WITH_SASL_USERNAME
+APP_CLIENT_SECRET=REPLACE_WITH_SASL_PASSWORD
 ```
 
-After saving the SASL username, password, click on the AsyncAPI. <br>
+Click on the AsyncAPI. <br>
 
 ![alt text](image-23.png)
 
@@ -277,10 +263,10 @@ After saving the SASL username, password, click on the AsyncAPI. <br>
 Copy the "gateway-group", and set EGW_BOOTSTRAP in  \~/EEM/config.properties file. <br>
 
 ```
-STUDENT_NUM=YOUR-STUDENT-NUMBER
+STUDENT_NUM=1
 APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
 APP_CLIENT_SECRET=a9fxxxxxxxxxxxxxxxxxx
-EGW_BOOTSTRAP=group-1.xxxxx.xxx.xxxxxxx
+EGW_BOOTSTRAP=REPLACE_WITH_GATEWAY_GROUP
 ```
 Now, save and close config.properties file. <br>
 
@@ -292,15 +278,15 @@ Click on \<Download certificate\>. The certificate will be downloaded into ~/Dow
 
 
 
-# Consuming Flight Landing Events
+# 4. Consuming Flight Landing Events<a name="consume-flight-events"></a>
 
 In this section, you will consume the flight landing events using Kafka Clients kafka-console-consumer.sh and a Java client.
 
-## Generate client certificates of Event Gateway
+## 4a. Generate client certificates of Event Gateway<a name="generate-egw-cert"></a>
 
 **Note: Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. ** <br>
 
-a)  Run the generate_egw_cert.sh script
+Run the generate_egw_cert.sh script
 
 ./generate_egw_cert.sh
 
@@ -310,7 +296,8 @@ ls -ltr
 
 ![](./images/image54.png)
 
-## kafka-console-consumer.sh - Consume flight events
+
+## 4b. kafka-console-consumer.sh - Consume flight events <a name="kafka-console-consumer.sh"></a>
 
 Here, you will receive flight landing events using the open-source kafka-console-consumer.sh program.
 
@@ -339,7 +326,8 @@ Now run the kafka_console_flight_landings_consumer.sh script and you should see 
 
  ![](./images/image56.png)
 
-## Java Application -- Consume flight events
+
+## 4c. Java Application -- Consume flight events <a name="java-consume"></a>
 
  Here, you will receive flight landing events using a custom java program.
 
@@ -375,11 +363,8 @@ You have initiated two Kafka Clients and have successfully obtained
 Flight landing events from Kafka via the IBM Event Gateway, with both
 clients receiving identical data.
 
-**Summary:**
+# 5. Summary <a name="summary"></a>
 
-In this laboratory, you have examined the AsyncAPI of IBM Event
-Automation and IBM API Connect platforms to transform Kafka Topics into
-APIs, enabling secure consumption of Kafka stream data via IBM Event
-Gateway.
+In this laboratory, you have examined the AsyncAPI of IBM Event Endpoint Management and IBM API Connect platforms to transform Kafka Topics into APIs, enabling secure consumption of Kafka stream data via IBM Event Gateway.
 
 **!!! CONGRATULATIONS !!!**
