@@ -61,11 +61,10 @@ Reference architecture diagram below;
 IBM Confluent Kafka  is an event streaming platform built on open
 source [Apache
 Kafka](https://www.ibm.com/think/topics/apache-kafka)®. It is available
-both as a fully managed service on IBM Cloud or on-premise
+both as a fully managed service or on-premise.
 
 
-**What is IBM Event Endpoint Management?**
-
+**What is IBM Event Endpoint Management?** <br>
 IBM Event Endpoint Management, a component of IBM Event Automation, is a
 tool that allows organizations to manage, discover, and share event
 streams as easily as APIs. It provides a catalog for event streams,
@@ -75,9 +74,7 @@ gap between event-driven architectures and API management practices.
 
 
 
-
-**What is IBM API Connect?**
-
+**What is IBM API Connect?** <br>
 IBM API Connect is a comprehensive platform for managing the complete
 lifecycle of APIs (Application Programming Interfaces). It enables
 organizations to create, manage, secure, socialize, and analyze APIs,
@@ -86,8 +83,9 @@ applications. API Connect provides a unified experience across the API
 lifecycle, from design and development to deployment, management, and
 monitoring.
 
-**About this hands-on lab**
+<br>
 
+**About this hands-on lab** <br>
 To support the hands-on activities in this lab, a dedicated environment
 has been provisioned, consisting of a Red Hat OpenShift cluster and a
 Linux workstation. These components provide the foundation for deploying
@@ -107,7 +105,7 @@ and testing AsyncAPIs in a realistic, cloud-native setup.
     monitor queue manager behavior, evaluate failover performance, and
     validate high availability and disaster recovery features.
 
-<br><br>
+<br>
 
 # IBM Event Endpoint Manager -- FLIGHT.LANDINGS Topic Review 
 <a name="eem-section"></a>
@@ -121,8 +119,7 @@ IBM API Connect.
 IBM Event Endpoint Manager (EEM) enables organizations to efficiently
 manage, discover, and share event streams in a manner comparable to
 APIs. EEM facilitates the addition and management of Kafka Topics from
-IBM Event Streams Kafka Brokers, along with other Vendor Kafka Brokers,
-thereby offering a unified platform for managing Kafka Platforms.
+any Kafka platforms thereby offering a unified platform for managing Kafka Platforms.
 
 Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been
 pre-defined and cataloged in EEM.
@@ -147,7 +144,7 @@ button to view the Topics view.
 Click on the FLIGHT.LANDINGS to look at the options for the topic. Here
 you will see that it has been published to the Event Gateway.
 
-Please be informed that the FLIGHT.LANDINGS Topic from IBM Event Streams
+Please be informed that the FLIGHT.LANDINGS Topic from the Kafka Platform (Event Streams or Confluent or Other Kafka providers) 
 is preconfigured within EEM, and an application is consistently
 generating events into this Topic at regular intervals.
 
@@ -188,18 +185,18 @@ to the Event Gateway.
 ![alt text](image-8.png)
 
 Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for example STUDENT1.FLIGHT.LANDINGS. Explore the page. <br>
+
 ![alt text](image-9.png)
 
 
-
-
+<br>
 
 
 
 
 # API Connect Developer Portal
 
-Here, you will access, login, discover, and subscribe to the AsyncAPI.
+Here, you will access, login, discover, and subscribe to the FLIGHT.LANDINGS AsyncAPI.
 Consider the API Connect Developer Portal as a marketplace for all your
 APIs, enabling application development teams to discover, subscribe to,
 and utilize the APIs within their applications, including Web
@@ -210,7 +207,6 @@ Applications, Mobile Applications, and more.
 a)  Locate the developer portal URL, by navigating to API Manager Home
     (Home Icon on top left) --\> Manage Catalogs, select Sandbox
     Catalog.
-
 
 ![alt text](image-10.png)
 
@@ -258,28 +254,32 @@ Now, click on the application to see the SASL username and password. <br>
 
 ![alt text](image-25.png)
 
-Save them to a Notepad or Textpad. We will use them later when Testing. <br>
+Let's copy and paste the SASL Username, and Password into \~/EEM/config.properties file. <br>
+
+```
+STUDENT_NUM=YOUR-STUDENT-NUMBER
+APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
+APP_CLIENT_SECRET=a9fxxxxxxxxxxxxxxxxxx
+```
 
 After saving the SASL username, password, click on the AsyncAPI. <br>
 
 ![alt text](image-23.png)
 
-Copy the "gateway-group" into the Notepad or Textpad, then click on \<Download certificate\>. <br>
-
 ![alt text](image-24.png)
 
+Copy the "gateway-group", and set EGW_BOOTSTRAP in  \~/EEM/config.properties file. <br>
+
+```
+STUDENT_NUM=YOUR-STUDENT-NUMBER
+APP_CLIENT_ID=app-xxxxx-xxxx-xxxx
+APP_CLIENT_SECRET=a9fxxxxxxxxxxxxxxxxxx
+EGW_BOOTSTRAP=group-1.xxxxx.xxx.xxxxxxx
+```
+
+Then click on \<Download certificate\>. <br>
+
 <br>
-
-
-
-## Testing
-
-Let's copy and paste the "Gateway group", SASL Username, and Password into \~/EEM/config.properties file.
-
- **IMPORTANT**\
- Copy and Paste the "gateway-group" to EGW_BOOTSTRAP in config.properties file.
- Copy and Paste the "Username"" to APP_CLIENT_ID in config.properties file.
- Copy and Paste the "Password" to APP_CLIENT_SECRET in config.properties file.
 
 
 
