@@ -4,19 +4,20 @@
 
 # Table of Contents
 - [1. Introduction](#introduction)
-- [2. IBM Event Endpoint Manager](#eem-section)
-    * [2a. Review FLIGHT.LANDINGS Topic](#review-topic)
-    * [2b. Topics](#topics)
-    * [2c. Virtual Topics](#virtual-topics)
-    * [2d. Catalogs](#catalogs)
-- [3. IBM API Connect](#apiconnect)
-    * [3a. API Connect Manager](#apiconnect-manager)
-    * [3b. API Connect Developer Portal](#apiconnect-devptl)
-- [4. Consuming Flight Landing Events](#consume-flight-events)
-    * [4a. Generate client certificates of Event Gateway](#generate-egw-cert)
-    * [4b. kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer.sh)
-    * [4c. Java Application -- Consume flight events](#java-consume)
-- [5. Summary](#summary)
+- [2. Confluent Kafka](#confluent)
+- [3. IBM Event Endpoint Manager](#eem-section)
+    * [3a. Review FLIGHT.LANDINGS Topic](#review-topic)
+    * [3b. Topics](#topics)
+    * [3c. Virtual Topics](#virtual-topics)
+    * [3d. Catalogs](#catalogs)
+- [4. IBM API Connect](#apiconnect)
+    * [4a. API Connect Manager](#apiconnect-manager)
+    * [4b. API Connect Developer Portal](#apiconnect-devptl)
+- [5. Consuming Flight Landing Events](#consume-flight-events)
+    * [5a. Generate client certificates of Event Gateway](#generate-egw-cert)
+    * [5b. kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer.sh)
+    * [5c. Java Application -- Consume flight events](#java-consume)
+- [6. Summary](#summary)
 
 ---
 
@@ -88,12 +89,20 @@ and testing AsyncAPIs in a realistic, cloud-native setup.
 
 <br>
 
-# 2. IBM Event Endpoint Manager <a name="eem-section"></a>
+# 2. Confluent Kafka <a name="confluent"></a>
+
+Notice that the flight landing events are being generated into Confluent Kafka platform. There is a App Connect Enterprise message flow that is simulating the events. <br>
+
+![alt text](./images/image-40.png)
+
+The instructor will take care of this step. <br><br>
+
+# 3. IBM Event Endpoint Manager <a name="eem-section"></a>
 
 **Note:** This section is just showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.
 <br>
 
-## 2a. Review FLIGHT.LANDINGS Topic <a name="review-topic"></a>
+## 3a. Review FLIGHT.LANDINGS Topic <a name="review-topic"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
@@ -110,7 +119,7 @@ button to view the Topics view.
 
 ![](./images/image-31.png)
 
-## 2b. Topics<a name="topics"></a>
+## 3b. Topics<a name="topics"></a>
 
 ![](./images/image-32.png)
 
@@ -126,7 +135,7 @@ Explore the **Information** tab. Notice the Schema, and Sample message
 that is describing the FLIGHT.LANDINGS topic.
 
 
-## 2c. Virtual topics <a name="virtual-topics"></a>
+## 3c. Virtual topics <a name="virtual-topics"></a>
 
 Let's create a virtual topic with your student id, for example STUDENT1.FLIGHT.LANDINGS. <br>
 
@@ -149,7 +158,7 @@ After Publish, it should look like below. <br>
 ![alt text](./images/image-7.png)
 
 
-## 2d. Catalogs<a name="catalogs"></a>
+## 3d. Catalogs<a name="catalogs"></a>
 
 Now, click on the Catalog icon on the left to see the Published Topics
 to the Event Gateway.
@@ -166,7 +175,7 @@ Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for exampl
 
 
 
-# 3. IBM API Connect <a name="apiconnect"></a>
+# 4. IBM API Connect <a name="apiconnect"></a>
 
 Here, you will access, login, discover, and subscribe to the FLIGHT.LANDINGS AsyncAPI.
 Consider the API Connect Developer Portal as a marketplace for all your
@@ -174,7 +183,7 @@ APIs, enabling application development teams to discover, subscribe to,
 and utilize the APIs within their applications, including Web
 Applications, Mobile Applications, and more.
 
-## 3a. API Connect Manager<a name="apiconnect-manager"></a>
+## 4a. API Connect Manager<a name="apiconnect-manager"></a>
 
 a) Logon to API Connect Manager using your student id. <br>  
 
@@ -197,7 +206,7 @@ e) Click on the devportal url. <br>
 ![alt text](./images/image-12.png)
 
 
-## 3b. API Connect Developer Portal<a name="apiconnect-devptl"></a>
+## 4b. API Connect Developer Portal<a name="apiconnect-devptl"></a>
 
 Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if **not already** signed up. <br>
 
@@ -275,11 +284,11 @@ Click on \<Download certificate\>. The certificate will be downloaded into ~/Dow
 <br>
 
 
-# 4. Consuming Flight Landing Events<a name="consume-flight-events"></a>
+# 5. Consuming Flight Landing Events<a name="consume-flight-events"></a>
 
 In this section, you will consume the flight landing events using Kafka Clients kafka-console-consumer.sh and a Java client.
 
-## 4a. Generate client certificates of Event Gateway<a name="generate-egw-cert"></a>
+## 5a. Generate client certificates of Event Gateway<a name="generate-egw-cert"></a>
 
 **Note: Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. ** <br>
 
@@ -294,7 +303,7 @@ ls -ltr
 ![](./images/image-39.png)
 
 
-## 4b. kafka-console-consumer.sh - Consume flight events <a name="kafka-console-consumer.sh"></a>
+## 5b. kafka-console-consumer.sh - Consume flight events <a name="kafka-console-consumer.sh"></a>
 
 Here, you will receive flight landing events using the open-source kafka-console-consumer.sh program.
 
@@ -324,7 +333,7 @@ Now run the kafka_console_flight_landings_consumer.sh script and you should see 
  ![](./images/image-37.png)
 
 
-## 4c. Java Application -- Consume flight events <a name="java-consume"></a>
+## 5c. Java Application -- Consume flight events <a name="java-consume"></a>
 
  Here, you will receive flight landing events using a custom java program.
 
@@ -360,7 +369,7 @@ You have initiated two Kafka Clients and have successfully obtained
 Flight landing events from Kafka via the IBM Event Gateway, with both
 clients receiving identical data.
 
-# 5. Summary <a name="summary"></a>
+# 6. Summary <a name="summary"></a>
 
 In this laboratory, you have examined the AsyncAPI of IBM Event Endpoint Management and IBM API Connect platforms to transform Kafka Topics into APIs, enabling secure consumption of Kafka stream data via IBM Event Gateway.
 
