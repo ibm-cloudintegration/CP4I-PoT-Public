@@ -258,136 +258,21 @@ Save them to a Notepad or Textpad. We will use them later when Testing. <br>
 After saving the SASL username, password, click on the AsyncAPI. <br>
 ![alt text](image-23.png)
 
-Copy the gateway group into the Notepad or Textpad, then click on \<Download certificate\>. <br>
+Copy the "Gateway group" into the Notepad or Textpad, then click on \<Download certificate\>. <br>
 ![alt text](image-24.png)
 
+<br>
 
+## Testing
 
-
-
-
-
-
-
-
-
-
-
-
-![](./images/image33.png)
-
-b)  Click on "Catalog Settings" tab.
-
-**Note:** Make sure you are in the correct Organization.
-
-![](./images/image34.png)
-
-c)  Click on Portal tab on left panel and right click the Portal URL and
-    open in new tab.
-
-![](./images/image35.png)
-
-## Sign-on the API Connect Developer Portal
-
-If you see "Warning: Potential Security Risk Ahead", click "Advanced",
-and click "Accept Risk and Continue" button to continue.
-
-a)  Click "Sign in" on the top right of the screen.
-
-![](./images/image36.png)
-
-b)  Sign-in to API Connect Developer Portal using your student id, and
-    password.
-
-**Ex:** student\<1\>dev, passw0rd
-
-![](./images/image37.png)
-
-c)  You should now be signed in under your student COrg. You will also
-    see the Flight Landings AsyncAPI that you published in the pervious
-    lab.
-
-![](./images/image38.png)
-
-## Subscribe to FLIGHT.LANDINGS API
-
-Subscribe to FLIGHT.LANDIGS API.
-
-- i) First you will open config.properties.
-- ii) Second, you will create an application.
-- iii) Third, when you create the application you will get key, and secret. You will copy and paste them into config.properties APP_CLIENT_ID, and APP_CLIENT_SECRET fields.
-
-a)  On the desktop, Open config.properties file with Text Editor as
-    below.
-
-Click on Applications (top left of the desktop) --\> Files and locate
-EEM folder.
-
-![](./images/image39.png)
-
-![](./images/image40.png)
-
-Double click on EEM (Event Endpoint Manager) folder.
-
-Open config.properties file using "Open With Text Editor".
-
-![](./images/image41.png)
-
-![](./images/image42.png)
-
- Now populate each field.\
- STUDENT_NUM=1,2,...20
-
-b)  Switch to API Connect Developer Portal. Select Flight.Landing
-    asyncapis Product.\
-    Select the default plan for this lab.
-
-![](./images/image43.png){width="6.404009186351706in"
-height="2.955696631671041in"}
-
-c)  Now we will need to create an application to subscribe to this plan.
-
- ![](./images/image44.png)
-
-d)  Give the new Application a Name.
-
-**EX:** Flight landing
-
-![](./images/image45.png)
-
-Click **Save** button, and that will display API Key, and Secret screen as below. Do **NOT** close it, move the below step.
-
-e)  You will now have the credentials for your application. Let's copy
-    and paste them into \~/EEM/config.properties file.
+Let's copy and paste the "Gateway group", SASL Username, and Password into \~/EEM/config.properties file.
 
  **IMPORTANT**\
- Copy and Paste the Key to APP_CLIENT_ID in config.properties file.
- Copy and Paste the Secret APP_CLIENT_SECRET in config.properties file.
+ Copy and Paste the "Gateway group" to EGW_BOOTSTRAP_SERVER in config.properties file.
+ Copy and Paste the "Username"" to APP_CLIENT_ID in config.properties file.
+ Copy and Paste the "Password" to APP_CLIENT_SECRET in config.properties file.
 
-![](./images/image46.png)
 
-f)  Click **Next** ![](./images/image47.png)
-
-g)  Click **Done** ![](./images/image48.png)
-
-h)  Now Click on the FLIGHT.LANDING API
-
-![](./images/image49.png)
-
-i)  From here go to the Subscribe(operation) and scroll down to
-    the *Properties* section.
-
-- Copy and Paste the **bootstrap.servers** to EGW_BOOTSTRAP field in config.properties file.
-- Copy and Paste the **client.id** to API_CLIENT_ID field in config.properties file.
-
-![](./images/image50.png)
-
-j)  Save config.properties file.
-
-**Summary:**\
-You have created an AsyncApi, added it to an API Product, Published,
-Subscribed, and finally captured APP_CLIENT_ID, APP_CLIENT_SECRET,
-EGW_BOOTSTRAP, and API_CLIENT_ID and saved them to config.properties.
 
 # Consuming Flight Landing Events
 
@@ -401,24 +286,13 @@ Terminal Window.
 
 ![alt text](./images/image51.png)
 
-a)  Run the below commands for logging into the OpenShift.
 
-oc login -u student\<n\> -p welcometotxc
-[https://api.6840855f81445a03dd00115e.ocp.techzone.ibm.com:6443](https://api.6840855f81445a03dd00115e.ocp.techzone.ibm.com:6443/)
-
-oc project student\<n\>
-
-![](./images/image52.png){width="6.5in"
-height="1.3381944444444445in"}
-
-b)  Now go to the EEM directory
+a)  Go to the EEM directory
 
 cd \~/EEM
 
-![A close-up of a text AI-generated content may be
-incorrect.](./images/image53.png)
 
-c)  Run the generate_egw_cert.sh script
+b)  Run the generate_egw_cert.sh script
 
 ./generate_egw_cert.sh
 
