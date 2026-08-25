@@ -1,4 +1,7 @@
-# IBM Event Automation & IBM API Connect: Socialization of Kafka Topics as AsyncAPI’s
+# Socializing Kafka Events through AsyncAPI using IBM Event Endpoint Management (EEM) and IBM API Connect
+
+
+[Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
 ---
 
@@ -374,3 +377,5 @@ clients receiving identical data.
 In this laboratory, you have examined the AsyncAPI of IBM Event Endpoint Management and IBM API Connect platforms to transform Kafka Topics into APIs, enabling secure consumption of Kafka stream data via IBM Event Gateway.
 
 **!!! CONGRATULATIONS !!!**
+
+[Return to main APIC lab page](../ReadMe.md#lab-abstracts)
