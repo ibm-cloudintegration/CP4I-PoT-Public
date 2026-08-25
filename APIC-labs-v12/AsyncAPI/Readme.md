@@ -185,13 +185,14 @@ Access IBM API Connect Manager (apim-demo) from the Cloud Pak for Integration Pl
 b) Click on Manage. <br>
 ![alt text](./images/image-27.png)
 
-c) Click on Sandbox catalog, then locate the developer portal URL, by navigating Catalog Settings Catalogs, and Portal. <br>
+c) Click on Sandbox catalog <br>
 
 ![alt text](./images/image-10.png)
 
+d) Click on Catalog Settings, and Portal. <br>
 ![alt text](./images/image-11.png)
 
-d) Click on the devportal url. <br>
+e) Click on the devportal url. <br>
 
 ![alt text](./images/image-12.png)
 
