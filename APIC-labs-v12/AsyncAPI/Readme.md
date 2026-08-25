@@ -264,7 +264,7 @@ After saving the SASL username, password, click on the AsyncAPI. <br>
 
 ![alt text](image-23.png)
 
-Copy the "Gateway group" into the Notepad or Textpad, then click on \<Download certificate\>. <br>
+Copy the "gateway-group" into the Notepad or Textpad, then click on \<Download certificate\>. <br>
 
 ![alt text](image-24.png)
 
@@ -277,7 +277,7 @@ Copy the "Gateway group" into the Notepad or Textpad, then click on \<Download c
 Let's copy and paste the "Gateway group", SASL Username, and Password into \~/EEM/config.properties file.
 
  **IMPORTANT**\
- Copy and Paste the "Gateway group" to EGW_BOOTSTRAP_SERVER in config.properties file.
+ Copy and Paste the "gateway-group" to EGW_BOOTSTRAP in config.properties file.
  Copy and Paste the "Username"" to APP_CLIENT_ID in config.properties file.
  Copy and Paste the "Password" to APP_CLIENT_SECRET in config.properties file.
 
