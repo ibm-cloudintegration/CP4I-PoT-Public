@@ -20,7 +20,6 @@
 ---
 
 
-
 <br>
 
 # 1. Introduction <a name="introduction"></a>
@@ -39,45 +38,41 @@ FLIGHT.LANDINGS topic into EEM, followed by making the API available on the IBM 
 
 Reference architecture diagram below;
 
-![alt text](comp-diagram.png)
+![alt text](./images/image.png)
 
 
 
-**What is Confluent Kafka**
+**What is Confluent Kafka** <br>
+- IBM Confluent Kafka  is an event streaming platform built on open source [Apache Kafka](https://www.ibm.com/think/topics/apache-kafka)®. It is available both as a fully managed service or on-premise.
 
-IBM Confluent Kafka  is an event streaming platform built on open
-source [Apache
-Kafka](https://www.ibm.com/think/topics/apache-kafka)®. It is available
-both as a fully managed service or on-premise.
-
+<br>
 
 **What is IBM Event Endpoint Management?** <br>
+- IBM Event Endpoint Manager (EEM) enables organizations to efficiently manage, discover, and share event streams in a manner comparable to APIs. EEM facilitates the addition and management of Kafka Topics from any Kafka platforms thereby offering a unified platform for managing Kafka Platforms. <br>
 
-IBM Event Endpoint Manager (EEM) enables organizations to efficiently manage, discover, and share event streams in a manner comparable to APIs. EEM facilitates the addition and management of Kafka Topics from any Kafka platforms thereby offering a unified platform for managing Kafka Platforms. <br>
-
-**Event Endpoint Management Core Capabilities** <br>
+- **Event Endpoint Management Core Capabilities** <br>
 **Event Catalog:** Provides a self-service, developer-friendly portal to search, discover, and reuse event sources.<br>
 **AsyncAPI Standardization:** Automatically documents event streams using the standard AsyncAPI specification.<br>
 **Centralized Control Plane:** Unifies governance across multiple disparate Kafka clusters.
 
-**Main Components** <br>
+- **Main Components** <br>
 **Event Manager:** The administrative plane where technical experts discover Kafka topics, define access rules, and publish definitions to the catalog. <br>
 **Event Gateway:** The runtime enforcement point that abstracts direct access to Kafka clusters, handling security, traffic virtualization, and policy enforcement.
 
-**Key Security and Governance Features** <br>
+- **Key Security and Governance Features** <br>
 **Authentication:** Validates Kafka clients before granting access. <br>
 **Quota Enforcement:** Limits the number of events a client can publish or consume over time.<br>
 **Redaction and Filtering:** Automatically redacts sensitive information and enforces schema-based filtering as traffic flows through the gateway.
 
-
+<br>
 
 **What is IBM API Connect?** <br>
-IBM API Connect is an enterprise-grade, integrated API management platform that helps businesses create, secure, manage, share, monetize, and analyze application programming interfaces (APIs) across cloud and on-premises environments. <br>
+- IBM API Connect is an enterprise-grade, integrated API management platform that helps businesses create, secure, manage, share, monetize, and analyze application programming interfaces (APIs) across cloud and on-premises environments. <br>
 
 <br>
 
 **About this hands-on lab** <br>
-To support the hands-on activities in this lab, a dedicated environment
+- To support the hands-on activities in this lab, a dedicated environment
 has been provisioned, consisting of a Red Hat OpenShift cluster and a
 Linux workstation. These components provide the foundation for deploying
 and testing AsyncAPIs in a realistic, cloud-native setup.
@@ -105,18 +100,18 @@ Let us examine the FLIGHT.LANDINGS Kafka Topic, which has already been pre-defin
 
 Access IBM Event Endpoint Manager (***my-eem-manager***) from the Cloud Pak for Integration Platform Navigator Console.
 
-![](./images/image9.png)
+![](./images/image-30.png)
 
 Logon to IBM Event Endpoint Manager as an Admin user "eem-admin", and password "passw0rd".
 
 If you get the below Welcome page, then simply click on the **Skip**
 button to view the Topics view.
 
-![](./images/image10.png)
+![](./images/image-31.png)
 
 ## Topics View
 
-![](./images/image11.png)
+![](./images/image-32.png)
 
 Click on the FLIGHT.LANDINGS to look at the options for the topic. Here
 you will see that it has been published to the Event Gateway.
@@ -124,7 +119,7 @@ you will see that it has been published to the Event Gateway.
 Please be informed that the FLIGHT.LANDINGS Topic from the Kafka Platform (Confluent or Other Kafka providers) 
 is preconfigured within EEM, and an application is consistently generating flight landing events into this Topic at regular intervals.
 
-![](./images/image12.png)
+![](./images/image-33.png)
 
 Explore the **Information** tab. Notice the Schema, and Sample message
 that is describing the FLIGHT.LANDINGS topic.
@@ -134,23 +129,23 @@ that is describing the FLIGHT.LANDINGS topic.
 
 Let's create a virtual topic with your student id, for example STUDENT1.FLIGHT.LANDINGS. <br>
 
-![alt text](image.png)
+![alt text](./images/image-0.png)
 
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 
-![alt text](image-2.png)
+![alt text](./images/image-2.png)
 
-![alt text](image-3.png)
+![alt text](./images/image-3.png)
 
-![alt text](image-4.png)
+![alt text](./images/image-4.png)
 
-![alt text](image-5.png)
+![alt text](./images/image-5.png)
 
-![alt text](image-6.png)
+![alt text](./images/image-6.png)
 
 After Publish, it should look like below. <br>
 
-![alt text](image-7.png)
+![alt text](./images/image-7.png)
 
 
 ## Catalogs View
@@ -158,11 +153,11 @@ After Publish, it should look like below. <br>
 Now, click on the Catalog icon on the left to see the Published Topics
 to the Event Gateway.
 
-![alt text](image-8.png)
+![alt text](./images/image-8.png)
 
 Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for example STUDENT1.FLIGHT.LANDINGS. Explore the page. <br>
 
-![alt text](image-9.png)
+![alt text](./images/image-9.png)
 
 
 <br>
@@ -182,66 +177,67 @@ Applications, Mobile Applications, and more.
 
 a) Logon to API Connect Manager using your student id. <br>  
 
-![alt text](image-26.png)
+Access IBM API Connect Manager (apim-demo) from the Cloud Pak for Integration Platform Navigator Console.<br>
+
+![alt text](./images/image-26.png)
 
 b) Click on Manage. <br>
-![alt text](image-27.png)
+![alt text](./images/image-27.png)
 
 c) Click on Sandbox catalog, then locate the developer portal URL, by navigating Catalog Settings Catalogs, and Portal. <br>
 
-![alt text](image-10.png)
+![alt text](./images/image-10.png)
 
-![alt text](image-11.png)
+![alt text](./images/image-11.png)
 
 d) Click on the devportal url. <br>
 
-![alt text](image-12.png)
+![alt text](./images/image-12.png)
 
 
 ## 3b. API Connect Developer Portal<a name="apiconnect-devptl"></a>
 
 Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if **not already** signed up. <br>
 
-![alt text](image-13.png)
+![alt text](./images/image-13.png)
 
 Enter id, email, and password. <br>
 
-![alt text](image-14.png)
+![alt text](./images/image-14.png)
 
 Sign-in now. <br>
-![alt text](image-15.png)
+![alt text](./images/image-15.png)
 
 Welcome to developer portal home page. <br>
-![alt text](image-16.png)
+![alt text](./images/image-16.png)
 
 Click on "Asset Gallery". <br>
-![alt text](image-17.png)
+![alt text](./images/image-17.png)
 
 You should see the Virtual Topic that you created and published in the Event Endpoint Manager section. <br>
-![alt text](image-18.png)
+![alt text](./images/image-18.png)
 
 Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now click on \<Consume\> icon. <br>
 
-![alt text](image-19.png)
+![alt text](./images/image-19.png)
 
 Select "Create new application", then click \<Request\>. <br>
-![alt text](image-20.png)
+![alt text](./images/image-20.png)
 
-Give a name to your application, for example student1-asyncapi-demo. <br>
-![alt text](image-21.png)
+Give a name to your application, for example **student1-asyncapi-demo**. <br>
+![alt text](./images/image-21.png)
 
-
-![alt text](image-22.png)
+![alt text](./images/image-22.png)
 
 Now, click on the application to see the SASL username and password. <br>
 
-![alt text](image-25.png)
+![alt text](./images/image-25.png)
 
 Let's copy and paste the SASL Username, and Password into \~/EEM/config.properties file. <br>
 
 Now, on the Desktop open a Terminal Window.
 
-![alt text](./images/image51.png)
+![alt text](./images/image-38.png)
 
 Go to the EEM directory
 
@@ -256,9 +252,9 @@ APP_CLIENT_SECRET=REPLACE_WITH_SASL_PASSWORD
 
 Click on the AsyncAPI. <br>
 
-![alt text](image-23.png)
+![alt text](./images/image-23.png)
 
-![alt text](image-24.png)
+![alt text](./images/image-24.png)
 
 Copy the "gateway-group", and set EGW_BOOTSTRAP in  \~/EEM/config.properties file. <br>
 
@@ -277,7 +273,6 @@ Click on \<Download certificate\>. The certificate will be downloaded into ~/Dow
 <br>
 
 
-
 # 4. Consuming Flight Landing Events<a name="consume-flight-events"></a>
 
 In this section, you will consume the flight landing events using Kafka Clients kafka-console-consumer.sh and a Java client.
@@ -294,7 +289,7 @@ When script is done run **ls -ltr** of the directory and you should see the eg
 
 ls -ltr
 
-![](./images/image54.png)
+![](./images/image-39.png)
 
 
 ## 4b. kafka-console-consumer.sh - Consume flight events <a name="kafka-console-consumer.sh"></a>
@@ -314,7 +309,7 @@ Change Directory to \~/EEM.
  cat config.properties
 ```
 
- ![](./images/image55.png)
+ ![](./images/image-36.png)
 
 gedit kafka_console_flight_landings_consumer.sh, and change topic (last line) to STUDENTyour-number.FLIGHT.LANDINGS, save and close file. <br>
 
@@ -324,7 +319,7 @@ Now run the kafka_console_flight_landings_consumer.sh script and you should see 
  ./kafka_console_flight_landings_consumer.sh
 ```
 
- ![](./images/image56.png)
+ ![](./images/image-37.png)
 
 
 ## 4c. Java Application -- Consume flight events <a name="java-consume"></a>
@@ -343,7 +338,7 @@ Now run the kafka_console_flight_landings_consumer.sh script and you should see 
 
 gedit config.properties.2 and change TOPIC to STUDENTyour-number.FLIGHT.LANDINGS. <br>
 
-![alt text](image-29.png)
+![alt text](./images/image-29.png)
 
 Now, run the Java consumer program. <br>
 ```
@@ -352,12 +347,12 @@ Now, run the Java consumer program. <br>
 
  You should see output like below.
 
- ![alt text](./images/image57.png)
+ ![alt text](./images/image-34.png)
 
  When both the Consumers are running, you should see both the Consumers
  receiving the events.
 
-![alt text](./images/image58.png)
+![alt text](./images/image-35.png)
 
 You have initiated two Kafka Clients and have successfully obtained
 Flight landing events from Kafka via the IBM Event Gateway, with both
