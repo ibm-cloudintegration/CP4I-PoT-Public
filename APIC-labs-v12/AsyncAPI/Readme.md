@@ -211,6 +211,69 @@ a)  Locate the developer portal URL, by navigating to API Manager Home
     (Home Icon on top left) --\> Manage Catalogs, select Sandbox
     Catalog.
 
+
+![alt text](image-10.png)
+
+![alt text](image-11.png)
+
+Locate the devportal url. <br>
+
+![alt text](image-12.png)
+
+Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal. <br>
+
+![alt text](image-13.png)
+
+Enter id, email, and password. <br>
+
+![alt text](image-14.png)
+
+Sign-in now. <br>
+![alt text](image-15.png)
+
+Welcome to developer portal home page. <br>
+![alt text](image-16.png)
+
+Click on "Asset Gallery". <br>
+![alt text](image-17.png)
+
+You should see the Virtual Topic that you created and published from the Event Endpoint Manager section. <br>
+![alt text](image-18.png)
+
+Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now on \<Consume\> icon. <br>
+
+![alt text](image-19.png)
+
+Select "Create new application", then click \<Request\>. <br>
+![alt text](image-20.png)
+
+Give a name to your application, for example student1-asyncapi-demo. <br>
+![alt text](image-21.png)
+
+Now, click on the application to see the SASL username and password. <br>
+![alt text](image-22.png)
+
+Save them to a Notepad or Textpad. We will use them later when Testing. <br>
+
+After saving the SASL username, password, click on the AsyncAPI. <br>
+![alt text](image-23.png)
+
+Copy the gateway group into the Notepad or Textpad, then click on \<Download certificate\>. <br>
+![alt text](image-24.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ![](./images/image33.png)
 
 b)  Click on "Catalog Settings" tab.
