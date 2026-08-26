@@ -9,10 +9,10 @@
 - [1. Introduction](#introduction)
 - [2. Confluent Kafka](#confluent)
 - [3. IBM Event Endpoint Management (EEM)](#eem-section)
-    * [3a. EEM Console](#eem-console)
-    * [3b. Topics](#topics)
-    * [3c. Virtual Topics](#virtual-topics)
-    * [3d. Catalogs](#catalogs)
+    * [3a. Event Endpoint Management - Console](#eem-console)
+    * [3b. Event Endpoint Management - Topics](#topics)
+    * [3c. Event Endpoint Management - Virtual Topics](#virtual-topics)
+    * [3d. Event Endpoint Management - Catalogs](#catalogs)
 - [4. IBM API Connect](#apiconnect)
     * [4a. API Connect Manager](#apiconnect-manager)
     * [4b. API Connect Developer Portal](#apiconnect-devptl)
@@ -115,7 +115,7 @@ Notice that the flight landing events are being generated into Confluent Kafka p
 **This section is showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.**
 <br>
 
-## 3a. EEM Console <a name="eem-console"></a>
+## 3a. Event Endpoint Management - Console <a name="eem-console"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
@@ -132,7 +132,7 @@ button to view the Topics view.
 
 ![](./images/image-31.png)
 
-## 3b. Topics<a name="topics"></a>
+## 3b. Event Endpoint Management - Topics<a name="topics"></a>
 
 **THIS SECTIONS is REVIEW ONLY** <br>
 
@@ -150,7 +150,7 @@ Explore the **Information** tab. Notice the Schema, and Sample message
 that is describing the FLIGHT.LANDINGS topic.
 
 
-## 3c. Virtual topics <a name="virtual-topics"></a>
+## 3c. Event Endpoint Management - Virtual topics <a name="virtual-topics"></a>
 
 **DO THIS SECTION** <br>
 
@@ -175,7 +175,7 @@ After Publish, it should look like below. <br>
 ![alt text](./images/image-7.png)
 
 
-## 3d. Catalogs<a name="catalogs"></a>
+## 3d. Event Endpoint Management - Catalogs<a name="catalogs"></a>
 
 Now, click on the Catalog icon on the left to see the Published Topics
 to the Event Gateway.
