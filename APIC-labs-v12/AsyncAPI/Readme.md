@@ -8,7 +8,7 @@
 # Table of Contents
 - [1. Introduction](#introduction)
 - [2. Confluent Kafka](#confluent)
-- [3. IBM Event Endpoint Manager](#eem-section)
+- [3. IBM Event Endpoint Management](#eem-section)
     * [3a. Review FLIGHT.LANDINGS Topic](#review-topic)
     * [3b. Topics](#topics)
     * [3c. Virtual Topics](#virtual-topics)
@@ -94,8 +94,10 @@ Linux workstation.
 # 2. Confluent Kafka <a name="confluent"></a>
 
 **REVIEW ONLY**
- 
- Confluent Console: https://163.66.92.248/home <br>
+
+The instructor will take care of Confluent setup. <br>
+
+Confluent Console: https://163.66.92.248/home <br>
 User: admin <br>
 Password: ssx1JrsQt5YJhRFVJSjM98QW <br>
 <br>
@@ -105,11 +107,10 @@ Notice that the flight landing events are being generated into Confluent Kafka p
 
 ![alt text](./images/image-40.png)
 
-The instructor will take care of this setup. <br>
+<br>
 
 
-
-# 3. IBM Event Endpoint Manager <a name="eem-section"></a>
+# 3. IBM Event Endpoint Management <a name="eem-section"></a>
 
 **Note:** This section is just showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.
 <br>
