@@ -1,4 +1,4 @@
-# Socializing Kafka Events through AsyncAPI using IBM Event Endpoint Management (EEM) and IBM API Connect
+# Socializing Kafka Events through AsyncAPI using IBM Event Endpoint Management, Confluent, and IBM API Connect
 
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
