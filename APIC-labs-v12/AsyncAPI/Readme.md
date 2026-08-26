@@ -243,7 +243,7 @@ Click on "Asset Gallery". <br>
 You should see the Virtual Topic that you created and published in the Event Endpoint Manager section. <br>
 ![alt text](./images/image-18.png)
 
-Click on that tile (STUDENT(n).FLIGHT.LANDINGS). Now click on \<Consume\> icon so that you can subscribe and consume the events.<br>
+Click on your Virtual Topic AsyncAPI tile (ex: STUDENT1.FLIGHT.LANDINGS). Now click on \<Consume\> icon so that you can subscribe and consume the events.<br>
 
 ![alt text](./images/image-19.png)
 
