@@ -405,4 +405,5 @@ Techzone Collection for Confluent: https://techzone.ibm.com/collection/confluent
 Env Name: Confluent Platform Enterprise Software
 
 Deploy Flight Landings Simulator to ACE. <br>
-GitRepo: 
+GitRepo: https://github.com/ibm-cloudintegration/CP4I-PoT-Public/tree/main/AppConnect/flight-landing-simulator-confluent
+<br>
