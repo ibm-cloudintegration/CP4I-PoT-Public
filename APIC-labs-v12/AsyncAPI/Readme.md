@@ -407,10 +407,16 @@ In this laboratory, you have examined the AsyncAPI of IBM Event Endpoint Managem
 
 LAB INSTRUCTOR PreWork. <br>
 
+Environments: <br>
+
 Techzone Collection for Confluent: https://techzone.ibm.com/collection/confluent-platform-environments/environments <br>
 Env Name: Confluent Platform Enterprise Software
 
-Deploy Flight Landings Simulator to ACE. <br>
+Techzone RHEL Desktop: 
+https://techzone.ibm.com/collection/integration-application-modernization-pots/environments?platform=69d16bc98a606868ad154e31
+<br>
+
+Flight Landings Simulator to ACE. <br>
 GitRepo: https://github.com/ibm-cloudintegration/CP4I-PoT-Public/tree/main/AppConnect/flight-landing-simulator-confluent
 <br>
 
