@@ -93,17 +93,21 @@ Linux workstation.
 
 # 2. Confluent Kafka <a name="confluent"></a>
 
+**REVIEW ONLY**
+ 
+ Confluent Console: https://163.66.92.248/home <br>
+User: admin <br>
+Password: ssx1JrsQt5YJhRFVJSjM98QW <br>
+<br>
+Once login explore FLIGHT.LANDINGS topic events. <br>
+
 Notice that the flight landing events are being generated into Confluent Kafka platform. There is a App Connect Enterprise message flow that is simulating the events. <br>
 
 ![alt text](./images/image-40.png)
 
 The instructor will take care of this setup. <br>
 
-Confluent Console: https://163.66.92.248/home <br>
-User: admin <br>
-Password: ssx1JrsQt5YJhRFVJSjM98QW <br>
-<br>
-Once login explore FLIGHT.LANDINGS topic events. <br><br>
+
 
 # 3. IBM Event Endpoint Manager <a name="eem-section"></a>
 
