@@ -8,8 +8,8 @@
 # Table of Contents
 - [1. Introduction](#introduction)
 - [2. Confluent Kafka](#confluent)
-- [3. IBM Event Endpoint Management](#eem-section)
-    * [3a. Review FLIGHT.LANDINGS Topic](#review-topic)
+- [3. IBM Event Endpoint Management (EEM)](#eem-section)
+    * [3a. EEM Console](#eem-console)
     * [3b. Topics](#topics)
     * [3c. Virtual Topics](#virtual-topics)
     * [3d. Catalogs](#catalogs)
@@ -110,12 +110,12 @@ Notice that the flight landing events are being generated into Confluent Kafka p
 <br>
 
 
-# 3. IBM Event Endpoint Management <a name="eem-section"></a>
+# 3. IBM Event Endpoint Management (EEM) <a name="eem-section"></a>
 
-**Note:** This section is just showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.
+**This section is showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.**
 <br>
 
-## 3a. FLIGHT.LANDINGS Topic <a name="review-topic"></a>
+## 3a. EEM Console <a name="eem-console"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
