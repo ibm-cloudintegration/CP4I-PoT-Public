@@ -17,7 +17,7 @@
     * [4a. API Connect Manager](#apiconnect-manager)
     * [4b. API Connect Developer Portal](#apiconnect-devptl)
 - [5. Consuming Flight Landing Events](#consume-flight-events)
-    * [5a. Generate client certificates of Event Gateway](#generate-egw-cert)
+    * [5a. Capture Event Gateway Certificates](#generate-egw-cert)
     * [5b. kafka-console-consumer.sh - Consume flight events](#kafka-console-consumer.sh)
     * [5c. Java Application -- Consume flight events](#java-consume)
 - [6. Summary](#summary)
@@ -190,7 +190,7 @@ Applications, Mobile Applications, and more.
 
 a) Logon to API Connect Manager using your student id. <br>  
 
-Access IBM API Connect Manager (apim-demo) from the Cloud Pak for Integration Platform Navigator Console.<br>
+From the Cloud Pak for Integration Platform Navigator Console, access IBM API Connect Manager (apim-demo) <br>
 
 ![alt text](./images/image-26.png)
 
@@ -204,22 +204,23 @@ c) Click on Sandbox catalog <br>
 d) Click on Catalog Settings, and Portal. <br>
 ![alt text](./images/image-11.png)
 
-e) Click on the devportal url. <br>
+e) Click on the Portal endpoint URL. <br>
 
 ![alt text](./images/image-12.png)
 
 
 ## 4b. API Connect Developer Portal<a name="apiconnect-devptl"></a>
 
-Welcome to IBM API Connect Developer Portal. Now, Sign up to devportal if **not already** signed up. <br>
+Welcome to IBM API Connect Developer Portal. Now, click "Sign up" if you **not already** signed up with your student id, otherwise use your student Developer Portal Credentials and login.<br>
 
+**Sign up process** <br>
 ![alt text](./images/image-13.png)
 
 Enter id, email, and password. <br>
 
 ![alt text](./images/image-14.png)
 
-Sign-in now. <br>
+**Sign-in** now. <br>
 ![alt text](./images/image-15.png)
 
 Welcome to developer portal home page. <br>
@@ -231,7 +232,7 @@ Click on "Asset Gallery". <br>
 You should see the Virtual Topic that you created and published in the Event Endpoint Manager section. <br>
 ![alt text](./images/image-18.png)
 
-Click on that tile (STUDENT1.FLIGHT.LANDINGS). Now click on \<Consume\> icon. <br>
+Click on that tile (STUDENT(n).FLIGHT.LANDINGS). Now click on \<Consume\> icon so that you can subscribe and consume the events.<br>
 
 ![alt text](./images/image-19.png)
 
@@ -247,26 +248,31 @@ Now, click on the application to see the SASL username and password. <br>
 
 ![alt text](./images/image-25.png)
 
-Let's copy and paste the SASL Username, and Password into \~/EEM/config.properties file. <br>
+Let's capture the SASL Username, and Password, follow the below steps. <br>
 
-Now, on the Desktop open a Terminal Window.
+Now, on the Desktop open a Terminal Window. <br>
 
 ![alt text](./images/image-38.png)
 
 Go to the EEM directory
 
-cd \~/EEM
-
-gedit config.properties <br>
 ```
-STUDENT_NUM=REPLACE_WITH_YOUR-STUDENT-NUMBER
-APP_CLIENT_ID=REPLACE_WITH_SASL_USERNAME
-APP_CLIENT_SECRET=REPLACE_WITH_SASL_PASSWORD
+cd ~/EEM
+
+gedit config.properties
 ```
 
-Click on the AsyncAPI. <br>
+```
+STUDENT_NUM=REPLACE_WITH_YOUR-STUDENT-NUMBER (for example 1)
+APP_CLIENT_ID=REPLACE_WITH_SASL_USERNAME_FROM_ABOVE
+APP_CLIENT_SECRET=REPLACE_WITH_SASL_PASSWORD_FROM_ABOVE
+```
+
+Click on the AsyncAPI (Ex: STUDENT1.FLIGHT.LANDINGS). <br>
 
 ![alt text](./images/image-23.png)
+
+Let's capture the gateway-group. <br>
 
 ![alt text](./images/image-24.png)
 
@@ -289,19 +295,23 @@ Click on \<Download certificate\>. The certificate will be downloaded into ~/Dow
 
 # 5. Consuming Flight Landing Events<a name="consume-flight-events"></a>
 
-In this section, you will consume the flight landing events using Kafka Clients kafka-console-consumer.sh and a Java client.
+In this section, you will consume the flight landing events using Kafka Clients **kafka-console-consumer.sh** and a **java_flight_landing_consumer.sh** client programs.
 
-## 5a. Generate client certificates of Event Gateway<a name="generate-egw-cert"></a>
+## 5a. Capture Event Gateway Certificates<a name="generate-egw-cert"></a>
 
-**Note: Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. ** <br>
+**Note:** Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. <br>
 
-Run the generate_egw_cert.sh script
+Run the generate_egw_cert.sh script.
 
+```
 ./generate_egw_cert.sh
+```
 
 When script is done run **ls -ltr** of the directory and you should see the egw cert files
 
+```
 ls -ltr
+```
 
 ![](./images/image-39.png)
 
@@ -316,18 +326,21 @@ Change Directory to \~/EEM.
  cd ~/EEM
 ```
 
- You should have the following info saved in
- your **config.properties** file.
+```
+gedit kafka_console_flight_landings_consumer.sh
+```
+Update topic name (last line) to STUDENTyour-number.FLIGHT.LANDINGS, save and close file. <br>
+
+You should have the following info saved in your **config.properties** file.
 
 ```
- cat config.properties
+cat config.properties
 ```
 
- ![](./images/image-36.png)
+![](./images/image-36.png)
 
-gedit kafka_console_flight_landings_consumer.sh, and change topic (last line) to STUDENTyour-number.FLIGHT.LANDINGS, save and close file. <br>
 
-Now run the kafka_console_flight_landings_consumer.sh script and you should see flight info being displayed.
+Now run the kafka_console_flight_landings_consumer.sh script and you should see flight landings events. <br>
 
 ```
  ./kafka_console_flight_landings_consumer.sh
@@ -335,42 +348,39 @@ Now run the kafka_console_flight_landings_consumer.sh script and you should see 
 
  ![](./images/image-37.png)
 
+<br>
 
 ## 5c. Java Application -- Consume flight events <a name="java-consume"></a>
 
- Here, you will receive flight landing events using a custom java program.
+Here, you will receive flight landing events using a custom java program.
 
- Open a **NEW** Terminal window (keep the kafka_console_flight_landing_consumer.sh running).
-
- a\) Change the Directory.
+Open a **NEW** Terminal window (keep the kafka_console_flight_landing_consumer.sh running).
 
 ```
- cd ~/EEM/java_flight_landing_project
+cd ~/EEM/java_flight_landing_project
+
+gedit config.properties.2
 ```
-
- b\) Now run the following command to start the Java Consumer.
-
-gedit config.properties.2 and change TOPIC to STUDENTyour-number.FLIGHT.LANDINGS. <br>
+Update TOPIC to STUDENTyour-number.FLIGHT.LANDINGS. <br>
 
 ![alt text](./images/image-29.png)
 
 Now, run the Java consumer program. <br>
 ```
- ./java_flight_landing_consumer.sh
+./java_flight_landing_consumer.sh
 ```
 
- You should see output like below.
+You should see output like below.
 
- ![alt text](./images/image-34.png)
+![alt text](./images/image-34.png)
 
- When both the Consumers are running, you should see both the Consumers
- receiving the events.
+When both the Consumers are running, you should see both the Consumers receiving the events.<br>
 
 ![alt text](./images/image-35.png)
 
 You have initiated two Kafka Clients and have successfully obtained
-Flight landing events from Kafka via the IBM Event Gateway, with both
-clients receiving identical data.
+Flight landing events from Kafka via the IBM Event Gateway, with both clients receiving identical data.<br><br>
+
 
 # 6. Summary <a name="summary"></a>
 
