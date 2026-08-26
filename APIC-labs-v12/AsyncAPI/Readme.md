@@ -79,8 +79,7 @@ Reference architecture diagram below;
 **About this hands-on lab** <br>
 - To support the hands-on activities in this lab, a dedicated environment
 has been provisioned, consisting of a Red Hat OpenShift cluster and a
-Linux workstation. These components provide the foundation for deploying
-and testing AsyncAPIs in a realistic, cloud-native setup.
+Linux workstation.
 
 - **Red Hat OpenShift Cluster**\
     The OpenShift cluster serves as the container deployment platform for all IBM
@@ -98,7 +97,13 @@ Notice that the flight landing events are being generated into Confluent Kafka p
 
 ![alt text](./images/image-40.png)
 
-The instructor will take care of this step. <br><br>
+The instructor will take care of this setup. <br>
+
+Confluent Console: https://163.66.92.248/home <br>
+User: admin <br>
+Password: ssx1JrsQt5YJhRFVJSjM98QW <br>
+<br>
+Once login explore FLIGHT.LANDINGS topic events. <br><br>
 
 # 3. IBM Event Endpoint Manager <a name="eem-section"></a>
 
