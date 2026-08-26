@@ -394,3 +394,15 @@ In this laboratory, you have examined the AsyncAPI of IBM Event Endpoint Managem
 **!!! CONGRATULATIONS !!!**
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
+
+<br>
+
+# 7. PreWork <a name="prework"></a>
+
+LAB INSTRUCTOR PreWork. <br>
+
+Techzone Collection for Confluent: https://techzone.ibm.com/collection/confluent-platform-environments/environments <br>
+Env Name: Confluent Platform Enterprise Software
+
+Deploy Flight Landings Simulator to ACE. <br>
+GitRepo: 
