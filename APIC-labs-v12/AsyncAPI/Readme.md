@@ -134,6 +134,8 @@ button to view the Topics view.
 
 ## 3b. Topics<a name="topics"></a>
 
+**THIS SECTIONS is REVIEW ONLY** <br>
+
 ![](./images/image-32.png)
 
 Click on the FLIGHT.LANDINGS to look at the options for the topic. Here
@@ -149,6 +151,8 @@ that is describing the FLIGHT.LANDINGS topic.
 
 
 ## 3c. Virtual topics <a name="virtual-topics"></a>
+
+**DO THIS SECTION** <br>
 
 Let's create a virtual topic with your student id, for example STUDENT1.FLIGHT.LANDINGS. <br>
 
@@ -182,10 +186,7 @@ Click on FLIGHT.LANDINGS topic, and you should see your virtual topic for exampl
 
 ![alt text](./images/image-9.png)
 
-
 <br>
-
-
 
 
 # 4. IBM API Connect <a name="apiconnect"></a>
@@ -412,3 +413,25 @@ Env Name: Confluent Platform Enterprise Software
 Deploy Flight Landings Simulator to ACE. <br>
 GitRepo: https://github.com/ibm-cloudintegration/CP4I-PoT-Public/tree/main/AppConnect/flight-landing-simulator-confluent
 <br>
+
+```
+
+EVENT ENDPOINT MANAGEMENT. - API CONNECT INTEGRATION
+
+First login to DEV Portal as user administrator .
+Password can get using the command below.
+
+oc get secret apim-demo--dceadcab-admin-secret -n cp4i-apic -o jsonpath='{.data.password}' | base64 -d
+
+After logging into the dev portal as administrator, create user dpadmin, passw0rd.
+
+— now create secret in event-automation
+oc create secret generic devportal-api-secret --from-literal="apim-key”=“dpadmin:passw0rd” -n event-automation 
+
+
+— Get apim-demo-mgmt-devportal-admin-client secret from cp4i-apic then create devportal-ca secret in event-automation
+
+kubectl get secret apim-demo-mgmt-devportal-admin-client -n cp4i-apic -o json \
+  | jq 'del(.metadata.annotations, .metadata.labels, .metadata.creationTimestamp, .metadata.resourceVersion, .metadata.uid) | .metadata.namespace = "event-automation" | .metadata.name = "devportal-ca"' \
+  | kubectl apply -f -
+```
