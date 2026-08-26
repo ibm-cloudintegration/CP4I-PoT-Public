@@ -93,7 +93,7 @@ Linux workstation.
 
 # 2. Confluent Kafka <a name="confluent"></a>
 
-**REVIEW ONLY**
+**THIS SECTIONS is REVIEW ONLY**
 
 The instructor will take care of Confluent setup. <br>
 
@@ -115,7 +115,7 @@ Notice that the flight landing events are being generated into Confluent Kafka p
 **Note:** This section is just showing the screens that an Event Endpoint Management Admin would use to expose a topic as AsyncAPI for IBM API Connect.
 <br>
 
-## 3a. Review FLIGHT.LANDINGS Topic <a name="review-topic"></a>
+## 3a. FLIGHT.LANDINGS Topic <a name="review-topic"></a>
 
 **THIS SECTIONS is REVIEW ONLY**
 
