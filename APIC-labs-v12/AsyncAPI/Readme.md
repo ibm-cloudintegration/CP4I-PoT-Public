@@ -89,6 +89,10 @@ Linux workstation.
     The Linux workstation functions as the primary interface for
     interacting with the OpenShift cluster. 
 
+You will be performing this lab from the Desktop provided by your instructor. <br>
+
+Logon to the Desktop as ibmuser / engageibm. <br>
+
 <br>
 
 # 2. Confluent Kafka <a name="confluent"></a>
@@ -310,7 +314,7 @@ In this section, you will consume the flight landing events using Kafka Clients 
 
 ## 5a. Capture Event Gateway Certificates<a name="generate-egw-cert"></a>
 
-**Note:** Make sure you are logged into the OpenShift Cluster. If not, logon before running the script below. <br>
+**Note:** Ensure you are logged into the OpenShift cluster in the Terminal before proceeding - you can do so by accessing OpenShift console, then, copy the login command (top right corner > hover over ‘student(n)’ > copy login command) to your clipboard and use it to log into your terminal. <br>
 
 Run the generate_egw_cert.sh script.
 
