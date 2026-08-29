@@ -76,138 +76,112 @@ URL.
 
 2\. In the left menu, click on **Resources**.  As you hover over the icon, you will see the item name.
 
-![alt text][pic9]
+![alt text](image.png)
 
 3\. Make sure **User registries** is selected and click **Create**.
 
-![alt text][pic10]
+![alt text](image-1.png)
 
 4\. Click on **Authentication URL user registry**.
 
-![alt text][pic11]
+![alt text](image-2.png)
 
-5\. Enter **App Registry** for the **Title**, **https://httpbin.org/basic-auth/student(n)/passw0rd** for the **Url**, and **App Registry** for the **Display name**.  Click **Save**.<br>
+
+5\. Enter **Student(n) App Registry** for the **Title**, **https://httpbin.org/basic-auth/student(n)/passw0rd** for the **Url**, and **App Registry** for the **Display name**.  Click **Save**.<br>
 Note: Make sure to replace student(n) with your student number. Example student1 <br>
 
-![alt text][pic12]
+![alt text](image-3.png)
 
-[pic0]: images/0.png
-[pic1]: images/1.png
-[pic2]: images/2.png
-[pic3]: images/3.png
-[pic4]: images/4.png
-[pic5]: images/5.png
-[pic6]: images/6.png
-[pic7]: images/7.png
-[pic8]: images/8.png
-[pic9]: images/9.png
-[pic10]: images/10.png
-[pic11]: images/11.png
-[pic12]: images/12.png
 
 # 3. Create an OAuth Service <a name="create_oauth_service"></a>
 
-1\. You should still be in **Resources**.  If not, in the left menu, click **Resources**.
+1\. You should still be in **Resources**.  If not, in the left menu, click **Resources**. Click on **OAuth providers**. <br>
 
-![alt text][pic13]
+![alt text](image-5.png)
 
-2\. Click on **OAuth providers**.
 
-![alt text][pic14]
+2\. Click **Add** and select **Native OAuth provider** from the drop down.
 
-3\. Click **Add** and select **Native OAuth provider** from the drop down.
+![alt text](image-6.png)
 
-![alt text][pic15]
 
-![alt text][pic16]
+3\. Enter **student(n)-oauth** for the **Title** and select **DataPower API Gateway** for the **Gateway Type**.  Click **Next**.
 
-4\. Enter **oauth** for the **Title** and select **DataPower API Gateway** for the **Gateway Type**.  Click **Next**.
+![alt text](image-7.png)
 
-![alt text][pic17]
 
-5\. The Configuration screen will show the default Authorize and Token paths.  For **Supported grant types**, select **Resource owner - Password** and deselect **Access code**.  For **Supported client types**, select **Confidential**.  Click **Next**.
+4\. The Configuration screen will show the default Authorize and Token paths.  For **Supported grant types**, select **Resource owner - Password** and deselect **Access code**.  For **Supported client types**, select **Confidential**.  Click **Next**.
 
-![alt text][pic18]
+![alt text](image-8.png)
 
-6\. One scope, **sample&#95;scope&#95;1**, is automatically created.  
 
-![alt text][pic19]
+5\. One scope, **sample&#95;scope&#95;1**, is automatically created.  
 
-7\. Replace **sample&#95;scope&#95;1** with **customer** for Scope **Name** and replace **Sample scope definition 1** with **Access to Customer API** for Scope **Description**.  Click **Next**.
 
-![alt text][pic20]
+![alt text](image-9.png)
 
-8\. Accept the defaults (**App Registry** for **Authenticate application users using**) and click **Next**.
+6\. Replace **sample&#95;scope&#95;1** with **customer** for Scope **Name** and replace **Sample scope definition 1** with **Access to Customer API** for Scope **Description**.  Click **Next**.
 
-![alt text][pic21]
+![alt text](image-9a.png)
+
+7\. Accept the defaults (**App Registry** for **Authenticate application users using**) and click **Next**.
+
+![alt text][image-9b.png]
 
 9\. Review the OAuth configuration and click **Finish**.
 
-![alt text][pic22]
+![alt text][image-9c.png]
 
 10\. Click **Save**.
 
-![alt text][pic68]
+![alt text](image-10.png)
 
-[pic13]: images/13.png
-[pic14]: images/14.png
-[pic15]: images/15.png
-[pic16]: images/16.png
-[pic17]: images/17.png
-[pic18]: images/18.png
-[pic19]: images/19.png
-[pic20]: images/20.png
-[pic21]: images/21.png
-[pic22]: images/22.png
-[pic68]: images/68.png
 
 # 4. Add the OAuth Service to the Sandbox Catalog <a name="add_service"></a>
 
 1\. In the left menu, click on **Manage**.
 
-![alt text][pic23]
+![alt text](image-11.png)
+
 
 2\. Click on **Sandbox**
 
-![alt text][pic24]
+![alt text](image-12.png)
 
 3\. In the top menu, click on **Catalog settings**.
 
-![alt text][pic25]
+
+![alt text](image-13.png)
+
 
 4\. Click on **API user registries**.
 
-![alt text][pic26]
+![alt text](image-14.png)
+
 
 5\. Click **Edit**.
 
-![alt text][pic27]
+![alt text](image-15.png)
 
-6\. Select **App Registry** and click **Save**.
 
-![alt text][pic28]
+6\. Select **Student(n) App Registry** and click **Save**.
+
+![alt text](image-16.png)
+
 
 7\. Click on **OAuth providers**.
 
-![alt text][pic29]
+![alt text](image-17.png)
 
 8\. Click **Edit**
 
-![alt text][pic30]
+![alt text](image-18.png)
 
-9\. Select **oauth** and click **Save**.
 
-![alt text][pic31]
+9\. Select **student1-oauth** and click **Save**.
 
-[pic23]: images/23.png
-[pic24]: images/24.png
-[pic25]: images/25.png
-[pic26]: images/26.png
-[pic27]: images/27.png
-[pic28]: images/28.png
-[pic29]: images/29.png
-[pic30]: images/30.png
-[pic31]: images/31.png
+![alt text](image-19.png)
+
 
 # 5. Create a New Version of the Customer API <a name="new_version"></a>
 
