@@ -183,37 +183,44 @@ Note: Make sure to replace student(n) with your student number. Example student1
 ![alt text](image-19.png)
 
 
-# 5. Create a New Version of the Customer API <a name="new_version"></a>
+# 5. Update Customer API <a name="update_api"></a>
 
-IBM API Connect supports multiple versions of APIs.  We will create a new version of the Customer API before making any changes that would break functionality for existing consumers. 
+1\. In the left menu, click on **API Studio**.
 
-First, we will save the API as a new version.
+![alt text](image-20.png)
 
-1\. In the left menu, click on **Develop**.
+Select customer-database-agw project. <br>
 
-![alt text][pic32]
+![alt text](image-21.png)
 
-2\. Confirm the **APIs** tab is selected and click on the **3-dot** menu next to **Customer Database** and select **Save as New Version** from the drop down menu.
+Click on your API, customer-database-agw. <br>
 
-![alt text][pic33]
+![alt text](image-22.png)
 
-3\. Enter **2.0.0** for the **Save as New Version** and click **Submit**.
+Scoll down to Components section, then click on \<Add a new security schema\>. <br>
 
-![alt text][pic34]
+![alt text](image-23.png)
 
-## 5a. Add OAuth Security to the Customer API <a name="oauth_customer"></a>
 
-We will modify the security policy for our new API version to tell it to use the OAuth 2.0 provider.
+## 5a. Add OAuth Security to the Customer Database API <a name="oauth_customer"></a>
 
-1\. Confirm the **APIs** tab is selected and click on version **2.0.0** of **Customer Database**.
 
-![alt text][pic35]
+1\. Select oauth-2, then enter Security schema key as **oauth-1**.
 
-2\. Click on the **+** next to **Security Schemes**.
+![alt text](image-24.png)
 
-![alt text][pic36]
+Click \<Add\>. <br>
 
-3\. Enter **oauth-1** for the **Security Definition Name (Key)** and select **oauth2** from the **Security Definition Type** drop down menu.  When you select oauth2 from the drop down menu, it will enable additional configuration options.
+2\. For the Catalog: select Sandbox, OAuth Provider: select student1-oauth, for the Scope: select "Resource Owner - Password". <br>
+
+![alt text](image-25.png)
+
+Scroll down, and you should see the "customer" scope should be selected automatically. <br>
+
+![alt text](image-26.png)
+
+
+3\. xxx
 
 ![alt text][pic37]
 
