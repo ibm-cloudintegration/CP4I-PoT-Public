@@ -220,53 +220,26 @@ Scroll down, and you should see the "customer" scope should be selected automati
 ![alt text](image-26.png)
 
 
-3\. xxx
+3\. Add **oauth-1** to the API Security. Click \<Security\> tab.
 
-![alt text][pic37]
+![alt text](image-27.png)
 
-4\.Select **Resource Owner - Password** from the **Flow** drop down menu and click **Create**.
+Click \<Add security schema\>. <br>
+![alt text](image-28.png)
 
-![alt text][pic38]
+Select **oauth-1**, then click \<Add\>.
+![alt text](image-29.png)
 
-5\. Click **Save**.
+You should see **oauth-1**, along with ClientID, Secret. <br>
+![alt text](image-30.png)
 
-![alt text][pic69]
+So, your API is now protected with multiple securities and the API consumers can use either security. <br>
 
-Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
+Now, select **customer** scope as below. <br>
+![alt text](image-31.png)
 
-![alt text][pic70]
 
-6\. In the **Design** tab, find the **Security** section.  You will likely have to scroll up.  Expand the **Security** section clicking on the + if it is not already expanded.  
 
-![alt text][pic39]
-
-7\. Select **oauth-1** and click on **Scopes** and select **customer**.  Click **Create**.
-
-![alt text][pic90]
-
-8\. Click **Save**.
-
-![alt text][pic69]
-
-9\. Once saved, you will see an indicator window appear that shows that **Your API has been updated**.  Click on the **X** to close the window.
-
-![alt text][pic70]
-
-[pic32]: images/32.png
-[pic33]: images/33.png
-[pic34]: images/34.png
-[pic35]: images/35.png
-[pic36]: images/36.png
-[pic37]: images/37.png
-[pic38]: images/38.png
-[pic39]: images/39.png
-[pic40]: images/40.png
-[pic41]: images/41.png
-[pic42]: images/42.png
-[pic69]: images/69.png
-[pic70]: images/70.png
-[pic90]: images/90.png
-[pic91]: images/91.png
 
 # 6. Create a New Product <a name="create_product"></a>
 
