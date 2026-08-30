@@ -9,25 +9,17 @@ Lab prerequisite: "The Developer Portal Experience"
 ---
 
 # Table of Contents
+
 - [1. Introduction](#introduction)
-
-- [2. Configure a New OAuth 2.0 Provider API](#configure_oauth)
+- [2. Configure OAuth Security](#configure_oauth)
 	* [2a. Configure Authentication URL User Registry](#configure_registry)
-
 - [3. Create an OAuth Service](#create_oauth_service)
-
 - [4. Add the OAuth Service to the Sandbox Catalog](#add_service)
-
-- [5. Create a New Version of the Customer API](#new_version)
-	* [5a. Add OAuth Security to the Customer API](#oauth_customer)
-
-- [6. Create a New Product](#create_product)
-
-- [7. Stage the Product to your API Manager Environment](#stage_product)
-
-- [8. Supersede Version 1.0.0 of the Product](#supersede)
-
-- [9. Test the OAuth Configuration](#test_oauth)
+- [5. Update customer-database-agw API](#update-api)
+	* [5a. Add OAuth Security](#oauth_customer)
+- [6. Publish API](#publish-api)
+- [7. Test OAUTH Security](#test_oauth)
+- [8. Test the OAuth Configuration](#test_oauth)
 
 ---
 
@@ -37,7 +29,7 @@ In this lab, we will secure the Customer Database API that was created in the "C
 
 **Pre-Requisite:** Finish **Create and Secure an API with DataPower API Gateway** before this. <br>
 
-# 2. Configure a New OAuth 2.0 Provider API <a name="configure_oauth"></a>
+# 2. Configure OAuth Security <a name="configure_oauth"></a>
 
 IBM API Connect is a full-featured OAuth 2.0 provider. The OAuth exchange works like any other API call, and thus we treat it as its own API.
 
@@ -104,12 +96,12 @@ Note: Make sure to replace student(n) with your student number. Example student1
 
 ![alt text](./images/image-9b.png)
 
-9\. Review the OAuth configuration and click **Finish**.
+8\. Review the OAuth configuration and click **Finish**.
 
 ![alt text](./images/image-9c.png)
 
 
-10\. Click **Save**.
+9\. Click **Save**.
 
 ![alt text](./images/image-10.png)
 
@@ -126,7 +118,6 @@ Note: Make sure to replace student(n) with your student number. Example student1
 ![alt text](./images/image-12.png)
 
 3\. In the top menu, click on **Catalog settings**.
-
 
 ![alt text](./images/image-13.png)
 
@@ -160,7 +151,7 @@ Note: Make sure to replace student(n) with your student number. Example student1
 ![alt text](./images/image-19.png)
 
 
-# 5. Update Customer API <a name="update_api"></a>
+# 5. Update customer-database-agw API <a name="update_api"></a>
 
 1\. In the left menu, click on **API Studio**.
 
@@ -179,8 +170,7 @@ Scoll down to Components section, then click on \<Add a new security schema\>. <
 ![alt text](./images/image-23.png)
 
 
-## 5a. Add OAuth Security to the Customer Database API <a name="oauth_customer"></a>
-
+## 5a. Add OAuth Security <a name="oauth_customer"></a>
 
 1\. Select oauth-2, then enter Security schema key as **oauth-1**.
 
@@ -227,7 +217,7 @@ Now, select **customer** scope as below. <br>
 
 
 
-# 7. Test OAUTH <a name="test_oauth"></a>
+# 7. Test OAUTH Security<a name="test_oauth"></a>
 
 In this section, you will test the API to ensure that OAuth is working properly. <br>
 
@@ -302,10 +292,11 @@ curl -k -H "Authorization: Bearer REPLACE_WITH_YOUR_BEARER_TOKEN_FROM_ABOVE" REP
 ```
 
 Example URL:  <br>
-curl -k -H "Authorization: Bearer AAIgNWU5OGRiYjEzNGU3ZDJlOGQ5NjBjZTlgPl5hj59Dl2tuPTQ_RTfE2BjgYOa1unWWlatdflfw0SYRbX_14TiXQG_u_hPT1cWy3DtvA" https://apim-demo-gw-gateway-cp4i-apic.apps.itz-xxxxx.infra01-lb.dal14.techzone.ibm.com/sbodapati-porg/sandbox/ace-tk-customerdb-v3-http-cp4i-ace.apps.itz-13vrj2.infra01-lb.dal14.techzone.ibm.com/customerdb/v3/customers
+curl -k -H "Authorization: Bearer AAIgNWU5OGRiYjEzNGU3ZDJlOGQ5NjBjZTlgPl5hj59Dl2tuPTQ_RTfE2BjgYOa1unWWlatdflfw0SYRbX_14TiXQG_u_hPT1cWy3DtvA" https://apim-demo-gw-gateway-cp4i-apic.apps.itz-xxxxx.infra01-lb.dal14.techzone.ibm.com/sbodapati-porg/sandbox/ace-tk-customerdb-v3-http-cp4i-ace.apps.itz-xxxxxx.infra01-lb.dal14.techzone.ibm.com/customerdb/v3/customers
 
 
 ![alt text](./images/image-44.png)
+
 You should see the customers. <br>
 
 22\. Feel free to test the rest of the operations.  Testing will be similar to the testing that was completed in the "Create and Secure an API to Proxy an Existing REST Web Service" lab.
@@ -314,14 +305,14 @@ You should see the customers. <br>
 
 
 
-## Summary
+## 8. Summary<a name="summary"></a>
 
 Congratulations, you have completed the **Add OAuth Security to your API and use Lifecycle Controls to Version Your API** lab. Throughout the lab, you learned how to:
 
 -   Configure an OAuth 2.0 service with the Resource Owner Password grant type
 
--   Clone a new version of an API
+-   Secure your API with OAUTH
 
--   Secure the new version of your API
+-   Tested your API with OAUTH
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
