@@ -4,7 +4,7 @@
 
 [Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
-Lab prerequisite: "The Developer Portal Experience"
+Lab prerequisite: "Create and Secure an API with DataPower API Gateway"
 
 ---
 
