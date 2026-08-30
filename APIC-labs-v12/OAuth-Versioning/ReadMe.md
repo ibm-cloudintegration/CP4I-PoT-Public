@@ -219,6 +219,12 @@ Now, select **customer** scope as below. <br>
 
 # 6. Publish the API <a name="publish-api"></a>
 
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+![alt text](image-34.png)
+
 
 
 # 7. Test OAUTH <a name="test_oauth"></a>
@@ -227,95 +233,7 @@ In this section, you will test the new version of the API to ensure that OAuth i
 
 1\. In the top menu, click **Catalog settings**.
 
-![alt text][pic71]
 
-2\. Click on **Portal**.
-
-![alt text][pic72]
-
-3\. Copy the **Portal URL** and paste it in a new browser tab.
-
-![alt text][pic73]
-
-4\. Click **Sign in** and use the Username and Password for the Portal account that you created in "The Developer Portal Experience" lab.
-
-![alt text][pic74]
-
-5\. Click on **Apps**.
-
-![alt text][pic82]
-
-6\. Select the app that you created in "The Developer Portal Experience" lab (e.g. Customer Demo).
-
-![alt text][pic83]
-
-7\. Click on **Subscriptions**.
-
-![alt text][pic84]
-
-8\. Under **Product subscriptions**, click **Migrate this subscription to plan 'bronze' in product 'Customer' at version '2.0.0'**.
-
-![alt text][pic85]
-
-9\. Confirm that you want to migrate the subscription but clicking **Migrate subscription**.
-
-![alt text][pic86]
-
-10\. You will see that the subscription has been successfully migrated.
-
-![alt text][pic87]
-
-11\. Click on **API Products**.
-
-![alt text][pic76]
-
-12\. Click on **Customer 2.0.0**.
-
-![alt text][pic77]
-
-13\. Click on the **Customer Database 2.0.0** API.
-
-![alt text][pic78]
-
-14\. Click **GET /customers**
-
-![alt text][pic79]
-
-15\. Click **Try it**.
-
-![alt text][pic80]
-
-16\. From the **Security** drop-down menu, select **oauth-1**.
-
-![alt text][pic81]
-
-17\. Confirm that your application is shown in the **API Key** and enter your application secret for the **API Secret**.
-
-![alt text][pic88]
-
-18\. 
-In the **Username** field, enter **student(n)**.  In the **Password** field, enter **passw0rd**.  Select **customer** for the **Scopes**.
-
-Recall that when we configured the OAuth API, we provided an Authentication URL as the method for validating the user credentials.
-
-Click **Get Token**.
-
-![alt text][pic89]
-
-19\. 
-The API Portal will call out to the OAuth Token URL with your client credentials and user credentials.  The OAuth API will intercept the request, validate the credentials, and generate a token. 
-
-![alt text][pic92] 
-
-20\. 
-Click **Send** to invoke the API. The request will include the OAuth bearer token in the Authorization header.
-
-![alt text][pic93]
-
-21\. 
-Scroll down to see the call results.
-
-![alt text][pic94]
 
 
 
@@ -357,28 +275,7 @@ You should see bunch of customers in json format.<br>
 
 ![alt text][pic95]
 
-[pic71]: images/71.png
-[pic72]: images/72.png
-[pic73]: images/73.png
-[pic74]: images/74.png
-[pic76]: images/76.png
-[pic77]: images/77.png
-[pic78]: images/78.png
-[pic79]: images/79.png
-[pic80]: images/80.png
-[pic81]: images/81.png
-[pic82]: images/82.png
-[pic83]: images/83.png
-[pic84]: images/84.png
-[pic85]: images/85.png
-[pic86]: images/86.png
-[pic87]: images/87.png
-[pic88]: images/88.png
-[pic89]: images/89.png
-[pic92]: images/92.png
-[pic93]: images/93.png
-[pic94]: images/94.png
-[pic95]: images/95.png
+
 
 ## Summary
 
