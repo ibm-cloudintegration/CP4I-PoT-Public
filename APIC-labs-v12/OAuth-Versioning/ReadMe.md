@@ -35,6 +35,7 @@ Lab prerequisite: "The Developer Portal Experience"
 
 In this lab, we will secure the Customer Database API that was created in the "Create and Secure an API with DataPower API Gateway" lab to protect the resources exposed by IBM API Connect. Consumers of our API will be required to obtain and provide a valid OAuth token before they can invoke the Customer Database API. 
 
+**Pre-Requisite:** Finish **Create and Secure an API with DataPower API Gateway** before this. <br>
 
 # 2. Configure a New OAuth 2.0 Provider API <a name="configure_oauth"></a>
 
@@ -187,26 +188,26 @@ Scoll down to Components section, then click on \<Add a new security schema\>. <
 
 Click \<Add\>. <br>
 
-2\. For the Catalog: select Sandbox, OAuth Provider: select student1-oauth, for the Scope: select "Resource Owner - Password". <br>
+2\. For the **"Catalog"** select **Sandbox**, for the **"OAuth Provider"** select **student1-oauth**, for the **Scope" select **"Resource Owner - Password"**. <br>
 
 ![alt text](image-25.png)
 
-Scroll down, and you should see the "customer" scope should be selected automatically. <br>
+Scroll down, and you should see the **"customer"** scope, and it should select automatically. <br>
 
 ![alt text](image-26.png)
 
 
-3\. Add **oauth-1** to the API Security. Click \<Security\> tab.
+3\. Add **oauth-1** to the API Security. Click **\<Security\>** tab.
 
 ![alt text](image-27.png)
 
-Click \<Add security schema\>. <br>
+Click **\<Add security schema\>**. <br>
 ![alt text](image-28.png)
 
 Select **oauth-1**, then click \<Add\>.
 ![alt text](image-29.png)
 
-You should see **oauth-1**, along with ClientID, Secret. <br>
+You should see **oauth-1**, along with **ClientID, Secret**. <br>
 ![alt text](image-30.png)
 
 So, your API is now protected with multiple securities and the API consumers can use either security. <br>
@@ -216,164 +217,11 @@ Now, select **customer** scope as below. <br>
 
 
 
+# 6. Publish the API <a name="publish-api"></a>
 
-# 6. Create a New Product <a name="create_product"></a>
 
-In IBM API Connect, Plans and APIs are grouped together in Products, with which you can manage the availability and visibility of APIs and Plans.
 
-Products allow related APIs to be bundled together for subscribers.
-
-1\. In the left menu, click on **Develop**.
-
-![alt text][pic43]
-
-2\. Click on **Products**
-
-![alt text][pic44]
-
-3\. Click **Add** and select **Product** from the drop down menu.
-
-![alt text][pic45]
-
-![alt text][pic46]
-
-4\. Select **New product** and click **Next**.
-
-![alt text][pic47]
-
-5\. Enter **Customer** for the **Title** and change the **Version** to **2.0.0**.  Click **Next**.
-
-![alt text][pic48]
-
-6\. Select the **Customer Database** API that is version **2.0.0** and click **Next**.
-
-![alt text][pic49]
-
-7\. We are going to create some new Plans.  Click **Add**
-
-![alt text][pic50]
-
-8\. Replace **Plan 1** with **Gold** for the **Title** and **500** for the **Rate limit**.
-
-![alt text][pic51]
-
-9\. Click on the **Trash can** icon next to the **Default plan** to delete it.
-
-![alt text][pic52]
-
-10\. Click **Add** to add another Plan.
-
-![alt text][pic53]
-
-11\. Replace **Plan 2** with **Silver** for the **Title** and **250** for the **Rate limit**.
-
-![alt text][pic54]
-
-12\. Click **Add** to add another Plan.
-
-![alt text][pic53]
-
-13\. Replace **Plan 3** with **Bronze** for the **Title** and **2** for the **Rate limit** and change the drop down from **hour** to **minute**.  Click **Next**.
-
-![alt text][pic55]
-
-14\. Select **Public** for **Visibility** and **Authenticated** for **Subscribability**.  Click **Next**.
-
-![alt text][pic56]
-
-15\. Your Product will be created and associated with the required objects such as APIs and Plans.  Click **Done**.
-
-![alt text][pic57]
-
-16\. Click on **Products**.
-
-![alt text][pic58]
-
-[pic43]: images/43.png
-[pic44]: images/44.png
-[pic45]: images/45.png
-[pic46]: images/46.png
-[pic47]: images/47.png
-[pic48]: images/48.png
-[pic49]: images/49.png
-[pic50]: images/50.png
-[pic51]: images/51.png
-[pic52]: images/52.png
-[pic53]: images/53.png
-[pic54]: images/54.png
-[pic55]: images/55.png
-[pic56]: images/56.png
-[pic57]: images/57.png
-[pic58]: images/58.png
-
-# 7. Stage the Product to your API Manager Environment <a name="stage_product"></a>
-
-Before an API Product can be published, we must first stage that Product to a Catalog. When a Product is in the staged state, it is not yet visible to, or subscribable by developers. However, it can be reviewed by the API Product Manager and published once it has been determined that the API Product is ready to be consumed.
-
-If you stage a Product to a Catalog, editing and then restaging that Product through the Products tab of API Designer or API Manager will affect changes to the staged version.
-
-1\. Click on the **3-dot** menu next to version **2.0.0** of the **Customer** Product and select **Stage**.
-
-![alt text][pic59]
-
-2\. Select **Sandbox** for the **Stage to** catalog and click **Next**.
-
-Note:  IBM API Connect allows you to publish products to specific gateways associated with the Catalog.
-
-![alt text][pic60]
-
-3\. Accept the default values for **Visibility** and **Subscribability** and click **Stage**.
-
-![alt text][pic100]
-
-[pic59]: images/59.png
-[pic60]: images/60.png
-[pic100]: images/100.png
-
-
-# 8. Supersede Version 1.0.0 of the Product <a name="supersede"></a>
-
-IBM API Connect provides capabilities for managing the lifecycle of your API Products. There are various states which an API Product can reside in, as well as controls around when you can move an API Product from one state to another. In this section, you will explore how to replace a running version of an API Product with a new one.
-
-1\. In the left menu, click **Manage**.
-
-![alt text][pic61]
-
-2\. Click on **Sandbox**.
-
-![alt text][pic62]
-
-3\. The **Products** tab will list all of the API Products that this Catalog is currently managing.  Confirm version **2.0.0** of the **Customer** Product is **Staged** and version **1.0.0** of the Customer Product is **Published**.
-
-![alt text][pic63]
-
-4\. Click on the **3-dot** menu next to version **1.0.0** of the **Customer** Product and click **Supersede**.
-
-![alt text][pic64]
-
-5\. Select **customer 2.0.0** and click **Next**.
-
-![alt text][pic65]
-
-6\.  In order to maintain our consumers' entitlements, we need to migrate their Plan subscriptions.
-
-The **customer 1.0.0** Product has a Plan called **Default Plan**.  The **customer 2.0.0** Product does not have a Default Plan.  Therefore, we need to choose how we are going to move the subscribers.  Select **Bronze** from the **Target** drop down menu and click **Supersede**.
-
-![alt text][pic66]
-
-7\. IBM API Connect will take care of deprecating version 1.0.0 of the Product and publishing version 2.0.0.
-
-![alt text][pic67]
-
-[pic61]: images/61.png
-[pic62]: images/62.png
-[pic63]: images/63.png
-[pic64]: images/64.png
-[pic65]: images/65.png
-[pic66]: images/66.png
-[pic67]: images/67.png
-
-# 9. Test the OAuth Configuration <a name="test_oauth"></a>
+# 7. Test OAUTH <a name="test_oauth"></a>
 
 In this section, you will test the new version of the API to ensure that OAuth is working properly.
 
