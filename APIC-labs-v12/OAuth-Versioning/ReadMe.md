@@ -33,33 +33,8 @@ Lab prerequisite: "The Developer Portal Experience"
 
 # 1. Introduction <a name="introduction"></a>
 
-In this lab, we will secure the Customer Database API that was created in the "Create and Secure an API to Proxy an Existing REST Web Service" lab to protect the resources exposed by IBM API Connect. Consumers of our API will be required to obtain and provide a valid OAuth token before they can invoke the Customer Database API. In order for the changes to take effect, we must publish the APIs to the Developer Portal and make them available for the API Consumers.  The Customer 1.0.0 version is already running and has active subscribers.
+In this lab, we will secure the Customer Database API that was created in the "Create and Secure an API with DataPower API Gateway" lab to protect the resources exposed by IBM API Connect. Consumers of our API will be required to obtain and provide a valid OAuth token before they can invoke the Customer Database API. 
 
-API lifecycle management capabilities is an essential part of the API Management platform. The API lifecycle includes the following stages:
-
-1.  Plan and design the API
-
-2.  Develop the API
-
-3.  Test the API
-
-4.  Deploy (publish) the API
-
-5.  Retire and deprecate the API
-
-In this tutorial, you will explore the following key capabilities:
-
--   Configure an OAuth 2.0 service (the Resource Owner Password grant type)
-
--   Clone a new version of an API
-
--   Secure the new version of your API
-
--   Create a new API Product
-
--   Replace the old Product
-
--   Test the OAuth API in the Developer Portal
 
 # 2. Configure a New OAuth 2.0 Provider API <a name="configure_oauth"></a>
 
@@ -69,7 +44,7 @@ In this section, you will create a new OAuth provider API, configure which grant
 
 # 2a. Configure Authentication URL User Registry <a name="configure_registry"></a>
 
-In order to configure user authentication, you must first define the registry to use, which may be LDAP, local user registry, or an authentication URL. For this lab, you will implement an Authentication
+In order to configure user authentication, you must first define the **Registry** to use, which may be **LDAP**, **local user registry**, or an **authentication URL**. For this lab, you will implement an Authentication
 URL.
 
 1\.If you're not logged before, follow these instructions to access to the API Manager -> [Login to the API Manager](../APIC-prereq/Login-apic/index.md)
@@ -126,11 +101,12 @@ Note: Make sure to replace student(n) with your student number. Example student1
 
 7\. Accept the defaults (**App Registry** for **Authenticate application users using**) and click **Next**.
 
-![alt text][image-9b.png]
+![alt text](image-9b.png)
 
 9\. Review the OAuth configuration and click **Finish**.
 
-![alt text][image-9c.png]
+![alt text](image-9c.png)
+
 
 10\. Click **Save**.
 
