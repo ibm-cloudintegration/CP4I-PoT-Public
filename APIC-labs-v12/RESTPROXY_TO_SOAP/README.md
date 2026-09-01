@@ -102,7 +102,22 @@ Similarly, update next **yml** file as below. <br>
 ![alt text](./images/image-4j.png)
 
 Click on the **Design** view. <br>
-![alt text](image--4k.png)
+
+![alt text](./images/image-4k.png)
+
+
+Click **Policy Sequence**, and then click **assembly**. <br>
+
+![alt text](./images/image-4l.png)
+
+Close the Policies view. <br>
+
+![alt text](./images/image-4m.png)
+
+Click on the "Invoke" policies and set the URL that you captured in the IBM App Connect section. <br>
+
+![alt text](./images/image-4n.png)
+
 
 ## 3b. Publish API 
 
@@ -126,50 +141,10 @@ Click \<Catalog settings\> tab, then click on **Portal**.<br>
 
 ![Alt text](./images/image-9.png)
 
-
-<br>
-xxxxxxxx
-<br>
-
-
-Click on "Host", and blank out the value. <br>
-![Alt text](./images/image-11.png)
-
-
-Click on "Gateway" Tab. <br>
-
-![Alt text](./images/image-10.png)
-
-Watch how the API is orchestrated with parse, mapping, and Invoke nodes. Ciick on each node and see details (Example below).<br>
-
-![Alt text](./images/json-wsdl-mapping.png)
-
-<br>
-Now, complete the API design. <br><br>
-
-Click on "Properties" on the left, and click (+) sign. Add target-url property, and paste "SOAP HTTP URL" captured in the previous seciton as below. <br>
-
-![Alt text](./images/image-15.png)
-
-Click \<Create\>. <br>
-
-Now, click on "Policies" option on the left, and lets modify the API in the designer view.<br>
-
-Click on each Node on the API Designer, see how the mapping is configured between REST to WSDL format. <br>
-<br>
-Now click on the first "CtoF Invoke" Node, and update the URL. <br>
-
-![Alt text](./images/image-16.png)
-
-Update URL value to "{target-url}" (without the double quotes). <br>
-
-Similary, set the URL field on the other three Invoke Nodes to be same "{target-url}".<br>
-
-SAVE the API (The Save button is on the top right of the screen). <br>
-
 <br>
 
 # 4. Testing the REST Proxy
+
 Click on the "Test" tab.<br>
 ![alt text](./images/image-17.png)
 
