@@ -1,6 +1,24 @@
-# Creating REST Proxy based upon a WSDL
+#  IBM API Connect - Creating REST Proxy based upon a WSDL
 
-# 1. Overview
+[Return to main APIC lab page](../ReadMe.md#lab-abstracts)
+
+
+---
+
+# Table of Contents
+
+- [1. Introduction](#introduction)
+- [2. IBM App Connect - Deploy Temperature Converter WebService](#configure_oauth)
+- [3. IBM API Connect - Create REST Proxy from the WSDL](#apic-create-api)
+	* [3a. Add API](#apic-add-api
+	* [3b. Publish API](#apic-publish-api    )
+- [4. Testing REST Proxy Service](#test-api)
+- [5. Summary](#summary)
+
+---
+
+
+# 1. Introduction <a name="introduction"></a>
 
 In this lab, you will configure a SOAP WebService that is deployed to IBM App Connect to function as a REST Proxy within IBM API Connect. You will be deploying a very simple Temperature Converter WebService into IBM App Connect then expose it to IBM API Connect as a REST API.  <br>
 
@@ -9,7 +27,7 @@ In this lab, you will configure a SOAP WebService that is deployed to IBM App Co
 ![Alt text](./images/design-diagram.png)
 <br>
 
-# 2. App Connect - Deploy Temperature Converter WebService
+# 2. IBM App Connect - Deploy Temperature Converter WebService <a name="ace-deploy"></a>
 
 Download the bar file from [<b><u>here</u></b>](./src/TemperatureConverter.bar).
 
@@ -50,7 +68,7 @@ Click on the Properties tab, and copy "SOAP HTTP URL". This will be configured i
 <br>
 
 
-# 3. Api Connect - Create REST Proxy from the WSDL
+# 3. IBM API Connect - Create REST Proxy from the WSDL <a name="apic-create-api"></a>
 
 Download the zip file that contains Temperature Converter WSDL, and XSD's from [<b><u>here</u></b>](./src/TemperatureConverter_WSDL.zip).
 
@@ -70,7 +88,7 @@ Enter **"Project name"** as **"student(n)-soap-project"**, and  "Description" as
 
 
 
-## 3a. Add API 
+## 3a. Add API <a name="apic-add-api"></a>
 
 Click on the project you just created. <br>
 ![alt text](./images/image-4b.png)
@@ -119,7 +137,7 @@ Click on the "Invoke" policies and set the URL that you captured in the IBM App 
 ![alt text](./images/image-4n.png)
 
 
-## 3b. Publish API 
+## 3b. Publish API <a name="apic-publish-api"></a>
 
 Click **Publish**. <br>
 
@@ -143,7 +161,7 @@ Click \<Catalog settings\> tab, then click on **Portal**.<br>
 
 <br>
 
-# 4. Testing the REST Proxy
+# 4. Testing REST Proxy Service<a name="test-api"></a>
 
 
 Click on the "API Products" tab.<br>
@@ -182,10 +200,10 @@ You should get the response with the Converted Fahrenheit value as below.<br>
 **Optional test:** You can also try POST CtoF operation and enter below in the Body tab. <br>
 
 
-
-### Congratulations!!!
-
+# 5. Summary<a name="summary"></a>
 
 
+Congratulations, you have exposed a SOAP WebService deployed on IBM App Connect to IBM API Connect as an REST API. <br> <br>
 
+[Return to main APIC lab page](../ReadMe.md#lab-abstracts)
 
