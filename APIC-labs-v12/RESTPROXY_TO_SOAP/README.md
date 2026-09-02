@@ -145,55 +145,44 @@ Click \<Catalog settings\> tab, then click on **Portal**.<br>
 
 # 4. Testing the REST Proxy
 
-Click on the "Test" tab.<br>
+
+Click on the "API Products" tab.<br>
+![alt text](./images/image-15.png)
+
+Click on student(n)-temperature-converter-rest-api-product. <br>
+![alt text](./images/image-16.png)
+
+Click **\<Subscribe\>**. <br>
 ![alt text](./images/image-17.png)
 
-Click on "Test Configuration". <br>
-![alt text](./images/image-17a.png)
+Select **Create new subscription**, then click **Request**. <br>
+![alt text](./images/image-18.png)
 
-Enable Auto-publish, and click "Save Preferences".<br>
-![Alt text](./images/image-18.png)
+![alt text](./images/image-19.png)
 
-Now, the API should be online.<br>
-![alt text](./images/image-18a.png)
+Click on soap-demo application. <br>
+![alt text](./images/image-20.png)
 
+Click on the API. <br>
+![alt text](./images/image-21.png)
 
-Select GET CtoF operation. <br>
-Click "**Clear**" to display the Parameters.<br>
+![alt text](./images/image-22.png)
 
-![Alt text](./images/image-20.png)
+Select **API Resources** > **/CtoF** > **GET**, then click **\<Try\>** button. <br>
+![alt text](./images/image-23.png)
 
-Enter 45 for TemperatureInC parameter below.<br>
-![alt text](./images/image-20a.png)
-
+Enter a Centigrade value, and cick **\<Send\>**. <br>
+![alt text](./images/image-24.png)
 
 You should get the response with the Converted Fahrenheit value as below.<br>
-![Alt text](./images/image-19.png)
 
-Check the "trace" tab of each Node as below.<br>
+![alt text](./images/image-25.png)
 
-![Alt text](./images/image-21.png)
-
-![Alt text](./images/image-22.png)
-
-Also, check "trace" for each of the remaining nodes. <br>
 
 **Optional test:** You can also try POST CtoF operation and enter below in the Body tab. <br>
-```
-{
-    "TemperatureInC": 30
-}
-```
-<br><br><br>
 
-**Similary, test FtoC method.**
-<br>
-```
-Enter sample JSON in the Body.
-{
-    "TemperatureInF": 32
-}
-```
+
+
 ### Congratulations!!!
 
 
